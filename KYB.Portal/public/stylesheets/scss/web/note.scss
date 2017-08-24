@@ -1,0 +1,62 @@
+@import "./vipGeneral";
+
+.user-info{border: 1px solid $border;}
+
+.ttl{background-color: #fff;@include HEIGHT(50px);font-size: 16px;
+  span{border-left: 2px solid #074ba0;padding-left: 10px;}
+}
+.nav-tabs{background-color: #fff;border-bottom: 1px solid #074ba0;padding-top: 20px;padding-left: 10px;
+  li{
+    a{color: #333;border: 1px solid #e3f0ff;border-bottom: none;}
+    a:hover{color: $blue3!important;background-color: transparent;border-color: transparent;}
+  }
+  .active{
+    a{color: $blue3!important;border: 1px solid #074ba0!important;border-bottom:1px solid transparent!important;}
+  }
+}
+.body{overflow: hidden;border: 1px solid #e3f0ff;background-color: #fff;border-top: none;
+  .hide-part{display: none;
+    .page-box{float: right;margin: 0;
+      .pager-info{
+        .pagination{
+          .active{display: inline;  }
+        }
+      }
+    }
+  }
+  .active{display: block;}
+  table{width: 100%;border-collapse:separate;margin: 20px 0 0;border: 1px solid $gray3;border-bottom: none;
+    thead{
+      tr{
+        td{background-color: $gray1;color: #fff;border-top: 1px solid transparent;text-align: left;height: 28px;font-size: 12px;}
+        td:first-child{width: 50px;padding:0;text-align: center;}
+      }
+    }
+    tbody{
+      tr{
+        td{border-bottom: 1px solid $gray3;text-align: left;height: 32px;color: #333;font-size: 12px;
+          a{color: $blue3;text-decoration: underline;}
+        }
+        td:first-child{padding: 0;text-align: center;}
+      }
+      tr:hover{
+        td{background-color: #d0e5fd}
+      }
+      .wrong-msg{height: 300px;
+        td{width: 100%;text-align: center;@include HEIGHT(300px);font-size: 20px;border:none;
+          a{color: $blue3;text-decoration: underline;margin-right: 10px;}
+        }
+      }
+    }
+    tfoot{
+      tr{
+        td{height: 32px;text-align: center;
+          button{float: left;margin-left: 20px;margin-top: 1px;}
+        }
+      }
+    }
+  }
+  .btn-part{overflow: hidden;padding-left: 20px;margin: 10px 0;position: relative;z-index: 10;
+    button{float: left;margin-right: 20px;}
+  }
+}

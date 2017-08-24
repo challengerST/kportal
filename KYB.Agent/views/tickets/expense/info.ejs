@@ -1,0 +1,173 @@
+<div class="search-part fill">
+    <div class="dp-tb">
+        <div class="input">
+            <label for="search-ddbh">订单编号：</label>
+            <input type="text" id="search-ddbh" class="sm-input">
+        </div>
+        <div class="input">
+            <label for="search-khmc">客户名称：</label>
+            <input type="text" id="search-khmc" class="sm-input">
+        </div>
+        <div class="input">
+            <label for="fkzt">状态：</label>
+            <select id="fkzt" class="sm-input">
+                <option value="99">全部</option>
+                <option value="0">未确认</option>
+                <option value="1">已确认</option>
+                <option value="2">申诉中</option>
+                <option value="3">已开账</option>
+            </select>
+        </div>
+        <button class="sm-btn blue-btn" id="search">查询</button>
+    </div>
+</div>
+<div class="operate fill">
+    <p class="list-cout">共为您找到 0 条结果</p>
+</div>
+<div class="outer-con">
+    <table class="outer-tb">
+        <thead>
+        <tr>
+            <td>订单号</td>
+            <td>客户公司</td>
+            <td>起始港</td>
+            <td>目的港</td>
+            <td>航空公司</td>
+            <td>起飞日期</td>
+            <td>总费用</td>
+            <td>状态</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+<div class="page-box outer-page"></div>
+<div class="white-back dp-n">
+    <div class="zd-part alert-part dp-n">
+        <p class="header">制单 <span class="close-btn">X</span></p>
+
+        <div class="zd-body fill">
+            <div class="txt fl-l">
+                <span class="title">订单号：</span>
+                <span class="body ddh">123456</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">客户：</span>
+                <span class="body kh">123456</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">订单渠道：</span>
+                <span class="body ddqd">123456</span>
+            </div>
+            <p class="title clear">航班信息</p>
+
+            <div class="txt fl-l">
+                <span class="title">起始港：</span>
+                <span class="body qsg">PVG</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">目的港：</span>
+                <span class="body mdg">SHA</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">航空公司：</span>
+                <span class="body hkgs">CA</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">起飞日期：</span>
+                <span class="body qfrq">2017-02-02</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">航班号：</span>
+                <span class="body hbh">123456</span>
+            </div>
+            <p class="title clear">货物信息</p>
+
+            <div class="txt fl-l">
+                <span class="title">品名：</span>
+                <span class="body pm tw">consol</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">类型：</span>
+                <span class="body lx">1321</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">委托报关：</span>
+                <span class="body wtbg">是</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">件数：</span>
+                <span class="body js">123456</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">体积：</span>
+                <span class="body tj">12345</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">重量：</span>
+                <span class="body zl">123456</span>
+            </div>
+            <div class="sel-type fill">
+                <p data-tar="zd-fyqd" class="active">费用清单</p>
+                <p data-tar="zd-ex">仓库和报关行费用</p>
+            </div>
+            <div class="nav-bar">
+                <div class="zd-fyqd">
+                    <p class="title clear">费用清单</p>
+                    <table class="zd-tb" border="1">
+                        <thead>
+                        <tr>
+                            <td>项目</td>
+                            <td>单价</td>
+                            <td>数量</td>
+                            <td>金额</td>
+                            <td>操作</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="zd-ex fill dp-n">
+                    <div class="half">
+                        <p class="title clear">仓库费用</p>
+                        <table class="zd-ckfy" border="1">
+                            <thead>
+                            <tr>
+                                <td>项目</td>
+                                <td>金额</td>
+                                <td>操作</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="half" style="margin-left: 4%;">
+                        <p class="title clear">报关行费用</p>
+                        <table class="zd-bgfy" border="1">
+                            <thead>
+                            <tr>
+                                <td>项目</td>
+                                <td>金额</td>
+                                <td>操作</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <textarea id="refuse-reason" readonly></textarea>
+        </div>
+        <div class="btn-pt">
+            <button id="ensure-charge" class="fl-l md-btn blue-btn">确认账单</button>
+            <button id="update-ensure" class="fl-l md-btn blue-btn">修改账单</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+</div>

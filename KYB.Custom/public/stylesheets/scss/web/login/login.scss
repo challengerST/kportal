@@ -1,0 +1,44 @@
+*{margin: 0;padding: 0;}
+html,body{width: 100%;height: 100%;}
+
+.dp-n{display: none;}
+
+.backImg{height: 100%;width: 100%;background: url("../../../../images/login.jpg") no-repeat;background-size: 100% 100%;position: relative;
+  .login-box{width: 800px;height:640px;position: absolute;top: 50%;left: 50%;margin-left: -400px;margin-top: -320px;
+    .lg-part{width: 100%;height: 451px;background-color: #fff;border-top: 1px solid transparent;
+      .version{width: 80px;height: 60px;background: url("../../../../images/login/tp.png") no-repeat;position: absolute;top: 0;right: 0;}
+      .logo{width: 420px;height: 80px;background: url("../../../../images/login/title.png") no-repeat;background-size: 100% 100%;margin: 50px auto 0;}
+      .i-bd{overflow: hidden;
+        .tips{width: 420px;display: block;margin: 15px auto 0;height: 25px;line-height: 25px;font-size: 16px;color: #888;}
+        input{width: 406px;height:46px;display: block;padding-left: 10px;float: left;margin-left: 190px;}
+        .warm{height:50px;line-height:50px;float: left;width: 150px;padding-left: 10px;font-size: 14px;color: red;overflow: hidden;  text-overflow: ellipsis;  white-space: nowrap;display: none;}
+      }
+      .verify{
+        input{width: 226px;margin-right: 10px;}
+        img{width: 168px;height: 48px;line-height: 50px;float: left;border: 1px solid #ccc;cursor: pointer;}
+      }
+      button{height: 50px;width: 420px;margin:30px auto 0;display: block;color: #fff;background-color: #074ba0;border: none;cursor: pointer;border-radius: 5px;font-size: 18px;}
+      button:hover{background-color: #003271;}
+      button:active{background-color: #002655;}
+    }
+    .img-part{width: 100%;height: 150px;
+      .dp-tb{height: 80px;width: 200px;margin: 35px auto 0;background: url("../../../../images/login/erweima.png") no-repeat;background-size: 100% 100%;}
+    }
+  }
+  .big-box{height: 740px;margin-top: -370px;
+    .lg-part{height: 551px; }
+  }
+}
+
+
+.alert-modal-element{position: fixed;width: 100%;height: 100%;top: 0;left: 0;background-color: rgba(3,3,3,0.5);z-index: 100000;
+  .alert-modal-content{width:300px;position: fixed;top: 50%;left: 50%;margin-left: -150px;margin-top: -100px;background-color: #fff;border-radius: 5px;border: 1px solid #ccc;z-index: 100001;
+    .alert-modal-body{
+      span{display: block;width: 100%;height: 100%;padding: 20px;font-size: 16px;text-align: center;box-sizing:border-box;  -moz-box-sizing:border-box; /* Firefox */  -webkit-box-sizing:border-box; /* Safari */} }
+    .alert-modal-footer{height: 51px;border-top: 1px solid transparent;
+      button{display: block;margin:10px auto;width: 60px;height: 30px;color: #fff;background-color: #074ba0;border-radius: 2px;font-size: 14px;}
+      button:hover{background-color: #003271;}
+      button:focus{background-color: #002655;}
+    }
+  }
+}

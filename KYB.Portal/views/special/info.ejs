@@ -1,0 +1,355 @@
+<div class="bottom-part fill">
+    <div class="half left fill" id="scroll-left">
+        <div class="left-body">
+            <div class="step1 step">
+                <i class="line"></i>
+
+                <p class="title title1">选择航空公司</p>
+
+                <div class="bd fill dp-n"></div>
+            </div>
+            <div class="step2 step">
+                <i class="line"></i>
+
+                <p class="title title2">选择航线产品</p>
+
+                <div class="bd fill dp-n"></div>
+            </div>
+            <div class="step3 step">
+                <i class="line"></i>
+
+                <p class="title title3">选择航班日期</p>
+
+                <div class="bd fill dp-n">
+                    <div class="s-time fill">
+                        <div class="timer fl-l" id="datetimepicker"></div>
+                        <div class="fl-l time-info">
+                            <p class="title">空运日历提示：</p>
+
+                            <p><span class="disabled"></span><span class="dp-b">无报价日期</span></p>
+
+                            <p><span class="focus"></span><span class="dp-b">可订舱日期</span></p>
+
+                            <p><span class="active"></span><span class="dp-b">已选中日期</span></p>
+                        </div>
+                        <div class="fl-l forbid-info">
+                            <p class="title">产品注意事项：</p>
+
+                            <p>1.不承运铝电池及相关货物；</p>
+
+                            <p>2.单票货物最低重量300KG；</p>
+
+                            <p>3.分单产生信息费，50元/分分单。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="step4 step">
+                <i class="line"></i>
+
+                <p class="title title4">选择目的港</p>
+
+                <div class="bd fill">
+                    <!--<button data-toggle="collapse" data-target="#demo1">-->
+                    <!--<span class="big dp-b fl-l">直达</span>-->
+                    <!--<span class="big dp-b fl-l">中转</span>-->
+                    <!--<span class="dp-b fl-l">（20个目的港）</span>-->
+                    <!--<span class="dp-b fl-r open">+折叠</span>-->
+                    <!--</button>-->
+                    <!--<div class="end-body collapse fill in" id="demo1">-->
+                    <!--<div class="part fill">-->
+                    <!--<div class="rt fill">-->
+                    <!--<span class="sg-end" data-limit="1,2,3,4,5,6,7" data-val="58b9269d1d2cfc0c64ad953b">CDG</span>-->
+                    <!--<span class="sg-end" data-limit="1,2,3,4,5,6,7" data-val="58b9269d1d2cfc0c64ad953b">CDG</span>-->
+                    <!--<span class="sg-end" data-limit="1,2,3,4,5,6,7" data-val="58b9269d1d2cfc0c64ad953b">CDG</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--<button data-toggle="collapse" data-target="#demo2">-->
+                    <!--<span class="big dp-b fl-l">直达</span>-->
+                    <!--<span class="big dp-b fl-l">中转</span>-->
+                    <!--<span class="dp-b fl-l">（20个目的港）</span>-->
+                    <!--<span class="dp-b fl-r open">+折叠</span>-->
+                    <!--</button>-->
+                    <!--<div class="end-body collapse fill in" id="demo2">-->
+                    <!--<div class="part fill add">-->
+                    <!--<div class="lf"><span>卡车1</span></div>-->
+                    <!--<div class="rt fill">-->
+                    <!--<span class="sg-end" data-limit="1,2,3,4,5,6,7" data-val="58b9269d1d2cfc0c64ad953b">CDG</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="part fill add">-->
+                    <!--<div class="lf"><span>卡车1</span></div>-->
+                    <!--<div class="rt fill">-->
+                    <!--<span class="sg-end" data-limit="1,2,3,4,5,6,7" data-val="58b9269d1d2cfc0c64ad953b">CDG</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                </div>
+            </div>
+            <div class="step5 step">
+                <p class="title title5">生成价格</p>
+
+                <div class="bd fill dp-n">
+                    <table class="left-tb-price">
+                        <thead>
+                        <tr>
+                            <td>比重</td>
+                            <td>MIN</td>
+                            <td class="ta-r">45KG</td>
+                            <td class="ta-r">100KG</td>
+                            <td class="ta-r">300KG</td>
+                            <td class="ta-r">500KG</td>
+                            <td class="ta-r">1000KG</td>
+                            <td></td>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+
+                        </tbody>
+                    </table>
+                    <div class="detail-bz">
+                        <p class="title"><span >*</span>备注信息：</p>
+                        <p class="body">这是备注</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="half right fill" id="scroll-right">
+        <div class="top fill">
+            <p class="title">航班信息</p>
+
+            <div class="input">
+                <label for="right-start" class="require">起始港：</label>
+                <input type="text" id="right-start" class="sm-input" readonly/>
+            </div>
+            <div class="input">
+                <label for="right-end" class="require">目的港：</label>
+                <input type="text" id="right-end" class="sm-input" readonly/>
+            </div>
+            <div class="input big">
+                <label for="trans-line">航线路径：</label>
+                <input type="text" id="trans-line" class="sm-input" readonly/>
+            </div>
+            <div class="input">
+                <label for="right-com" class="require">航空公司：</label>
+                <input type="text" id="right-com" class="sm-input" readonly/>
+            </div>
+            <div class="input">
+                <label for="right-time" class="require">航班日期：</label>
+                <input type="text" id="right-time" class="sm-input" readonly/>
+            </div>
+        </div>
+        <div class="top fill">
+            <p class="title">货物信息</p>
+
+            <div class="input">
+                <label for="num" class="require">件数：</label>
+                <input type="text" id="num" class="sm-input" onkeyup="value=value.replace(/[^\d.]/g,'')"/>
+                <span class="unit">PCS</span>
+            </div>
+            <div class="input">
+                <label for="danger">类型：</label>
+                <select id="danger" class="sm-input">
+                    <option value="1">普货</option>
+                    <option value="2">转关</option>
+                </select>
+            </div>
+            <div class="input">
+                <label for="wei" class="require">重量：</label>
+                <input type="text" id="wei" class="sm-input" onkeyup="value=value.replace(/[^\d.]/g,'')"/>
+                <span class="unit">KGS</span>
+            </div>
+            <div class="input">
+                <label for="name">货物名称：</label>
+                <input type="text" id="name" class="sm-input" value="consol"/>
+            </div>
+
+            <div class="input first">
+                <label for="vol" class="require">体积：</label>
+                <input type="text" id="vol" class="sm-input" onkeyup="value=value.replace(/[^\d.]/g,'')"/>
+                <span class="unit">CBM</span>
+                <span class="calculate-logo"></span>
+
+                <div class="add-part dp-n">
+                    <div class="add-in fl-l">
+                        <label for="long">长</label>
+                        <input type="text" class="sm-input" id="long" onkeyup="value=value.replace(/[^\d.]/g,'')"/>
+                    </div>
+                    <p class="multi">X</p>
+
+                    <div class="add-in fl-l">
+                        <label for="width">宽</label>
+                        <input type="text" class="sm-input" id="width" onkeyup="value=value.replace(/[^\d.]/g,'')"/>
+                    </div>
+                    <p class="multi">X</p>
+
+                    <div class="add-in fl-l">
+                        <label for="height">高</label>
+                        <input type="text" class="sm-input" id="height" onkeyup="value=value.replace(/[^\d.]/g,'')"/>
+                    </div>
+                    <p class="multi">X</p>
+
+                    <div class="add-in fl-l">
+                        <label for="sum-num">件数</label>
+                        <input type="text" class="sm-input" id="sum-num" onkeyup="value=value.replace(/[^\d.]/g,'')"/>
+                    </div>
+                    <button class="multi-calcu blue-btn sm-btn">确定</button>
+                </div>
+            </div>
+            <div class="input">
+                <label for="custom">委托报关：</label>
+                <select id="custom" class="sm-input">
+                    <option value="1">是</option>
+                    <option value="2">否</option>
+                </select>
+            </div>
+            <div class="input">
+                <label for="fp">分泡：</label>
+                <input type="text" id="fp" class="sm-input" readonly value="2/8"/>
+            </div>
+            <div class="limit-remark dp-n">航班单件货物长、宽、高最大1米，1米，1米；单件最大体积：1；单件重量不超过1kg,不接受危险品</div>
+        </div>
+        <div class="right-price">
+            <span class="title">价格信息</span>
+            <table border="1">
+                <thead>
+                <tr>
+                    <td class="c-bz">比重</td>
+                    <td class="c-min">MIN</td>
+                    <td class="c-45">45KG</td>
+                    <td class="c-100">100KG</td>
+                    <td class="c-300">300KG</td>
+                    <td class="c-500">500KG</td>
+                    <td class="c-1000">1000KG</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="c-price">
+                    <td class="c-bz">/</td>
+                    <td class="c-min">MIN</td>
+                    <td class="c-45">0</td>
+                    <td class="c-100">0</td>
+                    <td class="c-300">0</td>
+                    <td class="c-500">0</td>
+                    <td class="c-1000">0</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="operate">
+            <div class="price-pt dp-n">
+                <p class="font-big"><span class="title">预估总价</span><span class="body get-zj">CNY 5878.00</span></p>
+
+                <p><span class="title">空运费</span><span class="body get-kyf">CNY 5878.00</span></p>
+
+                <p class="jsjg"><i class="get-kyf">5628.00</i> = 单价 <i class="get-dj">45.00</i> * 计费重量 <i
+                            class="get-zl">12.5</i></p>
+
+                <div class="p-body">
+                    <p><span class="title">空运费</span><span class="body">CNY 5878.00</span></p>
+
+                    <p><span class="title">空运费</span><span class="body">CNY 5878.00</span></p>
+
+                    <p><span class="title">空运费</span><span class="body">CNY 5878.00</span></p>
+                </div>
+                <a href="javascript:void(0)" class="show-other">其他杂费清单</a>
+            </div>
+            <p class="dp-tb" style="display:none"><input type="checkbox" id="ck" checked/><label for="ck">我已阅读并同意《空运邦线上协议》</label></p>
+            <button id="submit" class="md-btn blue-btn">确认委托</button>
+            <div class="export">
+                <a href="javascript:void(0);" target="_blank" class="dp-b dl-pdf">
+                    <span class="dp-b fl-l excel-logo export-btn"></span>
+                    <span class="dp-b fl-l export-btn">导出报价单</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="white-back dp-n">
+    <div class="show-part other-list fill dp-n">
+        <div class="header"><span class="dp-b fl-l"></span><span class="dp-b fl-l">其他杂费清单</span><span
+                    class="close-btn fl-r dp-b">X</span></div>
+        <table border="1">
+            <thead>
+            <tr>
+                <td>费用名称</td>
+                <td>价格</td>
+                <td>备注</td>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="show-part price-list fill dp-n">
+        <div class="header"><span class="dp-b fl-l"></span><span class="dp-b fl-l">费用清单</span><span
+                    class="close-btn fl-r dp-b">X</span></div>
+        <div class="half">
+            <table>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="half">
+            <p>规则：计费重量=（体积/0.006-重量）×分抛比例+重量</p>
+
+            <p>若：体积/0.006 &lt; 重量，则计费重量=重量</p>
+
+            <p>总运费=单价×计费重量</p>
+
+            <p>总价=总运费+服务费</p>
+        </div>
+    </div>
+    <div class="history-part show-part dp-n">
+        <p class="header">历史报价 <span class="close-btn">X</span></p>
+
+        <div class="info-p fill">
+            <p class="sg-info">
+                <span class="ttl">起始港：</span>
+                <span class="body h-qsg">xxxx</span>
+            </p>
+
+            <p class="sg-info">
+                <span class="ttl">目的港：</span>
+                <span class="body h-mdg">xxxx</span>
+            </p>
+
+            <p class="sg-info">
+                <span class="ttl">航空公司：</span>
+                <span class="body h-hkgs">xxxx</span>
+            </p>
+
+            <p class="sg-info long">
+                <span class="ttl">航线路径：</span>
+                <span class="body h-hxlg">xxxx</span>
+            </p>
+        </div>
+        <p class="title">历史报价 <span>(过去30天内历史报价)</span></p>
+
+        <div class="h-tb">
+            <table class="table-bordered">
+                <thead>
+                <tr>
+                    <td>45KG</td>
+                    <td>100KG</td>
+                    <td>300KG</td>
+                    <td>500KG</td>
+                    <td>1000KG</td>
+                    <td>存档时间</td>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="btn-pt">
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+</div>

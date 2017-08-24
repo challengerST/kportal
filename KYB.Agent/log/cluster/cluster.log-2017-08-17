@@ -1,0 +1,2 @@
+[2017-08-17 15:14:40.090] [INFO] cluster - fork,     worker:1,     pid:15664
+[2017-08-17 15:14:41.316] [INFO] cluster - kyb_be 启动,监听:8000 端口,   当前环境:development

@@ -1,0 +1,25 @@
+[2017-07-31 11:41:02.399] [ERROR] error - Error: bind EADDRINUSE null:8000
+    at Object.exports._errnoException (util.js:953:11)
+    at exports._exceptionWithHostPort (util.js:976:20)
+    at cb (net.js:1318:16)
+    at shared (cluster.js:614:5)
+    at Worker.<anonymous> (cluster.js:588:9)
+    at process.<anonymous> (cluster.js:752:8)
+    at emitTwo (events.js:111:20)
+    at process.emit (events.js:191:7)
+    at handleMessage (internal/child_process.js:718:10)
+    at internal/child_process.js:501:7
+[2017-07-31 11:41:02.401] [FATAL] error - Error: bind EADDRINUSE null:8000
+    at Object.exports._errnoException (util.js:953:11)
+    at exports._exceptionWithHostPort (util.js:976:20)
+    at cb (net.js:1318:16)
+    at shared (cluster.js:614:5)
+    at Worker.<anonymous> (cluster.js:588:9)
+    at process.<anonymous> (cluster.js:752:8)
+    at emitTwo (events.js:111:20)
+    at process.emit (events.js:191:7)
+    at handleMessage (internal/child_process.js:718:10)
+    at internal/child_process.js:501:7
+[2017-07-31 18:50:08.679] [ERROR] error - {"sid":-1,"ip":"::1","method":"POST","url":"/api/order/underway/pmxg","status":404}
+[2017-07-31 18:50:14.348] [ERROR] error - {"sid":-1,"ip":"::1","method":"POST","url":"/api/order/underway/pmxg","status":404}
+[2017-07-31 18:51:43.435] [ERROR] error - {"sid":-1,"ip":"::1","method":"POST","url":"/api/order/underway/pmxg","status":404}

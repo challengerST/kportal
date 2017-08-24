@@ -1,0 +1,12 @@
+[2017-07-27 09:46:56.638] [INFO] cluster - fork,     worker:1,     pid:11376
+[2017-07-27 09:46:57.318] [INFO] cluster - kyb_be 启动,监听:8000 端口,   当前环境:development
+[2017-07-27 09:50:05.196] [INFO] cluster - fork,     worker:1,     pid:4260
+[2017-07-27 09:50:05.845] [INFO] cluster - kyb_be 启动,监听:8000 端口,   当前环境:development
+[2017-07-27 09:55:37.470] [INFO] cluster - fork,     worker:1,     pid:12304
+[2017-07-27 09:55:38.129] [INFO] cluster - kyb_be 启动,监听:8000 端口,   当前环境:development
+[2017-07-27 14:54:53.740] [INFO] cluster - fork,     worker:1,     pid:11036
+[2017-07-27 14:54:54.379] [INFO] cluster - kyb_be 启动,监听:8000 端口,   当前环境:development
+[2017-07-27 16:39:04.585] [INFO] cluster - fork,     worker:1,     pid:10652
+[2017-07-27 16:39:05.515] [INFO] cluster - kyb_be 启动,监听:8000 端口,   当前环境:development
+[2017-07-27 18:12:42.397] [INFO] cluster - fork,     worker:1,     pid:1100
+[2017-07-27 18:12:43.422] [INFO] cluster - kyb_be 启动,监听:8000 端口,   当前环境:development

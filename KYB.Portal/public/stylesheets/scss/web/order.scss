@@ -1,0 +1,117 @@
+@import "../general/general";
+
+.pass-box{  background: url('../../../images/delivery/bg_booking.jpg') no-repeat;border-top: 1px solid $blue1;background-size: 100% 400px;min-width: 1280px;
+  .container{background-color: transparent;margin: 10px auto 100px;
+    .nav-top{color: #fff;background-color: transparent;}
+    .super-man{width: 500px;height: 85px;margin: 0 auto;background: url('../../../images/img/iconmap2.png') -20px -465px;line-height: 140px;
+      span{background-color: transparent;color: rgba(238,238,238,0.5);}
+      .mark{color: #fff;}
+      .first{margin-left: 25px;}
+      .second{margin-left: 125px;}
+      .third{margin-left: 130px;}
+    }
+    .pass{height: 200px;width: 100%;background-color: rgba(0,63,142,1);margin-top: 10px;
+      .pass-info{height: 200px;width: 600px;background-color: transparent;padding: 20px 50px;
+        p{overflow: hidden;color: #fff;background-color: transparent;margin: 10px 0;font-size: 16px;@include HEIGHT(30px);
+          a{color: #fff;text-decoration: underline;margin-left:20px;}
+          .locate-logo{height: 30px;width: 30px;background: url("../../../images/img/iconmap1.png") no-repeat 0 -387px; }
+          .list-logo{height: 30px;width: 30px;background: url("../../../images/img/iconmap1.png") no-repeat -3px -424px; }
+        }
+        p:first-child{font-size: 25px;}
+      }
+      .pass-logo{margin-top: 30px;
+        .wechat-logo{height: 140px;width: 140px;background: url("../../../images/qrcode.jpg") no-repeat;background-size: 100% 100%;}
+        .connect-info{margin-left: 10px;margin-right: 20px;
+          p{@include HEIGHT(30px);}
+          .black{color: #fff;font-size: 16px;}
+          .blue{color: #fff;
+            a{color: #fff;text-decoration: underline;}
+            .glyphicon{@include HEIGHT(30px);@include textCenter(30px);color:#fff;}
+          }
+        }
+      }
+    }
+    .ddzs{background-color: #fff;padding-bottom: 100px;
+      .zs-body{width: 1050px;margin: 0 auto;
+        .zs-logo{@include HEIGHT(85px);margin: 0 0 10px;padding-top: 10px;font-size: 22px;color: $blue1;}
+        .zs-logo:before{content: '';display: block;height: 75px;width: 85px;float: left;background: url("../../../images/man_ok.png") no-repeat;background-size: 100% 100%;margin-right: 10px;}
+        .txt{font-size:16px;  color:#333333;}
+        a{display: block;font-size:12px;  color:#074ba0;text-decoration: underline;margin-top: 10px;}
+        a:hover{text-decoration: none;}
+        .top-l{width: 350px;height: 260px;padding: 20px;border:1px solid #cccccc;border-radius: 8px;float: left;margin-bottom: 50px;}
+        .top-r{width: 650px;height: 260px;padding: 20px;border:1px solid #cccccc;border-radius: 8px;float: left;margin: 0 0 50px 50px;}
+        .bottom-l{width: 350px;height: 260px;padding: 20px;border:1px solid #cccccc;border-radius: 8px;float: left;}
+        .bottom-r{width: 650px;height: 260px;padding: 20px;border:1px solid #cccccc;border-radius: 8px;float: left;margin-left: 50px;}
+      }
+    }
+  }
+}
+
+.white-back{width: 100%;height: 100%;background-color: rgba(255,255,255,0.7);position: absolute;  left: 0;top: 0;z-index: 10000;
+  .map{width: 800px;position: fixed;top:10%;left: 50%;margin-left: -400px;z-index: 10001;background-color: #fff;
+    .map-head{@include HEIGHT(50px);background-color: $blue2;color: #fff;font-size: 25px;padding-left: 30px;
+      span{color: #fff;background-color: $blue2;width: 50px;text-align: center;cursor: pointer;}
+    }
+    .map-box{width: 100%;overflow: auto;padding: 0 30px;border: 1px solid $gray2;
+      p{@include HEIGHT(25px);font-size: 14px;
+        span{display: block;float: left;}
+        .title{width: 100px;}
+        a{color: $blue3;text-decoration: underline;}
+      }
+      .map-main{height: 400px;width: 100%;margin-top: 10px;background-color: $blue3;
+        img{width: 100%;height: 100%;}
+      }
+      button{margin: 10px auto;}
+    }
+  }
+  .list{width: 800px;height:500px;position: fixed;top:50%;margin-top:-250px;left: 50%;margin-left: -400px;z-index: 10001;background-color: #fff;
+    .list-head{@include HEIGHT(50px);background-color: $blue2;color: #fff;font-size: 25px;padding-left: 30px;
+      span{color: #fff;background-color: $blue2;width: 50px;text-align: center;cursor: pointer;}
+    }
+    .list-box{width: 100%;height:450px;
+      .download{overflow: hidden;
+        .white-list{height: 165px;width: 110px;background: url("../../../images/img/list.png") no-repeat 0 0;margin-left: 200px;}
+        .dl-txt{margin-left: 10px;
+          p{width: 400px;@include NOWRAP();@include HEIGHT(30px);
+            a{@include HEIGHT(30px);font-size: 20px;color: $blue1;text-decoration: underline;  }
+            span{display: inline-block;height: 30px;width: 30px;background: url("../../../images/img/iconmap1.png") no-repeat 3px -313px;}
+          }
+          p:first-child{margin-top: 50px;}
+        }
+      }
+      .see-list{padding-left: 200px;font-size: 16px;font-weight: 600;margin-top: 20px;}
+      .sample{width: 330px;height: 165px;margin-left: 200px;
+        a{width: 110px;height: 165px;}
+        .sample-a{background: url("../../../images/img/list.png") no-repeat -110px 0;}
+        .sample-b{background: url("../../../images/img/list.png") no-repeat -220px 0;}
+        .sample-c{background: url("../../../images/img/list.png") no-repeat -330px 0;}
+      }
+    }
+  }
+}
+.al-part{position: fixed;z-index: 10000;width: 1000px;height: 500px;border: 1px solid $blue3;top: 50%;left: 50%;background-color: #fff;margin-left: -500px;margin-top: -250px;
+  p{font-size: 24px;padding: 0 40px;}
+  .header{@include HEIGHT(50px);text-align: center;font-size: 24px;border-bottom: 1px solid $blue3;padding: 0;background-color: $blue3;color: #fff;
+    span{display: block;@include HEIGHT(50px);width: 50px;float: right;cursor: pointer;color: #fff;}
+  }
+  .fir{margin: 20px 0;}
+  .sec{margin-bottom: 15px;}
+  table{width: 900px;margin: 30px auto 0;border-collapse:separate;
+    td{width: 128px;height: 50px;}
+    thead{
+      tr{
+        td{text-align: center;border: 1px solid black;border-left: none;font-size: 16px;padding: 10px 0;font-weight: 600;border-bottom: none;}
+        td:first-child{border-left: 1px solid black;}
+      }
+    }
+    tbody{
+      tr{
+        td{font-size: 16px;text-align: center;border: 1px solid black;border-left: none;border-bottom: none;}
+        td:first-child{border-left: 1px solid black;}
+      }
+      .sp-tr{
+        td{border-bottom: 1px solid black;}
+      }
+    }
+  }
+}

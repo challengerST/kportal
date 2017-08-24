@@ -1,0 +1,26 @@
+<%- include ../../../base/head.ejs %>
+<%# 样式表引用 %>
+<link rel="stylesheet" href="/javascripts/datePicker/css/bootstrap-datetimepicker.min.css"/>
+<link rel="stylesheet" href="/stylesheets/css/web/search.css">
+<%# 样式表引用结束 %>
+<%- include ../../../base/header.ejs %>
+
+<div class="app-box">
+    <div class="user-center">
+        <div class="container">
+            <p class="header-nav"><a href="/home" class="dp-b fl-l">首页</a>&nbsp;>&nbsp;<%= title %> </p>
+            <%- include ../../side.ejs %>
+            <div class="user-info">
+                <%- include ./info.ejs %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include ../../../base/javascripts.ejs %>
+<%# 脚本引用 %>
+<script src="/javascripts/datePicker/js/bootstrap-datetimepicker.min.js" charset="utf-8"></script>
+<script src="/javascripts/datePicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="utf-8"></script>
+<script src="/javascripts/search/airports/bundle.min.js" charset="utf-8"></script>
+<%# 脚本引用结束 %>
+<%- include ../../../base/foot.ejs %>

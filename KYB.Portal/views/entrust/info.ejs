@@ -1,0 +1,91 @@
+<div class="input-info fl-l">
+    <div class="input-header">信息填写</div>
+    <div class="box fill">
+        <p class="text cl-b">航班信息</p>
+
+        <div class="input">
+            <label for="start">起飞港：</label>
+            <input type="text" id="start" value="" readonly/>
+        </div>
+        <div class="input">
+            <label for="end">目的港：</label>
+            <input type="text" id="end" value="" readonly/>
+        </div>
+        <div class="input">
+            <label for="company">航空公司：</label>
+            <input type="text" id="company" value="" readonly/>
+        </div>
+        <div class="input">
+            <label for="f-time">起飞时间：</label>
+            <input type="text" id="f-time"/>
+        </div>
+        <div class="input long">
+            <label for="hxlj">航线路径：</label>
+            <input type="text" id="hxlj" readonly/>
+        </div>
+    </div>
+    <div class="box fill" style="border: none;;">
+        <p class="text cl-b">货物信息</p>
+
+        <div class="input">
+            <label for="sum">货物数量：</label>
+            <input maxlength="3" type="text" id="sum" onkeyup="value=value.replace(/[^\d]/g,'')"
+                   value=""/>
+            <span class="position">PCS</span>
+        </div>
+        <div class="input">
+            <label for="weight">货物毛重：</label>
+            <input type="text" id="weight" onkeyup="value=value.replace(/[^\d.]/g,'')"
+                   value=""/>
+            <span class="position">KGS</span>
+        </div>
+        <div class="input sel-size">
+            <label for="size">货物体积：</label>
+            <input type="text" id="size" onkeyup="value=value.replace(/[^\-?\d.]/g,'')"
+                   value=""/>
+            <span class="calculate-logo"></span>
+            <span class="position">CBM</span>
+
+            <div class="add-part dp-n">
+                <div class="add-in fl-l">
+                    <label for="long">长</label>
+                    <input type="text" id="long" onkeyup="value=value.replace(/[^\d.]/g,'')"/>
+                </div>
+                <p class="multi">X</p>
+
+                <div class="add-in fl-l">
+                    <label for="width">宽</label>
+                    <input type="text" id="width" onkeyup="value=value.replace(/[^\d.]/g,'')"/>
+                </div>
+                <p class="multi">X</p>
+
+                <div class="add-in fl-l">
+                    <label for="height">高</label>
+                    <input type="text" id="height" onkeyup="value=value.replace(/[^\d.]/g,'')"/>
+                </div>
+                <p class="multi">X</p>
+
+                <div class="add-in fl-l">
+                    <label for="sum-num">件数</label>
+                    <input type="text" id="sum-num" onkeyup="value=value.replace(/[^\d.]/g,'')"/>
+                </div>
+                <button class="multi-calcu">确定</button>
+            </div>
+        </div>
+        <div class="input">
+            <label for="name">货物名称：</label>
+            <input type="text" id="name" value="consol"/>
+        </div>
+        <div class="input">
+            <label for="custom">委托报关：</label>
+            <select id="custom">
+                <option value="1">是</option>
+                <option value="2">否</option>
+            </select>
+        </div>
+        <div class="input">
+            <label for="fpbl">分泡比例：</label>
+            <input type="text" id="fpbl" value="2/8" readonly/>
+        </div>
+    </div>
+</div>

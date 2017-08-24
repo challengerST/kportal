@@ -1,0 +1,14 @@
+@import "./vipGeneral";
+
+.input-part{padding: 30px 20px;border: 1px solid #E3F0FF;background-color: #fff;
+  .input{margin:20px 0 0 280px;overflow: hidden;
+    label,input,span{display: block;float: left;}
+    label{width: 120px;@include HEIGHT(30px);text-align: right;margin: 0;font-weight: normal;color: #333;}
+    span,.operate-mail{@include HEIGHT(30px);padding-left: 5px;color: red;}
+    .operate-mail{color: $blue2;text-decoration: underline;}
+    .operate-mail:hover{text-decoration: none;}
+    span:before{content: '';display: block;float: left;height: 30px;width: 30px;background: url('../../../images/img/remove.png');margin-right: 10px;}
+    .hide{display: none;}
+  }
+}
+.submit{margin: 20px auto;}

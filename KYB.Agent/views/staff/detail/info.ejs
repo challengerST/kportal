@@ -1,0 +1,102 @@
+<% var d = 'resBody' in data && data.resBody || {} %>
+<% var m = 'agentMember' in d && d.agentMember || {} %>
+<% var r = 'roleInfo' in d && d.roleInfo || {} %>
+<div class="con-body fill">
+    <div class="info fill">
+        <p class="single">
+            <span class="title">姓名：</span>
+            <span class="body"><%= m.name || '/' %></span>
+        </p>
+
+        <p class="single">
+            <span class="title">手机号：</span>
+            <span class="body"><%= m.mobile || '/' %></span>
+        </p>
+
+        <p class="single">
+            <span class="title">状态：</span>
+            <span class="body"><%= m.memberState == 1 ? '已启用' : '已禁用' %></span>
+        </p>
+
+        <p class="single">
+            <span class="title">邮箱：</span>
+            <span class="body"><%= m.email || '/' %></span>
+        </p>
+
+        <p class="single">
+            <span class="title">角色：</span>
+            <select id="a-role" class="sm-input" data-v="<%= r.roleName %>">
+
+            </select>
+        </p>
+    </div>
+
+    <div class="operate fill">
+        <button class="dp-b fl-r add sm-btn blue-btn" style="display: none;" id="submit" data-id="<%= m.memberId %>">
+            确定
+        </button>
+        <button class="dp-b fl-r add sm-btn blue-btn" id="transfer">转移订单</button>
+    </div>
+    <table class="outer-tb" data-id="<%= m.memberId %>">
+        <thead>
+        <tr>
+            <td></td>
+            <td>订单号</td>
+            <td>订单日期</td>
+            <td>起飞港</td>
+            <td>目的港</td>
+            <td>货物名称</td>
+            <td>订单状态</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <div class="page-box">
+
+    </div>
+</div>
+
+<div class="white-back dp-n">
+    <div class="add-modal alert-part fill dp-n">
+        <p class="header">转移订单 <span class="close-btn">X</span></p>
+
+        <div class="add-body fill">
+            <p class="t-title">转移订单</p>
+
+            <div class="half">
+                <p class="title">现订单操作权限</p>
+
+                <p class="sg"><span class="i-title">姓名：</span><span><%= m.name || '/' %></span></p>
+
+                <p class="sg"><span class="i-title">手机号：</span><span><%= m.mobile || '/' %></span></p>
+
+                <p class="sg"><span class="i-title">邮箱：</span><span><%= m.email || '/' %></span></p>
+            </div>
+            <div class="half">
+                <p class="title">接受人</p>
+
+                <p class="sg"><span class="i-title">姓名：</span><select id="m-list" class="sm-input"></select></p>
+
+                <p class="sg"><span class="i-title">手机号：</span><span class="js-mobile"></span></p>
+
+                <p class="sg"><span class="i-title">邮箱：</span><span class="js-mail"></span></p>
+            </div>
+        </div>
+        <div class="btn-pt">
+            <button id="add-ensure" class="fl-l md-btn blue-btn" data-id="<%= m.memberId %>">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="update-part alert-part dp-n">
+        <p class="header">确认修改 <span class="close-btn">X</span></p>
+
+        <p class="body">确定将该员工角色调整为 <span class="u-role">操作员</span></p>
+
+        <div class="btn-pt">
+            <button id="update-ensure" class="fl-l md-btn blue-btn" data-id="<%= m.memberId %>">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+</div>

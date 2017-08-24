@@ -1,0 +1,57 @@
+@import "../../general/general";
+
+.operate{width: 90%;margin: 20px auto 0;padding: 10px 20px;background-color: #fff;border: 1px solid $gray;border-top: 2px solid #8ab928;border-bottom: none;border-top-left-radius:5px;border-top-right-radius:5px;
+  .list-cout{float: left;@include HEIGHT(30px);margin: 0;}
+  button{float: right;margin-left: 2px;background-color: #339cd0;}
+  button:hover{background-color: #1275a6;}
+}
+.outer-con{width: 90%;margin: 0 auto;padding: 0 20px 20px;background-color: #fff;border: 1px solid $gray;border-bottom-left-radius:5px;border-bottom-right-radius:5px;border-top: none;}
+table{background-color: #fff;border-color: $gray;
+  td{text-align: center;height: 30px;font-size: 12px;  }
+  .short-td{height: 15px;}
+  .wrong{
+    td{height: 200px;font-size: 16px;
+      a{display: inline;}
+    }
+  }
+}
+.list-tb{width: 100%;
+  td{font-size: 12px;height: 28px;}
+  .font-red{color: red;}
+  thead{
+    td{background-color: #fff;color: #333;font-size: 13px;font-weight: 600;height: 35px;}
+  }
+  tr{border: 1px solid $gray;}
+  tr:hover{background-color: #f3f3f3;}
+}
+.page-box{width: 90%;margin: 10px auto;}
+
+.white-back{position: fixed;width: 100%;height: 100%;background-color: rgba(255,255,255,0.85);top: 0;left: 0;z-index: 1000;
+  .alert-part{ .header{@include HEIGHT(30px);background-color: $blue1;color: #fff;font-size: 16px;padding: 0 0 0 20px;
+    span{display: block;float: right;@include HEIGHT(30px);width: 50px;text-align: center;color: #fff;cursor: pointer;}
+  }
+    .btn-pt{display:table;margin: 0 auto;
+      button{margin-top: 20px;}
+      button:first-child{margin-right: 20px;}
+    }
+  }
+  .add-modal{background-color: #fff;width: 802px;position: fixed;top: 10%;left: 50%;margin-left: -400px;border: 1px solid $blue1;
+    .add-body{background-color: #fff;
+      .half{width:50%;float: left;padding:20px;
+        .input{overflow: hidden;padding-left: 25px;height: 55px;margin-bottom: 5px;width: auto;
+          label,input{display: block;float: left;}
+          label{width:100px;text-align: right;margin: 0;@include HEIGHT(30px);}
+          p.warm{clear: both;@include HEIGHT(25px);text-align: center;color: red;}
+          .b-red{border: 1px solid red;}
+        }
+      }
+      .right{
+        p
+        .title{@include HEIGHT(30px);font-size: 16px;margin-bottom: 10px;}
+        .role{margin: 0;}
+        .role-body{margin-bottom: 20px;}
+      }
+    }
+  }
+  .enable-part,.disable-part,.delete-part,.reset-part{background-color: #fff;width: 600px;position: fixed;top: 50%;left: 50%;margin-top: -125px;margin-left: -300px;border: 1px solid $blue1;  }
+}

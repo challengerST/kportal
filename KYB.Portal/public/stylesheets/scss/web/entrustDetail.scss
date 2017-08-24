@@ -1,0 +1,21 @@
+@import "../general/general";
+
+.detail-box{width: 100%;background: url("../../../images/img/bill_detail.png") no-repeat;min-height: 340px;
+  .container{
+    .header-nav{@include HEIGHT(30px);color: #fff;
+      a{color: #fff;}
+    }
+    .order-part{width: 740px;margin: 20px auto 0;background-color: #fff;padding: 10px 20px;
+      .header{@include HEIGHT(30px);text-align: center;font-size: 20px;}
+      .info{overflow: hidden;
+        span{@include HEIGHT(30px);}
+      }
+      table{width: 100%;
+        td{height: 50px;width: 100px;text-align: center;}
+      }
+    }
+    .button{width: 740px;margin: 0 auto;background-color: #fff;padding-bottom: 10px;
+      button{margin: 0 auto;}
+    }
+  }
+}

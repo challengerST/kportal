@@ -1,0 +1,194 @@
+<% Date.prototype.Format = function (fmt) { //author: meizz
+    var o = {
+        "M+": this.getMonth() + 1, //月份
+        "d+": this.getDate(), //日
+        "h+": this.getHours(), //小时
+        "m+": this.getMinutes(), //分
+        "s+": this.getSeconds(), //秒
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+        "S": this.getMilliseconds() //毫秒
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+} %>
+
+<% var l = 'airwayLimit' in d && d.airwayLimit || {}; %>
+<% var t = 'transPort' in d && d.transPort || []; %>
+<% var p = 'airwayPrice' in d && d.airwayPrice || {}; %>
+<% var arr = 'policy' in p && p.policy || {}; %>
+
+<script>
+    var valid = {
+        flightDay: '<%= d && 'flightDay' in d && d.flightDay || [] %>'
+        , validEnd: '<%= d && 'validEnd' in d && d.validEnd || [] %>'
+    };
+</script>
+
+
+<div class="modal_body">
+    <div class="top">
+        <div class="dp-tb">
+            <% if(d && 'airCompanyCode' in d){ %>
+            <p class="big start"><%= d.destCode || '/' %></p>
+            <p class="zz">
+                <span class="zzg"><%= d.airCompanyCode || '/' %></span>
+                <span class="zd"><%= t.length > 2 ? '直达' : (t.length == 3 ? t[1].portCode + ' 转关' : t[1].portCode + '、' + t[2].portCode + ' 转关') %></span>
+            </p>
+            <p class="big end"><%= d.deptCode || '/' %></p>
+            <% } %>
+            <p class="xghx">
+                <a href="javascript:void(0);" data-aid="<%= d.airwayId || '' %>">
+                    <span class="glyphicon glyphicon-search"></span>选择航线
+                </a>
+            </p>
+        </div>
+    </div>
+    <div class="pd-part bd-b">
+        <p class="title">基本信息</p>
+        <div class="row fill">
+            <div class="input left">
+                <label for="hbrq">航班日期：</label>
+                <input type="text" id="hbrq" class="sm-input s-require"
+                       value="<%= d.flightDate ? new Date(d.flightDate).Format('yyyy-MM-dd') : '' %>">
+            </div>
+        </div>
+    </div>
+    <div class="pd-part bd-b">
+        <p class="title">限制条件设置</p>
+        <div class="row fill">
+            <div class="input">
+                <label for="dpzlsx">单票订单重量上限：</label>
+                <input type="text" id="dpzlsx" class="sm-input short s-require" value="<%= l.maxWeight || '' %>">
+                <span class="unit">kg</span>
+            </div>
+        </div>
+        <div class="row fill">
+            <div class="input">
+                <label for="djspzl">单件商品重量上限：</label>
+                <input type="text" id="djspzl" class="sm-input short s-require" value="<%= l.pieceWeight || '' %>">
+                <span class="unit">kg</span>
+            </div>
+            <div class="input">
+                <label for="djcdsx">单件长度上限：</label>
+                <input type="text" id="djcdsx" class="sm-input short s-require" value="<%= l.length || '' %>">
+                <span class="unit">m</span>
+            </div>
+            <div class="input">
+                <label for="kdsx">宽度上限：</label>
+                <input type="text" id="kdsx" class="sm-input short s-require" value="<%= l.width || '' %>">
+                <span class="unit">m</span>
+            </div>
+            <div class="input">
+                <label for="gdsx">高度上限：</label>
+                <input type="text" id="gdsx" class="sm-input short s-require" value="<%= l.height || '' %>">
+                <span class="unit">m</span>
+            </div>
+        </div>
+        <div class="row fill">
+            <div class="rdo">
+                <label for="wxp">危险品：</label>
+                <input type="checkbox" id="wxp"<%= l.dangerousGoods ? 'checked' : '' %>>
+                <label for="wxp">不接受</label>
+            </div>
+        </div>
+    </div>
+    <div class="pd-part bd-b fill">
+        <p class="title">价格信息</p>
+        <div class="half">
+            <div class="row fill">
+                <div class="input">
+                    <label for="jzj">基准价：</label>
+                    <input type="text" id="jzj" class="sm-input s-require" value="<%= p.basicPrice || '' %>">
+                    <span class="unit">CNY</span>
+                </div>
+                <p class="right-ttl fl-r">阶梯价：</p>
+            </div>
+        </div>
+        <div class="half">
+            <table class="jt-tb">
+                <thead>
+                <tr>
+                    <td>拼货重量（kg）</td>
+                    <td>每公斤单价（CNY）</td>
+                    <td>操作</td>
+                </tr>
+                </thead>
+                <tbody>
+                <% for (var a in arr) { %>
+                <% if (arr.hasOwnProperty(a)) { %>
+                <% var dt = arr[a]; %>
+                <tr>
+                    <td><input type="text" class="weight s-require" value="<%= a %>"></td>
+                    <td><input type="text" class="price s-require" value="<%= dt %>"></td>
+                    <td><a href="javascript:void(0);" class="delete">-删除</a></td>
+                </tr>
+                <% } %>
+                <% } %>
+
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="3">
+                        <a href="javascript:void(0);" class="add">+添加</a>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="row fill fl-l">
+            <div class="input long">
+                <label for="remark">备注：</label>
+                <input type="text" id="remark" class="sm-input s-require" value="<%= d.remark || '' %>">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="btn-part fill">
+    <button class="white-btn md-btn fl-l" onclick="javascript:history.back(-1);">返回</button>
+
+    <% if(!('editable' in d) || d.editable){ %>
+    <button class="blue-btn md-btn fl-r" id="publish" data-id="<%= d.lclId || '0' %>">保存并发布</button>
+    <button class="white-btn md-btn fl-r" id="save" data-id="<%= d.lclId || '0' %>">仅保存</button>
+    <% } %>
+</div>
+
+<div class="white-back dp-n">
+    <div class="editor-modal alert-part dp-n">
+        <p class="header">搜索航线<span class="close-btn">X</span></p>
+        <div class="search-body">
+            <div class="main-info">
+                <div class="dp-tb">
+                    <div class="input com">
+                        <input type="text" id="search-code" placeholder="航空公司三字码" class="get-company">
+                        <ul class="get-name">
+
+                        </ul>
+                    </div>
+                    <div class="input st">
+                        <input type="text" id="search-start" placeholder="起始港三字码" class="name">
+                        <ul class="get-name">
+
+                        </ul>
+                    </div>
+                    <span class="dp-b"></span>
+                    <div class="input ed">
+                        <input type="text" id="search-end" placeholder="目的港三字码" class="name">
+                        <ul class="get-name">
+
+                        </ul>
+                    </div>
+                    <button class="sm-btn blue-btn dp-b" id="search">搜索</button>
+                </div>
+            </div>
+            <div class="result">
+                <p class="info-warm">请输入起始港、目的港搜索</p>
+            </div>
+        </div>
+        <div class="btn-pt">
+            <button id="editor-ensure" class="fl-l md-btn blue-btn" data-id="0">确定</button>
+            <button class="close-btn fl-l md-btn white-btn">关闭</button>
+        </div>
+    </div>
+</div>

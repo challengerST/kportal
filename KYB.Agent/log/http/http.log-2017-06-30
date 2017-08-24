@@ -1,0 +1,6 @@
+[2017-06-30 13:49:43.733] [INFO] http - cluster:1;    sid:-1;    ip:::1;    url:/;    method:GET;    queries:{};    body:{}
+[2017-06-30 13:49:43.771] [INFO] http - cluster:1;    sid:-1;    ip:::1;    url:/login;    method:GET;    queries:{};    body:{}
+[2017-06-30 13:49:44.018] [INFO] http - cluster:1;    sid:-1;    ip:::1;    url:/login/sendGt3?t=1498801784003;    method:GET;    queries:{"t":"1498801784003"};    body:{}
+[2017-06-30 14:10:06.517] [INFO] http - cluster:1;    sid:-1;    ip:::1;    url:/login;    method:GET;    queries:{};    body:{}
+[2017-06-30 14:10:06.556] [INFO] http - cluster:1;    sid:-1;    ip:::1;    url:/login/sendGt3?t=1498803006550;    method:GET;    queries:{"t":"1498803006550"};    body:{}
+[2017-06-30 14:57:39.894] [INFO] http - cluster:1;    sid:-1;    ip:::1;    url:/login;    method:GET;    queries:{};    body:{}

@@ -1,0 +1,54 @@
+<%- include ../base/head.ejs %>
+<%# 样式表引用 %>
+<link rel="stylesheet" href="/stylesheets/css/web/login.css">
+<%# 样式表引用结束 %>
+<%- include ../base/header.ejs %>
+
+<div class="app-box">
+    <div class="login-box">
+        <div class="container">
+            <img src="/images/img/login_left.png" alt="slogon" class="fl-l slogon">
+
+            <div class="fl-r login-form">
+                <div class="please-login width">请登录：</div>
+                <div class="input-tel width">
+                    <label for="tel" class="dp-n"></label>
+                    <input id="tel" type="text" placeholder="请输入您的账号" class="lg-input">
+                </div>
+                <p class="prompt-name prompt"></p>
+
+                <div class="input-pwd width">
+                    <label for="pwd" class="dp-n"></label>
+                    <input id="pwd" type="password" placeholder="请输入您的密码" class="lg-input">
+                </div>
+                <p class="prompt-pwd prompt"></p>
+
+                <div class="input-validate width">
+                    <div id="captcha">
+                        <p id="wait">正在加载验证码......</p>
+                    </div>
+                </div>
+                <p class="prompt-code prompt"></p>
+
+                <p class="wrong-text"></p>
+
+                <div class="auto-login width">
+                    <input type="checkbox" id="auto" class="fl-l" checked="checked">
+                    <label for="auto" class="fl-l">7天免登陆</label>
+                    <a href="/login/forget" class="fl-r dp-ib">忘记密码？</a>
+                    <a href="/login/register" class="fl-r dp-ib">免费注册</a>
+                </div>
+                <div class="input-submit width">
+                    <button class="lg-btn blue-btn" id="submit">登录</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include ../base/javascripts.ejs %>
+<%# 脚本引用 %>
+<script src="http://static.geetest.com/static/tools/gt.js"></script>
+<script src="/javascripts/login/bundle.min.js" charset="utf-8"></script>
+<%# 脚本引用结束 %>
+<%- include ../base/foot.ejs %>

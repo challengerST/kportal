@@ -1,0 +1,402 @@
+<div class="operate fill">
+    <p class="list-cout"><strong>选择航空公司</strong> 已有 0 家航空公司</p>
+</div>
+<div class="airports">
+    <div class="dp-tb companys">
+
+    </div>
+</div>
+<div class="new-al dp-n">
+    <div class="left">
+        <div class="btn-part">
+            <span class="delete-line">-</span>
+            <span class="add-line">+</span>
+            <span class="fa fa-undo" id="refresh-tree"></span>
+        </div>
+        <div class="air-tree" onselectstart="return false">
+
+        </div>
+    </div>
+    <div class="right dp-n">
+        <p class="head">
+            <span class="dp-b fl-l">航班信息</span>
+            <!--<a href="javascript:void(0);" class="dp-b fl-r blue-btn sm-btn">返回</a>-->
+            <a href="javascript:void(0);" class="dp-b fl-r blue-btn sm-btn" id="save" data-index="0" data-id="0"
+               data-ori="">保存</a>
+        </p>
+
+        <div class="air-info fill">
+            <div class="input">
+                <span class="label">航空公司：</span>
+                <span class="txt-input" id="com_id" data-id="">中国国际航空公司</span>
+            </div>
+            <div class="input">
+                <label for="start">起飞港：</label>
+                <input type="text" id="start" readonly class="select"/>
+                <ul class="dp-n se-part">
+                    <li>PVG</li>
+                    <li>SHA</li>
+                </ul>
+            </div>
+            <div class="remark">
+                <label for="remark">备注：</label>
+                <input type="text" id="remark"/>
+            </div>
+        </div>
+        <div class="detail-info">
+            <p class="head">
+                <span class="dp-b fl-l">目的机场</span>
+                <a href="javascript:void(0);" class="dp-b fl-r blue-btn sm-btn" id="batch-bz">比重配置</a>
+                <a href="javascript:void(0);" class="dp-b fl-r blue-btn sm-btn" id="multi-update">批量修改</a>
+                <a href="javascript:void(0);" class="dp-b fl-r blue-btn sm-btn" id="multi-add">批量添加</a>
+                <a href="javascript:void(0);" class="dp-b fl-r blue-btn sm-btn" id="add">新增</a>
+                <a href="javascript:void(0);" class="dp-b fl-r blue-btn sm-btn" id="remove">删除</a>
+                <a href="javascript:void(0);" class="dp-b fl-r blue-btn sm-btn" id="o-xj">下架</a>
+                <a href="javascript:void(0);" class="dp-b fl-r blue-btn sm-btn" id="o-sj">上架</a>
+                <a href="javascript:void(0);" class="dp-b fl-r blue-btn sm-btn" id="set-group">设置分区</a>
+                <a href="javascript:void(0);" class="dp-b fl-r blue-btn sm-btn" id="recommend">航线推荐</a>
+                <a href="javascript:void(0);" class="dp-b fl-r blue-btn sm-btn" id="cancel-recommend">取消推荐</a>
+            </p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                    <tr>
+                        <td class="th-small"><input type="checkbox" class="sel-all"/></td>
+                        <td class="th-mid">机场名称</td>
+                        <td class="th-big">头程航班</td>
+                        <td class="th-mid">中转方式</td>
+                        <td>比重</td>
+                        <td>MIN</td>
+                        <td>45KG</td>
+                        <td>100KG</td>
+                        <td>300KG</td>
+                        <td>500KG</td>
+                        <td>1000KG</td>
+                        <td>MYC</td>
+                        <td>SCC</td>
+                        <td class="th-mid">操作</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="publish">
+        <button class="publish-btn">发布航线</button>
+    </div>
+</div>
+<div class="white-back dp-n">
+    <div class="sg-limit-part show-part dp-n">
+        <p class="header">航线限制设置 <span class="close-btn">X</span></p>
+        <div class="main-info dp-n">已选择目的港：PEK</div>
+        <div class="border fill">
+            <p class="title">货物限制条件设置</p>
+            <div class="input">
+                <label for="sg-len">单件长度上限：</label>
+                <input type="text" id="sg-len" class="sm-input">
+                <span class="unit">m</span>
+            </div>
+            <div class="input">
+                <label for="sg-wid">单件宽度上限：</label>
+                <input type="text" id="sg-wid" class="sm-input">
+                <span class="unit">m</span>
+            </div>
+            <div class="input">
+                <label for="sg-hei">单件高度上限：</label>
+                <input type="text" id="sg-hei" class="sm-input">
+                <span class="unit">m</span>
+            </div>
+            <div class="input">
+                <label for="sg-zl">单件重量上限：</label>
+                <input type="text" id="sg-zl" class="sm-input">
+                <span class="unit">kg</span>
+            </div>
+            <div class="input clear">
+                <label for="sg-minWei">货物总重下限：</label>
+                <input type="text" id="sg-minWei" class="sm-input">
+                <span class="unit">kg</span>
+            </div>
+            <div class="rdo clear">
+                <input type="checkbox" id="sg-danger">
+                <label for="sg-danger">不接受危险品</label>
+            </div>
+            <div class="input clear" style="width: 100%;">
+                <label for="sg-beizhu">航线备注：</label>
+                <input type="text" id="sg-beizhu" class="sm-input">
+            </div>
+        </div>
+        <div class="btn-pt">
+            <button id="ensure-sg-limit" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="sg-set-bz show-part dp-n">
+        <p class="header">配置比重 <span class="close-btn">X</span></p>
+        <div class="bz-body fill">
+            <p class="ttl">选择比重价格：</p>
+            <p class="bz-lv" data-bz="200">1:200</p>
+            <p class="bz-lv" data-bz="300">1:300</p>
+            <p class="bz-lv" data-bz="500">1:500</p>
+            <p class="bz-lv" data-bz="1000">1:1000</p>
+        </div>
+        <div class="bz-body fill">
+            <p class="ttl">价格递减阶梯：</p>
+            <select id="bz-200">
+                <option value="0.5">-0.5</option>
+                <option value="1">-1</option>
+                <option value="1.5">-1.5</option>
+                <option value="2">-2</option>
+                <option value="2.5">-2.5</option>
+                <option value="3">-3</option>
+            </select>
+            <select id="bz-300">
+                <option value="0.5">-0.5</option>
+                <option value="1">-1</option>
+                <option value="1.5">-1.5</option>
+                <option value="2">-2</option>
+                <option value="2.5">-2.5</option>
+                <option value="3">-3</option>
+            </select>
+            <select id="bz-500">
+                <option value="0.5">-0.5</option>
+                <option value="1">-1</option>
+                <option value="1.5">-1.5</option>
+                <option value="2">-2</option>
+                <option value="2.5">-2.5</option>
+                <option value="3">-3</option>
+            </select>
+            <select id="bz-1000">
+                <option value="0.5">-0.5</option>
+                <option value="1">-1</option>
+                <option value="1.5">-1.5</option>
+                <option value="2">-2</option>
+                <option value="2.5">-2.5</option>
+                <option value="3">-3</option>
+            </select>
+        </div>
+        <div class="btn-pt">
+            <button id="ensure-sg-set-bz" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="del-part show-part dp-n">
+        <p class="header">删除该航线 <span class="close-btn">X</span></p>
+
+        <div class="btn-pt">
+            <button id="ensure-del" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="publish-part show-part dp-n">
+        <p class="header">发布航线 <span class="close-btn">X</span></p>
+
+        <div class="body">
+            <div id="sel-time" data-date-format="dd-mm-yyyy"></div>
+            <div class="input">
+                <label for="expireDate">选择过期时间：</label>
+                <input type="text" class="sm-input" id="expireDate" readonly data-date-format="dd-mm-yyyy"/>
+            </div>
+        </div>
+        <div class="btn-pt">
+            <button id="ensure-publish" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="add-part show-part dp-n">
+        <p class="header">批量添加 <span class="close-btn">X</span></p>
+
+        <div class="body">
+            <div class="input">
+                <label for="input-tag">分区：</label>
+                <input type="text" id="input-tag" class="sm-input"/>
+            </div>
+            <div class="input clr" style="margin-top: 10px;">
+                <label for="create-end">目的港：</label>
+                <input type="text" id="create-end" class="sm-input"/>
+                <span class="tips" style="display: none;">每次最多添加20条</span>
+                <ul class="get-name"></ul>
+            </div>
+            <div class="create-body clr">
+
+            </div>
+            <table class="multi-add">
+                <thead>
+                <tr>
+                    <td class="big">头程航班</td>
+                    <td class="middle">中转方式</td>
+                    <td>比重</td>
+                    <td>MIN</td>
+                    <td>45KG</td>
+                    <td>100KG</td>
+                    <td>300KG</td>
+                    <td>500KG</td>
+                    <td>1000KG</td>
+                    <td>MYC</td>
+                    <td>SCC</td>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="border fill">
+            <p class="title">货物限制条件设置</p>
+            <div class="input">
+                <label for="add-len">单件长度上限：</label>
+                <input type="text" id="add-len" class="sm-input">
+                <span class="unit">m</span>
+            </div>
+            <div class="input">
+                <label for="add-wid">单件宽度上限：</label>
+                <input type="text" id="add-wid" class="sm-input">
+                <span class="unit">m</span>
+            </div>
+            <div class="input">
+                <label for="add-hei">单件高度上限：</label>
+                <input type="text" id="add-hei" class="sm-input">
+                <span class="unit">m</span>
+            </div>
+            <div class="input">
+                <label for="add-zl">单件重量上限：</label>
+                <input type="text" id="add-zl" class="sm-input">
+                <span class="unit">kg</span>
+            </div>
+            <div class="input clr">
+                <label for="add-minWei">货物总重下限：</label>
+                <input type="text" id="add-minWei" class="sm-input">
+                <span class="unit">kg</span>
+            </div>
+            <div class="rdo clr">
+                <input type="checkbox" id="add-danger">
+                <label for="add-danger">不接受危险品</label>
+            </div>
+            <div class="input clr" style="width: 100%;">
+                <label for="add-beizhu">航线备注：</label>
+                <input type="text" id="add-beizhu" class="sm-input">
+            </div>
+        </div>
+        <div class="btn-pt">
+            <button id="ensure-add" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="update-part show-part dp-n">
+        <p class="header">批量修改 <span class="close-btn">X</span></p>
+
+        <div class="body">
+            <p class="title">已选择以下目的港：</p>
+
+            <div class="up-end fill">
+                <span>PVG</span>
+                <span>PVG</span>
+                <span>PVG</span>
+                <span>PVG</span>
+            </div>
+            <p class="title clr">航班日期及报价</p>
+            <table class="multi-update">
+                <thead>
+                <tr>
+                    <td class="big">头程航班</td>
+                    <td class="middle">中转方式</td>
+                    <td>比重</td>
+                    <td>MIN</td>
+                    <td>45KG</td>
+                    <td>100KG</td>
+                    <td>300KG</td>
+                    <td>500KG</td>
+                    <td>1000KG</td>
+                    <td>MYC</td>
+                    <td>SCC</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="first"><span class="weeks txt-input"><span class="week active" data-num="1">一</span><span
+                                    class="week active" data-num="2">二</span><span class="week active"
+                                                                                   data-num="3">三</span><span
+                                    class="week active" data-num="4">四</span><span class="week active"
+                                                                                   data-num="5">五</span><span
+                                    class="week active" data-num="6">六</span><span class="week active"
+                                                                                   data-num="7">七</span></span></td>
+                    <td><input class="method select" type="text" value="飞机" readonly="">
+                        <ul class="dp-n se-part">
+                            <li>飞机</li>
+                            <li>卡车</li>
+                        </ul>
+                    </td>
+                    <td><input class="min weight" data-200="0" data-300="0" data-500="0" type="text"></td>
+                    <td><input class="45 weight" data-200="0" data-300="0" data-500="0" type="text"></td>
+                    <td><input class="100 weight" data-200="0" data-300="0" data-500="0" type="text"></td>
+                    <td><input class="300 weight" data-200="0" data-300="0" data-500="0" type="text"></td>
+                    <td><input class="500 weight" data-200="0" data-300="0" data-500="0" type="text"></td>
+                    <td><input class="1000 weight" data-200="0" data-300="0" data-500="0" type="text"></td>
+                    <td><input class="bz" type="text"></td>
+                    <td><input class="state select" type="text" value="已上架" readonly="">
+                        <ul class="dp-n se-part">
+                            <li>已上架</li>
+                            <li>已下架</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="border fill">
+            <p class="title">货物限制条件设置</p>
+            <div class="input">
+                <label for="up-len">单件长度上限：</label>
+                <input type="text" id="up-len" class="sm-input">
+                <span class="unit">m</span>
+            </div>
+            <div class="input">
+                <label for="up-wid">单件宽度上限：</label>
+                <input type="text" id="up-wid" class="sm-input">
+                <span class="unit">m</span>
+            </div>
+            <div class="input">
+                <label for="up-hei">单件高度上限：</label>
+                <input type="text" id="up-hei" class="sm-input">
+                <span class="unit">m</span>
+            </div>
+            <div class="input">
+                <label for="up-zl">单件重量上限：</label>
+                <input type="text" id="up-zl" class="sm-input">
+                <span class="unit">kg</span>
+            </div>
+            <div class="input clr">
+                <label for="up-minWei">货物总重下限：</label>
+                <input type="text" id="up-minWei" class="sm-input">
+                <span class="unit">kg</span>
+            </div>
+            <div class="rdo clr">
+                <input type="checkbox" id="up-danger">
+                <label for="up-danger">不接受危险品</label>
+            </div>
+            <div class="input clr" style="width: 100%;">
+                <label for="up-beizhu">航线备注：</label>
+                <input type="text" id="up-beizhu" class="sm-input">
+            </div>
+        </div>
+        <div class="btn-pt">
+            <button id="ensure-update" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="group-part show-part dp-n">
+        <p class="header">设置分区 <span class="close-btn">X</span></p>
+        <div class="g-bd">
+            <div class="input">
+                <label for="ip-group">设置分区：</label>
+                <input type="text" id="ip-group" class="sm-input">
+            </div>
+        </div>
+        <div class="btn-pt">
+            <button id="group-ensure" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+</div>

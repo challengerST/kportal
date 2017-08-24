@@ -1,0 +1,334 @@
+@import "../general/general";
+@import "../newGeneral/general";
+
+.app-box {
+  padding: 0;
+}
+
+.search-part {
+  height: 520px;
+  border: 1px solid $blue1;
+  border-bottom: none;
+  background: url('../../../images/home/bg_home.jpg') no-repeat;
+  background-position: center top;
+  .container {
+    background-color: transparent;
+    position: relative;
+    .left {
+      background-color: transparent;
+      margin: 100px 0 0 40px;
+      p {
+        background-color: transparent;
+        font-size: 40px;
+        color: #fff;
+        margin-top: 30px;
+        padding-left: 40px;
+      }
+      .search-box {
+        margin-top: 35px;
+        height: 100px;
+        background-color: $blue1;
+        padding: 20px 0 0 30px;
+        width: 1100px;
+        .location {
+          height: 60px;
+          width: 350px;
+          float: left;
+          background-color: transparent;
+          position: relative;
+          margin-left: 10px;
+          input {
+            height: 60px;
+            width: 350px;
+            padding-left: 20px;
+            font-size: 18px;
+            border: none;
+          }
+          input {
+            border-radius: 5px;
+          }
+          .arrow {
+            width: 18px;
+            height: 10px;
+            position: absolute;
+            top: 25px;
+            right: 50px;
+          }
+          .arrow-down {
+            @include homeicon(-53px, -8px)
+          }
+          .arrow-up {
+            @include homeicon(-53px, -64px)
+          }
+          ul {
+            margin-top: 1px;
+            background-color: #fff;
+            li {
+              @include HEIGHT(35px);
+              padding-left: 20px;
+              font-size: 14px;
+              cursor: pointer;
+              color: #666;
+            }
+            li:hover {
+              background-color: #f4f4f4;
+              color: #333;
+            }
+            li.active {
+              background-color: #f4f4f4;
+              color: #333;
+            }
+          }
+          .ajax-part {
+            max-height: 200px;
+            overflow-y: auto;
+          }
+        }
+        button {
+          height: 60px;
+          width: 150px;
+          border-radius: 5px;
+          background-color: #ffe744;
+          color: #584d00;
+          font-size: 16px;
+          margin-left: 10px;
+        }
+        button:hover {
+          background-color: #efd524;
+        }
+        button:active {
+          background-color: #dbc00d;
+        }
+      }
+    }
+    .right {
+      background-color: transparent;
+      position: absolute;
+      right: 0;
+      top: 85px;
+    }
+  }
+}
+
+.info-box {
+  border-top: 1px solid transparent;
+  .container {
+    margin: 50px auto;
+    .top {
+      position: relative;
+      .line {
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: $blue1;
+        position: absolute;
+        top: 60px;
+      }
+      p {
+        width: 280px;
+        margin: 0 auto;
+        color: $blue1;
+        font-size: 20px;
+        padding-left: 10px;
+      }
+      .simple {
+        font-size: 20px;
+        background-color: #f6f6f6;
+        position: relative;
+        z-index: 10;
+        span {
+          font-size: 28px;
+          color: $blue1;
+          padding-right: 10px;
+        }
+
+      }
+      .info-number {
+        width: 400px;
+        font-size: 16px;
+        text-align: center;
+        padding: 10px 0 0 0;
+        span {
+          padding: 0 10px;
+          border-right: 1px solid $blue1;
+          color: #333;
+        }
+        span:last-child {
+          border: none;
+        }
+      ;
+      }
+    }
+    .bottom {
+      margin-top: 30px;
+      overflow: hidden;
+      .fl-l {
+        width: 300px;
+        height: 300px;
+        margin-left: 95px;
+        padding: 0 10px;
+        .img-first {
+          width: 200px;
+          height: 150px;
+          @include homeicon(-81px, 0);
+          margin: 0 auto;
+        }
+        .img-second {
+          width: 250px;
+          height: 150px;
+          @include homeicon(-315px, -9px);
+          margin: 0 auto;
+        }
+        .img-third {
+          width: 200px;
+          height: 150px;
+          @include homeicon(-81px, -145px);
+          margin: 0 auto;
+        }
+        .title {
+          font-size: 22px;
+          color: #1868BD;
+          text-align: center;
+          margin-bottom: 10px;
+        }
+        .text {
+          font-size: 16px;
+          color: #222;
+          @include HEIGHT(25px);
+          margin-top: 5px;
+          span {
+            display: block;
+            height: 25px;
+            width: 25px;
+            float: left;
+            @include homeicon(-13px, -87px)
+          }
+        }
+        .first-p {
+          padding-left: 20px;
+        }
+        .second-p {
+          padding-left: 10px;
+        }
+        .third-p {
+          padding-left: 55px;
+        }
+      }
+    }
+    .more-info {
+      display: block;
+      @include HEIGHT(42px);
+      width: 180px;
+      font-size: 14px;
+      color: #fff;
+      background-color: #074ba0;
+      text-align: center;
+      margin: 0 auto;
+    }
+    .more-info:hover {
+      background-color: #003271;
+    }
+    .more-info:active {
+      background-color: #002655;
+    }
+  }
+}
+
+.news-part {
+  margin: 50px 0;
+  .container {
+    .tb-center {
+      display: table;
+      margin: 0 auto;
+      .kyb-news {
+        width: 620px;
+        height: 274px;
+        background-color: #fff;
+      }
+      .common-problems {
+        height: 274px;
+        width: 620px;
+        background-color: #fff;
+        margin-left: 20px;
+      }
+      .big-part {
+        padding: 27px 20px;
+        .header {
+          @include HEIGHT(30px);
+          font-size: 22px;
+          color: $blue1;
+          a {
+            float: right;
+          }
+          a:hover {
+            color: #fff;
+          }
+          a:focus {
+            color: #fff;
+          }
+        }
+        .ren-info {
+          font-size: 12px;
+          color: #999;
+          margin: 5px 0 20px;
+        }
+        .news-body {
+          width: 580px;
+          height: 140px;
+          .loading-box {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            .spinner {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              margin-left: -25px;
+              margin-top: -30px;
+            }
+          }
+          .wrong {
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            line-height: 140px;
+            font-size: 20px;
+            a {
+              color: $blue3;
+            }
+          }
+          .sg-new {
+            width: 100%;
+            font-size: 14px;
+            margin-bottom: 10px;
+            @include NOWRAP();
+            position: relative;
+            padding-right: 85px;
+            display: block;
+            a {
+              color: #333;
+            }
+            span {
+              display: block;
+              float: right;
+              position: absolute;
+              right: 0;
+              top: 0;
+              font-size: 12px;
+              color: #666;
+              text-align: right;
+            }
+            .qa-img:before {
+              display: block;
+              float: left;
+              content: '';
+              width: 20px;
+              height: 20px;
+              background: url("../../../images/img/icon_QA.png") no-repeat 0 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

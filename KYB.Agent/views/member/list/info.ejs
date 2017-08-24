@@ -1,0 +1,199 @@
+<div class="search-part fill">
+    <div class="dp-tb">
+        <div class="input">
+            <label for="num">公司名称：</label>
+            <input type="text" id="num" class="sm-input"/>
+        </div>
+        <div class="input">
+            <label for="type">公司类型：</label>
+            <select id="type" class="sm-input">
+                <option value="99">全部</option>
+                <option value="11">个人</option>
+                <option value="12">货运代理</option>
+                <option value="13">贸易商</option>
+                <option value="14">电子商务</option>
+                <option value="15">制造商</option>
+                <option value="16">其他</option>
+            </select>
+        </div>
+        <button class="sm-btn blue-btn" id="search-btn">查询</button>
+    </div>
+</div>
+<div class="operate fill">
+    <p class="list-cout">共为您找到 0 条结果</p>
+    <!--<a href="/download/excel" class="sm-btn blue-btn fl-r">下载模板</a>-->
+    <a href="javascript:void(0);" class="sm-btn blue-btn fl-r" id="multi-add">批量导入</a>
+    <button class="sm-btn blue-btn fl-r" id="multi-open">批量启用</button>
+    <button class="sm-btn blue-btn fl-r" id="multi-close">批量停用</button>
+    <!--<button class="sm-btn blue-btn fl-r">批量导入</button>-->
+    <button class="sm-btn blue-btn fl-r" id="sg-add">添加会员</button>
+    <p class="info">会员认证审核，请查看公司资料是否盖有公章，没有公章不予通过</p>
+</div>
+
+<div class="outer-con">
+    <table class="outer-tb">
+        <thead>
+        <tr>
+            <td><input type="checkbox" class="sel-all"/></td>
+            <td>公司编号</td>
+            <td>公司名称</td>
+            <td>公司类型</td>
+            <td>联系人</td>
+            <td>联系方式</td>
+            <td>会员等级</td>
+            <td>信用额度</td>
+            <td>信用比率</td>
+            <td>信用账期</td>
+            <td>申请时间</td>
+            <td>会员类型</td>
+            <td>审核</td>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+<div class="page-box"></div>
+<div class="white-back dp-n">
+    <div class="close-part alert-part dp-n">
+        <p class="header">停用该会员 <span class="close-btn">X</span></p>
+
+        <div class="btn-pt">
+            <button id="close-ensure" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="open-part alert-part dp-n">
+        <p class="header">启用该会员 <span class="close-btn">X</span></p>
+
+        <div class="btn-pt">
+            <button id="open-ensure" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="multi-close-part alert-part dp-n">
+        <p class="header">批量停用会员 <span class="close-btn">X</span></p>
+
+        <div class="btn-pt">
+            <button id="multi-close-ensure" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="multi-open-part alert-part dp-n">
+        <p class="header">批量启用会员 <span class="close-btn">X</span></p>
+
+        <div class="btn-pt">
+            <button id="multi-open-ensure" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="add-part alert-part dp-n">
+        <p class="header">添加会员 <span class="close-btn">X</span></p>
+
+        <div class="add-body">
+            <p class="title">账户信息</p>
+
+            <div class="input-body fill">
+                <div class="input">
+                    <label for="add-tel" class="required">手机号：</label>
+                    <input type="text" id="add-tel" class="sm-input"/>
+                </div>
+                <div class="input">
+                    <label for="add-qq">QQ：</label>
+                    <input type="text" id="add-qq" class="sm-input"/>
+                </div>
+                <div class="input">
+                    <label for="add-person" class="required">联系人：</label>
+                    <input type="text" id="add-person" class="sm-input"/>
+                </div>
+                <div class="input">
+                    <label for="add-mail">邮箱：</label>
+                    <input type="text" id="add-mail" class="sm-input"/>
+                </div>
+            </div>
+            <p class="title">公司信息</p>
+
+            <div class="input-body fill">
+                <div class="input">
+                    <label for="add-company" class="required">公司名称：</label>
+                    <input type="text" id="add-company" class="sm-input"/>
+                </div>
+                <div class="input">
+                    <label for="add-level">会员等级：</label>
+                    <select id="add-level" class="sm-input">
+                        <option value="AA">AA</option>
+                        <option value="A">A</option>
+                        <option value="B" selected>B</option>
+                        <option value="C">C</option>
+                    </select>
+                </div>
+                <div class="input">
+                    <label for="add-type" class="required">公司类型：</label>
+                    <select id="add-type" class="sm-input">
+                        <option value="12">货运代理</option>
+                        <option value="11">个人</option>
+                        <option value="13">贸易商</option>
+                        <option value="14">电子商务</option>
+                        <option value="15">制造商</option>
+                        <option value="16">其他</option>
+                    </select>
+                </div>
+                <div class="input">
+                    <label for="add-ed">信用额度：</label>
+                    <input type="text" id="add-ed" class="sm-input" readonly/>
+                </div>
+                <div class="input">
+                    <label for="add-address" class="required">公司地址：</label>
+                    <input type="text" id="add-address" class="sm-input"/>
+                </div>
+                <div class="input">
+                    <label for="add-zq">信用账期：</label>
+                    <input type="text" id="add-zq" class="sm-input" readonly/>
+                </div>
+                <div class="input">
+                    <label for="add-dh" class="required">公司电话：</label>
+                    <input type="text" id="add-dh" class="sm-input"/>
+                </div>
+                <div class="input">
+                    <label for="add-hg">海关注册编码：</label>
+                    <input type="text" id="add-hg" class="sm-input"/>
+                </div>
+            </div>
+            <p class="add-warm dp-n">
+                手机号已存在
+                <br/>
+                公司名称重复
+            </p>
+        </div>
+        <div class="btn-pt">
+            <button id="accept-ensure" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="batch-part alert-part dp-n">
+        <p class="header">批量添加会员 <span class="close-btn">X</span></p>
+
+        <div class="main-info">
+            <p class="font-red">请先下载并参考“会员名单模板”文件</p>
+        </div>
+        <a href="javascript:void(0)" class="dp-b">
+            <p class="square">+</p>
+            <span class="dp-b excel-name">上传文件</span>
+            <input type="file" id="multi-btn"/>
+        </a>
+        <p class="warm fl-l">
+            注意事项：<br>
+            *一次导入最多300行客户信息，超过部分会被丢弃 <br>
+            *导入文件必须是XLSX格式，请使用Office 2007以上版本进行编辑、保存 <br>
+            *导入客户账户的登录密码默认为kyb（小写）+ 手机号码 <br>
+            *例如：手机号13012345678，密码kyb13012345678
+        </p>
+        <a class="dl-mb" href="/download/excel">下载会员名单模板.xls</a>
+
+        <div class="btn-pt clr">
+            <button id="batch-ensure" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+</div>

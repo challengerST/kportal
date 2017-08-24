@@ -1,0 +1,237 @@
+<% var lv; %>
+<% var aLv; %>
+<% switch (company.accountLevel) {
+    case 0:
+        lv = 'D';
+        aLv = 'C';
+        break;
+    case 1:
+        lv = 'C';
+        aLv = 'B';
+        break;
+    case 2:
+        lv = 'B';
+        aLv = 'A';
+        break;
+    case 3:
+        lv = 'A';
+        aLv = 'AA';
+        break;
+    case 4:
+        lv = 'AA';
+        aLv = null;
+        break;
+} %>
+<% var level = body && 'resBody' in body && body.resBody && 'config' in body.resBody && body.resBody.config || {}; %>
+<div class="check-has fill<%= company.applyState == 1 ? ' dp-n' : '' %>">
+    <div class="top-lv">
+        <div class="left">
+            <img src="/images/vip/card_<%= lv %>.png"/>
+
+            <p>
+                <span class="name"><%= company.companyName %></span>
+                <span>会员等级：<%= lv %></span>
+            </p>
+        </div>
+        <div class="middle">
+            <p class="title">会员权益：</p>
+            <% if(lv != 'D'){ %>
+            <p><span class="ttl">结款方式：</span><span class="bd"><%= lv == 'A' || lv == 'AA' ? '按月支付' : '按订单支付' %></span>
+            </p>
+
+            <p><span class="ttl">信用额度：</span><span class="bd"><%= company.accountCredit %></span></p>
+
+            <p><span class="ttl">信用账期：</span><span class="bd"><%= company.accountSettlement %></span></p>
+            <% }else{ %>
+            <p class="d-txt">无</p>
+            <% } %>
+        </div>
+        <div class="right">
+            <p class="title">会员Tips：</p>
+
+            <% if(lv != 'D'){ %>
+            <p>
+                <% if(aLv){ %>
+                您可以通过完成认证相关资料等步骤申请成为 <%= aLv %> 级会员，享受更多会员权益。
+                <% }else{ %>
+                您已经是最高级别会员！
+                <% } %>
+            </p>
+            <% }else{ %>
+            <p>您现在处于D级别会员，是黑名单状态哦！<br/>
+                请尽快联系客服，我们会为您提供合适的解决方案：
+                <br/>您的客服专员：<a href="javascript:void(0);">叮叮</a>&nbsp;&nbsp;&nbsp;服务热线：<span class="color-blue">4001&nbsp;101&nbsp;2218</span>
+            </p>
+            <% } %>
+        </div>
+    </div>
+
+    <% if(lv == 'C'){ %>
+    <div class="member-B fl-l">
+        <p class="title">会员权益详情：</p>
+
+        <p class="bill-info first-bill"><span class="i-title">结款方式</span><span class="body">按订单支付</span></p>
+
+        <p class="bill-info"><span class="i-title">信用额度</span><span
+                    class="body"><%= level['B'].creditDefault || '无' %></span>
+        </p>
+
+        <p class="bill-info"><span class="i-title">订单限额</span><span
+                    class="body"><%= level['B'].orderLimit || '无' %></span>
+        </p>
+
+        <p class="bill-info"><span class="i-title">信用账期</span><span class="body">
+                <%= level['B'].creditSettlement ? level['B'].creditSettlement + '天' : '订单确认后需立即支付' %>
+            </span></p>
+
+        <p class="sqtj">申请条件：</p>
+
+        <p class="sqtj-detail first-detail">完成手机注册认证用户；</p>
+
+        <p class="sqtj-detail">完成邮箱认证用户；</p>
+
+        <p class="sqtj-detail">完成公司实名资料认证；</p>
+        <button class="new-btn" data-lv="B">马上申请</button>
+    </div>
+    <% } %>
+
+    <% if(lv == 'C' || lv == 'B'){ %>
+    <div class="member-A fl-l">
+        <p class="title">会员权益详情：</p>
+
+        <p class="bill-info first-bill"><span class="i-title">结款方式</span><span class="body">按月结算</span></p>
+
+        <p class="bill-info"><span class="i-title">信用额度</span><span
+                    class="body"><%= level['A'].creditDefault || '无' %></span>
+        </p>
+
+        <p class="bill-info"><span class="i-title">订单限额</span><span
+                    class="body"><%= level['A'].orderLimit || '无' %></span>
+        </p>
+
+        <p class="bill-info"><span class="i-title">信用账期</span><span class="body">
+                <%= level['A'].creditSettlement ? level['A'].creditSettlement + '天' : '订单确认后需立即支付' %>
+            </span></p>
+
+        <p class="sqtj">申请条件：</p>
+
+        <p class="sqtj-detail first-detail">完成B级会员认证；</p>
+
+        <p class="sqtj-detail">最近三个月内完成订单大于50000；</p>
+
+        <p class="sqtj-detail">当前无欠费；</p>
+
+        <button class="new-btn<%= lv == 'C' ? ' disable-btn' : '' %>" data-lv="A">马上申请</button>
+    </div>
+    <% } %>
+
+    <% if(lv == 'C' || lv == 'B' || lv == 'A'){ %>
+    <div class="member-AA fl-l">
+        <p class="title">会员权益详情：</p>
+
+        <p class="bill-info first-bill"><span class="i-title">结款方式</span><span class="body">季度结算</span></p>
+
+        <p class="bill-info"><span class="i-title">信用额度</span><span
+                    class="body"><%= level['AA'].creditDefault || '无' %></span>
+        </p>
+
+        <p class="bill-info"><span class="i-title">订单限额</span><span
+                    class="body"><%= level['AA'].orderLimit || '无' %></span>
+        </p>
+
+        <p class="bill-info"><span class="i-title">信用账期</span><span class="body">
+                <%= level['AA'].creditSettlement ? level['AA'].creditSettlement + '天' : '订单确认后需立即支付' %>
+            </span></p>
+
+        <p class="sqtj">申请条件：</p>
+
+        <p class="sqtj-detail first-detail">完成A级会员认证；</p>
+
+        <p class="sqtj-detail">最近三个月内完成订单大于100000；</p>
+
+        <p class="sqtj-detail">最近三个月无欠费记录；</p>
+        <button class="new-btn<%= lv == 'C' ? ' disable-btn' : '' %>" data-lv="AA">马上申请</button>
+    </div>
+    <% } %>
+    <% if (lv == 'D') { %>
+
+    <div class="d-warm"></div>
+
+    <% } %>
+</div>
+<div class="auth-box<%= company.applyState == 1 ? '' : ' dp-n' %>">
+    <div class="input-box">
+        <div class="input">
+            <label for="s-name">公司名称：</label>
+            <input type="text" id="s-name" class="sm-input s-check"/>
+            <span class="hide">请填写公司名称</span>
+        </div>
+        <div class="input">
+            <label for="s-bm">海关注册编码：</label>
+            <input type="text" id="s-bm" class="sm-input s-check"/>
+            <span class="hide">请填写海关注册编码</span>
+        </div>
+        <div class="input">
+            <label for="s-type">公司类型：</label>
+            <select id="s-type" class="sm-input">
+                <option value="11">个人</option>
+                <option value="12">货代</option>
+                <option value="13">贸易商</option>
+                <option value="14">电子商务</option>
+                <option value="15">制造商，工厂</option>
+                <option value="16">其他</option>
+            </select>
+            <span class="hide">请选择公司类型</span>
+        </div>
+        <div class="input">
+            <label for="s-add">公司地址：</label>
+            <input type="text" id="s-add" class="sm-input s-check"/>
+            <span class="hide">请填写公司地址</span>
+        </div>
+        <div class="input">
+            <label for="s-tel">公司电话：</label>
+            <input type="text" id="s-tel" class="sm-input s-check"/>
+            <span class="hide">请填写公司电话</span>
+        </div>
+        <div class="input">
+            <label for="s-fax">公司传真：</label>
+            <input type="text" id="s-fax" class="sm-input s-check"/>
+            <span class="hide">请填写公司传真</span>
+        </div>
+        <div class="input">
+            <label for="s-lxr">联系人：</label>
+            <input type="text" id="s-lxr" class="sm-input s-check"/>
+            <span class="hide">请填写联系人</span>
+        </div>
+        <% if(lv == 'C' || lv == 'D' || lv == 'B' || lv == 'A'){ %>
+        <div class="up-img">
+            <span class="dp-b fl-l">上传公司证件：</span>
+
+            <div class="fl-l out">
+                <a href="javascript:void(0);" class="dp-b fl-l" id="sg-add">
+                    <span class="show-img dp-b">+</span>
+                    <span class="dp-b add-txt">添加文件</span>
+                    <input type="file" class="upImg" data-gid="0"/>
+                    <img src="/images/loading.gif" alt="" class="hide"/>
+                </a>
+
+                <div class="fl-l">
+                    <img src="/images/img/img_demo.png" width="125" height="100" class="dp-b"/>
+                    <span class="dp-b">*支持.jpg/.png/.pdf/.gif格式</span>
+                </div>
+            </div>
+        </div>
+        <% } %>
+    </div>
+    <p>
+        资质审核需要提交贵公司的三证 <br/>
+        客服工作人员将在收到您的资料后，2个工作日内完成审核。请正确填写相关西信息，虚假内容将无法通过企业认证。</p>
+    <button class="submit md-btn blue-btn">确定提交</button>
+    <div class="white-cover<%= company.applyState == 1 ? '' : ' dp-n' %>">
+        <div class="waiting">
+            <img src="/images/icon_wait.png"/>
+
+            <span>您的资料正在审核中，请耐心等待...</span>
+        </div>
+    </div>
+</div>

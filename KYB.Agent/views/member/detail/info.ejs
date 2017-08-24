@@ -1,0 +1,435 @@
+<% var c = data.company || {} %>
+<% var i = data.invoiceList || {} %>
+<% var m = data.member || {} %>
+<% var type; %>
+<% switch (c.companyType) {
+    case 11:
+        type = '个人';
+        break;
+    case 12:
+        type = '货运代理';
+        break;
+    case 13:
+        type = '贸易商';
+        break;
+    case 14:
+        type = '电子商务';
+        break;
+    case 15:
+        type = '制造商';
+        break;
+    case 16:
+        type = '其他';
+        break;
+} %>
+<% var level, levelName; %>
+<% switch (c.accountLevel) {
+    case 0:
+        level = 'D';
+        levelName = '黑名单客户';
+        break;
+    case 1:
+        level = 'C';
+        levelName = '未认证客户';
+        break;
+    case 2:
+        level = 'B';
+        levelName = '普通客户';
+        break;
+    case 3:
+        level = 'A';
+        levelName = '普通月结客户';
+        break;
+    case 4:
+        level = 'AA';
+        levelName = 'VIP月结客户';
+        break;
+} %>
+
+<div class="top-info">
+    <p class="p-info p-1">
+        <span class="title">姓名：</span>
+        <span><%= m.name || '/' %></span>
+    </p>
+
+    <p class="p-info p-2">
+        <span class="title">会员等级：</span>
+        <span><%= level || '/' %></span>
+    </p>
+
+    <p class="p-info p-3">
+        <span class="title">手机号：</span>
+        <span><%= m.mobile || '/' %></span>
+    </p>
+</div>
+<div class="o-num">
+    <div class="dp-tb">
+        <div>
+            <span>总订单数</span>
+            <span>0</span>
+        </div>
+        <div>
+            <span>交易票数</span>
+            <span>0</span>
+        </div>
+        <div>
+            <span>未结票数</span>
+            <span>0</span>
+        </div>
+        <div>
+            <span>已结票数</span>
+            <span>0</span>
+        </div>
+        <div>
+            <span>正常结单</span>
+            <span>0</span>
+        </div>
+        <div>
+            <span>客户原因取消</span>
+            <span class="font-g">0</span>
+        </div>
+        <div>
+            <span>不可控原因取消</span>
+            <span class="font-g">0</span>
+        </div>
+    </div>
+</div>
+<div class="second fill">
+    <div class="half fill">
+        <p class="title"  id="zhzl" data-id="<%= m.memberId %>">账户基本信息</p>
+
+        <p class="sg-info">
+            <span class="ttl">会员姓名：</span>
+            <span class="bd"><%= m.name || '/' %></span>
+        </p>
+
+        <p class="sg-info">
+            <span class="ttl">手机号：</span>
+            <span class="bd"><%= m.mobile || '/' %></span>
+        </p>
+
+        <p class="sg-info">
+            <span class="ttl">邮箱：</span>
+            <span class="bd"><%= m.email || '/' %></span>
+        </p>
+
+        <p class="sg-info">
+            <span class="ttl">座机：</span>
+            <span class="bd"><%= m.phone || '/' %></span>
+        </p>
+
+        <p class="sg-info">
+            <span class="ttl">QQ：</span>
+            <span class="bd"><%= m.QQ || '/' %></span>
+        </p>
+    </div>
+    <div class="half fill">
+        <p class="title">会员信息</p>
+
+        <p class="sg-info">
+            <span class="ttl">会员等级：</span>
+            <span class="bd"><%= level || '/' %></span>
+            <a href="javascript:void(0)" id="change-level">修改会员等级</a>
+            <%- level == 'B' || level == 'C' ? '' : ('<a href="javascript:void(0);" id="change-xy">修改信用额度 </a>') %>
+        </p>
+
+        <p class="sg-info">
+            <span class="ttl">结款方式：</span>
+            <span class="bd"><%= c.accountType == 2 ? '月结' : '票结' %></span>
+        </p>
+
+        <p class="sg-info">
+            <span class="ttl">信用额度：</span>
+            <span class="bd"><%= c.accountCredit || '0' %></span>
+        </p>
+
+        <p class="sg-info">
+            <span class="ttl">信用比率：</span>
+            <span class="bd"><%= parseInt(c.accountCreditRate * 100) ? parseInt(c.accountCreditRate * 100) + ' %' : '0 %' %></span>
+        </p>
+
+        <p class="sg-info">
+            <span class="ttl">信用账期：</span>
+            <span class="bd"><%= c.accountSettlement || '0' %>天</span>
+        </p>
+    </div>
+</div>
+<div class="second fill">
+    <div class="half fill">
+        <p class="title">基本信息
+            <a href="javascript:void(0);" id="editor" data-level="<%= level || 'B' %>">编辑</a>
+            <a href="javascript:void(0);" style="display: none;" id="save-company" data-id="<%= c.companyId %>">保存</a>
+            <a href="javascript:void(0);" style="display: none;" id="cancel-company">放弃</a>
+        </p>
+
+        <p class="sg-info">
+            <span class="ttl">公司名称：</span>
+            <span class="bd"><%= c.companyName || '/' %></span>
+        </p>
+
+        <p class="sg-info">
+            <span class="ttl">海关注册编码：</span>
+            <span class="bd"><%= c.registerCode || '/' %></span>
+        </p>
+
+        <p class="sg-info">
+            <span class="ttl">公司类型：</span>
+            <span class="bd"><%= type || '/' %></span>
+        </p>
+
+        <p class="sg-info">
+            <span class="ttl">地址：</span>
+            <input data-val="<%= c.companyAddress || '/' %>" type="text" class="sm-input" id="gsdz"
+                   value="<%= c.companyAddress || '/' %>" readonly/>
+        </p>
+
+        <p class="sg-info">
+            <span class="ttl">电话：</span>
+            <input data-val="<%= c.companyTel || '/' %>"
+                   type="text" class="sm-input" id="gsdh"
+                   value="<%= c.companyTel || '/' %>"
+                   readonly/>
+        </p>
+
+        <p class="sg-info">
+            <span class="ttl">传真：</span>
+            <input data-val="<%= c.companyFax || '/' %>"
+                   type="text"
+                   class="sm-input" id="gscz"
+                   value="<%= c.companyFax || '/' %>"
+                   readonly/>
+        </p>
+
+        <p class="sg-info">
+            <span class="ttl">联系人：</span>
+            <input data-val="<%= c.companyContact || '/' %>"
+                   type="text" class="sm-input" id="lxr"
+                   value="<%= c.companyContact || '/' %>"
+                   readonly/>
+        </p>
+
+        <p class="sg-info">
+            <span class="ttl">邮箱：</span>
+            <input data-val="<%= c.companyEmail || '/' %>" type="text" class="sm-input" id="gsyx"
+                   value="<%= c.companyEmail || '/' %>" readonly/>
+        </p>
+    </div>
+    <div class="half fill">
+        <p class="title" id="gszl" data-id="<%= c.companyId %>">公司资料</p>
+
+        <div class="img-body">
+
+            <!--<div class="up-part">-->
+            <!--<div class="top">PDF<a href="javascript:void(0);" class="dl"-->
+            <!--data-key="111"></a>-->
+            <!--<a href="javascript:void(0);" class="rm" data-key="111"></a>-->
+
+            <!--</div>-->
+            <!--<a href="javascript:void(0);" class="dp-b">PDF</a>-->
+            <!--</div>-->
+
+        </div>
+    </div>
+</div>
+<div class="third fill">
+    <p class="title">开票资料</p>
+    <table>
+        <thead>
+        <tr>
+            <td>发票类型</td>
+            <td>发票抬头</td>
+            <td>税号</td>
+            <td>开户行</td>
+            <td>地址</td>
+            <td>电话</td>
+            <!--<td>操作</td>-->
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td colspan="6">
+                暂无开票资料
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="javascript:void(0);" onclick="javascript :history.back(-1);" class="go-back blue-btn sm-btn">返回</a>
+</div>
+
+
+<div class="white-back dp-n">
+    <div class="remove-part alert-part dp-n">
+        <p class="header">确认删除该附件 <span class="close-btn">X</span></p>
+
+        <div class="btn-pt">
+            <button id="remove-ensure" class="fl-l md-btn blue-btn" data-id="170002023">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="xy-part alert-part dp-n">
+        <p class="header">修改信用额度 <span class="close-btn">X</span></p>
+
+        <div class="main-info">
+            <div class="dp-tb">
+                <p class="info"><span class="title">公司名称：</span><span class="gsmc"><%= c.companyName || '/' %></span>
+                </p>
+
+                <p class="info"><span class="title">公司类型：</span><span class="gslx"><%= type || '/' %></span></p>
+
+                <p class="info mg-0"><span class="title">联系人：</span><span
+                            class="lxr"><%= c.companyContact || '/' %></span></p>
+            </div>
+        </div>
+        <div class="border fill">
+            <p class="title">当前账号等级</p>
+
+            <div class="input">
+                <span class="left">会员等级：</span>
+                <span class="right"><%= level || '/' %></span>
+            </div>
+            <div class="input">
+                <span class="left">结款方式：</span>
+                <span class="right"><%= c.accountType == 2 ? '月结' : '票结' %></span>
+            </div>
+            <div class="input long">
+                <label for="i-xy">信用额度:</label>
+                <input type="text" class="sm-input" id="i-xy" value="<%= c.accountCredit || '0' %>" data-val="0"
+                       onkeyup="this.value=this.value.replace(/\D/g,'')"/>
+                <span class="xyfw"></span>
+            </div>
+            <div class="input long">
+                <label for="i-xy">信用比率:</label>
+                <input type="text" class="sm-input percentage" id="i-bl"
+                       value="<%= parseInt(c.accountCreditRate * 100) + '%' || '0' %>"
+                       onkeyup="this.value=this.value.replace(/\D/g,'')"/>
+                <span class="blfw">调整范围：100%-150%</span>
+            </div>
+        </div>
+        <div class="btn-pt">
+            <button id="xy-ensure" class="fl-l md-btn blue-btn" data-id="<%= c.companyId %>">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="hy-part alert-part dp-n">
+        <p class="header">修改会员等级 <span class="close-btn">X</span></p>
+
+        <div class="border fill">
+            <p class="font-red">注意：提升账号等级需要等待审批，审批期间保持原等级权限，降低账号等级无需等待审批，即可生效</p>
+        </div>
+        <div class="main-info">
+            <div class="dp-tb">
+                <p class="info"><span>公司名称：</span><span class="gsmc"><%= c.companyName || '/' %></span></p>
+
+                <p class="info"><span>公司类型：</span><span class="gslx"><%= type || '/' %></span></p>
+
+                <p class="info mg-0"><span>联系人：</span><span class="lxr"><%= c.companyContact || '/' %></span></p>
+            </div>
+        </div>
+
+        <div class="border fill">
+            <div class="half fill">
+                <p class="title">当前账号等级</p>
+
+                <div class="input">
+                    <span class="left">会员等级：</span>
+                    <span class="right"><%= level || 'B' %></span>
+                </div>
+                <div class="input">
+                    <span class="left">结款方式：</span>
+                    <span class="right"><%= c.accountType == 2 ? '月结' : '票结' %></span>
+                </div>
+                <div class="input">
+                    <span class="left">信用额度：</span>
+                    <span class="right"><%= c.accountCredit || '0' %></span>
+                </div>
+                <div class="input">
+                    <span class="left">账期：</span>
+                    <span class="right"><%= c.accountSettlement || '0' %>天</span>
+                </div>
+            </div>
+            <div class="half fill">
+                <p class="title">申请账号等级</p>
+
+                <div class="input">
+                    <label for="c-level">会员等级：</label>
+                    <select id="c-level" class="sm-input">
+                        <option value="AA">AA</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                    </select>
+                </div>
+                <div class="input">
+                    <span class="left">结款方式：</span>
+                    <span class="right"><%= c.accountType == 2 ? '月结' : '票结' %></span>
+                </div>
+                <div class="input">
+                    <span class="left">信用额度：</span>
+                    <span class="right level-xy"><%= c.accountCredit || '0' %></span>
+                </div>
+                <div class="input">
+                    <span class="left">账期：</span>
+                    <span class="right level-zq"><%= c.accountSettlement || '0' %>天</span>
+                </div>
+            </div>
+        </div>
+        <div class="btn-pt">
+            <button id="hy-ensure" class="fl-l md-btn blue-btn" data-id="<%= c.companyId %>">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="ticket-modal alert-part dp-n">
+        <p class="header">新增开票信息 <span class="close-btn">X</span></p>
+
+        <div class="ticket-body">
+            <div class="radio">
+                <span class="dp-b fl-l">发票类型：</span>
+
+                <div class="fl-l">
+                    <label for="pp">普票</label>
+                    <input type="radio" id="pp" value="1" name="type" checked="checked" autocomplete="off"/>
+                </div>
+                <div class="fl-l">
+                    <label for="zp">增票</label>
+                    <input type="radio" id="zp" value="2" name="type" autocomplete="off"/>
+                </div>
+            </div>
+            <div class="input">
+                <label for="tt">发票抬头：</label>
+                <input type="text" id="tt" value="<%= user && 'CompanyName' in user && user.CompanyName || '' %>"
+                       class="sm-input" autocomplete="off"/>
+            </div>
+            <div class="input">
+                <label for="sh">税号：</label>
+                <input type="text" id="sh" class="sm-input clear-input" readonly autocomplete="off"/>
+            </div>
+            <div class="input">
+                <label for="kh">开户行：</label>
+                <input type="text" id="kh" class="sm-input clear-input" readonly autocomplete="off"/>
+            </div>
+            <div class="input">
+                <label for="dz">地址：</label>
+                <input type="text" id="dz" class="sm-input clear-input" readonly autocomplete="off"/>
+            </div>
+            <div class="input">
+                <label for="dh">电话：</label>
+                <input type="text" id="dh" class="sm-input clear-input" readonly autocomplete="off"/>
+            </div>
+        </div>
+        <div class="btn-pt">
+            <button id="submit" class="fl-l md-btn blue-btn">确定</button>
+            <button id="change-ensure" class="fl-l md-btn blue-btn">修改</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="delete-part alert-part dp-n">
+        <p class="header">删除开票资料 <span class="close-btn">X</span></p>
+
+        <div class="btn-pt">
+            <button id="delete-ensure" class="fl-l md-btn blue-btn" data-id="0" data-gid="0">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,39 @@
+<div class="search-part">
+    <div class="search-option fl-l">
+        <div class="left">
+            <div class="input fl-l">
+                <label class="dp-b fl-l" for="start">起飞港：</label>
+                <input type="text" id="start" class="sm-input" placeholder="代码或名称" autocomplete="off"/>
+                <ul class="end-location dp-n ajax-part">
+                </ul>
+            </div>
+            <div class="input fl-l">
+                <label class="dp-b fl-l" for="end">目的港：</label>
+                <input id="end" type="text" placeholder="代码或名称" class="sm-input" autocomplete="off"/>
+                <ul class="end-location dp-n ajax-part">
+                </ul>
+            </div>
+        </div>
+        <div class="left">
+            <div class="input fl-l">
+                <label class="dp-b fl-l" for="company">航空公司：</label>
+                <input id="company" type="text" placeholder="不限" class="sm-input" autocomplete="off"/>
+                <ul class="company-arr dp-n ajax-part"></ul>
+            </div>
+            <div class="input fl-l">
+                <label class="dp-b fl-l" for="f-time">起飞日期：</label>
+                <input id="f-time" type="text" class="sm-input">
+                <ul class="company-arr dp-n ajax-part"></ul>
+            </div>
+        </div>
+    </div>
+    <button class="dp-b fl-l" id="search_btn">查询</button>
+</div>
+<p class="info-part">
+    <span id="start-txt" class=" dp-b fl-l big"></span>
+    <span class="big dp-b fl-l">-</span>
+    <span id="end-txt" class="big dp-b fl-l"></span>
+    <span class="dp-b fl-l small margin">共计</span>
+    <span class="dp-b fl-l small" id="sum">0</span>
+    <span class="dp-b fl-l small">个查询结果</span>
+</p>

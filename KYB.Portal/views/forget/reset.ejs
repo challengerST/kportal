@@ -1,0 +1,59 @@
+<%- include ../base/head.ejs %>
+<%# 样式表引用 %>
+<link rel="stylesheet" href="/stylesheets/css/web/forget.css">
+<%# 样式表引用结束 %>
+<%- include ../base/header.ejs %>
+
+<div class="app-box">
+    <div class="forget-box">
+        <div class="container">
+            <div class="st3">
+                <div class="progress-img">
+                    <div class="top">
+                        <span class="dp-b fl-l circle yellow-cir"></span>
+                        <span class="dp-b fl-l line blue-line"></span>
+                        <span class="dp-b fl-l circle yellow-cir"></span>
+                        <span class="dp-b fl-l line blue-line"></span>
+                        <span class="dp-b fl-l circle yellow-cir"></span>
+                        <span class="dp-b fl-l line"></span>
+                        <span class="dp-b fl-l circle"></span>
+                    </div>
+                    <div class="bottom">
+                        <span class="fir fl-l dp-b">输入您注册时使用的邮箱</span>
+                        <span class="sec fl-l dp-b">接收密码重置邮件</span>
+                        <span class="thi fl-l dp-b blue-txt">设置新的密码</span>
+                        <span class="for fl-l dp-b">密码设置成功</span>
+                    </div>
+                </div>
+
+                <div class="input">
+                    <label for="pwd">密码：</label>
+                    <input type="text" id="pwd" placeholder="6-20位的密码，必须由数字和英文组合" class="lg-input"/>
+                    <span class="hide">您的密码格式错误</span>
+                </div>
+                <div class="input">
+                    <label for="repeat">重复密码：</label>
+                    <input type="text" id="repeat" placeholder="请再次输入密码" class="lg-input"/>
+                    <span class="hide">两次输入不一致</span>
+                </div>
+                <button class="ensure md-btn blue-btn">确认重置</button>
+                <div class="connect">
+                    <span class="logo"></span>
+                    <span>有问题？您也可以联系我们的客服：</span>
+                    <a href="#">叮叮</a>
+                </div>
+            </div>
+            <div class="st4 dp-n">
+                <img src="/images/reset.png" width="300" height="200"/>
+                <p>密码重置成功！</p>
+                <a href="/login">现在登录</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include ../base/javascripts.ejs %>
+<%# 脚本引用 %>
+<script src="/javascripts/forget/bundle.min.js" charset="utf-8"></script>
+<%# 脚本引用结束 %>
+<%- include ../base/foot.ejs %>

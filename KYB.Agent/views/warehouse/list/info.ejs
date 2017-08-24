@@ -1,0 +1,140 @@
+<div class="search-part fill">
+    <div class="dp-tb">
+        <div class="input">
+            <label for="name">仓库名称：</label>
+            <input type="text" id="name" class="sm-input"/>
+        </div>
+        <!--<div class="input">-->
+        <!--<label for="type">仓库类型：</label>-->
+        <!--<select id="type" class="sm-input">-->
+        <!--<option value="1">普货</option>-->
+        <!--<option value="2">关封</option>-->
+        <!--</select>-->
+        <!--</div>-->
+        <button class="sm-btn blue-btn" id="search">查询</button>
+    </div>
+</div>
+<div class="operate fill">
+    <p class="list-cout">共为您找到 0 条结果</p>
+    <!--<button class="sm-btn blue-btn" id="default">设为默认</button>-->
+    <!--<button class="sm-btn blue-btn" id="remove">删除</button>-->
+    <!--<button class="sm-btn blue-btn" id="update">修改</button>-->
+    <button class="sm-btn blue-btn" id="add">新增</button>
+</div>
+<div class="outer-con">
+    <table class="outer-tb">
+        <thead>
+        <tr>
+            <td>仓库编号</td>
+            <td>仓库名称</td>
+            <td>仓库类型</td>
+            <td>仓库地址</td>
+            <td>仓库地图</td>
+            <td>联系人</td>
+            <td>联系方式</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+<div class="white-back dp-n">
+    <div class="delete-part alert-part dp-n">
+        <p class="header">删除该仓库信息 <span class="close-btn">X</span></p>
+
+        <div class="btn-pt">
+            <button id="delete-ensure" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="default-part alert-part dp-n">
+        <p class="header">设为默认仓库 <span class="close-btn">X</span></p>
+
+        <div class="btn-pt">
+            <button id="default-ensure" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="ticket-modal alert-part fill dp-n">
+        <p class="header"></p>
+
+        <div class="ticket-body border fill">
+
+            <div class="input dp-n">
+                <label for="alert-num">仓库编号：</label>
+                <input type="text" id="alert-num" class="sm-input" readonly/>
+            </div>
+            <div class="input">
+                <label for="alert-name">仓库名称：</label>
+                <input type="text" id="alert-name" class="sm-input require"/>
+            </div>
+            <div class="input">
+                <label for="alert-type">仓库类型：</label>
+                <select id="alert-type" class="sm-input">
+                    <option value="1">普货</option>
+                    <option value="2">关封</option>
+                </select>
+            </div>
+            <div class="input">
+                <label for="alert-city">所在城市：</label>
+                <select id="alert-city" class="sm-input">
+                    <option value="1">上海</option>
+                    <option value="2">宁波</option>
+                    <option value="3">南京</option>
+                    <option value="4">杭州</option>
+                </select>
+            </div>
+            <div class="input">
+                <label for="alert-address">送货地址：</label>
+                <input type="text" id="alert-address" class="sm-input require"/>
+            </div>
+            <div class="input">
+                <label for="alert-person">联系人：</label>
+                <input type="text" id="alert-person" class="sm-input require"/>
+            </div>
+            <div class="input">
+                <label for="alert-connect">联系方式：</label>
+                <input type="text" id="alert-connect" class="sm-input require"/>
+            </div>
+            <div class="input">
+                <label for="alert-map">进仓地图：</label>
+                <input type="text" id="alert-map" class="sm-input require" readonly data-key="0"/>
+                <a href="javascript:void(0);" class="upload">
+                    上传图片
+                    <input type="file" id="upImg"/>
+                </a>
+                <a href="javascript:void(0);" class="up-img dp-b glyphicon glyphicon-file dp-n" data-key="0"></a>
+            </div>
+            <div class="input dp-n">
+                <label for="alert-code">仓库代码：</label>
+                <input type="text" id="alert-code" class="sm-input" maxlength="3"
+                       onkeyup="this.value=this.value.replace(/[^\w\.\/]/ig,'')"/>
+            </div>
+            <div class="input">
+                <label for="jddz">寄单地址：</label>
+                <input type="text" id="jddz" class="sm-input"/>
+            </div>
+            <div class="input">
+                <label for="jd-lxr">联系人：</label>
+                <input type="text" id="jd-lxr" class="sm-input"/>
+            </div>
+            <div class="input">
+                <label for="jd-lxfs">联系方式：</label>
+                <input type="text" id="jd-lxfs" class="sm-input"/>
+            </div>
+            <div class="input">
+                <label for="alert-remark">备注：</label>
+                <input type="text" id="alert-remark" class="sm-input"/>
+            </div>
+        </div>
+        <div class="btn-pt">
+            <button id="submit" class="fl-l md-btn blue-btn" data-id="0">保存</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+</div>
+
+<!--防止打开图片被拦截-->
+<a class="dp-n" href="#" id="over-limit-a" target="_blank"><span id="over-limit-hot">防止拦截</span></a>

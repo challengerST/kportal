@@ -1,0 +1,78 @@
+<div class="search">
+    <div class="top fill">
+        <div class="input">
+            <label for="buyCon">联系人</label>
+            <div class="btn-group" style="margin-left:8px;">
+                <input type="text" id="buyCon" class="btn sm-input" style="width:84px;">
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin:0;padding:4px 8px;border-color:#d4d4d4;background:#fff;border-left:none;">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+            <ul class="dropdown-menu" style="width:82px;min-width:0;margin:0;">
+                <li><a href="#">全部</a></li>
+                <li><a href="#">收货人</a></li>
+                <li><a href="#">发货人</a></li>
+                <li><a href="#">通知人</a></li>
+            </ul>
+            </div>
+        </div>
+            <div class="input">
+                <label for="location">公司</label>
+                <input type="text" id="buyCompany" class="sm-input" style="margin-left:8px;"/>
+                <ul class="ajax-part dp-n">
+                </ul>
+            </div>
+            <div class="input">
+                <label for="buyName">姓名</label>
+                <input type="text" id="buyName" class="sm-input" style="margin-left:8px;"/>
+                <ul class="ajax-part dp-n">
+                </ul>
+            </div>
+        <div class="input">
+            <label for="buyPhone">电话 </label>
+            <input data-startdate="now" type="text" id="buyPhone" class="sm-input" style="margin-left:8px;"/>
+        </div>
+    </div>
+    <button class="dp-b search-btn sm-btn blue-btn">搜索</button>
+</div>
+<div class="fill">
+    <div class="sel-head fl-l">
+        <p class="<%= parts == '全部' ? 'active' : '' %> sel-title" data-tp="全部">全部<em class="dp-n icon-dagou1 iconfont"></em></p>
+
+        <p class="<%= parts == '收货人' ? 'active' : '' %> sel-title" data-tp="收货人">收货人<em class="dp-n icon-dagou1 iconfont"></em></p>
+
+        <p class="<%= parts == '发货人' ? 'active' : '' %> sel-title" data-tp="发货人">发货人<em class="dp-n icon-dagou1 iconfont"></em></p>
+
+        <p class="<%= parts == '通知人' ? 'active' : '' %> sel-title" data-tp="通知人">通知人<em class="dp-n icon-dagou1 iconfont"></em></p>
+
+        <!--<p class="<%#= parts == 'book' ? 'active' : '' %> sel-title" data-tp="book">订舱</p>-->
+
+        <!--<p class="<%#= parts == 'entry' ? 'active' : '' %> sel-title" data-tp="entry">进仓</p>-->
+
+        <!--<p class="<%#= parts == 'declare' ? 'active' : '' %> sel-title" data-tp="declare">报关</p>-->
+
+        <!--<p class="<%#= parts == 'transform' ? 'active' : '' %> sel-title" data-tp="transform">运输</p>-->
+
+    </div>
+    <p class="search-sum fl-r">共计<span class="total-count">0</span>条订单消息 当前<span style="color:#E64C7B"><span style="color:#E64C7B" id="curNo">1</span>/<span class="total-count" style="color:#E64C7B"></span></span>条</p>
+</div>
+
+<table>
+    <thead>
+    <tr class="nv_header">
+        <td>公司</td>
+        <td>姓名</td>
+        <td>电话</td>
+        <td>邮编</td>
+        <td>邮箱</td>
+        <td>联系人</td>
+        <td>操作</td>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+<div class="page-box">
+
+</div>

@@ -1,0 +1,29 @@
+<% var body = 'resBody' in data && data.resBody || {}; %>
+<% var arr = 'billStatistic' in body && body.billStatistic instanceof Array && body.billStatistic || []; %>
+<div class="operate fill">
+    <p class="list-cout">共为您找到 <%= arr.length %> 条结果</p>
+</div>
+<div class="outer-con">
+    <table class="list-tb">
+        <thead>
+        <tr>
+            <td>航空公司</td>
+            <td>运单数</td>
+            <td>已使用</td>
+            <td>已作废</td>
+            <td>剩余</td>
+        </tr>
+        </thead>
+        <tbody>
+        <% for(var i = 0;i < arr.length;i++){ %>
+        <tr>
+            <td><%= arr[i].airCompanyCode %></td>
+            <td><%= arr[i].totalCount %></td>
+            <td><%= arr[i].occupiedCount %></td>
+            <td><%= arr[i].cancelCount %></td>
+            <td class="font-red"><%= arr[i].enableCount %></td>
+        </tr>
+        <% } %>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,142 @@
+<% var arr = d && 'deptAirports' in d && d.deptAirports || [];%>
+<% var files = d && 'guarantyFiles' in d && d.guarantyFiles || {}; %>
+<% var obj = {}; %>
+<% for (var x = 0; x < arr.length; x++) {
+    var dtx = arr[x];
+    obj[dtx.airportCode] = dtx;
+} %>
+
+<script>
+    var oriSave = '<%= JSON.stringify(obj) %>';
+</script>
+
+
+<div class="modal_body">
+    <div class="row">
+        <div class="input middle">
+            <label for="code">航空公司搜索：</label>
+            <input type="text" class="sm-input" id="code" autocomplete="off" value="<%= d ? d.airCompanyCode : '' %>">
+            <ul class="dp-n get-name"></ul>
+        </div>
+    </div>
+    <p class="title">基本信息</p>
+    <div class="row">
+        <div class="input left">
+            <label for="inner-name">名称：</label>
+            <input type="text" class="sm-input" id="inner-name" data-code="<%= d ? d.airCompanyCode : 0 %>" readonly
+                   value="<%= d ? d.airCompanyName : '' %>">
+        </div>
+        <div class="input middle">
+            <label for="country">国家：</label>
+            <input type="text" class="sm-input" id="country" readonly value="<%= d ? d.airCompanyCountry : '' %>">
+        </div>
+        <div class="input right">
+            <label for="o-header">运单头：</label>
+            <input type="text" class="sm-input" id="o-header" readonly value="<%= d ? d.airwayBillCode : '' %>">
+        </div>
+    </div>
+    <div class="row">
+        <div class="input left" style="width:100%;padding-left: 100px;position: relative;">
+            <label for="bscdz" style="position: absolute;top: 0;left: 0;">办事处地址：</label>
+            <input style="width: 100%;" type="text" class="sm-input" id="bscdz" value="<%= d ? d.officeAddress : '' %>">
+        </div>
+    </div>
+    <p class="title clear">订舱设置</p>
+    <div class="row">
+        <div class="input left">
+            <label for="percentage">分泡比例：</label>
+            <select id="percentage" class="sm-input">
+                <option value="0.2"<%= d ? (d.bulkyRate == 0.2 ? ' selected' : '') : '' %>>2/8</option>
+                <option value="0.3"<%= d ? (d.bulkyRate == 0.3 ? ' selected' : '') : '' %>>3/7</option>
+                <option value="0.4"<%= d ? (d.bulkyRate == 0.4 ? ' selected' : '') : '' %>>4/6</option>
+                <option value="0.5"<%= d ? (d.bulkyRate == 0.5 ? ' selected' : '') : '' %>>5/5</option>
+            </select>
+        </div>
+        <div class="input middle">
+            <label for="warehouse">仓库设置：</label>
+            <select id="warehouse" class="sm-input" data-id="<%= d ? d.warehouseId : 0 %>">
+            </select>
+        </div>
+        <div class="input right">
+            <label for="price">费用设置：</label>
+            <select id="price" class="sm-input" data-id="<%= d ? d.templateId : 0 %>">
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input left">
+            <label for="min-price">MIN价格：</label>
+            <input id="min-price" class="sm-input" data-min="200" value="<%= d ? (d.minPrice || 200) : 200 %>"
+                   onkeyup="value=value.replace(/[^\-?\d]/g,'')"/>
+        </div>
+        <div class="input middle">
+            <label for="AWC-price">AWC：</label>
+            <input id="AWC-price" class="sm-input" value="<%= d ? (d.AWC_Fee || '') : '' %>"
+                   onkeyup="value=value.replace(/[^\-?\d]/g,'')"/>
+        </div>
+        <div class="input right dp-n">
+            <label for="CGC-price">CGC：</label>
+            <input id="CGC-price" class="sm-input" value="<%= d ? (d.CGC_Fee || '') : '' %>"
+                   onkeyup="value=value.replace(/[^\-?\d]/g,'')"/>
+        </div>
+    </div>
+    <p class="title">起始港列表</p>
+    <div class="row">
+
+        <div class="input left">
+            <div class="input">
+                <label for="start">机场搜索：</label>
+                <input type="text" class="sm-input" id="start" autocomplete="off">
+                <ul class="dp-n get-name"></ul>
+            </div>
+        </div>
+    </div>
+    <div class="add-body">
+        <table border="1" class="inner-tb">
+            <thead>
+            <tr>
+                <td>代码</td>
+                <td>名称</td>
+                <td>保函</td>
+                <td>操作</td>
+            </tr>
+            </thead>
+            <tbody>
+            <% for (var a = 0; a < arr.length; a++) { %>
+            <tr class="add-tr" data-key="<%= arr[a].airportCode %>">
+                <td><%= arr[a].airportCode %></td>
+                <td><%= arr[a].airportName %></td>
+                <td class="big">
+                    <div class="dp-tb">
+                        <% var f = files[arr[a].airportCode] || []; %>
+                        <% for (var i = 0; i < f.length; i++) { %>
+                        <div class="files">
+                            <div class="top">           <%= f[i].fileExtension.toUpperCase() %>
+                                <span class="glyphicon glyphicon-trash"
+                                      data-key="<%= f[i].keyName %>"></span>
+                            </div>
+                            <a href="javascript:void(0);" class="dp-b"><%= f[i].fileName %></a>
+                        </div>
+                        <% } %>
+                        <div class="add" style="display: block">
+                            <div class="top"> +</div>
+                            <a href="javascript:void(0);" class="dp-b">添加文件</a>
+                            <input type="file" class="up-file" data-p="<%= arr[a].airportCode %>">
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <a href="javascript:void(0);" class="remove-tr" data-key="<%= arr[a].airportCode %>">删除</a>
+                </td>
+
+            </tr>
+            <% } %>
+            </tbody>
+        </table>
+        <div class="dp-tb">
+            <button id="editor-ensure" class="blue-btn md-btn" data-id="<%= d ? d.Id : 0 %>"
+                    data-type="<%= d ? 2 : 1 %>"><%= d ? '修改' : '新增' %></button>
+            <button class="white-btn md-btn" onclick="javascript:window.close();">取消</button>
+        </div>
+    </div>
+</div>

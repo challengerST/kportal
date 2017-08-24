@@ -1,0 +1,55 @@
+<div class="search">
+    <div class="top">
+        <div class="input">
+            <label for="order-num">订单号：</label>
+            <input type="text" id="order-num" class="sm-input"/>
+        </div>
+        <div class="input">
+            <label for="location">目的港：</label>
+            <input type="text" id="location" class="sm-input"/>
+        </div>
+        <div class="input">
+            <label for="day-time">起飞日期：</label>
+            <input data-startdate="now" type="text" id="day-time" class="sm-input"/>
+            <span class="time-logo"></span>
+        </div>
+    </div>
+    <button class="dp-b search-btn sm-btn blue-btn">搜索</button>
+</div>
+<p class="search-sum">搜索结果共计 <span class="total-count">0</span> 条</p>
+<div class="sel-head">
+    <p class="<%= parts == 'all' ? 'active' : '' %> sel-title" data-tp="all">全部</p>
+
+    <p class="<%= parts == 'pending' ? 'active' : '' %> sel-title" data-tp="pending">待处理</p>
+
+    <p class="<%= parts == 'book' ? 'active' : '' %> sel-title" data-tp="book">订舱</p>
+
+    <p class="<%= parts == 'entry' ? 'active' : '' %> sel-title" data-tp="entry">进仓</p>
+
+    <p class="<%= parts == 'declare' ? 'active' : '' %> sel-title" data-tp="declare">报关</p>
+
+    <p class="<%= parts == 'transform' ? 'active' : '' %> sel-title" data-tp="transform">运输</p>
+
+</div>
+<table>
+    <thead>
+    <tr>
+        <td>订单号</td>
+        <td>主单号</td>
+        <td>委托方式</td>
+        <td>航班日期</td>
+        <td>起飞港</td>
+        <td>目的港</td>
+        <td>货物名称</td>
+        <td class="change-str">订单状态</td>
+        <td>总价</td>
+        <td>操作</td>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+<div class="page-box">
+
+</div>

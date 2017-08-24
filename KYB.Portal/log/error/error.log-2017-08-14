@@ -1,0 +1,1097 @@
+[2017-08-14 08:44:04.088] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/login/agentRegister","message":"D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:1\n >> 1| <% var o = resBody in data && data.resBody || {}; %>\r\n    2| <%- include ./head.ejs %>\r\n    3| <%# 样式表引用 %>\r\n    4| <link rel=\"stylesheet\" href=\"/stylesheets/css/web/agr.css\">\r\n\nresBody is not defined","stack":"ReferenceError: D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:1\n >> 1| <% var o = resBody in data && data.resBody || {}; %>\r\n    2| <%- include ./head.ejs %>\r\n    3| <%# 样式表引用 %>\r\n    4| <link rel=\"stylesheet\" href=\"/stylesheets/css/web/agr.css\">\r\n\nresBody is not defined\n    at eval (eval at <anonymous> (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:491:12), <anonymous>:9:16)\n    at returnedFn (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:520:17)\n    at View.exports.renderFile [as engine] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:374:31)\n    at View.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\view.js:126:8)\n    at tryRender (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:639:10)\n    at EventEmitter.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:591:3)\n    at ServerResponse.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\response.js:960:7)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\login\\index.js:101:20\n    at request.callback (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\service\\login\\index.js:166:17)\n    at Object.helpers.parseBody (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\request-json\\main.js:74:12)"}}
+[2017-08-14 08:51:56.624] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/login/agentRegister","message":"D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:1\n >> 1| <% var o = resBody in data && data.resBody || {}; %>\r\n    2| <%- include ./head.ejs %>\r\n    3| <%# 样式表引用 %>\r\n    4| <link rel=\"stylesheet\" href=\"/stylesheets/css/web/agr.css\">\r\n\nresBody is not defined","stack":"ReferenceError: D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:1\n >> 1| <% var o = resBody in data && data.resBody || {}; %>\r\n    2| <%- include ./head.ejs %>\r\n    3| <%# 样式表引用 %>\r\n    4| <link rel=\"stylesheet\" href=\"/stylesheets/css/web/agr.css\">\r\n\nresBody is not defined\n    at eval (eval at <anonymous> (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:491:12), <anonymous>:9:16)\n    at returnedFn (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:520:17)\n    at View.exports.renderFile [as engine] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:374:31)\n    at View.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\view.js:126:8)\n    at tryRender (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:639:10)\n    at EventEmitter.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:591:3)\n    at ServerResponse.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\response.js:960:7)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\login\\index.js:101:20\n    at request.callback (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\service\\login\\index.js:166:17)\n    at Object.helpers.parseBody (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\request-json\\main.js:74:12)"}}
+[2017-08-14 08:51:57.889] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/login/agentRegister","message":"D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:8\n    6| <div style=\"background:#fff;\">\r\n    7|     <div class=\"agr_container agr_header\">\r\n >> 8|         <p class=\"small-nav\" data-id=\"<%= o.companyId %>>\"><a href=\"/home\">首页</a> > <%= title %> </p>\r\n    9|     </div>\r\n    10| </div>\r\n    11| <div class=\"agr_status agr_container fill\">\r\n\no is not defined","stack":"ReferenceError: D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:8\n    6| <div style=\"background:#fff;\">\r\n    7|     <div class=\"agr_container agr_header\">\r\n >> 8|         <p class=\"small-nav\" data-id=\"<%= o.companyId %>>\"><a href=\"/home\">首页</a> > <%= title %> </p>\r\n    9|     </div>\r\n    10| </div>\r\n    11| <div class=\"agr_status agr_container fill\">\r\n\no is not defined\n    at eval (eval at <anonymous> (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:491:12), <anonymous>:160:23)\n    at returnedFn (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:520:17)\n    at View.exports.renderFile [as engine] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:374:31)\n    at View.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\view.js:126:8)\n    at tryRender (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:639:10)\n    at EventEmitter.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:591:3)\n    at ServerResponse.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\response.js:960:7)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\login\\index.js:101:20\n    at request.callback (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\service\\login\\index.js:166:17)\n    at Object.helpers.parseBody (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\request-json\\main.js:74:12)"}}
+[2017-08-14 08:51:58.354] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/login/agentRegister","message":"D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:8\n    6| <div style=\"background:#fff;\">\r\n    7|     <div class=\"agr_container agr_header\">\r\n >> 8|         <p class=\"small-nav\" data-id=\"<%= o.companyId %>>\"><a href=\"/home\">首页</a> > <%= title %> </p>\r\n    9|     </div>\r\n    10| </div>\r\n    11| <div class=\"agr_status agr_container fill\">\r\n\no is not defined","stack":"ReferenceError: D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:8\n    6| <div style=\"background:#fff;\">\r\n    7|     <div class=\"agr_container agr_header\">\r\n >> 8|         <p class=\"small-nav\" data-id=\"<%= o.companyId %>>\"><a href=\"/home\">首页</a> > <%= title %> </p>\r\n    9|     </div>\r\n    10| </div>\r\n    11| <div class=\"agr_status agr_container fill\">\r\n\no is not defined\n    at eval (eval at <anonymous> (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:491:12), <anonymous>:160:23)\n    at returnedFn (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:520:17)\n    at View.exports.renderFile [as engine] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:374:31)\n    at View.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\view.js:126:8)\n    at tryRender (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:639:10)\n    at EventEmitter.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:591:3)\n    at ServerResponse.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\response.js:960:7)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\login\\index.js:101:20\n    at request.callback (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\service\\login\\index.js:166:17)\n    at Object.helpers.parseBody (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\request-json\\main.js:74:12)"}}
+[2017-08-14 08:51:58.570] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/login/agentRegister","message":"D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:8\n    6| <div style=\"background:#fff;\">\r\n    7|     <div class=\"agr_container agr_header\">\r\n >> 8|         <p class=\"small-nav\" data-id=\"<%= o.companyId %>>\"><a href=\"/home\">首页</a> > <%= title %> </p>\r\n    9|     </div>\r\n    10| </div>\r\n    11| <div class=\"agr_status agr_container fill\">\r\n\no is not defined","stack":"ReferenceError: D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:8\n    6| <div style=\"background:#fff;\">\r\n    7|     <div class=\"agr_container agr_header\">\r\n >> 8|         <p class=\"small-nav\" data-id=\"<%= o.companyId %>>\"><a href=\"/home\">首页</a> > <%= title %> </p>\r\n    9|     </div>\r\n    10| </div>\r\n    11| <div class=\"agr_status agr_container fill\">\r\n\no is not defined\n    at eval (eval at <anonymous> (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:491:12), <anonymous>:160:23)\n    at returnedFn (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:520:17)\n    at View.exports.renderFile [as engine] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:374:31)\n    at View.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\view.js:126:8)\n    at tryRender (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:639:10)\n    at EventEmitter.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:591:3)\n    at ServerResponse.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\response.js:960:7)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\login\\index.js:101:20\n    at request.callback (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\service\\login\\index.js:166:17)\n    at Object.helpers.parseBody (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\request-json\\main.js:74:12)"}}
+[2017-08-14 08:52:44.808] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/login/agentRegister","message":"D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:8\n    6| <div style=\"background:#fff;\">\r\n    7|     <div class=\"agr_container agr_header\">\r\n >> 8|         <p class=\"small-nav\" data-id=\"<%= o.companyId %>>\"><a href=\"/home\">首页</a> > <%= title %> </p>\r\n    9|     </div>\r\n    10| </div>\r\n    11| <div class=\"agr_status agr_container fill\">\r\n\no is not defined","stack":"ReferenceError: D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:8\n    6| <div style=\"background:#fff;\">\r\n    7|     <div class=\"agr_container agr_header\">\r\n >> 8|         <p class=\"small-nav\" data-id=\"<%= o.companyId %>>\"><a href=\"/home\">首页</a> > <%= title %> </p>\r\n    9|     </div>\r\n    10| </div>\r\n    11| <div class=\"agr_status agr_container fill\">\r\n\no is not defined\n    at eval (eval at <anonymous> (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:491:12), <anonymous>:160:23)\n    at returnedFn (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:520:17)\n    at View.exports.renderFile [as engine] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:374:31)\n    at View.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\view.js:126:8)\n    at tryRender (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:639:10)\n    at EventEmitter.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:591:3)\n    at ServerResponse.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\response.js:960:7)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\login\\index.js:101:20\n    at request.callback (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\service\\login\\index.js:166:17)\n    at Object.helpers.parseBody (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\request-json\\main.js:74:12)"}}
+[2017-08-14 08:52:45.636] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/login/agentRegister","message":"D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:8\n    6| <div style=\"background:#fff;\">\r\n    7|     <div class=\"agr_container agr_header\">\r\n >> 8|         <p class=\"small-nav\" data-id=\"<%= o.companyId %>>\"><a href=\"/home\">首页</a> > <%= title %> </p>\r\n    9|     </div>\r\n    10| </div>\r\n    11| <div class=\"agr_status agr_container fill\">\r\n\no is not defined","stack":"ReferenceError: D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:8\n    6| <div style=\"background:#fff;\">\r\n    7|     <div class=\"agr_container agr_header\">\r\n >> 8|         <p class=\"small-nav\" data-id=\"<%= o.companyId %>>\"><a href=\"/home\">首页</a> > <%= title %> </p>\r\n    9|     </div>\r\n    10| </div>\r\n    11| <div class=\"agr_status agr_container fill\">\r\n\no is not defined\n    at eval (eval at <anonymous> (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:491:12), <anonymous>:160:23)\n    at returnedFn (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:520:17)\n    at View.exports.renderFile [as engine] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:374:31)\n    at View.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\view.js:126:8)\n    at tryRender (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:639:10)\n    at EventEmitter.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:591:3)\n    at ServerResponse.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\response.js:960:7)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\login\\index.js:101:20\n    at request.callback (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\service\\login\\index.js:166:17)\n    at Object.helpers.parseBody (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\request-json\\main.js:74:12)"}}
+[2017-08-14 08:53:09.785] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/login/agentRegister","message":"D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:8\n    6| <div style=\"background:#fff;\">\r\n    7|     <div class=\"agr_container agr_header\">\r\n >> 8|         <p class=\"small-nav\" data-id=\"<%= o.companyId %>>\"><a href=\"/home\">首页</a> > <%= title %> </p>\r\n    9|     </div>\r\n    10| </div>\r\n    11| <div class=\"agr_status agr_container fill\">\r\n\no is not defined","stack":"ReferenceError: D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:8\n    6| <div style=\"background:#fff;\">\r\n    7|     <div class=\"agr_container agr_header\">\r\n >> 8|         <p class=\"small-nav\" data-id=\"<%= o.companyId %>>\"><a href=\"/home\">首页</a> > <%= title %> </p>\r\n    9|     </div>\r\n    10| </div>\r\n    11| <div class=\"agr_status agr_container fill\">\r\n\no is not defined\n    at eval (eval at <anonymous> (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:491:12), <anonymous>:160:23)\n    at returnedFn (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:520:17)\n    at View.exports.renderFile [as engine] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:374:31)\n    at View.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\view.js:126:8)\n    at tryRender (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:639:10)\n    at EventEmitter.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:591:3)\n    at ServerResponse.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\response.js:960:7)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\login\\index.js:101:20\n    at request.callback (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\service\\login\\index.js:166:17)\n    at Object.helpers.parseBody (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\request-json\\main.js:74:12)"}}
+[2017-08-14 08:53:11.319] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/login/agentRegister","message":"D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:8\n    6| <div style=\"background:#fff;\">\r\n    7|     <div class=\"agr_container agr_header\">\r\n >> 8|         <p class=\"small-nav\" data-id=\"<%= o.companyId %>>\"><a href=\"/home\">首页</a> > <%= title %> </p>\r\n    9|     </div>\r\n    10| </div>\r\n    11| <div class=\"agr_status agr_container fill\">\r\n\no is not defined","stack":"ReferenceError: D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:8\n    6| <div style=\"background:#fff;\">\r\n    7|     <div class=\"agr_container agr_header\">\r\n >> 8|         <p class=\"small-nav\" data-id=\"<%= o.companyId %>>\"><a href=\"/home\">首页</a> > <%= title %> </p>\r\n    9|     </div>\r\n    10| </div>\r\n    11| <div class=\"agr_status agr_container fill\">\r\n\no is not defined\n    at eval (eval at <anonymous> (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:491:12), <anonymous>:160:23)\n    at returnedFn (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:520:17)\n    at View.exports.renderFile [as engine] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:374:31)\n    at View.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\view.js:126:8)\n    at tryRender (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:639:10)\n    at EventEmitter.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:591:3)\n    at ServerResponse.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\response.js:960:7)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\login\\index.js:101:20\n    at request.callback (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\service\\login\\index.js:166:17)\n    at Object.helpers.parseBody (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\request-json\\main.js:74:12)"}}
+[2017-08-14 08:53:11.535] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/login/agentRegister","message":"D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:8\n    6| <div style=\"background:#fff;\">\r\n    7|     <div class=\"agr_container agr_header\">\r\n >> 8|         <p class=\"small-nav\" data-id=\"<%= o.companyId %>>\"><a href=\"/home\">首页</a> > <%= title %> </p>\r\n    9|     </div>\r\n    10| </div>\r\n    11| <div class=\"agr_status agr_container fill\">\r\n\no is not defined","stack":"ReferenceError: D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:8\n    6| <div style=\"background:#fff;\">\r\n    7|     <div class=\"agr_container agr_header\">\r\n >> 8|         <p class=\"small-nav\" data-id=\"<%= o.companyId %>>\"><a href=\"/home\">首页</a> > <%= title %> </p>\r\n    9|     </div>\r\n    10| </div>\r\n    11| <div class=\"agr_status agr_container fill\">\r\n\no is not defined\n    at eval (eval at <anonymous> (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:491:12), <anonymous>:160:23)\n    at returnedFn (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:520:17)\n    at View.exports.renderFile [as engine] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:374:31)\n    at View.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\view.js:126:8)\n    at tryRender (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:639:10)\n    at EventEmitter.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:591:3)\n    at ServerResponse.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\response.js:960:7)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\login\\index.js:101:20\n    at request.callback (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\service\\login\\index.js:166:17)\n    at Object.helpers.parseBody (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\request-json\\main.js:74:12)"}}
+[2017-08-14 08:53:11.735] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/login/agentRegister","message":"D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:8\n    6| <div style=\"background:#fff;\">\r\n    7|     <div class=\"agr_container agr_header\">\r\n >> 8|         <p class=\"small-nav\" data-id=\"<%= o.companyId %>>\"><a href=\"/home\">首页</a> > <%= title %> </p>\r\n    9|     </div>\r\n    10| </div>\r\n    11| <div class=\"agr_status agr_container fill\">\r\n\no is not defined","stack":"ReferenceError: D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:8\n    6| <div style=\"background:#fff;\">\r\n    7|     <div class=\"agr_container agr_header\">\r\n >> 8|         <p class=\"small-nav\" data-id=\"<%= o.companyId %>>\"><a href=\"/home\">首页</a> > <%= title %> </p>\r\n    9|     </div>\r\n    10| </div>\r\n    11| <div class=\"agr_status agr_container fill\">\r\n\no is not defined\n    at eval (eval at <anonymous> (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:491:12), <anonymous>:160:23)\n    at returnedFn (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:520:17)\n    at View.exports.renderFile [as engine] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:374:31)\n    at View.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\view.js:126:8)\n    at tryRender (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:639:10)\n    at EventEmitter.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:591:3)\n    at ServerResponse.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\response.js:960:7)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\login\\index.js:101:20\n    at request.callback (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\service\\login\\index.js:166:17)\n    at Object.helpers.parseBody (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\request-json\\main.js:74:12)"}}
+[2017-08-14 08:53:11.927] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/login/agentRegister","message":"D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:8\n    6| <div style=\"background:#fff;\">\r\n    7|     <div class=\"agr_container agr_header\">\r\n >> 8|         <p class=\"small-nav\" data-id=\"<%= o.companyId %>>\"><a href=\"/home\">首页</a> > <%= title %> </p>\r\n    9|     </div>\r\n    10| </div>\r\n    11| <div class=\"agr_status agr_container fill\">\r\n\no is not defined","stack":"ReferenceError: D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:8\n    6| <div style=\"background:#fff;\">\r\n    7|     <div class=\"agr_container agr_header\">\r\n >> 8|         <p class=\"small-nav\" data-id=\"<%= o.companyId %>>\"><a href=\"/home\">首页</a> > <%= title %> </p>\r\n    9|     </div>\r\n    10| </div>\r\n    11| <div class=\"agr_status agr_container fill\">\r\n\no is not defined\n    at eval (eval at <anonymous> (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:491:12), <anonymous>:160:23)\n    at returnedFn (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:520:17)\n    at View.exports.renderFile [as engine] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:374:31)\n    at View.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\view.js:126:8)\n    at tryRender (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:639:10)\n    at EventEmitter.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:591:3)\n    at ServerResponse.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\response.js:960:7)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\login\\index.js:101:20\n    at request.callback (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\service\\login\\index.js:166:17)\n    at Object.helpers.parseBody (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\request-json\\main.js:74:12)"}}
+[2017-08-14 08:53:50.473] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/login/agentRegister","message":"D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:8\n    6| <div style=\"background:#fff;\">\r\n    7|     <div class=\"agr_container agr_header\">\r\n >> 8|         <p class=\"small-nav\" data-id=\"<%= o.companyId %>>\"><a href=\"/home\">首页</a> > <%= title %> </p>\r\n    9|     </div>\r\n    10| </div>\r\n    11| <div class=\"agr_status agr_container fill\">\r\n\no is not defined","stack":"ReferenceError: D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:8\n    6| <div style=\"background:#fff;\">\r\n    7|     <div class=\"agr_container agr_header\">\r\n >> 8|         <p class=\"small-nav\" data-id=\"<%= o.companyId %>>\"><a href=\"/home\">首页</a> > <%= title %> </p>\r\n    9|     </div>\r\n    10| </div>\r\n    11| <div class=\"agr_status agr_container fill\">\r\n\no is not defined\n    at eval (eval at <anonymous> (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:491:12), <anonymous>:160:23)\n    at returnedFn (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:520:17)\n    at View.exports.renderFile [as engine] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:374:31)\n    at View.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\view.js:126:8)\n    at tryRender (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:639:10)\n    at EventEmitter.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:591:3)\n    at ServerResponse.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\response.js:960:7)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\login\\index.js:101:20\n    at request.callback (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\service\\login\\index.js:166:17)\n    at Object.helpers.parseBody (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\request-json\\main.js:74:12)"}}
+[2017-08-14 08:54:13.897] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/login/agentRegister","message":"D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:8\n    6| <div style=\"background:#fff;\">\r\n    7|     <div class=\"agr_container agr_header\">\r\n >> 8|         <p class=\"small-nav\" data-id=\"<%= o.companyId %>>\"><a href=\"/home\">首页</a> > <%= title %> </p>\r\n    9|     </div>\r\n    10| </div>\r\n    11| <div class=\"agr_status agr_container fill\">\r\n\no is not defined","stack":"ReferenceError: D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\views\\agentRegister\\view.ejs:8\n    6| <div style=\"background:#fff;\">\r\n    7|     <div class=\"agr_container agr_header\">\r\n >> 8|         <p class=\"small-nav\" data-id=\"<%= o.companyId %>>\"><a href=\"/home\">首页</a> > <%= title %> </p>\r\n    9|     </div>\r\n    10| </div>\r\n    11| <div class=\"agr_status agr_container fill\">\r\n\no is not defined\n    at eval (eval at <anonymous> (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:491:12), <anonymous>:160:23)\n    at returnedFn (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:520:17)\n    at View.exports.renderFile [as engine] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\ejs\\lib\\ejs.js:374:31)\n    at View.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\view.js:126:8)\n    at tryRender (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:639:10)\n    at EventEmitter.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\application.js:591:3)\n    at ServerResponse.render (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\response.js:960:7)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\login\\index.js:101:20\n    at request.callback (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\service\\login\\index.js:166:17)\n    at Object.helpers.parseBody (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\request-json\\main.js:74:12)"}}
+[2017-08-14 09:28:14.203] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/addFile","message":"Cannot read property 'company' of null","stack":"TypeError: Cannot read property 'company' of null\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:225:29\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 09:28:19.277] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/addFile","message":"Cannot read property 'company' of null","stack":"TypeError: Cannot read property 'company' of null\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:225:29\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 09:28:25.951] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/addFile","message":"Cannot read property 'company' of null","stack":"TypeError: Cannot read property 'company' of null\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:225:29\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 09:28:39.870] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/addFile","message":"Cannot read property 'company' of null","stack":"TypeError: Cannot read property 'company' of null\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:225:29\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 09:28:45.281] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/addFile","message":"Cannot read property 'company' of null","stack":"TypeError: Cannot read property 'company' of null\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:225:29\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 09:30:43.127] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/addFile","message":"Cannot read property 'company' of null","stack":"TypeError: Cannot read property 'company' of null\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:225:29\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 09:30:46.856] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/addFile","message":"Cannot read property 'company' of null","stack":"TypeError: Cannot read property 'company' of null\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:225:29\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 09:31:57.171] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/addFile","message":"Cannot read property 'company' of null","stack":"TypeError: Cannot read property 'company' of null\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:225:29\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 09:33:46.913] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/addFile","message":"Cannot read property 'company' of null","stack":"TypeError: Cannot read property 'company' of null\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:225:29\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 09:34:06.146] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/addFile","message":"Cannot read property 'company' of null","stack":"TypeError: Cannot read property 'company' of null\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:225:29\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 09:34:45.099] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/addFile","message":"Cannot read property 'company' of null","stack":"TypeError: Cannot read property 'company' of null\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:225:29\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 09:45:18.158] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/addFile","message":"Cannot read property 'company' of null","stack":"TypeError: Cannot read property 'company' of null\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:225:29\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 09:45:22.600] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/addFile","message":"Cannot read property 'company' of null","stack":"TypeError: Cannot read property 'company' of null\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:225:29\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 09:50:35.412] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/addFile","message":"Cannot read property 'company' of null","stack":"TypeError: Cannot read property 'company' of null\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:225:29\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 09:50:39.403] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/addFile","message":"Cannot read property 'company' of null","stack":"TypeError: Cannot read property 'company' of null\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:225:29\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 09:52:32.103] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/addFile","message":"Cannot read property 'company' of null","stack":"TypeError: Cannot read property 'company' of null\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:225:29\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 09:56:59.054] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/addFile","message":"Cannot read property 'company' of null","stack":"TypeError: Cannot read property 'company' of null\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:225:29\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 09:57:49.022] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/addFile","message":"Cannot read property 'company' of null","stack":"TypeError: Cannot read property 'company' of null\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:225:29\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 10:10:55.696] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/removeFile","message":"Cannot read property 'company' of null","stack":"TypeError: Cannot read property 'company' of null\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:234:29\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 10:10:58.199] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/removeFile","message":"Cannot read property 'company' of null","stack":"TypeError: Cannot read property 'company' of null\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:234:29\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 14:16:59.334] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/newLogin","message":"Redis connection lost and command aborted. It might have been processed.","stack":"AbortError: Redis connection lost and command aborted. It might have been processed.\n    at RedisClient.flush_and_error (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:350:23)\n    at RedisClient.connection_gone (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:652:14)\n    at RedisClient.on_error (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:398:10)\n    at Socket.<anonymous> (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:272:14)\n    at emitOne (events.js:96:13)\n    at Socket.emit (events.js:188:7)\n    at emitErrorNT (net.js:1272:8)\n    at _combinedTickCallback (internal/process/next_tick.js:74:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)"}}
+[2017-08-14 14:16:59.335] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/newLogin","message":"Redis connection lost and command aborted. It might have been processed.","stack":"AbortError: Redis connection lost and command aborted. It might have been processed.\n    at RedisClient.flush_and_error (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:350:23)\n    at RedisClient.connection_gone (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:652:14)\n    at RedisClient.on_error (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:398:10)\n    at Socket.<anonymous> (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:272:14)\n    at emitOne (events.js:96:13)\n    at Socket.emit (events.js:188:7)\n    at emitErrorNT (net.js:1272:8)\n    at _combinedTickCallback (internal/process/next_tick.js:74:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)"}}
+[2017-08-14 14:16:59.512] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:16:59.512] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:17:00.415] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:17:00.415] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:17:17.427] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:17:17.427] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:17:18.068] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:17:18.069] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:18:01.179] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:18:01.179] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:18:01.843] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:18:01.843] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:20:01.844] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:20:01.844] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:20:06.964] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:20:06.964] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:20:08.308] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:20:08.308] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:20:08.961] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:20:08.961] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:20:09.696] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:20:09.696] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:20:10.112] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:20:10.112] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:20:10.315] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:20:10.315] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:20:10.551] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:20:10.551] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:20:10.717] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:20:10.717] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:20:10.885] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:20:10.885] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:20:30.775] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:20:30.775] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:20:31.694] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:20:31.694] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:21:32.626] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:21:32.626] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:21:33.532] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:21:33.533] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:21:34.218] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:21:34.218] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:21:34.850] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:21:34.850] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:21:48.661] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:21:48.661] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:21:57.516] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:21:57.517] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:22:46.971] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:38:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:84:17)
+    at Request.self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitTwo (events.js:106:13)
+    at Request.emit (events.js:191:7)
+    at Request.<anonymous> (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:1171:10)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at IncomingMessage.<anonymous> (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:1091:12)
+[2017-08-14 14:22:46.972] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:38:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:84:17)
+    at Request.self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitTwo (events.js:106:13)
+    at Request.emit (events.js:191:7)
+    at Request.<anonymous> (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:1171:10)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at IncomingMessage.<anonymous> (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:1091:12)
+[2017-08-14 14:22:47.222] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:38:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:84:17)
+    at Request.self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitTwo (events.js:106:13)
+    at Request.emit (events.js:191:7)
+    at Request.<anonymous> (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:1171:10)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at IncomingMessage.<anonymous> (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:1091:12)
+[2017-08-14 14:22:47.222] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:38:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:84:17)
+    at Request.self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitTwo (events.js:106:13)
+    at Request.emit (events.js:191:7)
+    at Request.<anonymous> (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:1171:10)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at IncomingMessage.<anonymous> (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:1091:12)
+[2017-08-14 14:42:55.228] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:42:55.228] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:42:58.194] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:42:58.194] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:43:07.222] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:43:07.222] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:43:08.598] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:43:08.598] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:43:09.782] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:43:09.782] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:43:25.412] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/newLogin","message":"Redis connection lost and command aborted. It might have been processed.","stack":"AbortError: Redis connection lost and command aborted. It might have been processed.\n    at RedisClient.flush_and_error (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:350:23)\n    at RedisClient.connection_gone (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:652:14)\n    at RedisClient.on_error (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:398:10)\n    at Socket.<anonymous> (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:272:14)\n    at emitOne (events.js:96:13)\n    at Socket.emit (events.js:188:7)\n    at emitErrorNT (net.js:1272:8)\n    at _combinedTickCallback (internal/process/next_tick.js:74:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)"}}
+[2017-08-14 14:43:25.414] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/newLogin","message":"Redis connection lost and command aborted. It might have been processed.","stack":"AbortError: Redis connection lost and command aborted. It might have been processed.\n    at RedisClient.flush_and_error (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:350:23)\n    at RedisClient.connection_gone (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:652:14)\n    at RedisClient.on_error (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:398:10)\n    at Socket.<anonymous> (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:272:14)\n    at emitOne (events.js:96:13)\n    at Socket.emit (events.js:188:7)\n    at emitErrorNT (net.js:1272:8)\n    at _combinedTickCallback (internal/process/next_tick.js:74:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)"}}
+[2017-08-14 14:43:25.414] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/newLogin","message":"Redis connection lost and command aborted. It might have been processed.","stack":"AbortError: Redis connection lost and command aborted. It might have been processed.\n    at RedisClient.flush_and_error (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:350:23)\n    at RedisClient.connection_gone (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:652:14)\n    at RedisClient.on_error (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:398:10)\n    at Socket.<anonymous> (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:272:14)\n    at emitOne (events.js:96:13)\n    at Socket.emit (events.js:188:7)\n    at emitErrorNT (net.js:1272:8)\n    at _combinedTickCallback (internal/process/next_tick.js:74:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)"}}
+[2017-08-14 14:43:25.415] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/newLogin","message":"Redis connection lost and command aborted. It might have been processed.","stack":"AbortError: Redis connection lost and command aborted. It might have been processed.\n    at RedisClient.flush_and_error (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:350:23)\n    at RedisClient.connection_gone (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:652:14)\n    at RedisClient.on_error (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:398:10)\n    at Socket.<anonymous> (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:272:14)\n    at emitOne (events.js:96:13)\n    at Socket.emit (events.js:188:7)\n    at emitErrorNT (net.js:1272:8)\n    at _combinedTickCallback (internal/process/next_tick.js:74:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)"}}
+[2017-08-14 14:43:25.416] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/newLogin","message":"Redis connection lost and command aborted. It might have been processed.","stack":"AbortError: Redis connection lost and command aborted. It might have been processed.\n    at RedisClient.flush_and_error (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:350:23)\n    at RedisClient.connection_gone (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:652:14)\n    at RedisClient.on_error (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:398:10)\n    at Socket.<anonymous> (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\redis\\index.js:272:14)\n    at emitOne (events.js:96:13)\n    at Socket.emit (events.js:188:7)\n    at emitErrorNT (net.js:1272:8)\n    at _combinedTickCallback (internal/process/next_tick.js:74:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)"}}
+[2017-08-14 14:43:28.148] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:43:28.148] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:43:29.228] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:43:29.228] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:43:30.040] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:43:30.040] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:43:51.851] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:43:51.852] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:44:50.884] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:44:50.884] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:44:51.597] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:44:51.597] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:44:51.819] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:44:51.819] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:44:52.006] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:44:52.007] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:44:52.718] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:44:52.718] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:44:52.948] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:44:52.948] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:44:53.128] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:44:53.128] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:44:53.316] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:44:53.316] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:44:53.517] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:44:53.517] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:44:53.691] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:44:53.691] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:44:53.889] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:44:53.889] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:45:02.144] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 14:45:02.144] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:30:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:76:17)
+    at self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at Request.onRequestError (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:884:8)
+    at emitOne (events.js:101:20)
+    at ClientRequest.emit (events.js:188:7)
+    at Socket.socketErrorListener (_http_client.js:306:9)
+[2017-08-14 17:56:42.275] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/register","message":"loginService.register is not a function","stack":"TypeError: loginService.register is not a function\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:84:18\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 17:56:45.219] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/register","message":"loginService.register is not a function","stack":"TypeError: loginService.register is not a function\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:84:18\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 17:56:46.475] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/register","message":"loginService.register is not a function","stack":"TypeError: loginService.register is not a function\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:84:18\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 17:56:47.090] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/register","message":"loginService.register is not a function","stack":"TypeError: loginService.register is not a function\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:84:18\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 17:56:47.290] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/register","message":"loginService.register is not a function","stack":"TypeError: loginService.register is not a function\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:84:18\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 17:56:47.452] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/register","message":"loginService.register is not a function","stack":"TypeError: loginService.register is not a function\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:84:18\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 17:56:47.610] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/register","message":"loginService.register is not a function","stack":"TypeError: loginService.register is not a function\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:84:18\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 17:56:47.786] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/register","message":"loginService.register is not a function","stack":"TypeError: loginService.register is not a function\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:84:18\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 17:56:47.970] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/register","message":"loginService.register is not a function","stack":"TypeError: loginService.register is not a function\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:84:18\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 17:56:48.746] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/register","message":"loginService.register is not a function","stack":"TypeError: loginService.register is not a function\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:84:18\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 17:56:49.180] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/register","message":"loginService.register is not a function","stack":"TypeError: loginService.register is not a function\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:84:18\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 17:56:49.363] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/register","message":"loginService.register is not a function","stack":"TypeError: loginService.register is not a function\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:84:18\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 17:56:49.563] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/register","message":"loginService.register is not a function","stack":"TypeError: loginService.register is not a function\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:84:18\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 17:56:50.499] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/register","message":"loginService.register is not a function","stack":"TypeError: loginService.register is not a function\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:84:18\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 17:56:50.890] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/register","message":"loginService.register is not a function","stack":"TypeError: loginService.register is not a function\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:84:18\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 17:56:51.075] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/register","message":"loginService.register is not a function","stack":"TypeError: loginService.register is not a function\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:84:18\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 17:56:51.267] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/register","message":"loginService.register is not a function","stack":"TypeError: loginService.register is not a function\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:84:18\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 17:56:51.762] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/register","message":"loginService.register is not a function","stack":"TypeError: loginService.register is not a function\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:84:18\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 17:56:51.939] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/register","message":"loginService.register is not a function","stack":"TypeError: loginService.register is not a function\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:84:18\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 17:56:52.114] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/register","message":"loginService.register is not a function","stack":"TypeError: loginService.register is not a function\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:84:18\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 17:56:52.291] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/register","message":"loginService.register is not a function","stack":"TypeError: loginService.register is not a function\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:84:18\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-14 18:11:19.468] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/login/register","message":"loginService.register is not a function","stack":"TypeError: loginService.register is not a function\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\login\\index.js:84:18\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}

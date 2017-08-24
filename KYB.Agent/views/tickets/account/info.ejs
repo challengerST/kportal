@@ -1,0 +1,223 @@
+<div class="search-part fill">
+    <div class="dp-tb">
+        <div class="input">
+            <label for="search-zdbh">账单编号：</label>
+            <input type="text" id="search-zdbh" class="sm-input">
+        </div>
+        <div class="input">
+            <label for="search-khmc">客户名称：</label>
+            <input type="text" id="search-khmc" class="sm-input">
+        </div>
+        <div class="input">
+            <label for="fkzt">付款状态：</label>
+            <select id="fkzt" class="sm-input">
+                <option value="99">全部</option>
+                <option value="0">未付款</option>
+                <option value="1">已付款</option>
+                <option value="2">部分付款</option>
+            </select>
+        </div>
+        <button class="sm-btn blue-btn" id="search">查询</button>
+    </div>
+</div>
+<div class="operate fill">
+    <p class="list-cout">共为您找到 0 条结果</p>
+    <button class="blue-btn sm-btn flr" id="batch-bills">批量开账</button>
+    <button class="blue-btn sm-btn flr" id="new-bill">新建账单</button>
+</div>
+<div class="outer-con">
+    <table class="outer-tb">
+        <thead>
+        <tr>
+            <td>账单编号</td>
+            <td>客户</td>
+            <td>账期</td>
+            <td>付款截止</td>
+            <td>账单金额</td>
+            <td>已付金额</td>
+            <td>应收金额</td>
+            <td>账单状态</td>
+            <td>开票状态</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+<div class="outer-pages"></div>
+<div class="white-back dp-n">
+    <div class="delete-part alert-part dp-n">
+        <p class="header">删除该账单 <span class="close-btn">X</span></p>
+
+        <div class="btn-pt">
+            <button id="delete-ensure" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="detail-part alert-part dp-n">
+        <p class="header">账单详情 <span class="close-btn">X</span></p>
+
+        <div class="info-body fill">
+            <p class="sg-info">
+                <span class="title">账单编号：</span>
+                <span class="contents zdbh">XXXXXXX</span>
+            </p>
+
+            <p class="sg-info">
+                <span class="title">客户：</span>
+                <span class="contents kh">XXXXXXX</span>
+            </p>
+
+            <p class="info-title">账单信息</p>
+
+            <p class="sg-info">
+                <span class="title">账单金额：</span>
+                <span class="contents zdje">XXXXXXX</span>
+            </p>
+
+            <p class="sg-info">
+                <span class="title">开票日期：</span>
+                <span class="contents kprq">XXXXXXX</span>
+            </p>
+
+            <p class="sg-info">
+                <span class="title">付款截止日期：</span>
+                <span class="contents fkjz">XXXXXXX</span>
+            </p>
+
+            <p class="sg-info">
+                <span class="title">账单周期：</span>
+                <span class="contents zdzq">XXXXXXX</span>
+            </p>
+
+            <p class="info-title">费用明细</p>
+            <table class="detail-tb">
+                <thead>
+                <tr>
+                    <td>订单编号</td>
+                    <td>订单费用</td>
+                </tr>
+                </thead>
+                <tbdoy>
+                    <tr>
+                        <td>编号1</td>
+                        <td>CNY 100</td>
+                    </tr>
+                    <tr>
+                        <td>编号1</td>
+                        <td>CNY 200</td>
+                    </tr>
+                    <tr>
+                        <td>编号1</td>
+                        <td>CNY 300</td>
+                    </tr>
+                </tbdoy>
+                <tfoot>
+                <tr>
+                    <td>总计</td>
+                    <td>CNY 600</td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="btn-pt">
+            <button id="d-dczd" class="fl-l md-btn blue-btn" style="display: none;">导出账单</button>
+            <button id="d-hxfy" class="fl-l md-btn blue-btn">核销费用</button>
+            <button id="d-fp" class="fl-l md-btn blue-btn" style="margin-left: 20px;display: none;">发票</button>
+        </div>
+    </div>
+    <div class="batch-part alert-part dp-n">
+        <p class="header">批量开账 <span class="close-btn">X</span></p>
+
+        <div class="info-body fill">
+            <p class="batch-search">
+                账单周期 <input type="text" class="sm-input b-require" id="batchStart"/> 至 <input type="text"
+                                                                                              class="sm-input b-require"
+                                                                                              id="batchEnd"/>
+                <button class="fl-r sm-btn blue-btn" id="batch-search">查询</button>
+            </p>
+
+            <p class="info-title">客户列表</p>
+            <table class="batch-tb" border="1">
+                <thead>
+                <tr>
+                    <td></td>
+                    <td>客户</td>
+                    <td>账期</td>
+                    <td>费用笔数</td>
+                    <td>总计金额</td>
+                    <td>操作</td>
+                </tr>
+                </thead>
+                <tbody>
+                <!--<tr>-->
+                <!--<td><input type="checkbox"/></td>-->
+                <!--<td>客户</td>-->
+                <!--<td>账期</td>-->
+                <!--<td>费用笔数</td>-->
+                <!--<td>总计金额</td>-->
+                <!--<td><a href="javascript:void(0);">详情</a></td>-->
+                <!--</tr>-->
+                </tbody>
+            </table>
+            <div class="batch-pages"></div>
+        </div>
+        <div class="btn-pt">
+            <button id="b-plsc" class="fl-l md-btn blue-btn">批量生成账单</button>
+        </div>
+    </div>
+    <div class="add-part alert-part dp-n">
+        <p class="header">新建账单 <span class="close-btn">X</span></p>
+
+        <div class="info-body fill">
+            <div class="add-search fill">
+                <div class="input long">
+                    <label for="a-kh">客户：</label>
+                    <input type="text" id="a-kh" class="sm-input a-require" autocomplete="off"/>
+                    <ul class="get-name dp-n">
+                    </ul>
+                    <button class="blue-btn sm-btn fl-r" id="search-bills">查询</button>
+                </div>
+                <p class="clr"><span class="i-title">账单周期：</span> <input type="text" class="sm-input a-require"
+                                                                         id="addStart"/>
+                    <span>至</span>
+                    <input type="text" class="sm-input a-require" id="addEnd"/></p>
+            </div>
+
+            <p class="info-title">费用明细</p>
+            <table class="add-tb">
+                <thead>
+                <tr>
+                    <td></td>
+                    <td>订单编号</td>
+                    <td>订单费用</td>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="add-pages"></div>
+        <div class="btn-pt">
+            <button id="a-sczd" class="fl-l md-btn blue-btn">生成账单</button>
+            <button class="fl-l md-btn white-btn close-btn">取消</button>
+        </div>
+    </div>
+    <div class="publish-part alert-part dp-n">
+        <p class="header">核销账单 <span class="close-this">X</span></p>
+
+        <div class="body fill">
+            <div class="input fill">
+                <label for="expireDate">输入核销金额：</label>
+                <input type="text" class="sm-input" id="expireDate" onkeyup="value=value.replace(/[^\-?\d.]/g,'')"/>
+            </div>
+        </div>
+        <div class="btn-pt">
+            <button id="ensure-publish" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-this fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+</div>

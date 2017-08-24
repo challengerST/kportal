@@ -1,0 +1,60 @@
+/* public class */
+/* display */
+.dp-n{display:none;}
+.dp-i{display:inline;}
+.dp-b{display:block;}
+.dp-ib{display:inline-block;}
+.dp-tb{display:table;}
+/* float */
+.fl-l{float:left;}
+.fl-r{float:right!important;}
+/* clear */
+.cl-b{clear:both;}
+/* font-family */
+.ff-a{font-family:Arial,sans-serif;}
+.ff-t{font-family:Tahoma,sans-serif;}
+.ff-v{font-family:Verdana,sans-serif;}
+.ff-s{font-family:Simsun,sans-serif;}
+.ff-l{font-family:'Lucida Console',sans-serif;}
+.ff-w{font-family:'Microsoft Yahei',sans-serif;}
+.ff-skk{font-family:STKaiti,KaiTi,SimSun,sans-serif;}
+/* text-align */
+.ta-c{text-align:center;}
+.ta-r{text-align:right;}
+.ta-l{text-align:left;}
+.ta-j{text-align:justify;}
+/* padding & margin */
+.pr-20{padding-right: 20px;}
+.pl-20{padding-left: 20px}
+.mr-10{margin-right: 10px;}
+/* button */
+.lg-btn{display: block;width: 300px;text-align: center;@include HEIGHT(50px);font-size: 16px;border-radius: 5px;}
+.md-btn{display: block;width: 180px;text-align: center;@include HEIGHT(40px);font-size: 14px;border-radius: 5px;}
+.sm-btn{display: block;width: 60px;text-align: center;@include HEIGHT(30px);font-size: 14px;border-radius: 2px;}
+
+.blue-btn{color: #fff;background-color: #074ba0;}
+.blue-btn:hover{background-color: #003271;}
+.blue-btn:active{background-color: #002655;}
+
+
+.red-btn{color: #fff;background-color: #bc0b5c;}
+.red-btn:hover{background-color: #930546;}
+.red-btn:active{background-color: #720135;}
+
+.white-btn{color: #074ba0;background-color: #fff;border: 1px solid #074ba0;}
+.white-btn:hover{background-color: #f4f4f4;}
+.white-btn:active{background-color: #dedede;}
+
+.lg-input{height: 50px;width: 300px;padding-left: 14px;font-size: 14px;color: #999;border: 1px solid #d4d4d4;}
+.sm-input{height: 30px;width: 180px;padding-left: 10px;font-size: 12px;color: #999;border: 1px solid #d4d4d4;border-radius: 2px;}
+.lg-input:focus,.sm-input:focus{border:1px solid #7aaeee;}
+
+input.wrong{border: 1px solid #ff0000;}
+
+input[readonly]{background-color: #f4f4f4;border: 1px solid #d4d4d4;}
+
+.lg-select{width: 300px;height: 50px;border:1px solid #d4d4d4;padding-left: 14px;color:#999;
+}
+.lg-select:focus{color: #333;}
+.sm-select{width: 180px;height: 30px;border:1px solid #d4d4d4;padding-left: 10px;color: #999;font-size: 12px; }
+.sm-select:focus{color: #333;}

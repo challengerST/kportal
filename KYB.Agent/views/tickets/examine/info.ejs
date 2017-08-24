@@ -1,0 +1,64 @@
+<div class="search-part fill">
+    <div class="dp-tb">
+        <div class="input">
+            <label for="search-name">公司名称：</label>
+            <input type="text" id="search-name" class="sm-input">
+        </div>
+        <div class="input">
+            <label for="search-state">审核状态：</label>
+            <select id="search-state" class="sm-input">
+                <option value="99">全部</option>
+                <option value="0">未审核</option>
+                <option value="1">审核通过</option>
+                <option value="-1">审核失败</option>
+            </select>
+        </div>
+        <button class="sm-btn blue-btn" id="search">查询</button>
+    </div>
+</div>
+<div class="operate fill">
+    <p class="list-cout">共为您找到 0 条结果</p>
+    <!--<button class="blue-btn sm-btn flr" id="batch-bills">批量开账</button>-->
+    <!--<button class="blue-btn sm-btn flr" id="new-bill">新建账单</button>-->
+</div>
+<div class="outer-con">
+    <table class="outer-tb">
+        <thead>
+        <tr>
+            <td>公司编号</td>
+            <td>公司名称</td>
+            <td>会员等级</td>
+            <td>信用额度</td>
+            <td>可用额度</td>
+            <td>累计成交金额</td>
+            <td>累计成交票数</td>
+            <td>返现金额</td>
+            <td>返现时间</td>
+            <td>审核状态</td>
+            <td>审核操作</td>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <div class="outer-pages"></div>
+</div>
+<div class="white-back dp-n">
+    <div class="accept-part alert-part dp-n">
+        <p class="header">通过该申请 <span class="close-btn">X</span></p>
+
+        <div class="btn-pt">
+            <button id="accept-ensure" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="refuse-part alert-part dp-n">
+        <p class="header">拒绝该申请 <span class="close-btn">X</span></p>
+
+        <div class="btn-pt">
+            <button id="refuse-ensure" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+</div>

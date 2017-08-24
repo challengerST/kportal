@@ -1,0 +1,110 @@
+@import "../../general/general";
+
+.content-wrapper{padding-top: 0!important;
+  .welcome{@include HEIGHT(184px);padding: 0 5%;background: url("../../../../images/banner.png") no-repeat;background-size: 100% 100%;font-size: 24px;}
+}
+
+.main-body{width: 90%;margin: 20px auto;
+  .cswbg,.cswjc,.jrqf,.wqrfy,.wzfzd{  float: left;border-radius: 5px;padding: 0 20px 20px;position: relative;
+    .title{width: 100%;@include HEIGHT(50px);color: #fff;margin: 0;font-weight: 600;font-size: 20px;
+      span{color: #fff;}
+      .icon{display: block;float: left;height: 22px;width: 22px;line-height: 22px;text-align: center;margin-top: 15px;margin-right: 5px;font-size: 20px;}
+    }
+    .tb{width: 100%;padding-top: 25px;height: 175px;overflow: auto;
+      table{width: 100%;display: block;
+        thead{position: absolute;top: 50px;left: 0;width: 100%;padding: 0 20px;
+          tr{width: 100%;display: block;}
+          td{text-align: center;line-height: 25px;font-size: 12px;display: block;float: left;}
+        }
+        tbody{width: 100%;display: block;
+          tr{display: block;overflow: hidden;}
+          td{text-align: center;color: #fff;font-size: 12px;height: 41px;display: block;float: left;line-height: 40px;}
+          .wrong{height: 150px;}
+        }
+      }
+    }
+  }
+  .jrqf{width: 100%;margin: 50px 0;}
+  .cswbg,.cswjc,.wqrfy,.wzfzd{  width: 48%; }
+  .mg{margin-left: 4%;}
+  .cswbg{background-color: #169bd5;min-height: 245px;
+    .title{
+      .icon{background-color: #f6a623;border-radius: 50%;border: 1px solid #fff;line-height: 20px;}
+    }
+    thead{
+      td{color: #73cff6;background-color: #169bd5;}
+    }
+    tbody{
+      td{background-color: #0e86bb;border-bottom: 1px solid #169bd5;}
+      td.wrong{height: 150px;background-color: #169bd5;background: url("../../../../images/icon_checked.png") no-repeat;background-position: 100% 100%;border-bottom: none;}
+    }
+  }
+  .cswjc{background-color: #287186;min-height: 245px;
+    .title{
+      .icon{background-color: #f6a623;border-radius: 50%;border: 1px solid #fff;line-height: 20px;}
+    }
+    thead{
+      td{color: #73cff6;background-color: #287186;}
+    }
+    tbody{
+      td{background-color: #23677b;}
+      .wrong{height: 150px;background-color: #287186;background: url("../../../../images/icon_checked.png") no-repeat;background-position: 100% 100%;}
+    }
+  }
+  .jrqf{background-color: #00b494;
+    .title{@include HEIGHT(80px);
+      .icon{background-color: #078e76;border-radius: 50%;border: 1px solid #fff;line-height: 20px;font-size: 14px;margin-top: 30px;}
+    }
+    thead{padding-left: 160px!important;top: 20px!important;
+      td{color: #FF9A02;background-color: #00b494;}
+    }
+    tbody{
+      td{border-bottom: 1px solid #00b494;}
+    }
+  }
+  .jrqf.wrong{padding-bottom: 0;
+    .title{background: url("../../../../images/icon_cursor.png") no-repeat; background-position: 100% 11px;
+    }
+  }
+  .jrqf.notZ{padding-left: 150px;position: relative;min-height: 150px;
+    .title,.tb{float: left;}
+    .title{width: 120px;position: absolute;left: 20px;top: 0;height: auto;margin-top: 15px;
+     .info-txt{display: block;@include HEIGHT(50px);text-align: right;
+      .icon{margin-top: 15px;}
+     }
+      .num{display: block;@include HEIGHT(70px);text-align: center;font-size: 48px;}
+    }
+    .tb{margin-top: 20px;padding-left: 10px;border-left:1px solid #00a083;
+      thead{
+        td{color: #7feedb;}
+      }
+      tbody{
+        td{background-color: #019b7f;}
+      }
+    }
+  }
+  .wqrfy{background-color: #fff;border-top:3px solid #6a6ad4;box-shadow:0 2px 2px 0 rgba(0,0,0,0.28);
+    .title{color: #6a6ad4;
+      span{color: #6a6ad4!important;}
+      .icon{background-color: #fff;}
+    }
+    thead{
+      td{background-color: #fff;}
+    }
+    tbody{
+      td{background-color: #ecf0f5;color: #333!important;border-bottom: 1px solid #fff;}
+    }
+  }
+  .wzfzd{background-color: #fff;border-top:3px solid #d75177;box-shadow:0 2px 2px 0 rgba(0,0,0,0.28);
+    .title{color: #d75177;
+      span{color: #d75177!important;}
+      .icon{background-color: #fff;}
+    }
+    thead{
+      td{background-color: #fff;}
+    }
+    tbody{
+      td{background-color: #ecf0f5;color: #333!important;border-bottom: 1px solid #fff;}
+    }
+  }
+}

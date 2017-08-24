@@ -1,0 +1,58 @@
+/* scss mixin */
+
+/* variables */
+$blue1: #074BA0;
+$blue2: #1868BD;
+$blue3: #248FD5;
+$blue4: #1286CF;
+$gray1: #666;
+$gray2: #999;
+$gray3: #CCC;
+$gray4: #E3F0FF;
+$yellow1: #A5BA00;
+$yellow2: #FFE744;
+$red1: #D45075;
+$border: #eaeaea;
+$blueB: #7aaeee;
+$c652: #657592;
+$c6b: #006bbc;
+$d8: #d8dde8;
+$fa8: #9fadc8;
+$c6:#c6cede;
+$e7:#e7ebf2;
+$e6:#e64c7b;
+$f7:#F7F8FA;
+$bbd:#006bbd;
+/* method */
+@mixin clear() {
+  clear: both;
+  overflow: hidden;
+}
+
+@mixin HEIGHT($HEIGHT) {
+  height: $HEIGHT;
+  line-height: $HEIGHT;
+}
+
+@mixin NOWRAP() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin textCenter($WIDTH) {
+  width: $WIDTH;
+  text-align: center;
+}
+
+@mixin homeicon($left,$right) {
+  background: url('../../../images/icon.png') $left $right no-repeat;
+}
+@mixin br($bz){
+  -webkit-border-radius:$bz;
+  -moz-border-radius:$bz;
+  border-radius:$bz;
+}
+//@mixin bs(){
+//
+//}

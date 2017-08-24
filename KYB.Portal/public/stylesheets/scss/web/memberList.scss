@@ -1,0 +1,59 @@
+@import "./vipGeneral";
+
+.body-part{padding: 30px 20px;border: 1px solid #E3F0FF;background-color: #fff;
+  .editor{@include HEIGHT(30px);
+    span{float: right;cursor: pointer;margin-left: 10px;}
+  }
+  table{width: 100%;border-collapse:separate;margin-top: 20px;border: 1px solid $gray3;border-bottom: none;
+    thead{
+      tr{
+        td{background-color: $gray1;color: #fff;border-top: 1px solid transparent;height: 28px;padding-left: 20px;font-size: 12px;text-align: center;}
+        td:first-child{width: 7%;}
+      }
+    }
+    tbody{
+      tr{
+        td{border-bottom: 1px solid $gray3;background-color: #fff;height: 32px;font-size: 12px;padding-left: 20px;text-align: center;
+          a{color: $blue1;text-decoration: underline!important;}
+          a:hover{text-decoration: none!important;}
+        }
+      }
+      tr:hover{
+        td{background-color: #d0e5fd;}
+      }
+      .wrong-msg{height: 300px;
+        td{width: 100%;text-align: center;@include HEIGHT(300px);font-size: 20px;border:none;
+          a{color: $blue3;text-decoration: underline;}
+        }
+      }
+    }
+  }
+}
+
+.white-back{position: fixed;width: 100%;height: 100%;background-color: rgba(255,255,255,0.85);top: 0;left: 0;z-index: 1000;
+  .alert-part{ .header{@include HEIGHT(50px);background-color: $blue1;color: #fff;font-size: 24px;padding: 0 0 0 20px;
+    span{display: block;float: right;@include HEIGHT(50px);width: 50px;text-align: center;color: #fff;cursor: pointer;}
+  }
+    .btn-pt{display:table;margin: 0 auto;
+      button{margin-top: 20px;}
+      button:first-child{margin-right: 20px;}
+    }
+  }
+  .add-modal{background-color: #fff;width: 802px;position: fixed;top: 10%;left: 50%;margin-left: -400px;border: 1px solid $blue1;
+    .add-body{background-color: #fff;
+      .half{width:50%;float: left;padding:20px;
+        .input{overflow: hidden;padding-left: 25px;height: 55px;margin-bottom: 5px;
+          label,input{display: block;float: left;}
+          label{width:100px;text-align: right;margin: 0;@include HEIGHT(30px);}
+          p.warm{clear: both;@include HEIGHT(25px);text-align: center;color: red;}
+          .b-red{border: 1px solid red;}
+        }
+      }
+      .right{
+        .title{@include HEIGHT(30px);font-size: 16px;margin-bottom: 10px;}
+        .role-body{margin-bottom: 20px;}
+      }
+    }
+  }
+  .enable-part,.disable-part{background-color: #fff;width: 600px;position: fixed;top: 50%;left: 50%;margin-top: -125px;margin-left: -300px;border: 1px solid $blue1; padding-bottom: 20px; }
+}

@@ -1,0 +1,36 @@
+@import "../general/general";
+
+.detail-box{width: 100%;background: url("../../../images/img/bill_detail.png") no-repeat;min-height: 340px;
+  .container{
+    .header-nav{@include HEIGHT(30px);color: #fff;
+      a{color: #fff;}
+    }
+    .main-box{padding: 50px 0;background-color: rgba(255,255,255,0.85);border: 1px solid $blue3;margin-top: 20px;
+      .info-box{width: 826px;margin: 0 auto;position: relative;background-color: #fff;border:1px solid $border;padding: 10px 20px;
+        .font-blue{line-height: 30px;font-size: 24px;text-align: center;color: $blue2;}
+        .ty{line-height:22px;font-size: 14px;margin-top: 20px;
+          span:first-child{float: left;color: black;}
+          span:last-child{float: right;color: black;}
+        }
+        .warn{@include HEIGHT(22px);font-size: 14px;color: $gray2;}
+        .khgs{border: 1px solid $border;margin-top: 10px;padding: 10px;  text-align: center;}
+        .shr{@include HEIGHT(45px);color: black;}
+        table{width: 100%;border: 1px solid $border;
+          td{height: 25px;text-align: center;width: 16.6%;font-size: 12px;color: black;}
+          .bg-g{background-color: #f3f3f3;}
+          .font-r{color: #d75177;}
+          .ta-r{text-align: right;padding-right: 20px;}
+        }
+        .state-icon{height: 125px;width: 125px;position: absolute;top: -40px;right: -40px;}
+        .dqr{background: url("../../../images/img/label_dzd.png") no-repeat 0 0;}
+        .yqr{background: url("../../../images/img/label_dzd.png") no-repeat -152px 0;}
+        .zdssz{background: url("../../../images/img/icon_ssz.png") no-repeat;}
+        .yjs{background: url("../../../images/img/icon_yjs.png") no-repeat;}
+      }
+      .btn-part{display: table;margin: 10px auto 0;
+        button{margin-right: 10px;}
+        button:last-child{margin-right: 0;}
+      }
+    }
+  }
+}

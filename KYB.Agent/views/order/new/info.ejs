@@ -1,0 +1,224 @@
+<div class="add-body">
+    <div class="add-search fill">
+        <div class="row">
+            <div class="input left">
+                <label for="info-member">选择客户：</label>
+                <input type="text" id="info-member" class="sm-input a-require">
+                <!--<span class="unit glyphicon glyphicon-search"></span>-->
+                <ul class="get-name dp-n"></ul>
+            </div>
+            <div class="input middle">
+                <label for="info-yg">员工：</label>
+                <select id="info-yg" class="sm-input">
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input left" style="clear:both;">
+                <label for="add-start">起始港：</label>
+                <input type="text" id="add-start" class="sm-input name s-require a-require">
+                <ul class="get-name dp-n"></ul>
+            </div>
+            <div class="input middle">
+                <label for="add-end">目的港：</label>
+                <input type="text" id="add-end" class="sm-input name s-require a-require">
+                <ul class="get-name dp-n"></ul>
+            </div>
+            <div class="input right">
+                <label for="add-date">航班日期：</label>
+                <input type="text" id="add-date" class="sm-input s-require a-require">
+                <span class="unit glyphicon glyphicon-calendar"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input left">
+                <label for="add-com">航空公司：</label>
+                <input type="text" id="add-com" class="sm-input get-company">
+                <ul class="get-name dp-n"></ul>
+            </div>
+            <div class="input middle">
+                <button class="sm-btn blue-btn" id="inner-search">搜索</button>
+            </div>
+        </div>
+    </div>
+    <div class="result-part">
+        <p class="title">根据输入结果匹配如下结果：</p>
+        <table class="search-tb" border="1">
+            <thead>
+            <tr>
+                <td></td>
+                <td>航空公司</td>
+                <td>航线</td>
+                <td>min</td>
+                <td>45KG</td>
+                <td>100KG</td>
+                <td>300KG</td>
+                <td>500KG</td>
+                <td>1000KG</td>
+                <td>备注</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td colspan="10" class="big">请输入航班信息搜索！</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="inner-page"></div>
+    </div>
+    <div class="info-part fill">
+        <div class="row">
+            <div class="input left">
+                <label for="info-num">货物件数：</label>
+                <input type="text" id="info-num" class="sm-input p-require a-require">
+                <span class="unit">PCS</span>
+            </div>
+            <div class="input middle">
+                <label for="info-wei">货物重量：</label>
+                <input type="text" id="info-wei" class="sm-input p-require a-require">
+                <span class="unit">KGS</span>
+            </div>
+            <div class="input right">
+                <label for="info-size">货物体积：</label>
+                <input type="text" id="info-size" class="sm-input p-require a-require">
+                <span class="unit">CBM</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input left">
+                <label for="info-type">类型：</label>
+                <select id="info-type" class="sm-input">
+                    <option value="1">普货</option>
+                    <option value="2">转关</option>
+                </select>
+            </div>
+            <div class="input middle">
+                <label for="info-name">货物名称：</label>
+                <input type="text" id="info-name" class="sm-input" value="consol">
+            </div>
+            <div class="input right">
+                <label for="info-custom">委托报关：</label>
+                <select id="info-custom" class="sm-input">
+                    <option value="1">是</option>
+                    <option value="0">否</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input left">
+                <label for="fpbl">分泡比例：</label>
+                <select id="fpbl" class="sm-input">
+                    <option value="0.2">2/8</option>
+                    <option value="0.3">3/7</option>
+                    <option value="0.4">4/6</option>
+                    <option value="0.5">5/5</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input left">
+            <label for="send-price">单价：</label>
+            <input type="text" id="send-price" class="sm-input" readonly="" onkeyup="value=value.replace(/[^\d.]/g,'')">
+        </div>
+        <div class="rdo middle">
+            <input type="checkbox" id="gddj">
+            <label for="gddj">固定单价</label>
+        </div>
+    </div>
+    <p class="price">预估运价：CNY <span class="yg-price"></span></p>
+    <table border="1" class="price-tb">
+        <thead>
+        <tr>
+            <td class="c-45">45KG</td>
+            <td class="c-100">100KG</td>
+            <td class="c-300">300KG</td>
+            <td class="c-500">500KG</td>
+            <td class="c-1000">1000KG</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="c-price">
+            <td class="c-45">0</td>
+            <td class="c-100">0</td>
+            <td class="c-300">0</td>
+            <td class="c-500">0</td>
+            <td class="c-1000">0</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="input left">
+            <label for="warehouse">仓库设置：</label>
+            <select id="warehouse" class="sm-input">
+                <option value="10094">fffffffffff</option>
+                <option value="10100">123</option>
+                <option value="10090">111</option>
+                <option value="10099">222222</option>
+                <option value="10088">浦东普货仓库</option>
+            </select>
+        </div>
+        <div class="input middle">
+            <label for="pc">批次：</label>
+            <select id="pc" class="sm-input">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input left">
+            <label for="ip-jcbh">进仓编号：</label>
+            <input type="text" id="ip-jcbh" class="sm-input" readonly>
+        </div>
+        <div class="rdo middle">
+            <input type="checkbox" id="zdjcbh" checked>
+            <label for="zdjcbh">自动分配进仓编号</label>
+        </div>
+        <div class="input right">
+            <button class="blue-btn md-btn" id="set-jcbh" style="display: none;">设置进仓编号</button>
+        </div>
+    </div>
+    <div class="dp-tb">
+        <button class="blue-btn md-btn" id="add-ensure">添加</button>
+        <button class="white-btn md-btn" onclick="javascript:window.close();">返回</button>
+    </div>
+</div>
+
+<div class="white-back dp-n">
+    <div class="set-part alert-part dp-n">
+        <p class="header">设置进仓编号 <span class="close-btn">X</span></p>
+        <div class="body fill">
+            <textarea id="multi-set" autocomplete="OFF"></textarea>
+            <div class="warm-info">
+                <p>*按批次输入进仓编号</p>
+                <p>*每个进仓编号一行</p>
+                <p>*只支持字母+数字组合</p>
+                <p>*字母全部为大写</p>
+                <p>*进仓编号个数决定进仓批次</p>
+                <p>*最多添加10个人进仓编号</p>
+            </div>
+        </div>
+        <div class="btn-pt clr">
+            <button id="set-ensure" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-l md-btn white-btn">关闭</button>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="loading-part dp-n">
+    <div class="loading">
+        <img src="/images/loading.gif">
+        <p class="txt">Loading</p>
+    </div>
+</div>

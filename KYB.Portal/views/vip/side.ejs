@@ -1,0 +1,146 @@
+<% var role = 'role' in user && user.role && 'roleName' in user.role && user.role.roleName %>
+<% var company = 'company' in user && user.company || {} %>
+<div class="panel-group vip-side" id="accordion">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion"
+                   href="#leftVip" class="<%= part == 'center' ? 'active' : 'collapsed' %>">
+                    会员中心
+                    <span class="arrow"></span>
+                </a>
+            </h4>
+        </div>
+        <div id="leftVip" class="panel-collapse collapse<%= part == 'center' ? ' in' : '' %>">
+            <div class="panel-body">
+                <a href="/vip" class="dp-b<%= index == '1' ? ' active' : '' %>">会员首页</a>
+                <a href="/vip/editor" class="dp-b<%= index == '2' ? ' active' : '' %>">编辑个人资料</a>
+                <a href="/vip/reset" class="dp-b<%= index == '3' ? ' active' : '' %>">修改密码</a>
+                <% var clas, text; %>
+                <% switch (company.AuthStateNo) {
+                    case -1:
+                        clas = 'font-red';
+                        text = '(未认证)';
+                        break;
+                    case 0:
+                        clas = 'font-red';
+                        text = '(认证中)';
+                        break;
+                    case 1:
+                        clas = 'font-green';
+                        text = '(已认证)';
+                        break;
+                    case 2:
+                        clas = 'font-red';
+                        text = '(认证失败)';
+                        break;
+                } %>
+                <% if (role && role == '管理员') { %>
+                <a href="/vip/auth" class="dp-b<%= index == '4' ? ' active' : '' %>">资质认证</a>
+                <% } %>
+                <% if (role && role != '财务') { %>
+                <a href="/vip/relation" class="dp-b<%= index == '5' ? ' active' : '' %>">收发货人</a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <!--<div class="panel panel-default">-->
+    <!--<div class="panel-heading">-->
+    <!--<h4 class="panel-title">-->
+    <!--<a href="/vip/entrust">我的委托书</a>-->
+    <!--</h4>-->
+    <!--</div>-->
+    <!--</div>-->
+    <% if (role && role != '财务') { %>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a href="/vip/order" class="<%= part == 'order' ? 'active' : 'collapsed' %>">空运订单</a>
+            </h4>
+        </div>
+    </div>
+    <% } %>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion"
+                   href="#leftTicket" class="<%= part == 'bill' ? 'active' : 'collapsed' %>">
+                    账单与发票
+                    <span class="arrow"></span>
+                </a>
+            </h4>
+        </div>
+        <div id="leftTicket" class="panel-collapse collapse<%= part == 'bill' ? ' in' : '' %>">
+            <div class="panel-body">
+                <% if (role && role != '财务') { %>
+                <a href="/vip/bill" class="dp-b<%= index == '6' ? ' active' : '' %>">费用清单</a>
+                <% } %>
+                <% if (role && role != '操作员') { %>
+                <a href="/vip/account" class="dp-b<%= index == '7' ? ' active' : '' %>">对账单</a>
+                <% } %>
+                <% if (role && role != '操作员') { %>
+                <a href="/vip/appeal" class="dp-b<%= index == '8' ? ' active' : '' %>">开票申请</a>
+                <% } %>
+                <% if (role && role != '操作员') { %>
+                <a href="/vip/ticket" class="dp-b<%= index == '9' ? ' active' : '' %>">开票资料</a>
+                <% } %>
+                <!--<a href="" class="dp-b">发票管理</a>-->
+            </div>
+        </div>
+    </div>
+    <% if (role && role == '管理员') { %>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion"
+                   href="#leftMember" class="<%= part == 'member' ? 'active' : 'collapsed' %>">
+                    员工管理
+                    <span class="arrow"></span>
+                </a>
+            </h4>
+        </div>
+        <div id="leftMember" class="panel-collapse collapse<%= part == 'member' ? ' in' : '' %>">
+            <div class="panel-body">
+                <a href="/vip/member/list" class="dp-b<%= index == '10' ? ' active' : '' %>">员工列表</a>
+                <a href="/vip/member/role" class="dp-b<%= index == '11' ? ' active' : '' %>">角色说明</a>
+            </div>
+        </div>
+    </div>
+    <% } %>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion"
+                   href="#leftTool" class="<%= part == 'tool' ? 'active' : 'collapsed' %>">
+                    实用工具
+                    <span class="arrow"></span>
+                </a>
+            </h4>
+        </div>
+        <div id="leftTool" class="panel-collapse collapse<%= part == 'tool' ? ' in' : '' %>">
+            <div class="panel-body">
+                <a href="/vip/search/airports" class="dp-b<%= index == '12' ? ' active' : '' %>">机场查询</a>
+                <a href="/vip/search/company" class="dp-b<%= index == '13' ? ' active' : '' %>">航空公司查询</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion"
+                   href="#leftNote" class="<%= part == 'note' ? 'active' : 'collapsed' %>">
+                    消息中心
+                    <span class="arrow"></span>
+                </a>
+            </h4>
+        </div>
+        <div id="leftNote" class="panel-collapse collapse<%= part == 'note' ? ' in' : '' %>">
+            <div class="panel-body">
+                <a href="/vip/note" class="dp-b<%= index == '14' ? ' active' : '' %>">全部消息</a>
+                <a href="/vip/note?tp=unread" class="dp-b<%= index == '15' ? ' active' : '' %>">未读消息</a>
+                <a href="/vip/noteSet" class="dp-b<%= index == '16' ? ' active' : '' %>">消息设置</a>
+            </div>
+        </div>
+    </div>
+</div>

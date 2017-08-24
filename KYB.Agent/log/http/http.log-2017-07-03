@@ -1,0 +1,10 @@
+[2017-07-03 11:52:59.390] [INFO] http - cluster:1;    sid:-1;    ip:::1;    url:/;    method:GET;    queries:{};    body:{}
+[2017-07-03 11:52:59.420] [INFO] http - cluster:1;    sid:-1;    ip:::1;    url:/login;    method:GET;    queries:{};    body:{}
+[2017-07-03 11:52:59.618] [INFO] http - cluster:1;    sid:-1;    ip:::1;    url:/login/sendGt3?t=1499053979613;    method:GET;    queries:{"t":"1499053979613"};    body:{}
+[2017-07-03 11:54:12.023] [INFO] http - cluster:1;    sid:-1;    ip:::1;    url:/api/account/login;    method:POST;    queries:{};    body:{"id":"18405108112","pwd":"kyb123456","geetest_challenge":"47555a77d58d953e24c77c305b6a5f9el0","geetest_validate":"929dfca64b6dcfc4525929df31e69658","geetest_seccode":"929dfca64b6dcfc4525929df31e69658|jordan"}
+[2017-07-03 11:54:12.176] [INFO] http - cluster:1;    sid:-1;    ip:::1;    url:/home;    method:GET;    queries:{};    body:{}
+[2017-07-03 11:54:12.537] [INFO] http - cluster:1;    sid:-1;    ip:::1;    url:/api/home/wbg;    method:POST;    queries:{};    body:{}
+[2017-07-03 11:54:12.539] [INFO] http - cluster:1;    sid:-1;    ip:::1;    url:/api/home/wjc;    method:POST;    queries:{};    body:{}
+[2017-07-03 11:54:12.553] [INFO] http - cluster:1;    sid:-1;    ip:::1;    url:/api/home/jrqf;    method:POST;    queries:{};    body:{}
+[2017-07-03 11:54:12.554] [INFO] http - cluster:1;    sid:-1;    ip:::1;    url:/api/home/wqrfy;    method:POST;    queries:{};    body:{}
+[2017-07-03 11:54:12.555] [INFO] http - cluster:1;    sid:-1;    ip:::1;    url:/api/home/wzfzd;    method:POST;    queries:{};    body:{}

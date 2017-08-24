@@ -1,0 +1,85 @@
+<%- include ../base/head.ejs %>
+<%# 样式表引用 %>
+<link rel="stylesheet" href="/javascripts/datePicker/css/bootstrap-datetimepicker.min.css"/>
+<link rel="stylesheet" href="/stylesheets/css/web/order.css">
+<%# 样式表引用结束 %>
+<%- include ../base/header.ejs %>
+<div class="app-box">
+    <div class="pass-box">
+        <div class="container">
+            <p class="nav-top">首页 > 运价查询</p>
+
+
+            <div class="super-man">
+                <span class="first">委托订舱</span>
+                <span class="second">确认委托信息</span>
+                <span class="third mark">委托成功</span>
+            </div>
+            <div class="pass">
+                <div class="pass-info fl-l">
+                    <p>委托成功！您的空运订单已生成</p>
+
+                    <p class="order-number">您的订单编号：<%= data.orderNum || '' %> <a
+                                href="/vip/order/detail?id=<%= data.orderId %>">查看订单详情></a> <a href="/delivery/special">再来一单</a>
+                    </p>
+
+                    <% if(data && 'orderChannel' in data && data.orderChannel == 10000000){ %>
+                    <!-- 下单完成无进仓编号，所以隐藏。不删除防止后期需求更改 -->
+                    <p><span class="dp-b fl-l locate-logo"></span> <a id="open_map" data-id="<%= data.warehouseId %>"
+                                                                      class="dp-b fl-l"
+                                                                      href="javascript:void(0);">查看进仓编号及下载进仓地图></a>
+                    </p>
+                    <% } %>
+                    <p><span class="dp-b fl-l list-logo"></span> <a id="open_list" class="dp-b fl-l"
+                                                                    href="javascript:void(0);">查看下载货物保函></a></p>
+                </div>
+                <div class="pass-logo fl-r">
+                    <div class="wechat-logo fl-l"></div>
+                    <div class="connect-info fl-l">
+                        <p class="black">微信“扫一扫”关注空运邦</p>
+
+                        <p class="black">绑定手机PC账号 空运订单随时查看</p>
+
+                        <p style="margin-top: 20px;" class="blue"><span class="glyphicon glyphicon-user"></span>有问题？在线联系您的客服专员：<a
+                                    href="#">叮叮</a></p>
+
+                        <p class="blue"><span class="glyphicon glyphicon-earphone"></span>021-31157505-8011</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ddzs fill">
+                <div class="zs-body">
+                    <p class="zs-logo">空运帮订单小助手：</p>
+                    <div class="top-l">
+                        <p class="txt">您可以在“会员中心” → “空运订单”中查询到您的订单信息。</p>
+                        <img src="/images/e_001.png">
+                    </div>
+                    <div class="top-r">
+                        <p class="txt">建议您打来订单详情页面，尽快完善收发货人信息：</p>
+                        <a href="/vip/order/detail?id=<%= data.orderId %>">现在就去设置></a>
+                        <img src="/images/e_002.png">
+                    </div>
+                    <div class="bottom-l">
+                        <p class="txt">如需报关，请根据提示尽快上传报关相关资料。</p>
+                        <a href="/vip/order/detail?id=<%= data.orderId %>">现在就去上传></a>
+                        <img src="/images/e_003.png">
+                    </div>
+                    <div class="bottom-r">
+                        <p class="txt">还有更多订单相关文件提供下载。<br>如果您对订单的预估费用有异议，点击查看费用明细及杂费明细：</p>
+                        <img src="/images/e_005.png">
+                        <img src="/images/e_004.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include ./model.ejs %>
+<%- include ../base/javascripts.ejs %>
+<%# 脚本引用 %>
+<script src="/javascripts/datePicker/js/bootstrap-datetimepicker.min.js" charset="utf-8"></script>
+<script src="/javascripts/datePicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="utf-8"></script>
+<script src="/javascripts/order/bundle.min.js" charset="utf-8"></script>
+<%# 脚本引用结束 %>
+<%- include ../base/foot.ejs %>

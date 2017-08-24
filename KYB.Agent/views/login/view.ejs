@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="Jeremy">
+    <meta name="Author" content="Jeremy">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title> <%= title %> </title>
+    <link rel="stylesheet" href="/stylesheets/css/web/login/login.css">
+</head>
+
+<body class="hold-transition login-page">
+<div class="backImg">
+    <div class="login-box big-box">
+        <div class="lg-part">
+            <p class="version"></p>
+
+            <p class="logo"></p>
+
+            <div class="i-bd">
+                <p class="tips">手机号/用户名</p>
+                <input type="text" id="account"/>
+
+                <p class="warm">请输入正确的用户名！</p>
+            </div>
+            <div class="i-bd">
+                <p class="tips">密码</p>
+                <input type="password" id="pwd"/>
+
+                <p class="warm">请输入正确的密码！</p>
+            </div>
+            <div class="i-bd verify">
+                <p class="tips">验证码</p>
+                <div id="captcha">
+                    <p id="wait">正在加载验证码......</p>
+                </div>
+
+                <p class="warm" id="captcha-warm">请完成验证！</p>
+            </div>
+            <button id="submit">登录</button>
+        </div>
+        <div class="img-part">
+            <div class="dp-tb"></div>
+        </div>
+
+
+        <script src="/plugins/jQuery/jQuery-2.2.0.min.js"></script>
+        <script src="http://static.geetest.com/static/tools/gt.js"></script>
+        <script src="/javascripts/login/bundle.min.js"></script>
+    </div>
+</div>
+</body>
+</html>

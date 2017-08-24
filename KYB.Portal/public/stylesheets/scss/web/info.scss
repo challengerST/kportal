@@ -1,0 +1,67 @@
+@import "../general/general";
+
+.container{
+  .small-nav{@include HEIGHT(40px);background-color: #fff;
+    a{color: $blue3;}
+  }
+  .box{@include clear();background-color: #fff;
+    .info-side{background-color: #eff3f5;border: 1px solid $gray3;height: 202px;width: 200px;
+      a{width: 198px;@include HEIGHT(50px);padding-left: 50px;font-weight: 600;}
+      a:hover,.border{background-color: #fff;color: $blue3;border-left: 5px solid $blue3;padding-left: 45px;}
+    }
+    .right-part{overflow:hidden;float: left;width: 1080px;padding-left: 100px;
+      h3{margin: 0;color: $blue3;}
+    }
+    .about{
+      .detail{line-height: 30px;margin-top: 10px;}
+      .b-border{@include HEIGHT(40px);font-size: 20px;color: $blue3;border: 1px solid $blue3;text-align: center;margin-top: 20px;}
+      .different{width: 300px;}
+      img{display:block;margin: 0 auto;}
+      .provide{width: 200px;}
+      .compare{@include HEIGHT(40px);text-align: center;margin-top: 20px;
+        span{width: 200px;height: 40px;margin: 0 100px;color: #fff;font-size: 16px;}
+        span:first-child{ background-color: #e15d6b; }
+        span:last-child{background-color: #66c3cc;}
+      }
+      .com-detail{width: 700px;height: 355px;margin: 40px auto;border-top: 5px solid black;
+        ul{width: 315px;height: 350px;margin: 30px 0 0;
+          li{@include HEIGHT(50px)}
+          .first{margin-top: 40px;}
+          .second{margin-top: 60px;}
+          .third{margin-top: 55px;}
+        }
+        .com-logo{width: 70px;height: 350px;background:url('../../../images/home/about_pic2.png') no-repeat;}
+      }
+    }
+    .problems{
+      .qa{padding: 20px 0 20px 10px;
+        .q-title{width: 120px;@include HEIGHT(40px);color: #fff;font-size: 16px;text-align: center;}
+        .green{background-color: #66c3cc;}
+        .red{background-color: #e15d6b;}
+        .qa-part{overflow: hidden;margin-top: 20px;border-bottom: 1px dotted $gray2;
+          div{overflow: hidden;
+            span{width: 30px;@include HEIGHT(30px);text-align: center;color: #fff;margin-top: 5px;}
+            p{width: 920px;margin-left: 20px;line-height: 40px;}
+          }
+          .q-part{
+            span{background-color: $blue3;}
+            p{font-weight: 600;}
+          }
+          .a-part{
+            span{background-color: $gray2;}
+          }
+        }
+      }
+    }
+    .terms{
+      p{line-height: 30px;margin:5px 0;}
+      .terms-title{color: $blue3;font-size: 18px;margin: 20px 0;}
+    }
+    .connect{height: 600px;
+      p{margin: 10px 0;}
+    }
+  }
+}
+.app-box{
+  padding:0;
+}

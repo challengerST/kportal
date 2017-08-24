@@ -1,0 +1,29 @@
+/* scss mixin */
+
+/* variables */
+$dblue: #003676;
+$lblue: #0f478b;
+$sblue: #d9ecf8;
+$blue1: #074BA0;
+$green: #00b494;
+$lgreen: #39cccc;
+$gray: #ccc;
+$blueB:#7aaeee;
+/* method */
+@mixin clear() {
+  clear: both;
+  overflow: hidden;
+}
+@mixin HEIGHT($HEIGHT) {
+  height: $HEIGHT;
+  line-height: $HEIGHT;
+}
+@mixin NOWRAP() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@mixin textCenter($WIDTH) {
+  width: $WIDTH;
+  text-align: center;
+}

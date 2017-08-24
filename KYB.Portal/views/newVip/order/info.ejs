@@ -1,0 +1,80 @@
+<div class="search">
+    <div class="top fill">
+        <div class="input">
+            <label for="order-num">订单号</label>
+            <input type="text" id="order-num" class="sm-input" style="margin-left:8px;"/>
+        </div>
+        <div class="searchDeport fl-l">
+            <div class="input">
+                <label for="location">航线</label>
+                <input type="text" id="start_location" class="sm-input" style="margin-left:8px;"/>
+                <ul class="ajax-part dp-n">
+                </ul>
+            </div>
+            <div class="fl-l">
+                <span style="color:#c6cede;margin:0 4px;height:30px;line-height:30px;">-</span>
+            </div>
+            <div class="input">
+                <label for="location" style="display: none"></label>
+                <input type="text" id="end_location" class="sm-input"/>
+                <ul class="ajax-part dp-n">
+                </ul>
+            </div>
+        </div>
+        <div class="input">
+            <label for="day-time">起飞日期 </label>
+            <input data-startdate="now" type="text" id="day-time" class="sm-input" style="margin-left:8px;"/>
+            <!--<span class="time-logo"></span>-->
+        </div>
+    </div>
+    <button class="dp-b search-btn sm-btn blue-btn">搜索</button>
+</div>
+<div class="fill">
+    <div class="sel-head fl-l">
+        <p class="<%= parts == 'all' ? 'active' : '' %> sel-title" data-tp="all">全部<em class="dp-n icon-dagou1 iconfont"></em></p>
+
+        <p class="<%= parts == 'pending' ? 'active' : '' %> sel-title" data-tp="pending">待处理<em class="dp-n icon-dagou1 iconfont"></em></p>
+
+        <p class="<%= parts == 'underway' ? 'active' : '' %> sel-title" data-tp="underway">进行中<em class="dp-n icon-dagou1 iconfont"></em></p>
+
+        <p class="<%= parts == 'done' ? 'active' : '' %> sel-title" data-tp="done">已结束<em class="dp-n icon-dagou1 iconfont"></em></p>
+
+        <!--<p class="<%#= parts == 'book' ? 'active' : '' %> sel-title" data-tp="book">订舱</p>-->
+
+        <!--<p class="<%#= parts == 'entry' ? 'active' : '' %> sel-title" data-tp="entry">进仓</p>-->
+
+        <!--<p class="<%#= parts == 'declare' ? 'active' : '' %> sel-title" data-tp="declare">报关</p>-->
+
+        <!--<p class="<%#= parts == 'transform' ? 'active' : '' %> sel-title" data-tp="transform">运输</p>-->
+
+    </div>
+    <div class="fl-r">
+
+    </div>
+</div>
+
+<table>
+    <thead>
+    <tr class="nv_header">
+        <td>订单号</td>
+        <td>主单号</td>
+        <td>委托方式</td>
+        <td>航班日期</td>
+        <td>起飞港</td>
+        <td>目的港</td>
+        <td>货物名称</td>
+        <td class="change-str">订单状态</td>
+        <td>总价</td>
+        <td>操作</td>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+<div class="fill">
+    <div class="page-box">
+
+    </div>
+    <p class="search-sum fl-l">共计<span class="total-count">0</span>条订单消息 当前<span style="color:#E64C7B"><span style="color:#E64C7B" id="curNo">1</span>/<span class="total-count" style="color:#E64C7B"></span></span>条</p>
+</div>

@@ -1,0 +1,77 @@
+<div class="search-part">
+    <div class="input-part">
+        <div class="input">
+            <label for="id">账单编号：</label>
+            <input type="text" id="id" value="" class="sm-input"/>
+        </div>
+        <div class="input">
+            <label for="state">付款状态：</label>
+            <select id="state" class="sm-select">
+                <option value="99">全部</option>
+                <option value="0">未付款</option>
+                <option value="2">部分付款</option>
+                <option value="1">已付款</option>
+            </select>
+        </div>
+    </div>
+    <button class="search-btn sm-btn blue-btn" id="search-btn">搜索</button>
+</div>
+<div class="operate-part fill">
+    <button class="blue-btn sm-btn" id="appeal">申请开票</button>
+</div>
+<table>
+    <thead>
+    <tr>
+        <td><input type="checkbox" name="all"></td>
+        <td>账单编号</td>
+        <td>账期</td>
+        <td>账单金额</td>
+        <td>已付金额</td>
+        <td>剩余金额</td>
+        <td>付款截止日期</td>
+        <td>账单状态</td>
+        <td>开票状态</td>
+        <td>操作</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+
+    </tr>
+    </tbody>
+</table>
+<div class="page-box">
+
+</div>
+<div class="white-back dp-n">
+    <div class="appeal-part alert-part dp-n">
+        <p class="header">开票申请 <span class="close-btn">X</span></p>
+        <p class="info"></p>
+        <p class="price">开票总金额为：<span class="ft-r"></span>CNY&nbsp;&nbsp;&nbsp;您需要开
+            <select id="fp-num"></select>
+            张发票
+        </p>
+        <div class="appeal-body">
+            <p class="sg-fp">
+                1. 发票抬头：<select class="sel-tt">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+                发票种类：<span class="fpzl">普票</span>
+                开票金额：<span><input type="text" class="kpje" autocomplete="off">CNY</span>
+            </p>
+            <p class="sg-fp">
+                1. 发票抬头：<select class="sel-tt">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+                发票种类：<span class="fpzl">普票</span>
+                开票金额：<span><input type="text" class="kpje" autocomplete="off">CNY</span>
+            </p>
+        </div>
+        <div class="btn-pt">
+            <button id="appeal-ensure" class="fl-l md-btn blue-btn" data-id="0">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+</div>

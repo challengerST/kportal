@@ -1,0 +1,26 @@
+<div class="info-side fl-l">
+    <div class="panel panel-default<%= tt == 'dynamic' ? ' active' : '' %>">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a href="/home/news/dynamic" class="dp-b">行业动态</a>
+            </h4>
+        </div>
+    </div>
+    <div class="panel panel-default<%= tt == 'common' ? ' active' : '' %>">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#leftMember" class="" aria-expanded="true">
+                    常见问题
+                    <span class="arrow"></span>
+                </a>
+            </h4>
+        </div>
+        <div id="leftMember" class="panel-collapse collapse<%= tt == 'common' ? ' in' : '' %>" aria-expanded="true">
+            <div class="panel-body">
+                <a href="/home/news/login" class="dp-b<%= pos == 'newLogin' ? ' active' : '' %>" data-type="10">注册与登录</a>
+                <a href="/home/news/order" class="dp-b<%= pos == 'order' ? ' active' : '' %>" data-type="20">订舱须知</a>
+                <a href="/home/news/center" class="dp-b<%= pos == 'center' ? ' active' : '' %>" data-type="30">会员管理中心</a>
+            </div>
+        </div>
+    </div>
+</div>

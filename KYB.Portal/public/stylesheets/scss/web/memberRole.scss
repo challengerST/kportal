@@ -1,0 +1,30 @@
+@import "./vipGeneral";
+
+.body-part{padding: 30px 20px;border: 1px solid #E3F0FF;background-color: #fff;
+  .editor{@include HEIGHT(30px);
+    span{float: right;cursor: pointer;}
+  }
+  table{width: 100%;border-collapse:separate;margin-top: 20px;border: 1px solid $gray3;border-bottom: none;
+    thead{
+      tr{
+        td{background-color: $gray1;color: #fff;border-top: 1px solid transparent;height: 28px;padding-left: 20px;font-size: 12px;text-align: center}
+      }
+    }
+    tbody{
+      tr{
+        td{border-bottom: 1px solid $gray3;background-color: #fff;height: 32px;font-size: 12px;padding-left: 20px;text-align: center;
+          a{color: $blue1;text-decoration: underline!important;}
+          a:hover{text-decoration: none!important;}
+        }
+      }
+      tr:hover{
+        td{background-color: #d0e5fd;}
+      }
+      .wrong-msg{height: 300px;
+        td{width: 100%;text-align: center;@include HEIGHT(300px);font-size: 20px;border:none;
+          a{color: $blue3;text-decoration: underline;}
+        }
+      }
+    }
+  }
+}

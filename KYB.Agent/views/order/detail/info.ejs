@@ -1,0 +1,1162 @@
+<% var order = 'resBody' in data && data.resBody || {} %>
+<% var o = 'order' in order && order.order || {} %>
+<% var s = 'storage' in order && order.storage || {} %>
+<% var b = 'subOrderList' in order && order.subOrderList || [] %>
+<% var m = 'member' in order && order.member || {} %>
+<% var c = 'company' in order && order.company || {} %>
+<% var orderShipper = o.orderShipper || {} %>
+<% var orderConsignee = o.orderConsignee || {} %>
+<% var orderNotifier = o.orderNotifier || {} %>
+<% var wfdhw = {}, wnum = false; %>
+<% Date.prototype.Format = function (fmt) { //author: meizz
+    var o = {
+        "M+": this.getMonth() + 1, //月份
+        "d+": this.getDate(), //日
+        "h+": this.getHours(), //小时
+        "m+": this.getMinutes(), //分
+        "s+": this.getSeconds(), //秒
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+        "S": this.getMilliseconds() //毫秒
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+} %>
+
+<script>
+    var fhr = {
+        "contactName": '<%= orderShipper.contactName || '' %>',
+        "contactAddress": '<%= orderShipper.contactAddress || '' %>',
+        "contactPerson": '<%= orderShipper.contactPerson || '' %>',
+        "contactTel": '<%= orderShipper.contactTel || '' %>',
+        "contactFax": '<%= orderShipper.contactFax || '' %>',
+        "contactEmail": '<%= orderShipper.contactEmail || '' %>'
+    };
+    var shr = {
+        "contactName": '<%= orderConsignee.contactName || '' %>',
+        "contactAddress": '<%= orderConsignee.contactAddress || '' %>',
+        "contactPerson": '<%= orderConsignee.contactPerson || '' %>',
+        "contactTel": '<%= orderConsignee.contactTel || '' %>',
+        "contactFax": '<%= orderConsignee.contactFax || '' %>',
+        "contactEmail": '<%= orderConsignee.contactEmail || '' %>'
+    };
+    var tzr = {
+        "contactName": '<%= orderNotifier.contactName || '' %>',
+        "contactAddress": '<%= orderNotifier.contactAddress || '' %>',
+        "contactPerson": '<%= orderNotifier.contactPerson || '' %>',
+        "contactTel": '<%= orderNotifier.contactTel || '' %>',
+        "contactFax": '<%= orderNotifier.contactFax || '' %>',
+        "contactEmail": '<%= orderNotifier.contactEmail || '' %>'
+    };
+</script>
+<div class="top-info">
+    <p class="p-info p-1">
+        <span class="title">订单号：</span>
+        <span><%= o.orderNum || '/' %></span>
+    </p>
+
+    <p class="zwf"></p>
+
+    <p class="p-info p-2">
+        <span class="title">运单号：</span>
+        <span id="ydh" data-no="<%= o.airwayBillNum || '0' %>"><%= o.airwayBillNum || '/' %></span>
+    </p>
+
+    <p class="zwf"></p>
+
+    <p class="p-info p-3">
+        <span class="title">进仓编号：</span>
+        <span><%= o.warehouseEntryNum || '/' %></span>
+    </p>
+</div>
+<div class="jdt fill">
+    <% var num = 1; %>
+    <% if (o.orderState == 2 || o.orderState == 3 || o.orderState == 4) {
+        if (o.transTime) {
+            num = 5;
+        } else if (o.declareTime) {
+            num = 4;
+        } else if (o.entryTime) {
+            num = 3;
+        } else if (o.bookingTime) {
+            num = 2;
+        }
+    } else {
+        num = 1
+    } %>
+    <div class="timeLines fill">
+        <div class="timeLine<%= num >= 1 ? ' blue' : '' %> <%= num == 1 ? ' active' : '' %>">
+            <% var str = ''; %>
+            <% switch (o.orderState) {
+                case 0:
+                    str = '新订单';
+                    break;
+                case 1:
+                    str = '待处理';
+                    break;
+                case -1:
+                case -2:
+                    str = '已取消';
+                    break;
+                case 2:
+                case 3:
+                case 4:
+                    str = '进行中';
+                    break;
+            } %>
+            <p class="icon"></p>
+            <p class="line"></p>
+            <div class="txt"><%= str %></div>
+        </div>
+        <div class="position timeLine<%= num >= 2 ? ' blue' : '' %> <%= num == 2 ? ' active' : '' %>">
+            <% switch (o.bookingState) {
+                case 0:
+                    str = '未订舱';
+                    break;
+                case 1:
+                    str = '已订舱';
+                    break;
+                case -1:
+                    str = '订舱失败';
+                    break;
+                case 2:
+                    str = '已改配';
+                    break;
+                case -2:
+                    str = '改配中';
+                    break;
+            } %>
+            <div class="txt big"><%= str %></div>
+            <p class="icon"></p>
+            <p class="line"></p>
+            <p class="line-side"></p>
+        </div>
+        <div class="positionL timeLine<%= num >= 3 ? ' blue' : '' %> <%= num == 3 ? ' active' : '' %>">
+            <% switch (o.entryState) {
+                case 0:
+                    str = '待进仓';
+                    break;
+                case 1:
+                    str = '已进仓';
+                    break;
+                case 2:
+                    str = '已确认';
+                    break;
+            } %>
+            <p class="icon"></p>
+            <p class="line"></p>
+            <p class="line-side"></p>
+            <div class="txt big"><%= str %></div>
+        </div>
+        <div class="timeLine<%= num >= 4 ? ' blue' : '' %> <%= num == 4 ? ' active' : '' %>">
+            <% switch (o.declareState) {
+                case 0:
+                    str = '未报关';
+                    break;
+                case 1:
+                    str = '预审中';
+                    break;
+                case 2:
+                    str = '预审通过';
+                    break;
+                case 3:
+                    str = '开始报关';
+                    break;
+                case 4:
+                    str = '报关中';
+                    break;
+                case 5:
+                    str = '报关完成';
+                    break;
+                case -6:
+                    str = '报关失败';
+                    break;
+                case -4:
+                    str = '退关中';
+                    break;
+                case -5:
+                    str = '退关完成';
+                    break;
+            } %>
+            <p class="icon"></p>
+            <p class="line"></p>
+            <div class="txt"><%= str %></div>
+        </div>
+        <div class="timeLine<%= num >= 5 ? ' blue' : '' %> <%= num == 5 ? ' active' : '' %>">
+            <% switch (o.transState) {
+                case 0:
+                    str = '待出库';
+                    break;
+                case 1:
+                    str = '已出库，待起飞';
+                    break;
+                case 2:
+                    str = '已起飞';
+                    break;
+                case 3:
+                    str = '已到达';
+                    break;
+            } %>
+            <p class="icon"></p>
+            <p class="line"></p>
+            <div class="txt"><%= str %></div>
+        </div>
+    </div>
+</div>
+<div class="body-info fill">
+
+    <div class="second fill">
+        <div class="half d-hbxx">
+            <p class="m-title">
+                <span class="fl-l">航班信息</span>
+                <% if (o.orderState == 2 || o.orderState == 3 || o.orderState == 4) { %>
+                <a href="javascript:void(0);" id="save-info"
+                   style="font-size: 14px;float: left;margin-left: 20px;" data-id="<%= o.orderId %>">保存</a>
+                <% } %>
+            </p>
+
+            <div class="mg-b fill">
+                <p class="p-info">
+                    <span class="title">起始港：</span>
+                    <span><%= o.deptCode || '/' %></span>
+                </p>
+
+                <p class="p-info">
+                    <span class="title">目的港：</span>
+                    <span><%= o.destCode || '/' %></span>
+                </p>
+
+                <p class="p-info">
+                    <span class="title">航空公司：</span>
+                    <span><%= o.airCompanyCode || '/' %></span>
+                </p>
+
+                <p class="p-info">
+                    <span class="title">起飞日期：</span>
+                    <span id="upd-time"><%= o.flightDate ? new Date(o.flightDate).Format('yyyy-MM-dd') : '/' %></span>
+                </p>
+                <% var line = ''; %>
+                <% if (o.airwayInfo && 'transPort' in o.airwayInfo && o.airwayInfo.transPort instanceof Array && o.airwayInfo.transPort.length > 0) {
+                    var arr = o.airwayInfo.transPort;
+                    for (var a in arr) {
+                        if (arr.hasOwnProperty(a)) {
+                            var d = arr[a];
+                            line += d.portCode + (a == o.airwayInfo.transPort.length - 1 ? '' : ' -> ')
+                        }
+                    }
+                } %>
+                <p class="p-info">
+                    <span class="title">航线路径：</span>
+                    <span><%= line || '/' %></span>
+                </p>
+
+                <p class="p-info">
+                    <span class="title">航班号：</span>
+
+                    <% if (o.orderState == 2 || o.orderState == 3 || o.orderState == 4) { %>
+                    <input type="text" id="ip-hbxx" class="sm-input" value="<%= o.airlineInfo || '' %>">
+                    <% }else{ %>
+                    <span><%= o.airlineInfo || '/' %></span>
+                    <% } %>
+                </p>
+
+                <p class="p-info">
+                    <span class="title">起飞时间：</span>
+                    <% if (o.orderState == 2 || o.orderState == 3 || o.orderState == 4) { %>
+                    <input type="text" id="ip-qfsj" class="sm-input"
+                           value="<%= o.airlineTime ? new Date(o.airlineTime).Format('hh:mm') : '' %>">
+                    <% }else{ %>
+                    <span><%= o.airlineTime ? new Date(o.airlineTime).Format('hh:mm') : '/' %></span>
+                    <% } %>
+                </p>
+            </div>
+        </div>
+        <div class="half">
+            <p class="m-title">
+                <span class="fl-l">货物信息</span>
+                <% if (o.orderState == 0 || o.orderState == 1 || o.orderState == 2) { %>
+                <a href="javascript:void(0);" id="pm-info"
+                   style="font-size: 14px;float: left;margin-left: 20px;" data-id="<%= o.orderId %>">保存</a>
+                <% } %>
+            </p>
+
+            <div class="mg-b fill">
+                <p class="p-info ck-half">
+                    <span class="title">仓库：</span>
+                    <span class="ckmc" data-id="<%= o.warehouseId %>"></span>
+                </p>
+
+                <p class="p-info ck-half">
+                    <span class="title">品名：</span>
+                    <span>
+                        <% if (o.orderState == 0 || o.orderState == 1 || o.orderState == 2) { %>
+                        <input type="text" id="pn-name" class="sm-input" value="<%= o.cargo.cargoName || '' %>">
+                        <% }else{ %>
+                        <span><%= o.cargo.cargoName || '/' %></span>
+                        <% } %>
+                    </span>
+                </p>
+                <p class="p-info ck-half">
+                    <span class="title">委托报关：</span>
+                    <span><%= o.cargo.isBulkyCargo ? '是' : '否' %></span>
+                </p>
+                <p class="p-info ck-half">
+                    <span class="title">唛头：</span>
+                    <span>
+                        <% if (o.orderState == 0 || o.orderState == 1 || o.orderState == 2) { %>
+                        <input type="text" id="mark-name" class="sm-input" value="<%= o.cargo.packageMark || '' %>">
+                        <% }else{ %>
+                        <span><%= o.cargo.packageMark || '/' %></span>
+                        <% } %>
+                    </span>
+                </p>
+                <div class="d-wtxx">
+                    <p class="p-clear">委托信息</p>
+
+                    <p class="p-info">
+                        <span class="title">件数：</span>
+                        <span><%= o.declareCargo.cargoCount %> PCS</span>
+                    </p>
+                    <p class="p-info">
+                        <span class="title">体积：</span>
+                        <span><%= o.declareCargo.cargoSize %> CBM</span>
+                    </p>
+
+                    <p class="p-info short">
+                        <span class="title">重量：</span>
+                        <span><%= o.declareCargo.cargoWeight %> KGS（计费重量：<%= o.declareCargo.chargingWeight %>
+                            KGS）</span>
+                    </p>
+                    <p class="p-info">
+                        <span class="title">委托单价：</span>
+                        <span><%= o.declareChargingPrice || 0 %> CNY</span>
+                    </p>
+                    <p class="p-info">
+                        <span class="title">价格策略：</span>
+                        <span><%= o.orderStrategy == 0 ? '按等级价格' : '约定单价' %></span>
+                    </p>
+                </div>
+
+                <% if(o.entryCargo){ %>
+                <div class="d-jcxx">
+                    <p class="p-clear">进仓信息</p>
+
+                    <p class="p-info">
+                        <span class="title">件数：</span>
+                        <span><%= o.entryCargo.cargoCount %> PCS</span>
+                    </p>
+
+                    <p class="p-info">
+                        <span class="title">体积：</span>
+                        <span id="entrysize" data-size="<%= o.entryCargo.cargoSize %>"><%= o.entryCargo.cargoSize %> CBM</span>
+                    </p>
+
+                    <p class="p-info short">
+                        <span class="title">重量：</span>
+                        <span><%= o.entryCargo.cargoWeight %> KGS（计费重量：<%= o.entryChargingWeight %> KGS）</span>
+                    </p>
+
+                    <p class="p-info">
+                        <span class="title">实际单价：</span>
+                        <span><%= o.entryChargingPrice || 0 %> CNY</span>
+                    </p>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+    <div class="third fill">
+        <div class="cl-b">
+        <div class="ott" style="width: 24%;float:left;word-break:break-all;word-wrap:break-word;margin-right:10px;" >
+            <p class="m-title">
+                <span class="fl-l">发货人</span>
+                <% if(o.orderConfirmState != 1){ %>
+                <a href="javascript:void(0);" style="font-size: 14px;margin-left: 20px;" class="fl-l show-contact"
+                   data-t="发货人" data-sid="<%= o.subNum || 0 %>">设置</a>
+                <% } %>
+            </p>
+            <div class="border<%= o.orderShipper ? '' : ' no-ship' %>" >
+                <% if(o.orderShipper){ %>
+                <p><%= o.orderShipper.contactName %></p>
+                <p><%= o.orderShipper.contactAddress %></p>
+                <p><% if(o.orderShipper.contactPerson){ %>
+                    <span><%= o.orderShipper.contactPerson %></span>
+                    <% } %></p>
+                <p>
+                    <% if(o.orderShipper.contactTel){ %>
+                    <span><%= o.orderShipper.contactTel %></span>
+                    <% } %></p>
+
+                <p><% if(o.orderShipper.contactFax){ %>
+                    <span><%= o.orderShipper.contactFax %></span>
+                    <% } %>
+                </p>
+                <p><% if(o.orderShipper.contactEmail){ %>
+                    <span><%= o.orderShipper.contactEmail %></span>
+                    <% } %></p>
+                <% }else{ %>
+                暂无发货人信息
+                <% } %>
+            </div>
+        </div>
+        <div class="ott" style="width: 24%;float:left;word-break:break-all;word-wrap:break-word;margin-right:10px;">
+            <p class="m-title">
+                <span class="fl-l">收货人</span>
+                <% if(o.orderConfirmState != 1){ %>
+                <a href="javascript:void(0);" style="font-size: 14px;margin-left: 20px;" class="fl-l show-contact"
+                   data-t="收货人" data-sid="<%= o.subNum || 0 %>">设置</a>
+                <% } %>
+            </p>
+            <div class="border<%= o.orderConsignee ? '' : ' no-ship' %>" >
+                <% if(o.orderConsignee){ %>
+                <p><%= o.orderConsignee.contactName %></p>
+                <p><%= o.orderConsignee.contactAddress %></p>
+                <p><% if(o.orderConsignee.contactPerson){ %>
+                    <span><%= o.orderConsignee.contactPerson %></span>
+                    <% } %></p>
+                <p>
+                    <% if(o.orderConsignee.contactTel){ %>
+                    <span><%= o.orderConsignee.contactTel %></span>
+                    <% } %></p>
+                <p><% if(o.orderConsignee.contactFax){ %>
+                    <span><%= o.orderConsignee.contactFax %></span>
+                    <% } %>
+                </p>
+                <p><% if(o.orderConsignee.contactEmail){ %>
+                    <span><%= o.orderConsignee.contactEmail %></span>
+                    <% } %></p>
+                <% }else{ %>
+                暂无收货人信息
+                <% } %>
+            </div>
+        </div>
+        <div class="ott" style="width: 24%;float: left;word-break:break-all;word-wrap:break-word;margin-right:10px;">
+            <p class="m-title">
+                <span class="fl-l">通知人</span>
+                <% if(o.orderConfirmState != 1){ %>
+                <a href="javascript:void(0);" style="font-size: 14px;margin-left: 20px;" class="fl-l show-contact"
+                   data-t="通知人" data-sid="<%= o.subNum || 0 %>">设置</a>
+                <% } %>
+            </p>
+            <% var hasInfo = false;
+                if(o.orderNotifier && (o.orderNotifier.contactName || o.orderNotifier.contactAddress || o.orderNotifier.contactPerson
+                    || o.orderNotifier.contactTel || o.orderNotifier.contactFax || o.orderNotifier.contactEmail)) {
+                    hasInfo = true;
+                }
+            %>
+            <div class="border<%= hasInfo ? '' : ' no-ship' %>" >
+            <% if(hasInfo){ %>
+            <p><span><%= o.orderNotifier.contactName %></span></p>
+            <p><span><%= o.orderNotifier.contactAddress %></span></p>
+            <p><span><%= o.orderNotifier.contactPerson %></span>
+                </p>
+            <p>
+                <span><%= o.orderNotifier.contactTel %></span>
+                </p>
+            <p><% if(o.orderNotifier.contactFax){ %>
+                <span><%= o.orderNotifier.contactFax %></span>
+                <% } %>
+            </p>
+            <p><% if(o.orderNotifier.contactEmail){ %>
+                <span><%= o.orderNotifier.contactEmail %></span>
+                <% } %></p>
+            <% }else{ %>
+            暂无通知人信息
+            <% } %>
+        </div>
+            </div>
+            <div class="ott" style="width: 24%;float: left;word-break:break-all;word-wrap:break-word;margin-right:10px;">
+                <p class="m-title khxx" data-id="<%= o.companyId %>">客户信息</p>
+                <p class="p-info">
+                    <span class="title">客户名称：</span>
+                    <span class="kh-mc"><%= c.companyName || '/' %></span>
+                </p>
+                <p class="p-info">
+                    <% var dj = ''; %>
+                    <% switch (c.applyLevel) {
+                        case 0:
+                            dj = 'D';
+                            break;
+                        case 1:
+                            dj = 'C';
+                            break;
+                        case 2:
+                            dj = 'B';
+                            break;
+                        case 3:
+                            dj = 'A';
+                            break;
+                        case 4:
+                            dj = 'AA';
+                            break;
+                    } %>
+
+                    <span class="title">等级：</span>
+                    <span class="kh-dj"><%= dj %></span>
+                </p>
+
+                <p class="p-info">
+                    <span class="title">联系人：</span>
+                    <span class="kh-lxr"><%= m.name || '/' %></span>
+                </p>
+
+                <p class="p-info">
+                    <span class="title">联系方式：</span>
+                    <span class="kh-lxfs"><%= m.mobile || '/' %></span>
+                </p>
+
+                <p class="p-info">
+                    <span class="title">QQ：</span>
+                    <span class="kh-qq"><%= m.QQ || '/' %></span>
+                </p>
+            </div>
+    </div>
+
+    <p class="m-title hwxx" style="height: 70px;line-height: 70px">
+        货物信息
+        <% if(o.entryState == 2){ %>
+        <% if(b.length == 0){ %>
+        <button style="background-color: #eb9b16;width: 80px;" id="w-cfd">拆分单</button>
+        <% } %>
+        <button disabled style="background-color: #999;">进仓数据已确认</button>
+        <% }else if(o.airwayBillNum){ %>
+        <button style="background-color: #339cd0;" id="bjjcsj-btn" data-id="<%= o.orderId %>"
+                data-n="<%= c.companyName || '/' %>" data-c="<%= m.name || '/' %>">
+            编辑进仓数据
+        </button>
+        <% } %>
+        <% if(o.airwayBillConfirm){ %>
+        <% if(b.length == 0){ %>
+        <a href="/order/detail/ensure?id=<%= o.orderId %>" target="_blank" class="fl-r">查看主单</a>
+        <% } %>
+        <% } %>
+    </p>
+    <table class="mg-b" style="margin-bottom: 20px;">
+        <thead>
+        <tr>
+            <% if(b.length == 0){ %>
+            <td><input type="checkbox" id="sel-td"></td>
+            <% } %>
+            <td>进仓编号</td>
+            <td>长(CM)</td>
+            <td>宽(CM)</td>
+            <td>高(CM)</td>
+            <td>件数(PCS)</td>
+            <td>重量(KGS)</td>
+            <td>体积(CBM)</td>
+            <td>包装</td>
+            <td>损毁</td>
+            <td>变形</td>
+            <td>受潮</td>
+            <td>其他</td>
+            <td>备注</td>
+        </tr>
+        </thead>
+        <tbody>
+
+        <% if(s.entryList.length > 0){ %>
+        <% for(var i = 0;i < s.entryList.length;i++){ %>
+        <% var d = s.entryList[i]; %>
+        <% for(var x in d.entryDetail){ %>
+        <% if(d.entryDetail.hasOwnProperty(x)){ %>
+        <% var dd = d.entryDetail[x] %>
+        <% if (!dd.subNum) {
+            wnum = true;
+            wfdhw[d.storageId] = d;
+        } %>
+        <tr>
+            <% if(b.length == 0){ %>
+            <td><input data-enum="<%= d.entryNum %>" data-dt="<%= JSON.stringify(dd).replace(/\"/g, "'") %>"
+                       type="checkbox" class="td-sg"></td>
+            <% } %>
+            <td><%= d.entryNum %></td>
+            <td><%= dd.itemLength %></td>
+            <td><%= dd.itemWidth %></td>
+            <td><%= dd.itemHeight %></td>
+            <td><%= dd.itemCount %></td>
+            <td>-</td>
+            <td class="item-tj"><%= (dd.itemCount * dd.itemLength * dd.itemWidth * dd.itemHeight / 1000000) %></td>
+            <td><%= d.packageType %></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <% } %>
+        <% } %>
+        <tr class="tr-xj">
+            <td>小计</td>
+            <td colspan="<%= b.length == 0 ? 4 : 3 %>" class="font-g">更新时间（<%= d.storageTime %>）</td>
+            <td><%= d.storageCount %></td>
+            <td><%= d.storageWeight %></td>
+            <td class="xj-tj"><%= d.storageSize %></td>
+            <td></td>
+            <td><%= d.damageCount || '-' %></td>
+            <td><%= d.transformCount || '-' %></td>
+            <td><%= d.dampCount || '-' %></td>
+            <td><%= d.otherCount || '-' %></td>
+            <td>-</td>
+        </tr>
+        <% } %>
+        <tr class="tr-zj">
+            <td>总计</td>
+            <td colspan="<%= b.length == 0 ? 4 : 3 %>"></td>
+            <td><%= s.totalCount %></td>
+            <td><%= s.totalWeight %></td>
+            <td class="total-tj"><%= s.totalSize %></td>
+            <td></td>
+            <td><%= s.totalDamage || '' %></td>
+            <td><%= s.totalTransform || '' %></td>
+            <td><%= s.totalDamp || '' %></td>
+            <td><%= s.totalOther || '' %></td>
+            <td></td>
+        </tr>
+        <% }else{ %>
+        <tr>
+            <td colspan="<%= b.length == 0 ? 14 : 13 %>">暂无进仓数据</td>
+        </tr>
+        <% } %>
+
+        </tbody>
+    </table>
+
+    <div class="ydtb dp-n">
+        <p class="m-title">运输信息</p>
+        <table border="1" class="yd-tb">
+            <thead>
+            <tr>
+                <td>操作时间</td>
+                <td>操作城市</td>
+                <td>航班</td>
+                <td>货物状态</td>
+                <td>件数</td>
+                <td>重量（KG）</td>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <% if(b.length == 0){ %>
+    <p class="m-title">订单附件</p>
+    <div class="ddfj fill ddfj-pub" data-id="<%= o.orderId %>">
+        <p class="title fill">
+            <span class="logo">上传资料证件</span>
+            <span class="fl-l">温馨提示：请尽快上传报关单、报关委托书、装箱单、发票等资料，文件格式支持.doc/.docx/.xls/.xlsx/.pdf/.jpg/.png/.bmp
+                <br>
+                请检查资料证件上传是否齐全，如果齐全，可以向报关行发送报关通知或发送预审通知
+                <% if(o.allowCustomDeclare){ %>
+                <button class="send-bg fsbgzt" id="send-bg" data-param="3" data-id="<%= o.orderId || '' %>"
+                        data-sid="<%= o.subNum || '' %>">发送报关通知
+                </button>
+                <% } %>
+                <% if(o.allowPreCheck){ %>
+                <button class="send-bg fsyszt" id="send-ys" data-param="1" data-id="<%= o.orderId || '' %>"
+                        data-sid="<%= o.subNum || '' %>">发送预审通知
+                </button>
+                <% } %>
+            </span>
+        </p>
+        <!--<div class="add-type" data-type="11">-->
+        <!--<div class="top">-->
+        <!--+-->
+        <!--</div>-->
+        <!--<a href="javascript:void(0);" class="dp-b f-name" data-name="报关单">报关单</a>-->
+        <!--<input type="file" class="up-type" data-id="<%= o.orderId %>" data-type="11"/>-->
+        <!--</div>-->
+        <!--<div class="add-type" data-type="12">-->
+        <!--<div class="top">-->
+        <!--+-->
+        <!--</div>-->
+        <!--<a href="javascript:void(0);" class="dp-b f-name" data-name="申报要素">申报要素</a>-->
+        <!--<input type="file" class="up-type" data-id="<%= o.orderId %>" data-type="12"/>-->
+        <!--</div>-->
+        <!--<div class="add-type" data-type="13">-->
+        <!--<div class="top">-->
+        <!--+-->
+        <!--</div>-->
+        <!--<a href="javascript:void(0);" class="dp-b f-name" data-name="报关发票">报关发票</a>-->
+        <!--<input type="file" class="up-type" data-id="<%= o.orderId %>" data-type="13"/>-->
+        <!--</div>-->
+        <!--<div class="add-type" data-type="14">-->
+        <!--<div class="top">-->
+        <!--+-->
+        <!--</div>-->
+        <!--<a href="javascript:void(0);" class="dp-b f-name" data-name="装箱单">装箱单</a>-->
+        <!--<input type="file" class="up-type" data-id="<%= o.orderId %>" data-type="14"/>-->
+        <!--</div>-->
+        <!--<div class="add-type" data-type="15">-->
+        <!--<div class="top">-->
+        <!--+-->
+        <!--</div>-->
+        <!--<a href="javascript:void(0);" class="dp-b f-name" data-name="报关委托书">报关委托书</a>-->
+        <!--<input type="file" class="up-type" data-id="<%= o.orderId %>" data-type="15"/>-->
+        <!--</div>-->
+        <div class="add">
+            <div class="top">
+                +
+            </div>
+            <a href="javascript:void(0);" class="dp-b">添加文件</a>
+            <input type="file" id="up-file" data-id="<%= o.orderId %>" data-sid="<%= o.subNum || '' %>">
+        </div>
+    </div>
+
+        <div class="fill fxtzs">
+        <p class="title fill">
+            <span class="logo">预录单和放行通知书</span>
+        </p>
+        <div class="fxtzs-fill fill">
+
+                <div class="dp-b fl-l dl dl-yld"  id="dlyldmain" data-type="21" data-key="0"><a href="javascript:void(0);"><span class="dp-b img">预</span><span class="dp-b txt">预录单</span></a><div class="cover dp-n"></div></div>
+                <div class="dp-b fl-l dl dl-file" data-type="22" data-key="0"><a href="javascript:void(0);"><span class="dp-b img">查</span><span class="dp-b txt">查验费用单</span></a> <div class="cover dp-n"></div></div>
+        </div>
+
+        </div>
+
+    <% } %>
+</div>
+<% if(b.length > 0){ %>
+<div class="fd-part">
+    <div class="change-tab fill">
+        <span class="sp-b fl-l sg-tab active" data-tar="yfdhw">已分单货物</span>
+        <span class="sp-b fl-l sg-tab" data-tar="wfdhw">未分单货物</span>
+        <button class="dp-b fl-r" id="cdd">拆订单</button>
+        <% if(o.airwayBillConfirm){ %>
+        <% if(b.length > 0){ %>
+        <a href="/order/detail/ensure?id=<%= o.orderId %>" target="_blank" class="fl-r">查看主单</a>
+        <% } %>
+        <% } %>
+    </div>
+    <div class="body-tabs">
+        <div id="yfdhw" class="tabs active">
+            <% for(var f in b){ %>
+            <% if(b.hasOwnProperty(f)){ %>
+            <% var d3 = b[f]; %>
+            <% var str1 = ''; %>
+            <% switch (d3.declareState) {
+                case 0:
+                    str1 = '未报关';
+                    break;
+                case 1:
+                    str1 = '预审中';
+                    break;
+                case 2:
+                    str1 = '预审通过';
+                    break;
+                case 3:
+                    str1 = '开始报关';
+                    break;
+                case 4:
+                    str1 = '报关中';
+                    break;
+                case 5:
+                    str1 = '报关完成';
+                    break;
+                case -6:
+                    str1 = '报关失败';
+                    break;
+                case -4:
+                    str1 = '退关中';
+                    break;
+                case -5:
+                    str1 = '退关完成';
+                    break;
+            } %>
+            <div class="sg-yfd fill">
+                <button data-time="0" data-id="<%= d3.subNum %>" type="button"
+                        class="yfd-btn<%= str1 != '报关完成' ? '' : ' i-hide' %> <%= str1 == '报关失败' ? '' : ' input-show' %>"
+                        data-target="#<%= d3.Id %>">
+                    <input type="checkbox" class="yfd-sg" value="<%= d3.Id %>">
+                    <p>分单号：<%= d3.subNum %></p>
+                    <% if(d3.orderConfirmState === 1){ %>
+                    <span class="fdzt">分单已确认</span>
+                    <% } %>
+                    <span class="bgzt<%= str1 != '报关完成' ? ' sb' : '' %>"><%= str1 %></span>
+                    <span class="fl-r">+展开</span>
+                </button>
+                <div id="<%= d3.Id %>" class="collapse fd-info-body">
+                    <div class="fd-top fill">
+                        <div class="fd-info">
+                            <p class="title">发货人信息
+                                <a href="javascript:void(0);">编辑</a>
+                            </p>
+                            <p>1111111</p>
+                            <p>1111111</p>
+                            <p>1111111</p>
+                            <p>1111111</p>
+                        </div>
+                        <div class="fd-info">
+                            <p class="title">收货人信息
+                                <a href="javascript:void(0);">编辑</a>
+                            </p>
+                            <p>1111111</p>
+                            <p>1111111</p>
+                            <p>1111111</p>
+                            <p>1111111</p>
+                        </div>
+                        <div class="fd-info">
+                            <p class="title">品名
+                                <a href="javascript:void(0);">编辑</a>
+                            </p>
+                            <p>纺织品</p>
+                        </div>
+                    </div>
+                    <div class="fd-middle">
+                        <p class="title">分单货物信息
+                            <button class="dp-b fl-r">拆分单</button>
+                            <a href="javascript:void(0)" target="_blank" class="fl-r" data-sid="">查看分单</a>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <% } %>
+            <% } %>
+        </div>
+        <div id="wfdhw" class="tabs">
+            <p class="m-title">货物信息
+                <% if(b.length > 0){ %>
+                <button class="dp-b fl-r" id="w-cfd">拆分单</button>
+                <% } %>
+            </p>
+            <table class="mg-b" style="margin-bottom: 20px;">
+                <thead>
+                <tr>
+                    <td><input type="checkbox" id="sel-td"></td>
+                    <td>进仓编号</td>
+                    <td>长(CM)</td>
+                    <td>宽(CM)</td>
+                    <td>高(CM)</td>
+                    <td>件数(PCS)</td>
+                    <td>重量(KGS)</td>
+                    <td>体积(CBM)</td>
+                    <td>包装</td>
+                    <td>损毁</td>
+                    <td>变形</td>
+                    <td>受潮</td>
+                    <td>其他</td>
+                    <td>备注</td>
+                </tr>
+                </thead>
+                <tbody>
+                <% var zjjs = 0, zjzl = 0, zjtj = 0, zjps = 0, zjbx = 0, zjsc = 0, zjqt = 0; %>
+                <% if (wnum) { %>
+
+                <% for(var w in wfdhw){ %>
+                <% if(wfdhw.hasOwnProperty(w)){ %>
+                <% var xjjs = 0, xjzl = 0, xjtj = 0, xjps = 0, xjbx = 0, xjsc = 0, xjqt = 0; %>
+                <% var d1 = wfdhw[w]; %>
+
+                <% for(var z in d1.entryDetail){ %>
+                <% if(d1.entryDetail.hasOwnProperty(z)){ %>
+                <% var d2 = d1.entryDetail[z]; %>
+                <% if(!d2.subNum){ %>
+                <tr>
+                    <td><input data-enum="<%= d1.entryNum %>"
+                               data-dt="<%= JSON.stringify(d2).replace(/\"/g, "'") %>" type="checkbox"
+                               class="td-sg"></td>
+                    <td><%=  d1.entryNum %></td>
+                    <td><%= d2.itemLength %></td>
+                    <td><%= d2.itemWidth %></td>
+                    <td><%= d2.itemHeight %></td>
+                    <td><%= d2.itemCount %></td>
+                    <% xjjs += d2.itemCount; %>
+                    <% zjjs += d2.itemCount; %>
+                    <td>-</td>
+                    <td class="item-tj"><%= (d2.itemCount * d2.itemLength * d2.itemWidth * d2.itemHeight / 1000000) %></td>
+                    <% xjtj += d2.itemCount * d2.itemLength * d2.itemWidth * d2.itemHeight / 1000000; %>
+                    <% zjtj += d2.itemCount * d2.itemLength * d2.itemWidth * d2.itemHeight / 1000000; %>
+                    <td><%= d1.packageType %></td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <% } %>
+                <% } %>
+                <% } %>
+                <tr class="tr-xj">
+                    <td>小计</td>
+                    <td colspan="4 %>" class="font-g">更新时间（<%= d1.storageTime %>）</td>
+                    <td><%= xjjs %></td>
+                    <td><%= d1.storageWeight %></td>
+                    <% zjzl += d1.storageWeight; %>
+                    <td class="xj-tj"><%= xjtj %></td>
+                    <td></td>
+                    <td><%= d1.damageCount || '-' %></td>
+                    <% zjps += d1.damageCount; %>
+                    <td><%= d1.transformCount || '-' %></td>
+                    <% zjbx += d1.transformCount; %>
+                    <td><%= d1.dampCount || '-' %></td>
+                    <% zjsc += d1.dampCount; %>
+                    <td><%= d1.otherCount || '-' %></td>
+                    <% zjqt += d1.otherCount; %>
+                    <td>-</td>
+                </tr>
+                <% } %>
+                <% } %>
+                <tr class="tr-zj">
+                    <td>总计</td>
+                    <td colspan="4"></td>
+                    <td><%= zjjs %></td>
+                    <td><%= zjzl %></td>
+                    <td class="total-tj"><%= zjtj %></td>
+                    <td></td>
+                    <td><%= zjps || '' %></td>
+                    <td><%= zjbx || '' %></td>
+                    <td><%= zjsc || '' %></td>
+                    <td><%= zjqt || '' %></td>
+                    <td></td>
+                </tr>
+                <% } else { %>
+                <tr>
+                    <td colspan="14">无未分单货物</td>
+                </tr>
+                <% } %>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+<% } %>
+
+<div class="white-back dp-n">
+    <div class="name-part alert-part dp-n">
+        <p class="header">修改品名 <span class="close-btn">X</span></p>
+        <div class="dp-tb">
+            <div class="input">
+                <label for="cg-name">新品名：</label>
+                <input type="text" class="sm-input" id="cg-name">
+            </div>
+            <div class="input">
+                <label for="mark-subname">新唛头：</label>
+                <input type="text" class="sm-input" id="mark-subname">
+            </div>
+        </div>
+        <div class="btn-pt">
+            <button id="name-ensure" class="fl-l md-btn blue-btn" data-id="<%= o.orderId %>">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="yl-part alert-part dp-n">
+        <p class="header">下载预录单<span class="close-btn">X</span></p>
+        <div class="bh-body fill">
+            <div class="dp-tb">
+
+            </div>
+        </div>
+    </div>
+    <div class="remove-part alert-part dp-n">
+        <p class="header">确认删除该附件 <span class="close-btn">X</span></p>
+
+        <div class="btn-pt">
+            <button id="remove-ensure" class="fl-l md-btn blue-btn" data-id="<%= o.orderId %>">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="remove-type-part alert-part dp-n">
+        <p class="header">确认删除该附件 <span class="close-btn">X</span></p>
+
+        <div class="btn-pt">
+            <button id="remove-type-ensure" class="fl-l md-btn blue-btn" data-id="<%= o.orderId %>">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="bg-part alert-part dp-n">
+        <p class="header">确认发送报关通知 <span class="close-btn">X</span></p>
+
+        <div class="btn-pt">
+            <button id="bg-ensure" class="fl-l md-btn blue-btn" data-id="<%= o.orderId %>">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="contact-modal alert-part dp-n">
+        <p class="header">新增收货人<span class="close-c">X</span></p>
+
+        <p class="sel-tp">
+            <span data-tp="1" class="show-name">新建</span>
+            <span data-tp="2">搜索</span>
+        </p>
+
+        <div class="ticket-body">
+            <div class="new dp-n fill">
+                <div class="input">
+                    <label for="s-name">名称：</label>
+                    <input type="text" id="s-name" class="sm-input ct-require" autocomplete="off">
+                </div>
+                <div class="input">
+                    <label for="s-dz">地址：</label>
+                    <input type="text" id="s-dz" class="sm-input ct-require" autocomplete="off">
+                </div>
+                <div class=" input">
+                    <label for="s-person">联系人：</label>
+                    <input type="text" id="s-person" class="sm-input ct-require" autocomplete="off">
+                </div>
+                <div class=" input">
+                    <label for="s-dh">联系电话：</label>
+                    <input type="text" id="s-dh" class="sm-input ct-require" autocomplete="off">
+                </div>
+                <div class=" input">
+                    <label for="s-mail">邮箱：</label>
+                    <input type="text" id="s-mail" class="sm-input" autocomplete="off">
+                </div>
+                <div class=" input">
+                    <label for="s-cz">传真：</label>
+                    <input type="text" id="s-cz" class="sm-input" autocomplete="off">
+                </div>
+                <div class="input dp-n" style="padding-left: 310px;">
+                    <input type="checkbox" id="s-save"/>
+                    保存到常用收发货人
+                </div>
+            </div>
+            <div class="search">
+                <div class="dp-tb">
+                    <label for="c-name">名称：</label>
+                    <input type="text" class="sm-input" id="c-name"/>
+                    <button class="sm-btn blue-btn" id="search-p" data-cid="<%= c.companyId %>">查询</button>
+                </div>
+                <table class="table-bordered">
+                    <thead>
+                    <tr>
+                        <td></td>
+                        <td>名称</td>
+                        <td>地址</td>
+                        <td>联系人</td>
+                        <td>联系电话</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="wrong">
+                        <td colspan="5">请搜索</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="contact-page"></div>
+            </div>
+        </div>
+        <div class=" btn-pt">
+            <button id="save-contact" class="fl-l md-btn blue-btn" data-id="<%= o.orderId %>"
+                    data-mid="<%= m.memberId %>">保存
+            </button>
+            <button id="ensure-contact" class="fl-l md-btn blue-btn" data-id="<%= o.orderId %>"
+                    data-mid="<%= m.memberId %>">确认
+            </button>
+            <button class="close-c fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="fd-alert-part alert-part dp-n">
+        <p class="header">拆分单设置 <span class="close-btn">X</span></p>
+        <div class="main-info">
+            <div class="dp-tb">
+                <div class="input" style="margin-right: 50px;">
+                    <input type="radio" id="czxfd" name="sel-fd-type" checked value="1">
+                    <label for="czxfd">拆至新分单</label>
+                </div>
+                <div class="input">
+                    <input type="radio" id="czyyfd" name="sel-fd-type" value="2">
+                    <label for="czyyfd">拆至已有分单</label>
+                </div>
+            </div>
+        </div>
+        <div class="alert-body">
+            <div class="new fill">
+                <div class="input">
+                    <label for="nfd-fdh">分单号：</label>
+                    <input type="text" id="nfd-fdh" class="nfd-required">
+                </div>
+                <div class="input">
+                    <label for="nfd-pm">品名：</label>
+                    <input type="text" id="nfd-pm" class="nfd-required">
+                </div>
+                <div class="input">
+                    <label for="nfd-zl">新分单重量：</label>
+                    <input type="text" id="nfd-zl" class="nfd-required">
+                </div>
+                <p>系统自动为您生成分单号，您也可以填写自己的分单号</p>
+            </div>
+            <div class="exist fill dp-n">
+                <input type="hidden" id="origin-fdh" value="" />
+                <div class="input">
+                    <label for="yyfd-fdh">选择分单号：</label>
+                    <select id="yyfd-fdh">
+                        <% for(var v = 0;v < b.length;v++){ %>
+                        <option data-wei="<%= b[v].weight %>" value="<%= b[v].subNum %>"><%= b[v].subNum %></option>
+                        <% } %>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="dif-weight">
+            <div class="w-e dp-n">
+                <p class="line"></p>
+                <p class="y-info">此分单的货物信息发生变化，分单总重量可能需要调整</p>
+                <p class="b-info">目标分单：<span class="mbfd">11321321</span></p>
+                <p class="change-info mb">
+                    <span class="ori">原重量(KG)：</span>
+                    <span class="ori-wei">100</span>
+                    <span class="glyphicon glyphicon-arrow-right"></span>
+                    <span class="new">新重量：</span>
+                    <input type="text" id="w-e--n-w">
+                    <span class="unit">KG</span>
+                </p>
+            </div>
+            <div class="y-n fill dp-n">
+                <p class="line"></p>
+                <p class="y-info">此分单的货物信息发生变化，分单总重量可能需要调整</p>
+                <div class="p-input fill">
+                    <p class="head">原重量：</p>
+                    <p class="body">100 KG</p>
+                </div>
+                <div class="input">
+                    <label for="y-n-xzl">新重量：</label>
+                    <input type="text" id="y-n-xzl" class="">
+                </div>
+            </div>
+            <div class="y-e dp-n">
+                <p class="line"></p>
+                <p class="y-info">此分单的货物信息发生变化，分单总重量可能需要调整</p>
+                <p class="b-info">被拆分单：<span class="bcfd">11321321</span></p>
+                <p class="change-info bc">
+                    <span class="ori">原重量(KG)：</span>
+                    <span class="ori-wei">100</span>
+                    <span class="glyphicon glyphicon-arrow-right"></span>
+                    <span class="new">新重量：</span>
+                    <input type="text" id="y-e-b-zl">
+                    <span class="unit">KG</span>
+                </p>
+                <p class="b-info">目标分单：<span class="mbfd">11321321</span></p>
+                <p class="change-info mb">
+                    <span class="ori">原重量(KG)：</span>
+                    <span class="ori-wei">100</span>
+                    <span class="glyphicon glyphicon-arrow-right"></span>
+                    <span class="new">新重量：</span>
+                    <input type="text" id="y-e-mb-zl">
+                    <span class="unit">KG</span>
+                </p>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="btn-pt">
+            <button class="close-btn fl-l md-btn white-btn f-pt">关闭</button>
+            <button id="create-fd" class="fl-l md-btn blue-btn f-pt">确定</button>
+            <button id="fd-btz" class="fl-l md-btn white-btn s-pt" style="margin-right: 20px;display: none;">不调整
+            </button>
+            <button id="fd-tz" class="fl-l md-btn blue-btn s-pt" style="display: none;">确认调整</button>
+        </div>
+    </div>
+
+
+
+</div>
+<div class="loading-part dp-n">
+    <div class="loading">
+        <img src="/images/loading.gif">
+        <p class="txt">Loading</p>
+    </div>
+</div>

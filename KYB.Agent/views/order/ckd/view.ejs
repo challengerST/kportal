@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="Jeremy">
+    <meta name="Author" content="Jeremy">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>预录单</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'SimSun';
+            box-sizing: border-box;
+            -moz-box-sizing: border-box; /* Firefox */
+            -webkit-box-sizing: border-box; /* Safari */
+        }
+
+        .dp-b {
+            display: block;
+        }
+
+        .dp-n {
+            display: none;
+        }
+
+        .fl-l {
+            float: left;
+        }
+
+        .fl-r {
+            float: right;
+        }
+
+        .t-r {
+            text-align: right;
+        }
+
+        .t-c {
+            text-align: center;
+        }
+
+        .container {
+            width: 735px;
+            margin: 0 auto;
+        }
+
+        p.top, p.bottom {
+            overflow: hidden;
+        }
+
+        p.top .dp-b {
+            font-family: 'SimHei';
+            font-size: 22px;
+            padding: 0 10px;
+        }
+
+        p.bottom .dp-b {
+            font-size: 12px;
+            line-height: 25px;
+        }
+
+        p.bottom .fl-l {
+            padding-left: 80px;
+        }
+
+        p.bottom .fl-r {
+            padding-right: 80px;
+        }
+
+        p.middle {
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .no-border-l {
+            border-left: none !important;
+        }
+
+        .no-border-r {
+            border-right: none !important;
+        }
+
+        table {
+            border-collapse: collapse;
+            border: 2px solid #000;
+            width: 100%;
+        }
+
+        .info {
+            border-bottom: none;
+        }
+
+        .goods {
+            border-top: none;
+        }
+
+        .goods thead td {
+            height: 20px;
+        }
+
+        .goods tbody td {
+            height: 25px;
+        }
+
+        .goods thead tr {
+            border-bottom: 1px solid #000;
+        }
+
+        .goods tbody tr {
+            border-bottom: 1px dotted #000;
+        }
+
+        .info td {
+            border: 1px solid #000;
+            height: 35px;
+        }
+
+        td {
+            font-size: 12px;
+            padding-left: 5px;
+        }
+
+        td .fl-l {
+            height: 100%;
+        }
+
+        .dp-tb {
+            display: table;
+            margin: 50px auto;
+        }
+
+        .blue-btn {
+            display: block;
+            width: 180px;
+            text-align: center;
+            cursor: pointer;
+            height: 40px;
+            font-size: 14px;
+            border-radius: 5px;
+            float: left;
+            color: #fff;
+            background-color: #074ba0;
+        }
+
+        .blue-btn:hover {
+            background-color: #003271;
+        }
+
+        .blue-btn:active {
+            background-color: #002655;
+        }
+
+        .ensure {
+            font-family: 'SimHei';
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        .stamp div.fl-l {
+            width: 50%;
+            padding-left: 10px;
+            overflow: hidden;
+        }
+
+        .stamp div.fl-l span {
+            font-family: 'SimHei';
+            font-size: 18px;
+            line-height: 20px;
+            float: left;
+        }
+
+        .stamp div.fl-l .zw {
+            width: 40px;
+            height: 20px;
+            line-height: 20px;;
+        }
+    </style>
+</head>
+<body>
+<% var body = 'resBody' in data && data.resBody || {}; %>
+<% var dt = 'dataRequest' in body && body.dataRequest || {}; %>
+<% var d = 'decleration' in dt && dt.decleration || {}; %>
+<% var g = 'goods' in d && d.goods || []; %>
+
+<% Date.prototype.Format = function (fmt) { //author: J
+    var o = {
+        "M+": this.getMonth() + 1, //月份
+        "d+": this.getDate(), //日
+        "h+": this.getHours(), //小时
+        "m+": this.getMinutes(), //分
+        "s+": this.getSeconds(), //秒
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+        "S": this.getMilliseconds() //毫秒
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+} %>
+
+<div class="container">
+    <p class="top">
+        <span class="dp-b fl-l">准予进/出海关卡口通知书</span>
+        <span class="dp-b fl-r">*<%= d.customs_id %>*</span>
+    </p>
+    <p class="bottom">
+        <span class="dp-b fl-l">申报单位：<%= d.agentCompany.name %></span>
+        <span class="dp-b fl-r">海关编号：<%= d.customs_id %></span>
+    </p>
+    <table class="info">
+        <tbody>
+        <tr>
+            <td class="no-border-r">出口口岸</td>
+            <td class="no-border-l" colspan="3"><%= d.deptPort.name %> &nbsp;&nbsp; <%= d.deptPort.code %></td>
+            <td class="no-border-r">备案号</td>
+            <td class="no-border-l"><%= d.manual_no || '/' %></td>
+            <td class="no-border-r">出口日期</td>
+            <td class="no-border-l"><%= d.i_e_date ? new Date(d.i_e_date).Format('yyyy-MM-dd') : '' %></td>
+            <td class="no-border-r">申报日期</td>
+            <td class="no-border-l"><%= dt.sbrq ? new Date(dt.sbrq).Format('yyyy-MM-dd') : '' %></td>
+        </tr>
+        <tr>
+            <td class="no-border-r">经营单位</td>
+            <td class="no-border-l" colspan="3"><%= d.ownerCompany.code %><br/><%= d.ownerCompany.name %></td>
+            <td class="t-c">运输方式<br><%= d.transf.name || '/' %></td>
+            <td colspan="3">运输工具名称<br><%= d.traf_name || '/' %></td>
+            <td colspan="2">提运单号<br><%= d.bill_no || '/' %></td>
+        </tr>
+        <tr>
+            <td class="no-border-r">发货单位</td>
+            <td class="no-border-l" colspan="3">  <%= d.shipperCompany.code %><br/><%= d.shipperCompany.name %></td>
+            <td colspan="2">监管方式<br><span>&nbsp;&nbsp;<%= d.supervision.name %></span><span
+                        class="fl-r"><%= d.supervision.code %>&nbsp;&nbsp;</span></td>
+            <td colspan="2">征免性质<br><span>&nbsp;&nbsp;<%= d.levytype.name %></span><span
+                        class="fl-r"><%= d.levytype.code %>&nbsp;&nbsp;</span></td>
+            <td colspan="2">结汇方式<br><span>&nbsp;&nbsp;<%= d.pay_way || '' %></span></td>
+        </tr>
+        <tr>
+            <td colspan="3">许可证号<br><span>&nbsp;&nbsp;<%= d.lisence_no || '' %></span></td>
+            <td colspan="2">运抵国(地区)<br><span><%= d.destCountry.name %></span><span
+                        class="fl-r"><%= d.destCountry.code %>&nbsp;&nbsp;</span></td>
+            <td colspan="3">指运港<br><span><%= d.destPort.name %></span><span class="fl-r"><%= d.destPort.code %>
+                    &nbsp;&nbsp;</span>
+            </td>
+            <td colspan="2">境内货源地<br><span><%= d.deptDistrict.name %></span><span
+                        class="fl-r"><%= d.deptDistrict.code %>&nbsp;&nbsp;</span></td>
+        </tr>
+        <tr>
+            <td colspan="3">批准文号<br><span>&nbsp;&nbsp;<%= d.appr_no || '' %></span></td>
+            <td>
+                成交方式<br><span>&nbsp;&nbsp;&nbsp;<%= d.trans_mode == 1 ? 'CIF' : (d.trans_mode == 2 ? 'C8F' : 'FOB') %></span>
+            </td>
+            <td colspan="2">
+                运费<br><span>&nbsp;&nbsp;<%= d.trans_fee ? d.trans_fee.curr_code + '/' + d.trans_fee.rate + '/' + d.trans_fee.mark : '' %></span>
+            </td>
+            <td colspan="2">
+                保费<br><span>&nbsp;&nbsp;<%= d.insur_fee ? d.insur_fee.curr_code + '/' + d.insur_fee.rate + '/' + d.insur_fee.mark : '' %></span>
+            </td>
+            <td colspan="2">
+                杂费<br><span>&nbsp;&nbsp;<%= d.other_fee ? d.other_fee.curr_code + '/' + d.other_fee.rate + '/' + d.other_fee.mark : '' %></span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">合同协议号<br><span>&nbsp;&nbsp;<%= d.contr_no || '' %></span></td>
+            <td>件数<span>&nbsp;&nbsp;&nbsp;<%= d.pack_no || '' %></span></td>
+            <td colspan="2">包装种类<span>&nbsp;&nbsp;&nbsp;<%= d.wrap_type || '' %></span></td>
+            <td colspan="2">毛重（千克）<span>&nbsp;&nbsp;&nbsp;<%= d.gross_wt || '' %></span></td>
+            <td colspan="2">净重（千克）<span>&nbsp;&nbsp;&nbsp;<%= d.net_wt || '' %></span></td>
+        </tr>
+        <tr>
+            <td colspan="3">集装箱号<span>&nbsp;&nbsp;<%= d.ex_source || '' %></span></td>
+            <td colspan="4">&nbsp;&nbsp;随附单据</td>
+            <td colspan="3">&nbsp;&nbsp;生产厂家</td>
+        </tr>
+        <tr>
+            <td colspan="10" style="height: 50px;padding-top: 5px;"><span class="dp-b fl-l">标记唛码及备注</span></td>
+        </tr>
+        </tbody>
+    </table>
+    <table class="goods">
+        <thead>
+        <tr>
+            <td>项号</td>
+            <td>商品编号</td>
+            <td>商品名称</td>
+            <td>数量及单位</td>
+            <td>最终目的国（地区）</td>
+            <td>单价</td>
+            <td>总价</td>
+            <td>币制</td>
+        </tr>
+        </thead>
+        <tbody>
+        <% for(var i = 0;i < g.length;i++){ %>
+        <tr>
+            <td><%= i + 1 %></td>
+            <td><%= g[i].code_s %></td>
+            <td style="max-width: 250px;"><%= g[i].g_name %></td>
+            <td>
+                <%= g[i].qty_1 %><%= g[i].g_unit.name %>
+            </td>
+            <td><%= g[i].destCountry.name %></td>
+            <td><%= g[i].decl_price %></td>
+            <td><%= g[i].trade_total %></td>
+            <td><%= g[i].currency.name %></td>
+        </tr>
+        <% } %>
+        </tbody>
+    </table>
+    <div class="ensure">
+        以上内容与我司向海关申报和实际货物相符。
+        <br>
+        如有不符，我司愿承担一切法律责任。
+    </div>
+    <div class="stamp" style="overflow: hidden;">
+        <div class="fl-l">
+            <span class="dp-b" style="width: 100%;">经营或申报单位签章</span>
+            <span class="dp-b zw"></span>
+            <span class="dp-b">年</span>
+            <span class="dp-b zw"></span>
+            <span class="dp-b">月</span>
+            <span class="dp-b zw"></span>
+            <span class="dp-b">日</span>
+        </div>
+        <div class="fl-l">
+            <span class="dp-b" style="width: 100%;">海关签注</span>
+            <span class="dp-b zw"></span>
+            <span class="dp-b">年</span>
+            <span class="dp-b zw"></span>
+            <span class="dp-b">月</span>
+            <span class="dp-b zw"></span>
+            <span class="dp-b">日</span>
+        </div>
+    </div>
+    <div class="stamp-part" style="height: 150px;position: relative;margin-top: 20px;">
+        <img SRC="http://kybpublic.oss-cn-shanghai.aliyuncs.com/images/img/hanglian_stamp.png" style="height: 150px;width: 200px;position: absolute;">
+    </div>
+</div>
+<div class="dp-tb">
+    <button class="dl-yld blue-btn">下载</button>
+</div>
+<script src="http://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+<script src="/javascripts/order/lading/bundle.min.js" charset="utf-8"></script>
+</body>
+</html>

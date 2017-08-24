@@ -1,0 +1,48 @@
+<%- include ../base/head.ejs %>
+<%# 样式表引用 %>
+<link rel="stylesheet" href="/stylesheets/css/web/tools.css">
+<%# 样式表引用结束 %>
+<%- include ../base/header.ejs %>
+
+<div class="app-box">
+    <div class="tools-box">
+        <div class="container">
+            <h1>空运实用工具</h1>
+            <div class="tools">
+                <div class="title">
+                    <div class="t-options fl-l active" data-tar="wl">物流跟踪<span class="dp-n"></span></div>
+                    <div class="t-options fl-l" data-tar="hs">HS编码查询<span class="dp-n"></span></div>
+                    <div class="t-options fl-l" data-tar="code">三字代码查询<span class="dp-n"></span></div>
+                </div>
+                <div class="content">
+                    <div class="t-body dp-n active" id="wl">
+                        <div class="button">
+                            <label class="dp-b fl-l" for="wl_check">货物订单号:</label>
+                            <input type="text" id="wl_check" class="fl-l">
+                            <button class="fl-l">查询</button>
+                        </div>
+                        <!--<div class="body">-->
+                            <!--<p class="provider">为您获取到以下物流信息由 <span>空运邦</span> 提供</p>-->
+                            <!--<p><span class="circle">已起飞 <span class="time">2016-01-22 12:30</span> </span></p>-->
+                            <!--<span class="dp-b border"></span>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="t-body dp-n" id="hs"></div>
+                    <div class="t-body dp-n" id="code">
+                        <div class="button">
+                            <label class="dp-b fl-l" for="wl_check">三字代码:</label>
+                            <input type="text" id="wl_check" class="fl-l">
+                            <button class="fl-l">查询</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include ../base/javascripts.ejs %>
+<%# 脚本引用 %>
+<script src="/javascripts/tools/bundle.min.js" charset="utf-8"></script>
+<%# 脚本引用结束 %>
+<%- include ../base/foot.ejs %>

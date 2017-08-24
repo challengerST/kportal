@@ -1,0 +1,96 @@
+<% var member = 'member' in data && data.member || {} %>
+<% var company = 'company' in data && data.company || {} %>
+<% var lv; %>
+<% switch (company.accountLevel) {
+    case 0:
+        lv = 'D';
+        break;
+    case 1:
+        lv = 'C';
+        break;
+    case 2:
+        lv = 'B';
+        break;
+    case 3:
+        lv = 'A';
+        break;
+    case 4:
+        lv = 'AA';
+        break;
+} %>
+<div class="top">
+    <!--<div class="user-img fl-l">-->
+    <!--<img src="./images/vip/icon_mbhome_head.png" alt="" height="100" width="100"/>-->
+    <!--<a href="/vip/editor" class="dp-b">编辑个人资料</a>-->
+    <!--</div>-->
+    <div class="user-company fl-l">
+        <div class="left">
+            <img src="/images/vip/card_<%= lv %>.png"/>
+            <% if(lv != 'AA'){ %>
+            <a href="/vip/auth">提升会员级别</a>
+            <% } %>
+        </div>
+        <div class="right">
+            <p class="user-name">下午好！&nbsp; <%= user.member.name || '' %></p>
+
+            <p class="company-name"><%= 'companyName' in company && company.companyName || '' %></p>
+            <a href="javascript:void(0);">用户级别：<%= lv %></a>
+        </div>
+    </div>
+    <div class="ed">
+        <span class="title">信用额度：</span>
+        <span class="body"><%= 'accountCredit' in company && company.accountCredit && company.accountCredit.toFixed(2) || 0 %>
+            元</span>
+    </div>
+    <div class="ed">
+        <span class="title">可用额度：</span>
+        <span class="body"><%= 'accountAvailable' in company && company.accountAvailable && company.accountAvailable.toFixed(2) || 0 %>
+            元</span>
+    </div>
+    <div class="connect-dd fill">
+        <img src="/images/vip/icon_mbhome_head.png" alt=""/>
+
+        <div>
+            <span>您的客服专员：老邦</span>
+
+            <span>活动时间：每天9:00-18:00</span>
+            <a href="">点此联系老邦</a>
+        </div>
+    </div>
+</div>
+<div class="middle">
+    <div class="order-sum fl-l">
+        <span class="dp-b o-logo"></span>
+
+        <p>进行中的订单提醒：</p>
+        <% if('sum' in company){ %>
+        <div class="fl-l"><a
+                    href="/vip/order?offset=0&tp=entry">已进仓：1</a>
+        </div>
+        <div class="fl-l"><a
+                    href="/vip/order?offset=0&tp=applied">已报关：1</a>
+        </div>
+        <div class="fl-l"><a
+                    href="/vip/order?offset=0&tp=arrive">已到达：1</a>
+        </div>
+        <div class="fl-l"><a
+                    href="/vip/order?offset=0&tp=refuse">已拒绝：1</a>
+        </div>
+        <% }else{ %>
+        <p class="none-order">您暂无订单信息</p>
+        <% } %>
+    </div>
+    <div class="fl-l money">
+        <p class="title">累计成交金额：</p>
+
+        <p class="font-red">0.00&nbsp;元</p>
+        <span class="dp-b mouse-logo"></span>
+    </div>
+    <div class="fl-l total-sum">
+        <p class="title">累计成交票数：</p>
+
+        <p class="font-black">0&nbsp;单</p>
+        <span class="dp-b paper-logo"></span>
+    </div>
+</div>
+<div class="bottom"></div>

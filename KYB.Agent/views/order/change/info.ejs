@@ -1,0 +1,669 @@
+<div class="search-part fill">
+    <div class="dp-tb">
+        <div class="input">
+            <label for="start">起始港：</label>
+            <input type="text" id="start" class="sm-input"/>
+        </div>
+        <div class="input">
+            <label for="end">目的港：</label>
+            <input type="text" id="end" class="sm-input"/>
+        </div>
+        <div class="input">
+            <label for="order-num">运单号/订单号：</label>
+            <input type="text" id="order-num" class="sm-input"/>
+        </div>
+        <button class="sm-btn blue-btn" id="search">查询</button>
+    </div>
+</div>
+<div class="operate fill">
+    <p class="list-cout">共为您找到 0 条结果</p>
+    <button class="blue-btn sm-btn fl-r" id="transfer">分配</button>
+</div>
+<div class="outer-con">
+    <table class="outer-tb">
+        <thead>
+        <tr>
+            <td>主单号/订单号</td>
+            <td colspan="3">订单信息</td>
+            <td colspan="4">航班信息</td>
+            <td colspan="7">货物信息</td>
+        </tr>
+        </thead>
+
+    </table>
+</div>
+<div class="outer-pages"></div>
+<div class="white-back dp-n">
+    <div class="log-part alert-part dp-n">
+        <p class="header">操作日志 <span class="close-btn">X</span></p>
+        <div class="log-div">
+            <table class="log-table" border="1">
+                <thead>
+                <tr>
+                    <td>时间</td>
+                    <td>订单编号</td>
+                    <td>操作</td>
+                    <td>操作员ID</td>
+                    <td class="long">描述</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>时间</td>
+                    <td>订单编号</td>
+                    <td>操作</td>
+                    <td>操作员ID</td>
+                    <td class="long">描述</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="btn-pt">
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="transfer-part alert-part dp-n">
+        <p class="header">分配订单操作员 <span class="close-btn">X</span></p>
+        <div class="dp-tb">
+            <div class="input">
+                <label for="czy">操作员：</label>
+                <select id="czy" class="sm-input">
+                    <option value="1">1</option>
+                    <option value="1">1</option>
+                </select>
+            </div>
+        </div>
+        <div class="btn-pt">
+            <button id="accept-transfer" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="accept-part alert-part dp-n">
+        <p class="header">接受该订单 <span class="close-btn">X</span></p>
+
+        <div class="btn-pt">
+            <button id="accept-ensure" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="refuse-part alert-part dp-n">
+        <p class="header">拒绝该订单 <span class="close-btn">X</span></p>
+
+        <div class="refuse-body">
+            <p class="info">请选择取消原因：</p>
+
+            <div class="dp-b clr">
+                <div class="reason">
+                    <input type="radio" name="reason" id="r1" checked/>
+                    <label for="r1">无法满足客户要求，取消</label>
+                </div>
+                <div class="reason">
+                    <input type="radio" name="reason" id="r2"/>
+                    <label for="r2">货物存在问题，取消</label>
+                </div>
+                <div class="reason">
+                    <input type="radio" name="reason" id="r3"/>
+                    <label for="r3">时间问题，取消</label>
+                </div>
+                <div class="reason">
+                    <input type="radio" name="reason" id="r4"/>
+                    <label for="r4">客户原因，取消</label>
+                </div>
+                <div class="reason">
+                    <input type="radio" name="reason" id="r5"/>
+                    <label for="r5">其他原因请备注</label>
+                </div>
+                <textarea id="text-r4"></textarea>
+
+                <div class="reason">
+                    <input type="checkbox" id="r6"/>
+                    <label for="r6">订单已产生费用</label>
+                </div>
+            </div>
+        </div>
+        <div class="btn-pt">
+            <button id="refuse-ensure" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="bg-part alert-part dp-n">
+        <p class="header">报关数据更新 <span class="close-btn">X</span></p>
+
+        <div class="add-data-body fill">
+            <p>订单号：<span class="ddh">11321321321</span></p>
+
+            <p class="fl-l mg-r">起始港：<span class="qsg">PVG</span></p>
+
+            <p class="fl-l mg-r">目的港：<span class="mdg">SHA</span></p>
+
+            <p class="fl-l mg-r">航空公司：<span class="hkgs">CA</span></p>
+
+            <p class="fl-l">起飞日期：<span class="qfrq">2017-02-02</span></p>
+
+            <p class="fl-l mg-r clear">进仓状态：<span class="jczt">未确认</span></p>
+
+            <p class="fl-l">订舱状态：<span class="dczt">已确认</span></p>
+
+            <div class="input fl-l clear">
+                <label for="c-bgzt">报关状态：</label>
+                <select id="c-bgzt" class="sm-input">
+                    <option value="0">未报关</option>
+                    <option value="1">报关中</option>
+                    <option value="2">报关完成</option>
+                    <option value="-2">报关失败</option>
+                    <option value="-1">退关中</option>
+                    <option value="-3">退关完成</option>
+                </select>
+            </div>
+        </div>
+        <div class="btn-pt">
+            <button id="bg-ensure" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="cy-part alert-part dp-n">
+        <p class="header">查验数据更新 <span class="close-btn">X</span></p>
+
+        <div class="add-data-body fill">
+            <p>订单号：<span class="ddh">11321321321</span></p>
+
+            <p class="fl-l mg-r">起始港：<span class="qsg">PVG</span></p>
+
+            <p class="fl-l mg-r">目的港：<span class="mdg">SHA</span></p>
+
+            <p class="fl-l mg-r">航空公司：<span class="hkgs">CA</span></p>
+
+            <p class="fl-l">起飞日期：<span class="qfrq">2017-02-02</span></p>
+
+            <p class="fl-l mg-r clear">进仓状态：<span class="jczt">未确认</span></p>
+
+            <p class="fl-l">订舱状态：<span class="dczt">已确认</span></p>
+
+            <div class="input fl-l clear">
+                <label for="c-cyzt">查验状态：</label>
+                <select id="c-cyzt" class="sm-input">
+                    <option value="0">待查验</option>
+                    <option value="1">查验中</option>
+                    <option value="2">直接放行</option>
+                    <option value="3">查验放行</option>
+                    <option value="4">查验扣货</option>
+
+                </select>
+            </div>
+        </div>
+        <div class="btn-pt">
+            <button id="cy-ensure" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="ys-part alert-part dp-n">
+        <p class="header">运输数据更新 <span class="close-btn">X</span></p>
+
+        <div class="add-data-body fill">
+            <p>订单号：<span class="ddh">11321321321</span></p>
+
+            <p class="fl-l mg-r">起始港：<span class="qsg">PVG</span></p>
+
+            <p class="fl-l mg-r">目的港：<span class="mdg">SHA</span></p>
+
+            <p class="fl-l mg-r">航空公司：<span class="hkgs">CA</span></p>
+
+            <p class="fl-l">起飞日期：<span class="qfrq">2017-02-02</span></p>
+
+            <p class="fl-l mg-r clear">进仓状态：<span class="jczt">未确认</span></p>
+
+            <p class="fl-l">订舱状态：<span class="dczt">已确认</span></p>
+
+            <div class="input fl-l clear">
+                <label for="c-yszt">运输状态：</label>
+                <select id="c-yszt" class="sm-input">
+                    <option value="0">待起飞</option>
+                    <option value="1">已起飞</option>
+                    <option value="2">已到达</option>
+                </select>
+            </div>
+        </div>
+        <div class="btn-pt">
+            <button id="ys-ensure" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="add-data-part alert-part dp-n">
+        <p class="header">录入进仓数据 <span class="close-btn">X</span></p>
+
+        <div class="add-data-body fill">
+            <p>进仓编号：<span class="jcbh">11321321321</span></p>
+
+            <p class="fl-l mg-r">客户名称：<span class="khmc">11321321321</span></p>
+
+            <p class="fl-l">联系人：<span class="lxr">11321321321</span></p>
+
+            <p class="fl-r icon"><span class="glyphicon glyphicon-plus"></span></p>
+
+            <div class="copy-table fill">
+                <div class="thd fill">
+                    <div class="big">时间</div>
+                    <div>件数</div>
+                    <div>长</div>
+                    <div>宽</div>
+                    <div>高</div>
+                    <div>体积</div>
+                    <div>重量</div>
+                    <div>包装</div>
+                    <div>破损</div>
+                    <div>受潮</div>
+                    <div>变形</div>
+                    <div>其他</div>
+                    <div>备注</div>
+                    <div>操作</div>
+                </div>
+                <div class="tbd fill">
+
+                </div>
+                <div class="tft fill">
+
+                </div>
+            </div>
+            <!--<table class="add-data-tb" border="1">-->
+            <!--<thead>-->
+            <!--<tr>-->
+            <!--<td>时间</td>-->
+            <!--<td>件数</td>-->
+            <!--<td>体积</td>-->
+            <!--<td>重量</td>-->
+            <!--<td>包装</td>-->
+            <!--<td>破损</td>-->
+            <!--<td>受潮</td>-->
+            <!--<td>变形</td>-->
+            <!--<td>其他</td>-->
+            <!--<td>备注</td>-->
+            <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+            <!--<tr>-->
+            <!--<td><input type="text" class="a-date"/></td>-->
+            <!--<td><input type="text" class="a-num" onkeyup="value=value.replace(/[^\d.]/g,'')"/></td>-->
+            <!--<td><input type="text" class="a-size" onkeyup="value=value.replace(/[^\d.]/g,'')"/></td>-->
+            <!--<td><input type="text" class="a-wei" onkeyup="value=value.replace(/[^\d.]/g,'')"/></td>-->
+            <!--<td>-->
+            <!--<select class="a-package">-->
+            <!--<option value="1">纸箱</option>-->
+            <!--<option value="2">木箱</option>-->
+            <!--<option value="3">卷</option>-->
+            <!--<option value="4">托盘</option>-->
+            <!--</select>-->
+            <!--</td>-->
+            <!--<td><input type="text" class="a-ps" value="0" onkeyup="value=value.replace(/[^\d.]/g,'')"/></td>-->
+            <!--<td><input type="text" class="a-sc" value="0" onkeyup="value=value.replace(/[^\d.]/g,'')"/></td>-->
+            <!--<td><input type="text" class="a-bx" value="0" onkeyup="value=value.replace(/[^\d.]/g,'')"/></td>-->
+            <!--<td><input type="text" class="a-qt" value="0" onkeyup="value=value.replace(/[^\d.]/g,'')"/></td>-->
+            <!--<td><input type="text" class="a-bz" data-null="1"/></td>-->
+            <!--</tr>-->
+            <!--</tbody>-->
+            <!--</table>-->
+        </div>
+        <div class="btn-pt">
+            <button id="add-data" class="fl-l md-btn blue-btn">添加</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="ensure-data-part alert-part dp-n">
+        <p class="header">确认进仓数据 <span class="close-btn">X</span></p>
+
+        <div class="add-data-body fill">
+            <p>进仓编号：<span class="jcbh">11321321321</span></p>
+
+            <p class="fl-l mg-r">客户名称：<span class="khmc">11321321321</span></p>
+
+            <p class="fl-l">联系人：<span class="lxr">11321321321</span></p>
+
+            <div class="copy-table fill">
+                <div class="thd fill">
+                    <div>批次</div>
+                    <div class="big">时间</div>
+                    <div>件数</div>
+                    <div>长</div>
+                    <div>宽</div>
+                    <div>高</div>
+                    <div>体积</div>
+                    <div>重量</div>
+                    <div>包装</div>
+                    <div>破损</div>
+                    <div>受潮</div>
+                    <div>变形</div>
+                    <div>其他</div>
+                    <div>备注</div>
+                </div>
+                <div class="tbd fill">
+                    <div class="ttr fill">
+                        <div>批次</div>
+                        <div class="big">时间</div>
+                        <div>件数</div>
+                        <div>长</div>
+                        <div>宽</div>
+                        <div>高</div>
+                        <div>体积</div>
+                        <div>重量</div>
+                        <div>包装</div>
+                        <div>破损</div>
+                        <div>受潮</div>
+                        <div>变形</div>
+                        <div>其他</div>
+                        <div>备注</div>
+                    </div>
+                </div>
+                <div class="tft fill">
+
+                </div>
+            </div>
+            <!--<div class="ensure-tb">-->
+            <!--<table class="ensure-data-tb" border="1">-->
+            <!--<thead>-->
+            <!--<tr>-->
+            <!--<td>批次</td>-->
+            <!--<td>时间</td>-->
+            <!--<td>件数</td>-->
+            <!--<td>体积</td>-->
+            <!--<td>重量</td>-->
+            <!--<td>包装</td>-->
+            <!--<td>破损</td>-->
+            <!--<td>受潮</td>-->
+            <!--<td>变形</td>-->
+            <!--<td>其他</td>-->
+            <!--<td>备注</td>-->
+            <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+
+            <!--</tbody>-->
+            <!--<tfoot>-->
+
+            <!--</tfoot>-->
+            <!--</table>-->
+            <!--</div>-->
+            <p class="mg-t">进仓数据确认后无法修改</p>
+
+            <p>进仓数据确认后，后续计算将采用确认后数据</p>
+        </div>
+        <div class="btn-pt">
+            <button id="ensure-data" class="fl-l md-btn blue-btn">确认</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="yd-part alert-part dp-n">
+        <p class="header">关联运单 <span class="close-btn">X</span></p>
+
+        <div class="zd-body fill">
+            <p class="title clear">航班信息</p>
+
+            <div class="txt fl-l">
+                <span class="title">订单号：</span>
+                <span class="body ddh">123456</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">起始港：</span>
+                <span class="body qsg">PVG</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">目的港：</span>
+                <span class="body mdg">SHA</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">航空公司：</span>
+                <span class="body hkgs">CA</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">起飞日期：</span>
+                <span class="body qfrq">2017-02-02</span>
+            </div>
+            <p class="title clear">货物信息</p>
+
+            <div class="txt fl-l">
+                <span class="title">件数：</span>
+                <span class="body js">123456</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">体积：</span>
+                <span class="body tj">12345</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">重量：</span>
+                <span class="body zl">123456</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">进仓状态：</span>
+                <span class="body jczt">123456</span>
+            </div>
+            <div class="result-part dp-n">
+                <p class="title clear">可关联运单</p>
+
+                <div class="yd-body fill">
+                    <div class="left fill">
+                        <p class="yd-rd">
+                            <input type="radio" name="s-yd"/>123456789
+                        </p>
+                    </div>
+                    <div class="right fill">
+                        <p class="title">已关联运单</p>
+
+                        <div class="yd-tb">
+                            <table border="1">
+                                <thead>
+                                <tr>
+                                    <td>订单号</td>
+                                    <td>件数</td>
+                                    <td>体积</td>
+                                    <td>重量</td>
+                                    <td>进仓状态</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="add-yd fill dp-n">
+                <p class="title clear">订舱信息</p>
+
+                <div class="input">
+                    <label for="yd-c">预定件数：</label>
+                    <input type="text" id="yd-c" class="sm-input yd-ip"/>
+                </div>
+                <div class="input">
+                    <label for="yd-s">预定体积：</label>
+                    <input type="text" id="yd-s" class="sm-input yd-ip"/>
+                </div>
+                <div class="input">
+                    <label for="yd-w">预定重量：</label>
+                    <input type="text" id="yd-w" class="sm-input yd-ip"/>
+                </div>
+                <p class="clear font-red">*保存后自动分配运单号</p>
+            </div>
+        </div>
+        <div class="btn-pt">
+            <button id="gl-ensure" class="fl-l md-btn blue-btn" data-tp="0">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="zd-part alert-part dp-n">
+        <p class="header">制单 <span class="close-btn">X</span></p>
+
+        <div class="zd-body fill">
+            <div class="txt fl-l">
+                <span class="title">订单号：</span>
+                <span class="body ddh">123456</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">客户：</span>
+                <span class="body kh">123456</span>
+            </div>
+            <p class="title clear">航班信息</p>
+
+            <div class="txt fl-l">
+                <span class="title">起始港：</span>
+                <span class="body qsg">PVG</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">目的港：</span>
+                <span class="body mdg">SHA</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">航空公司：</span>
+                <span class="body hkgs">CA</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">起飞日期：</span>
+                <span class="body qfrq">2017-02-02</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">航班号：</span>
+                <span class="body hbh">123456</span>
+            </div>
+            <p class="title clear">货物信息</p>
+
+            <div class="txt fl-l">
+                <span class="title">品名：</span>
+                <span class="body pm">consol</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">类型：</span>
+                <span class="body lx">1321</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">委托报关：</span>
+                <span class="body wtbg">是</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">件数：</span>
+                <span class="body js">123456</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">体积：</span>
+                <span class="body tj">12345</span>
+            </div>
+            <div class="txt fl-l">
+                <span class="title">重量：</span>
+                <span class="body zl">123456</span>
+            </div>
+            <p class="title clear">费用清单</p>
+            <table class="zd-tb" border="1">
+                <thead>
+                <tr>
+                    <td>项目</td>
+                    <td>单价</td>
+                    <td>数量</td>
+                    <td>金额</td>
+                    <td>操作</td>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="btn-pt">
+            <button id="zd-ensure" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="change-part alert-part dp-n">
+        <p class="header">订单改配 <span class="close-btn">X</span></p>
+
+        <div class="gp-body">
+            <div class="main-info">
+                <div class="dp-tb">
+                    <p class="info"><span class="title">运单号：</span><span class="gp-ydh">99986470521</span></p>
+
+                    <p class="info"><span class="title">客户：</span><span class="gp-kh">CA</span></p>
+
+                    <p class="info mg-0"><span class="title">订单渠道：</span><span class="gp-qd">未使用</span></p>
+                </div>
+            </div>
+            <div class="border fill">
+                <p class="title">货物信息</p>
+
+                <p class="sg-info"><span class="ttl">品名：</span><span class="gp-pm">xxxx</span></p>
+
+                <p class="sg-info"><span class="ttl">类型：</span><span class="gp-lx">xxxx</span></p>
+
+                <p class="sg-info mgr-0"><span class="ttl">委托报关：</span><span class="gp-bg">xxxx</span></p>
+
+                <p class="sg-info"><span class="ttl">件数：</span><span class="gp-js">xxxx</span></p>
+
+                <p class="sg-info"><span class="ttl">体积：</span><span class="gp-tj">xxxx</span></p>
+
+                <p class="sg-info mgr-0"><span class="ttl">重量：</span><span class="gp-zl">xxxx</span></p>
+
+                <p class="sg-info"><span class="ttl">订舱状态：</span><span class="gp-dc">xxxx</span></p>
+
+                <p class="sg-info"><span class="ttl">进仓状态：</span><span class="gp-jc">xxxx</span></p>
+            </div>
+            <div class="border fill">
+                <p class="title">航班信息</p>
+
+                <p class="sg-info"><span class="ttl">起始港：</span><span class="gp-s" id="gp-s">xxxx</span></p>
+
+                <div class="input">
+                    <label for="gp-e">目的港：</label>
+                    <input type="text" class="sm-input bg-ip s-req" id="gp-e"/>
+                    <ul class="get-name"></ul>
+                </div>
+                <div class="input mgr-0">
+                    <label for="gp-c">航空公司：</label>
+                    <input type="text" class="sm-input bg-ip s-req" id="gp-c"/>
+                    <ul class="get-name"></ul>
+                </div>
+                <div class="input">
+                    <label for="gp-d">起飞日期：</label>
+                    <input type="text" class="sm-input s-req" id="gp-d"/>
+                </div>
+                <p class="sg-info"><span class="ttl">航线路径：</span><span class="gp-l">xxxx</span></p>
+
+                <div class="input mgr-0">
+                    <button id="gp-search" class="sm-btn blue-btn">搜索</button>
+                </div>
+            </div>
+            <div class="border fill hxlb">
+                <div class="result-part">
+                    <p class="title">根据输入结果匹配如下结果：</p>
+                    <table class="gp-tb">
+                        <thead>
+                        <tr>
+                            <td></td>
+                            <td>航空公司</td>
+                            <td>航线</td>
+                            <td>45KG</td>
+                            <td>100KG</td>
+                            <td>300KG</td>
+                            <td>500KG</td>
+                            <td>1000KG</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td colspan="8" class="big">请输入航班信息搜索！</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="gp-pages"></div>
+                </div>
+            </div>
+            <div class="border fill">
+                <div class="input">
+                    <label for="gp-dj">单价：</label>
+                    <input type="text" class="sm-input" id="gp-dj" onkeyup="value=value.replace(/[^\-?\d.]/g,'')"/>
+                </div>
+                <div class="rdo">
+                    <input type="checkbox" id="gp-fix"/>
+                    <label for="gp-fix">固定单价</label>
+                </div>
+            </div>
+        </div>
+        <div class="btn-pt">
+            <button id="change-ensure" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+</div>

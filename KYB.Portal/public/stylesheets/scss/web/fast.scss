@@ -1,0 +1,113 @@
+@import "../general/general";
+
+.delivery-box{  background: url('../../../images/img/bg_booking.jpg') no-repeat;border-top: 1px solid $blue1;
+  .container{background-color: transparent;margin: 10px auto 100px;
+    .nav-top{color: #fff;background-color: transparent;}
+    .super-man{width: 100%;margin: 0 auto;overflow: hidden;
+      .top-img{margin: 0 auto;width: 530px;
+        span{float: left;display: block;}
+        .line{width: 150px;border: 1px solid $border;margin-top: 9px;}
+        .circle{width: 20px;height: 20px;border: 1px solid transparent;border-radius: 50%;background-color: #fff;}
+        .doing{background-color: $yellow2;}
+        .done{background-color: green;}
+      }
+      .text{overflow: hidden;margin-top: 10px;
+        span{color: #fff;display: block;float: left;font-size: 12px;}
+        .step1{margin-left: 345px;}
+        .step2{margin-left: 70px;}
+        .step3{margin-left: 95px;}
+        .step4{margin-left: 110px;}
+      }
+    }
+    .fast-box{width: 100%;background-color: #fff;padding: 0 50px;border-top: 1px solid transparent;margin-top: 10px;
+      .top{margin-top: 10px;border-bottom: 1px solid $border;padding-bottom: 30px;
+        .title{color: #248fd5;font-size: 16px;@include clear();}
+        .no-airline{@include clear();color: red;padding: 10px 0 0 100px;height: 40px;line-height: 30px;}
+        .input{width: 280px;float: left;margin-top: 10px;position: relative;margin-right: 165px;
+          label,input{display: block;float: left;margin: 0;}
+          label{@include HEIGHT(30px);text-align: right;font-weight: normal;width: 100px;}
+          label.require:before{content: '*';color: red;margin-right: 5px;}
+          input{padding-right: 40px;}
+          .warm{border: 1px solid red;}
+          .unit{display: block;@include HEIGHT(30px);@include textCenter(40px);position: absolute;top: 0;right: 0;color: #999;}
+          ul{width: 180px;position: absolute;top: 32px;right:0;  z-index: 1000;background-color: #fff;
+            li{width: 100%;text-align: center;@include HEIGHT(30px);border: 1px solid $border;border-bottom: none;@include NOWRAP();cursor: pointer;}
+            li:last-child{border-bottom: 1px solid $border;}
+            li.active{background-color: #f4f4f4;}
+          }
+        }
+        .input:nth-child(3n+1){margin-right: 0;}
+        .first{
+          input{width: 140px;}
+          .unit{right: 40px;}
+          .calculate-logo{display: block;float: left;height: 30px;width: 30px;margin-left: 10px;cursor:pointer;background: url("../../../images/img/iconmap1.png") no-repeat 0 -350px;}
+          .add-part{width: 180px;height: 100px;border: 1px solid $gray3;position: absolute;top: 32px;z-index: 100;background-color: #fff;right:0;
+            .add-in{width: 37px;height: 50px;
+              label,input{display: block;}
+              label{width: 37px;@include HEIGHT(20px);text-align: center;}
+              input{width: 37px;height: 30px;padding: 0;text-align: center;}
+            }
+            .multi{width: 10px;height: 50px;float: left;line-height: 70px;}
+            .multi-calcu{position: absolute;  bottom: 10px;left: 70px;}
+          }
+        }
+        a{display: block;@include HEIGHT(30px);margin:10px 20px 0 0;float: right;color: $blue3;text-decoration: underline;}
+        a:hover{text-decoration: none;}
+      }
+      .top:after{display: block;content: '';@include clear();}
+      .middle{overflow: hidden;;margin-top: 10px;
+        .title{display: block;float: left;width: 100px;text-align: right;@include HEIGHT(30px);}
+        .radio{float: left;margin: 5px 10px 0 0;}
+      }
+      .operate{margin-top: 20px;
+        .price-pt{width: 402px;border: 1px solid #D45075;margin: 0 auto;padding: 20px 0;
+          p{text-align: center;overflow: hidden;color: $gray2;font-size: 12px;
+            span{display: block;float: left;@include HEIGHT(25px);@include NOWRAP();color: #000;}
+            .title{width: 43%;text-align: right;}
+            .body{width: 55%;text-align: left;padding-left: 20px;}
+          }
+          .font-big{
+            span{font-size: 16px;}
+            .body{color: #D45075;}
+          }
+          a{display: block;@include HEIGHT(25px);text-align: center;margin-top: 10px;color: $blue3;text-decoration: underline;}
+          a:hover{text-decoration: none;}
+          .jsjg{
+            i{font-style: normal;color: $gray2;}
+          }
+        }
+        .dp-tb{margin: 20px auto 0;
+          input,label{display: block;float: left;margin: 0;}
+          input{margin-top: 4px;}
+        }
+        #submit{margin: 10px auto 0;}
+      }
+    }
+  }
+}
+.bg-class{background: url('../../../images/img/bg_bx.jpg') no-repeat}
+.white-back{height: 100%;width: 100%;position: fixed;left: 0;top: 0;background-color: rgba(255,255,255,0.7);z-index: 10000;
+  .other-list{width: 600px;position: absolute;left: 50%;margin-left: -300px;top: 40%;z-index: 10001;
+    .header{@include HEIGHT(50px);background-color: $blue3;
+      span{margin-left: 20px;font-size: 20px;color: $yellow2;background-color: $blue3;}
+      span:first-child{color: #fff;}
+      .close-btn{height: 50px;width: 50px;color: #fff;text-align: center;font-size: 30px;cursor: pointer;}
+    }
+    table{width: 100%;background-color: #fff;
+      td{width: 25%;text-align: center;@include HEIGHT(30px);}
+    }
+  }
+  .price-list{  width: 800px;position: absolute;left: 50%;margin-left: -400px;top: 15%;z-index: 10001;background-color: #fff;padding-bottom: 10px;border: 1px solid $border;
+    .header{@include HEIGHT(50px);background-color: $blue3;
+      span{margin-left: 20px;font-size: 20px;color: $yellow2;background-color: $blue3;}
+      span:first-child{color: #fff;}
+      .close-btn{height: 50px;width: 50px;color: #fff;text-align: center;font-size: 30px;cursor: pointer;}
+    }
+    .half{width: 50%;float: left;padding: 20px;
+      p{line-height: 30px;margin-bottom: 10px;}
+      table{width: 100%;
+        td{height: 30px;text-align: center;}
+      }
+    }
+  }
+}

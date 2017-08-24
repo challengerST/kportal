@@ -1,0 +1,99 @@
+@import "../general/general";
+@import "../newGeneral/general";
+.up-img {
+  overflow: hidden;
+  margin: 20px 0 0 54px;
+  span:first-child {
+    font-size:12px;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+    font-weight: normal;
+    color: #333;
+    margin-right:10px;
+  }
+  .out {
+    a {
+      height: 130px;
+      width: 100px;
+      position: relative;
+      overflow: hidden;
+      .show-img {
+        display: block;
+        height: 88px;
+        width: 88px;
+        color: $c6;
+        border: 1px solid $c6;
+        line-height: 88px;
+        font-size: 30px;
+        font-weight: 600;
+        text-align: center;
+      }
+      .add-txt {
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        color: #999;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+      }
+      input{
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 100px;
+        opacity: 0;
+      }
+      img{
+        position: absolute;
+        display: block;
+        height: 100px;
+        width: 100px;
+        top: 0;
+        left: 0;
+      }
+    }
+    div {
+      margin-left: 10px;
+      span{
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
+        color: #999;
+        font-size:12px;
+      }
+    }
+  }
+}
+.agr_next{
+  margin-left:218px;
+  margin-top:38px;
+}
+.agr_next.agr-index{
+  margin-left:0;
+}
+.agr_status{
+  padding-left:338px;
+}
+.acf_delete{
+  display:inline-block;
+  width:88px;
+  height:24px;
+  background:$c652;
+  opacity:0.5;
+  filter: opacity(50);
+  position:absolute;
+  bottom:43px;
+
+}
+.up-data em{
+    display:inline-block;
+    position:absolute;
+    top:66px;
+    left:70px;
+    width:16px;
+    height:16px;
+    color:#fff;
+}

@@ -1,0 +1,46 @@
+<%- include ../base/head.ejs %>
+<%# 样式表引用 %>
+<link rel="stylesheet" href="/stylesheets/css/web/login.css">
+<%# 样式表引用结束 %>
+<%- include ../base/header.ejs %>
+
+<div class="app-box">
+    <div class="active-box">
+        <div class="container">
+            <% if(data == 0){ %>
+            <div class="active-img"></div>
+            <% }else{ %>
+            <div class="wrong-img"></div>
+            <% } %>
+
+            <% if(data == 0){ %>
+            <p>邮箱已激活！</p>
+            <% }else{ %>
+            <p><%= msg %></p>
+            <% } %>
+            <% if(data == 0){ %>
+            <a href="/login" class="auto-login-active">3秒后系统会自动跳转，也可点击本处</a>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<%- include ../base/javascripts.ejs %>
+
+<script>
+    var data = '<%= data %>';
+    var n = 3;
+    if (data == 0) {
+        setInterval(function () {
+            n--;
+            if (n == 0) {
+                location.href = '/login';
+            } else {
+                $('.auto-login-active').html(n + '秒后系统会自动跳转，也可点击本处');
+            }
+        }, 1000)
+    }
+</script>
+
+
+<%- include ../base/foot.ejs %>

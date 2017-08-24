@@ -1,0 +1,148 @@
+<div class="search-part fill">
+    <div class="dp-tb">
+        <div class="input">
+            <label for="name">航空公司名称：</label>
+            <input type="text" id="name" class="sm-input"/>
+        </div>
+        <button class="sm-btn blue-btn" id="ot-search">查询</button>
+    </div>
+</div>
+<div class="operate fill">
+    <!--<a class="blue-btn sm-btn fl-r" href="/airline/company/detail" target="_blank">添加</a>-->
+    <a class="blue-btn sm-btn fl-r" id="open-add" href="javascript:void(0);" target="_blank">添加</a>
+</div>
+<div class="outer-con">
+    <table class="outer-tb">
+        <thead>
+        <tr>
+            <td>航空公司</td>
+            <td>国家</td>
+            <td>分泡比例</td>
+            <td>仓库</td>
+            <td>起始港</td>
+            <td>目的港统计</td>
+            <td>航线统计</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+<div class="white-back dp-n">
+    <div class="delete-part alert-part dp-n">
+        <p class="header">删除该信息 <span class="close-btn">X</span></p>
+        <p class="del-info">连带删除目的港和航线</p>
+        <div class="btn-pt">
+            <button id="delete-ensure" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="editor-modal alert-part dp-n">
+        <p class="header">关联航空公司<span class="close-btn">X</span></p>
+
+        <div class="modal_body">
+            <div class="main-info">
+                <div class="dp-tb">
+                    <div class="input">
+                        <label for="code">航空公司搜索：</label>
+                        <input type="text" class="sm-input" id="code" autocomplete="off"/>
+                        <ul class="dp-n get-name"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border fill">
+                <p class="title">基本信息</p>
+
+                <div class="input">
+                    <label for="inner-name">名称：</label>
+                    <input type="text" class="sm-input" id="inner-name" data-code="0" readonly/>
+                </div>
+                <div class="input">
+                    <label for="country">国家：</label>
+                    <input type="text" class="sm-input" id="country" readonly/>
+                </div>
+                <div class="input mg-0">
+                    <label for="o-header">运单头：</label>
+                    <input type="text" class="sm-input" id="o-header" readonly/>
+                </div>
+            </div>
+            <div class="border fill">
+                <p class="title clear">订舱设置</p>
+
+                <div class="input">
+                    <label for="percentage">分泡比例：</label>
+                    <select id="percentage" class="sm-input">
+                        <option value="0.2">2/8</option>
+                        <option value="0.3">3/7</option>
+                        <option value="0.4">4/6</option>
+                        <option value="0.5">5/5</option>
+                    </select>
+                </div>
+                <div class="input">
+                    <label for="warehouse">仓库设置：</label>
+                    <select id="warehouse" class="sm-input" data-sd="<%=  %>>">
+
+                    </select>
+                </div>
+                <div class="input mg-0">
+                    <label for="price">费用设置：</label>
+                    <select id="price" class="sm-input">
+
+                    </select>
+                </div>
+            </div>
+            <div class="border fill">
+                <p class="title">起始港列表</p>
+
+                <div class="input-part fill">
+                    <div class="input">
+                        <label for="start">机场搜索：</label>
+                        <input type="text" class="sm-input" id="start" autocomplete="off"/>
+                        <ul class="dp-n get-name"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="add-body">
+                <table border="1" class="inner-tb">
+                    <thead>
+                    <tr>
+                        <td>代码</td>
+                        <td>名称</td>
+                        <td>保函</td>
+                        <td>操作</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!--<tr>-->
+                    <!--<td>PVG</td>-->
+                    <!--<td>11111</td>-->
+                    <!--<td class="big">-->
+                    <!--<div class="dp-tb">-->
+                    <!--<div class="files">-->
+                    <!--<div class="top">-->
+                    <!--PDF-->
+                    <!--<span class="glyphicon glyphicon-trash"></span>-->
+                    <!--</div>-->
+                    <!--<a href="javascript:void(0);" class="dp-b">文件名</a>-->
+                    <!--</div>-->
+                    <!--<div class="add">-->
+                    <!--<div class="top">-->
+                    <!--+-->
+                    <!--</div>-->
+                    <!--<a href="javascript:void(0);" class="dp-b">添加文件</a>-->
+                    <!--<input type="file" class="up-file">-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</td>-->
+                    <!--<td><a href="#">删除</a></td>-->
+                    <!--</tr>-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="btn-pt">
+            <button id="editor-ensure" class="fl-l md-btn blue-btn" data-id="0">确定</button>
+            <button class="close-btn fl-l md-btn white-btn">关闭</button>
+        </div>
+    </div>
+</div>

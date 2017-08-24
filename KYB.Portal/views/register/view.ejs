@@ -1,0 +1,186 @@
+<%- include ../newBase/head.ejs %>
+<%# 样式表引用 %>
+<link rel="stylesheet" href="/stylesheets/css/web/agr.css">
+<%# 样式表引用结束 %>
+<%- include ../newBase/header.ejs %>
+<div style="background:#fff;">
+    <div class="agr_container agr_header">
+        <p class="small-nav" data-id=""><a href="/home">首页</a> > <%= title %> </p>
+    </div>
+</div>
+<div class="agr_status agr_container fill">
+    <div class="agr_statusDetail active fl-l">
+        <div class="agr_statusCode"><span>1</span></div>
+        <div class="agr_statusWord"><span>验证手机</span></div>
+    </div>
+    <div class="transline fl-l"></div>
+    <div class="agr_statusDetail fl-l">
+        <div class="agr_statusCode"><span>2</span></div>
+        <div class="agr_statusWord"><span>完善资料</span></div>
+    </div>
+    <div class="transline fl-l"></div>
+    <div class="agr_statusDetail fl-l">
+        <div class="agr_statusCode"><span>3</span></div>
+        <div class="agr_statusWord"><span>注册完成</span></div>
+    </div>
+</div>
+<div class="app-box register-box">
+    <div class="agr_container container">
+        <div style="padding-top:18px;padding-left:62px;border:1px solid #e7ebf2;background:#fff;width:705px;">
+            <div class="agr_setupTip" style="line-height:25px;">
+                <p class="f-12" style="color:#e64c7b">注册须知:</p>
+                <p class="f-12"><em class="agr_dot"></em>如果您是贵公司第一个注册的员工，那么您的角色默认为管理员；</p>
+                <p class="f-12"><em class="agr_dot"></em>您也可以在员工管理模块，邀请您的同事与您协同工作；</p>
+                <p class="f-12" style="margin-left:20px;">如果您已有同事在空运邦上注册过账号，那么您无需注册账号。只需让您的同事在员工管理模块邀请您进来</p>
+                <p class="f-12" style="margin-left:20px;">即可，这样，您与您的同事属于同一公司，方便协同工作。</p>
+            </div>
+            <div class="tel ipt fill" style="margin-top:26px;">
+                <label class="dp-b fl-l f-12" for="tel"><span class="star">*</span>手机号</label>
+                <input type="text" id="tel" onkeyup="this.value=this.value.replace(/\D/g,'')" placeholder="请输入联系人的手机号"
+                       onblur="this.placeholder=''"
+                       autocomplete="off">
+                <span class="info dp-n f-12">手机号格式有误</span>
+                <span class="agr_wrong">请填写联系人的手机号</span>
+            </div>
+            <!--<div class="code">-->
+            <!--<label class="dp-b fl-l" for="code"><span class="star">*</span>验证码：</label>-->
+            <!--<input type="text" id="code" placeholder="请输入验证码" autocomplete="off">-->
+            <!--<img src="" id="getCode" alt="图片验证" class="validate-img fl-l">-->
+            <!--<span class="info dp-n wrong-code">请输入验证码</span>-->
+            <!--</div>-->
+            <!--<div class="code ipt fill">-->
+            <!--<label class="dp-b fl-l" for="code"><span class="star">*</span>验证码：</label>-->
+            <!--<div id="captcha">-->
+            <!--<p id="wait">正在加载验证码......</p>-->
+            <!--</div>-->
+            <!--<span class="info dp-n" id="notice">请完成验证</span>-->
+            <!--</div>-->
+            <div class="phone-msg ipt fill">
+                <label class="dp-b fl-l f-12" for="p-msg"><span class="star">*</span>验证码</label>
+                <input type="text" id="p-msg" placeholder="请输入验证码" onblur="this.placeholder=''" autocomplete="off">
+                <button class="p-msg lg-btn white-btn f-12">获取短信验证码</button>
+                <span class="info dp-n f-12">验证码错误</span>
+                <span class="agr_wrong">请输入验证码</span>
+            </div>
+            <!--<div class="password ipt fill">-->
+            <!--<label class="dp-b fl-l" for="password"><span class="star">*</span>设置登录密码：</label>-->
+            <!--<input type="password" id="password" placeholder="6-20位的密码，必须由数字和英文组合" autocomplete="off">-->
+            <!--<span class="info dp-n">密码格式错误</span>-->
+            <!--</div>-->
+            <!--<div class="ensure ipt fill">-->
+            <!--<label class="dp-b fl-l" for="ensure"><span class="star">*</span>重复登录密码：</label>-->
+            <!--<input type="password" id="ensure" placeholder="请再次输入密码" autocomplete="off">-->
+            <!--<span class="info dp-n">两次输入不一致</span>-->
+            <!--</div>-->
+
+            <!--<p class="already">-->
+            <!--<label for="check"></label>-->
+            <!--<input type="checkbox" id="check" checked="checked">-->
+            <!--我已同意并阅读-->
+            <!--<a href="/login/deal" target="_blank"> 《空运邦用户协议》 </a>-->
+            <!--</p>-->
+            <!--<div class="click-pt">-->
+            <!--<button id="register" class="lg-btn blue-btn">注册</button>-->
+            <!--<a href="/login">已有账号？立即登录</a>-->
+            <!--</div>-->
+            <div class="agr_next fill">
+                <a href="../newLogin" class="fl-l" style="color:#006bbd;margin-top:10px;font-size:12px;">已有账号，请登录 ></a>
+                <a href="javascript:void(0)" class="lg-btn blue-btn fl-r">下一步</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="data-box app-box dp-n">
+    <div class="agr_container container">
+        <div style="padding-top:18px;padding-left:62px;border:1px solid #e7ebf2;background:#fff;width:705px;">
+            <div class="ipt fill">
+                <label class="dp-b fl-l">手机号码</label>
+                <!--<input type="password" id="password" placeholder="6-20位数字+字母组合" autocomplete="off">-->
+                <span class="res_mobile fl-l">12345644568</span>
+                <!--<span class="agr_wrong">请填写密码</span>-->
+            </div>
+            <div class="passward ipt fill">
+                <label class="dp-b fl-l" for="password">
+                    <!--<span class="star">*</span>-->
+                    设置密码</label>
+                <input type="password" id="password" placeholder="6-20位数字+字母组合" onfocus="this.placeholder='6-20位数字+字母组合'"
+                       onblur="this.placeholder=''" autocomplete="off">
+                <span class="info dp-n f-12">密码格式错误</span>
+                <span class="agr_wrong f-12">请填写密码</span>
+            </div>
+            <div class="ensurePwd ipt fill">
+                <label class="dp-b fl-l" for="ensure">确认密码</label>
+                <input type="password" id="ensure" placeholder="请再次输入密码" onfocus="this.placeholder='请再次输入密码'"
+                       onblur="this.placeholder=''" autocomplete="off">
+                <span class="info dp-n f-12">两次输入不一致</span>
+                <span class="agr_wrong f-12">请确认密码</span>
+            </div>
+            <div class="res_name ipt fill">
+                <label class="dp-b fl-l f-12" for="res_name">真实姓名</label>
+                <input type="text" id="res_name" placeholder="请填写真实姓名" onfocus="this.placeholder='请填写真实姓名'"
+                       onblur="this.placeholder=''" autocomplete="off">
+                <span class="info dp-n f-12">名称格式错误</span>
+                <span class="agr_wrong f-12">请填写真实姓名</span>
+            </div>
+            <div class="res_mail ipt fill">
+                <label class="dp-b fl-l f-12" for="mail">电子邮箱</label>
+                <input type="text" id="mail" placeholder="请填写常用邮箱" onblur="this.placeholder=''" autocomplete="on">
+                <span class="info dp-n f-12">邮箱格式错误</span>
+                <span class="agr_wrong f-12">请填写常用邮箱</span>
+            </div>
+            <div class="companyName ipt fill">
+                <label class="dp-b fl-l f-12" for="companyName">公司名称</label>
+                <input type="text" id="companyName" placeholder="请填入公司名称" onblur="this.placeholder=''" autocomplete="on">
+                <span class="fl-l f-12" style="width:180px;color:#657592;margin-top:10px;margin-left:10px;">请务必填写真实正确的公司名称
+                以免订单委托中造成不必要的纠纷
+                </span>
+                <!--<span class="info f-12"></span>-->
+                <span class="agr_wrong f-12">请输入公司名称</span>
+            </div>
+            <div class="res_next">
+                <a href="javascript:void(0)" class="lg-btn blue-btn">注册</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="pass-box app-box res_ok dp-n">
+    <div class="agr_container container">
+        <div class="agr_content fill">
+            <div class="fl-l agr_successCode"><img src="/images/icon_ok.png" alt=""></div>
+            <div class="fl-l agr_success">
+                <p class="fir-txt">注册成功</p>
+                <p>如果您是贵公司第一个注册的员工，那么您的角色默认为管理员；</p>
+                <p>您也可以在<a href="javascript:void(0)">员工管理</a>模块，邀请您的同事与您协同工作；</p>
+                <p>现在就可以开始寻找适合您的<a href="javascript:void(0)">航线产品</a>、委托订单。</p>
+                <p class="agr_next agr_index">
+                    <a href="/home" class="go-login lg-btn blue-btn">返回首页</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="pass-box app-box res_sorry dp-n">
+    <div class="agr_container container">
+        <div class="agr_content fill">
+            <div class="fl-l agr_successCode"><img src="/images/icon_sorry.png" alt=""></div>
+            <div class="fl-l agr_success">
+                <p class="fir-txt">抱歉...</p>
+                <p style="width:456px;line-height:1.6;">您不是【上海腾亿国际货运代理有限公司】的店主，也不是该公司的员工，无权进行此
+                    操作。</p>
+                <p class="agr_next agr_index">
+                    <a href="/home" class="go-login lg-btn blue-btn">返回首页</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+<%- include ../newBase/javascripts.ejs %>
+<%# 脚本引用 %>
+<script src="http://static.geetest.com/static/tools/gt.js"></script>
+<script src="/javascripts/register/bundle.min.js" charset="utf-8"></script>
+<%# 脚本引用结束 %>
+

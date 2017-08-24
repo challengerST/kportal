@@ -1,0 +1,77 @@
+<%- include ../base/head.ejs %>
+<%# 样式表引用 %>
+<link rel="stylesheet" href="/javascripts/datePicker/css/bootstrap-datetimepicker.min.css"/>
+<link rel="stylesheet" href="/stylesheets/css/web/entrust.css">
+<%# 样式表引用结束 %>
+<%- include ../base/header.ejs %>
+
+<script>
+    var dd = {
+        mb: '<%= mb||'' %>'
+    };
+</script>
+
+<div class="app-box">
+    <div class="delivery-box">
+        <div class="container">
+            <p class="nav-top">首页 > 运价查询</p>
+
+            <div class="super-man">
+                <span class="first">委托订舱</span>
+                <span class="second mark">确认委托信息</span>
+                <span class="third">委托成功</span>
+            </div>
+            <div class="order-box fill">
+                <%- include ./info.ejs %>
+                <%- include ./price.ejs %>
+            </div>
+        </div>
+    </div>
+    <div class="pass-box dp-n">
+        <div class="container">
+            <p class="nav-top">首页 > 运价查询</p>
+
+            <div class="super-man">
+                <span class="first">委托订舱</span>
+                <span class="second">确认委托信息</span>
+                <span class="third mark">委托成功</span>
+            </div>
+            <div class="pass">
+                <div class="pass-info fl-l">
+                    <p>委托成功！您的空运订单已生成</p>
+
+                    <p class="order-number"></p>
+
+                    <p><span class="dp-b fl-l locate-logo"></span> <a id="open_map" class="dp-b fl-l"
+                                                                      href="javascript:void(0);">查看进仓编号及下载进仓地图></a>
+                    </p>
+
+                    <p><span class="dp-b fl-l list-logo"></span> <a id="open_list" class="dp-b fl-l"
+                                                                    href="javascript:void(0);">查看下载货物保函></a></p>
+                </div>
+                <div class="pass-logo fl-r"></div>
+            </div>
+            <div class="connect">
+                <div class="wechat-logo fl-l"></div>
+                <div class="connect-info fl-l">
+                    <p class="black">微信“扫一扫”关注空运邦</p>
+
+                    <p class="black">绑定手机PC账号 空运订单随时查看</p>
+
+                    <p class="blue"><span class="head-logo"></span>有问题？在线联系您的客服专员：<a href="#">叮叮</a></p>
+
+                    <p class="blue"><span class="phone-logo"></span>021-31157505-8011</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include ./model.ejs %>
+<%- include ../base/javascripts.ejs %>
+<%# 脚本引用 %>
+<script src="/javascripts/datePicker/js/bootstrap-datetimepicker.min.js" charset="utf-8"></script>
+<script src="/javascripts/datePicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="utf-8"></script>
+<script src="/javascripts/entrust/bundle.min.js" charset="utf-8"></script>
+<%# 脚本引用结束 %>
+<%- include ../base/foot.ejs %>

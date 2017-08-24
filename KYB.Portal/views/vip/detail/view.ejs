@@ -1,0 +1,26 @@
+<%- include ../../base/head.ejs %>
+<%# 样式表引用 %>
+<link rel="stylesheet" href="/javascripts/datePicker/css/bootstrap-datetimepicker.min.css"/>
+<link rel="stylesheet" href="/stylesheets/css/web/detail.css">
+<%# 样式表引用结束 %>
+<%- include ../../base/header.ejs %>
+
+<div class="app-box">
+    <div class="detail-box">
+        <div class="container">
+            <% if ('resCode' in data && data.resCode == 0) { %>
+            <%- include ./info.ejs %>
+            <% }else{ %>
+            <p class="wrong">获取订单详情失败，<a href="">请重试</a></p>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<%- include ../../base/javascripts.ejs %>
+<%# 脚本引用 %>
+<script src="/javascripts/datePicker/js/bootstrap-datetimepicker.min.js" charset="utf-8"></script>
+<script src="/javascripts/datePicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="utf-8"></script>
+<script src="/javascripts/detail/bundle.min.js" charset="utf-8"></script>
+<%# 脚本引用结束 %>
+<%- include ../../base/foot.ejs %>

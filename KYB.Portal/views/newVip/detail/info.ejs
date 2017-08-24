@@ -1,0 +1,889 @@
+<% var o = 'order' in data.resBody && data.resBody.order || {}; %>
+<% var s = 'storage' in data.resBody && data.resBody.storage || {} %>
+<% var b = 'subOrderList' in data.resBody && data.resBody.subOrderList || [] %>
+<% var wfdhw = {}, wnum = false; %>
+<% var orderShipper = o.orderShipper || {} %>
+<% var orderConsignee = o.orderConsignee || {} %>
+<% var orderNotifier = o.orderNotifier || {} %>
+<% Date.prototype.Format = function (fmt) { //author: J
+    var o = {
+        "M+": this.getMonth() + 1, //月份
+        "d+": this.getDate(), //日
+        "h+": this.getHours(), //小时
+        "m+": this.getMinutes(), //分
+        "s+": this.getSeconds(), //秒
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+        "S": this.getMilliseconds() //毫秒
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+} %>
+<% var hxlj = ''; %>
+<% if (o.airwayInfo && 'transPort' in o.airwayInfo && o.airwayInfo.transPort instanceof Array && o.airwayInfo.transPort.length > 0) {
+    var ports = o.airwayInfo.transPort;
+    for (var i = 0; i < ports.length; i++) {
+        hxlj += ports[i].portCode + (i == ports.length - 1 ? '' : ' -> ');
+    }
+} else {
+    hxlj = '/';
+} %>
+<script>
+    var fhr = {
+        "contactName": '<%= orderShipper.contactName || '' %>',
+        "contactAddress": '<%= orderShipper.contactAddress || '' %>',
+        "contactPerson": '<%= orderShipper.contactPerson || '' %>',
+        "contactTel": '<%= orderShipper.contactTel || '' %>',
+        "contactFax": '<%= orderShipper.contactFax || '' %>',
+        "contactEmail": '<%= orderShipper.contactEmail || '' %>'
+    };
+    var shr = {
+        "contactName": '<%= orderConsignee.contactName || '' %>',
+        "contactAddress": '<%= orderConsignee.contactAddress || '' %>',
+        "contactPerson": '<%= orderConsignee.contactPerson || '' %>',
+        "contactTel": '<%= orderConsignee.contactTel || '' %>',
+        "contactFax": '<%= orderConsignee.contactFax || '' %>',
+        "contactEmail": '<%= orderConsignee.contactEmail || '' %>'
+    };
+    var tzr = {
+        "contactName": '<%= orderNotifier.contactName || '' %>',
+        "contactAddress": '<%= orderNotifier.contactAddress || '' %>',
+        "contactPerson": '<%= orderNotifier.contactPerson || '' %>',
+        "contactTel": '<%= orderNotifier.contactTel || '' %>',
+        "contactFax": '<%= orderNotifier.contactFax || '' %>',
+        "contactEmail": '<%= orderNotifier.contactEmail || '' %>'
+    };
+    //报价单数据
+    var dlData = {
+        dchy: '<%= 'company' in user && user.company && user.company.companyName || '/' %>'
+        , qyg: '<%= o.deptCode || '/' %>'
+        , mdg: '<%= o.destCode || '/' %>'
+        , hkgs: '<%= o.airCompanyCode || '/' %>'
+        , qfrq: '<%= new Date(o.flightDate).Format('yyyy-MM-dd') %>'
+        , hc: '<%= hxlj || '/' %>'
+        , pm: '<%= o.cargo.cargoName || '/' %>'
+        , ygzl: '<%= o.cargo.chargingWeight || '/' %>'
+        , ygtj: '<%= o.cargo.cargoSize.toFixed(2) || '/' %>'
+        , ygjs: '<%= o.cargo.cargoCount || '/' %>'
+        , dj: '<%= o.chargingPrice || '/' %>'
+        , zj: '<%= o.chargingTotal || '/' %>'
+    };
+</script>
+<p class="header-nav"><a href="/home" class="dp-b fl-l">首页</a>
+    <span class="dp-b fl-l gt" style="color: #fff;padding: 0 10px;"> > </span>
+    <a href="/vip/order" class="dp-b fl-l">订单目录</a>
+    <span class="dp-b fl-l gt" style="color: #fff;padding: 0 10px;"> > </span>
+    <%= title %> </p>
+<div class="main">
+    <div class="main-head">
+        <span class="dp-b fl-l left">订单编号：<%= o.orderNum || '/' %></span>
+        <span class="dp-b fl-l left" id="ydh"
+              data-no="<%= o.airwayBillNum || '' %>">主单号：<%= o.airwayBillNum || '未分配' %></span>
+        <!--<a class="dp-b fl-r yellow show-map">更多></a>-->
+        <span class="dp-b fl-r small">进仓编号：<%= o.warehouseEntryNum || '未分配' %></span>
+    </div>
+    <div class="main-body">
+        <% var num = 1; %>
+        <% var jcbhtb = ''; %>
+        <% if (o.orderState == 2 || o.orderState == 3 || o.orderState == 4) {
+            if (o.transTime) {
+                num = 5;
+            } else if (o.declareTime) {
+                num = 4;
+            } else if (o.entryTime) {
+                num = 3;
+            } else if (o.bookingTime) {
+                num = 2;
+            }
+        } else {
+            num = 1
+        } %>
+        <%
+            if(num==1){
+                if(o.transState){
+                    if(o.declareState){
+                        if(o.entryState){
+                            if(o.bookingState){
+                                ++num;
+                            }
+                        }
+                    }
+                }else{num=1;}
+            }
+            console.log(num);
+          %>
+        <div class="timeLines fill">
+            <div class="timeLine<%= num >= 1 ? ' blue' : '' %> <%= num == 1 ? ' active' : '' %>">
+                <% var str = ''; %>
+                <% switch (o.orderState) {
+                    case 0:
+                        str = '新订单';
+                        break;
+                    case 1:
+                        str = '待处理';
+                        break;
+                    case -1:
+                    case -2:
+                        str = '已取消';
+                        break;
+                    case 2:
+                    case 3:
+                    case 4:
+                        str = '进行中';
+                        break;
+                } %>
+                <p class="icon"></p>
+                <p class="line"></p>
+                <div class="txt big"><%= str %></div>
+                <div class="txt"><%= o.createDt ? new Date(o.createDt).Format('yyyy-MM-dd hh:mm') : '' %></div>
+            </div>
+            <div class="position timeLine<%= num >= 2 ? ' blue' : '' %> <%= num == 2 ? ' active' : '' %>">
+                <% switch (o.bookingState) {
+                    case 0:
+                        str = '未订舱';
+                        break;
+                    case 1:
+                        str = '已订舱';
+                        break;
+                    case -1:
+                        str = '订舱失败';
+                        break;
+                    case 2:
+                        str = '已改配';
+                        break;
+                    case -2:
+                        str = '改配中';
+                        break;
+                } %>
+                <div class="txt big"><%= str %></div>
+                <div class="txt"><%= o.bookingTime ? new Date(o.bookingTime).Format('yyyy-MM-dd hh:mm') : '' %></div>
+                <p class="icon"></p>
+                <p class="line"></p>
+                <p class="line-side"></p>
+            </div>
+            <div class="positionL timeLine<%= num >= 3 ? ' blue' : '' %> <%= num == 3 ? ' active' : '' %>">
+                <% switch (o.entryState) {
+                    case 0:
+                        str = '待进仓';
+                        jcbhtb = '待进仓';
+                        break;
+                    case 1:
+                        str = '已进仓';
+                        jcbhtb = '已进仓';
+                        break;
+                    case 2:
+                        str = '已确认';
+                        jcbhtb = '已确认';
+                        break;
+                } %>
+                <p class="icon"></p>
+                <p class="line"></p>
+                <p class="line-side"></p>
+                <div class="txt big"><%= str %></div>
+                <div class="txt"><%= o.entryTime ? new Date(o.entryTime).Format('yyyy-MM-dd hh:mm') : '' %></div>
+            </div>
+            <div class="timeLine<%= num >= 4 ? ' blue' : '' %> <%= num == 4 ? ' active' : '' %>">
+                <% switch (o.declareState) {
+                    case 0:
+                        str = '未报关';
+                        break;
+                    case 1:
+                        str = '预审中';
+                        break;
+                    case 2:
+                        str = '预审通过';
+                        break;
+                    case 3:
+                        str = '开始报关';
+                        break;
+                    case 4:
+                        str = '报关中';
+                        break;
+                    case 5:
+                        str = '报关完成';
+                        break;
+                    case -6:
+                        str = '报关失败';
+                        break;
+                    case -4:
+                        str = '退关中';
+                        break;
+                    case -5:
+                        str = '退关完成';
+                        break;
+                }%>
+                <p class="icon"></p>
+                <p class="line"></p>
+                <div class="txt big"><%= str %></div>
+                <div class="txt"><%= o.declareTime ? new Date(o.declareTime).Format('yyyy-MM-dd hh:mm') : '' %></div>
+            </div>
+                <div class="timeLine<%= num >= 5 ? ' blue' : '' %> <%= num == 5 ? ' active' : '' %>">
+                <% switch (o.transState) {
+                    case 0:
+                        str = '待出库';
+                        break;
+                    case 1:
+                        str = '已出库，待起飞';
+                        break;
+                    case 2:
+                        str = '已起飞';
+                        break;
+                    case 3:
+                        str = '已到达';
+                        break;
+                } %>
+                <p class="icon"></p>
+                <p class="line"></p>
+                <div class="txt big"><%= str %></div>
+                <div class="txt"><%= o.transTime ? new Date(o.transTime).Format('yyyy-MM-dd hh:mm') : '' %></div>
+            </div>
+        </div>
+
+        <div class="airline fill">
+            <div class="logo fill">
+                <div class="fl-l">
+                    <span class="dp-b big"><%= o.airwayInfo && o.airwayInfo.deptNode.portName || o.deptCode || '/' %>
+                        （<%= o.airwayInfo && o.airwayInfo.deptNode.portCode || o.deptCode || '/' %>）</span>
+                </div>
+                <div class="fl-l img"></div>
+                <div class="fl-l">
+                    <span class="dp-b big"><%= o.airwayInfo && o.airwayInfo.destNode.portName || o.destCode || '/' %>
+                        （<%= o.airwayInfo && o.airwayInfo.destNode.portCode || o.destCode || '/' %>）</span>
+                </div>
+            </div>
+            <div class="padding-top fill">
+                <div class="fl-l al-info">
+                    <p class="fir"><span></span>航班信息</p>
+
+                    <p><span class="title">航空公司：</span><span class="val"><%= o.airCompanyCode || '/' %></span></p>
+
+                    <p><span class="title">航班号：</span><span class="val"><%= o.airlineInfo || '/' %></span></p>
+
+                    <p><span class="title">起飞日期：</span><span
+                                class="val"><%= new Date(o.flightDate).Format('yyyy-MM-dd') || '/' %></span></p>
+                    <p><span class="title">起飞时间：</span><span
+                                class="val"><%= o.airlineTime ? new Date(o.airlineTime).Format('hh:mm') : '/' %></span>
+                    </p>
+                </div>
+                <div class="fl-r good-info">
+                    <p class="fir"><span></span>货物信息</p>
+                    <p class="fl-l small">品名：<%= o.cargo.cargoName %></p>
+                    <p class="fl-l big">唛头：<%= o.cargo.packageMark %></p>
+
+                    <p class="fl-l small">件数：<%= o.cargo.cargoCount %>&nbsp;PCS</p>
+                    <p class="fl-l big">委托报关：<%= o.cargo.isBulkyCargo ? '是' : '否' %></p>
+
+                    <p class="fl-l small">毛重：<%= o.cargo.cargoWeight %>&nbsp;KGS</p>
+                    <p class="fl-l big">
+                        最晚进仓：<%= new Date(new Date(o.flightDate).getTime() - 86400000).Format('yyyy-MM-dd') %> 12:00</p>
+
+                    <p class="fl-l small">体积：<%= o.cargo.cargoSize.toFixed(2) %>&nbsp;CBM</p>
+                    <p class="fl-l big">进仓状态：<%= jcbhtb || '/' %></p>
+                </div>
+            </div>
+            <div class="mainOrder" style="overflow:hidden;">
+                <div class="fl-l user-info" style="width:33%">
+                    <p class="fir">
+                        <span></span>发货人信息
+                        <% if(o.orderConfirmState != 1){ %>
+                        <a href="javascript:void(0);" class="fl-r show-contact" data-t="发货人" data-sid="<%= o.subNum %>">设置</a>
+                        <% } %>
+                    </p>
+                    <% if(o.orderShipper){ %>
+                    <p><span class="title"></span><span class="val"><%= o.orderShipper.contactName || '' %></span>
+                    </p>
+                    <p><span class="title"></span><span class="val"><%= o.orderShipper.contactAddress || '' %></span>
+                    </p>
+                    <% if(o.orderShipper.contactPerson){%>
+                    <p><span class="title"></span><span class="val"><%= o.orderShipper.contactPerson %></span>
+                    </p>
+                    <% } %>
+                    <p><span class="title"></span><span class="val"><%= o.orderShipper.contactTel || '' %></span>
+                    </p>
+                    <% if(o.orderShipper.contactFax){%>
+                    <p><span class="title"></span><span class="val"><%= o.orderShipper.contactFax %></span>
+                    </p>
+                    <% } %>
+                    <% if(o.orderShipper.contactEmail){%>
+                    <p><span class="title"></span><span class="val"><%= o.orderShipper.contactEmail %></span>
+                    </p>
+                    <% } %>
+                    <% }else{ %>
+                    <p class="no-info">暂无发货人信息</p>
+                    <% } %>
+                </div>
+                <div class="fl-l user-info" style="width:33%">
+                    <p class="fir">
+                        <span></span>收货人信息
+                        <% if(o.orderConfirmState != 1){ %>
+                        <a href="javascript:void(0);" class="fl-r show-contact" data-t="收货人" data-sid="<%= o.subNum %>">设置</a>
+                        <% } %>
+                    </p>
+                    <% if(o.orderConsignee){ %>
+                    <p><span class="title"></span><span class="val"><%= o.orderConsignee.contactName || '' %></span>
+                    </p>
+                    <p><span class="title"></span><span class="val"><%= o.orderConsignee.contactAddress || '' %></span>
+                    </p>
+                    <% if(o.orderConsignee.contactPerson){%>
+                    <p><span class="title"></span><span class="val"><%= o.orderConsignee.contactPerson %></span>
+                    </p>
+                    <% } %>
+                    <p><span class="title"></span><span class="val"><%= o.orderConsignee.contactTel || '' %></span>
+                    </p>
+                    <% if(o.orderConsignee.contactFax){%>
+                    <p><span class="title"></span><span class="val"><%= o.orderConsignee.contactFax %></span>
+                    </p>
+                    <% } %>
+                    <% if(o.orderConsignee.contactEmail){%>
+                    <p><span class="title"></span><span class="val"><%= o.orderConsignee.contactEmail %></span>
+                    </p>
+                    <% } %>
+                    <% }else{ %>
+                    <p class="no-info">暂无收货人信息</p>
+                    <% } %>
+                </div>
+                <div class="fl-r user-info last-info" style="width:33%">
+                    <p class="fir">
+                        <span></span>通知人
+                        <% if(o.orderConfirmState != 1){ %>
+                        <a href="javascript:void(0);" class="fl-r show-contact" data-t="通知人" data-sid="<%= o.subNum %>">设置</a>
+                        <% } %>
+                    </p>
+                    <% if(o.orderNotifier){ %>
+                    <p><span class="title"></span><span class="val"><%= o.orderNotifier.contactName || '' %></span>
+                    </p>
+                    <p><span class="title"></span><span class="val"><%= o.orderNotifier.contactAddress || '' %></span>
+                    </p>
+                    <% if(o.orderNotifier.contactPerson){%>
+                    <p><span class="title"></span><span class="val"><%= o.orderNotifier.contactPerson %></span>
+                    </p>
+                    <% } %>
+                    <p><span class="title"></span><span class="val"><%= o.orderNotifier.contactTel || '' %></span>
+                    </p>
+                    <% if(o.orderNotifier.contactFax){%>
+                    <p><span class="title"></span><span class="val"><%= o.orderNotifier.contactFax %></span>
+                    </p>
+                    <% } %>
+                    <% if(o.orderNotifier.contactEmail){%>
+                    <p><span class="title"></span><span class="val"><%= o.orderNotifier.contactEmail %></span>
+                    </p>
+                    <% } %>
+                    <% }else{ %>
+                    <p class="no-info">暂无通知人信息</p>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        <% if(s.entryList.length > 0){ %>
+        <div class="enter-data">
+            <table border="1" class="warehouse-tb" data-ddbh="<%= o.orderNum || '/' %>"
+                   data-jcbh="<%= o.warehouseEntryNum || '/' %>"
+                   data-khmc="<%= 'company' in user && user.company && user.company.companyName || '/' %>"
+                   data-jczt="<%= jcbhtb || '/' %>">
+                <thead>
+                <tr>
+                    <td>进仓编号</td>
+                    <td>长(CM)</td>
+                    <td>宽(CM)</td>
+                    <td>高(CM)</td>
+                    <td>件数(PCS)</td>
+                    <td>重量(KGS)</td>
+                    <td>体积(CBM)</td>
+                    <td>包装</td>
+                    <td>损毁</td>
+                    <td>变形</td>
+                    <td>受潮</td>
+                    <td>其他</td>
+                    <td>备注</td>
+                </tr>
+                </thead>
+                <tbody>
+
+                <% if(s.entryList.length > 0){ %>
+                <% for(var i = 0;i < s.entryList.length;i++){ %>
+                <% var d = s.entryList[i]; %>
+                <% for(var x in d.entryDetail){ %>
+                <% if(d.entryDetail.hasOwnProperty(x)){ %>
+                <% var dd = d.entryDetail[x] %>
+                <% if (!dd.subNum) {
+                    wnum = true;
+                    wfdhw[d.entryNum] = d;
+                } %>
+                <tr>
+                    <td><%= d.entryNum %></td>
+                    <td><%= dd.itemLength %></td>
+                    <td><%= dd.itemWidth %></td>
+                    <td><%= dd.itemHeight %></td>
+                    <td><%= dd.itemCount %></td>
+                    <td>-</td>
+                    <td><%= (dd.itemCount * dd.itemLength * dd.itemWidth * dd.itemHeight / 1000000).toFixed(2) %></td>
+                    <td><%= d.packageType %></td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <% } %>
+                <% } %>
+                <tr class="tr-xj">
+                    <td>小计</td>
+                    <td colspan="3" class="font-g">更新时间（<%= d.storageTime %>）</td>
+                    <td><%= d.storageCount %></td>
+                    <td>-</td>
+                    <td><%= d.storageSize.toFixed(2) %></td>
+                    <td></td>
+                    <td><%= d.damageCount || '-' %></td>
+                    <td><%= d.transformCount || '-' %></td>
+                    <td><%= d.dampCount || '-' %></td>
+                    <td><%= d.otherCount || '-' %></td>
+                    <td>-</td>
+                </tr>
+                <% } %>
+                <tr class="tr-zj">
+                    <td>总计</td>
+                    <td colspan="3"></td>
+                    <td><%= s.totalCount %></td>
+                    <td><%= s.totalWeight %></td>
+                    <td><%= s.totalSize.toFixed(2) %></td>
+                    <td></td>
+                    <td><%= s.totalDamage || '' %></td>
+                    <td><%= s.totalTransform || '' %></td>
+                    <td><%= s.totalDamp || '' %></td>
+                    <td><%= s.totalOther || '' %></td>
+                    <td></td>
+                </tr>
+                <% }else{ %>
+                <tr>
+                    <td colspan="13">暂无进仓数据</td>
+                </tr>
+                <% } %>
+
+                </tbody>
+            </table>
+            <div class="enter-bottom">
+                <div class="enter-left">
+                    <p class="warm-info"> 温馨提示：长、宽、高单位为厘米</p>
+                    <p class="kfzy">客服专员：<a href="javascript:void(0);">叮叮</a></p>
+                </div>
+                <% if(o.entryState != 2){ %>
+                <button style="margin-top: 5px;" class="dp-b blue-btn md-btn fl-r ensure-enter">确认进仓信息</button>
+                <% } %>
+                <a href="javascript:void(0);" id="dl-warehouse" class="fl-r">导出进仓明细</a>
+            </div>
+            <% if(o.entryState == 2){ %>
+            <div class="yqr-logo"></div>
+            <% } %>
+            <% if(b.length > 0){ %>
+            <div class="fd-part">
+                <div class="change-tab fill">
+                    <span class="sp-b fl-l sg-tab active" data-tar="yfdhw">已分单货物</span>
+                    <span class="sp-b fl-l sg-tab" data-tar="wfdhw">未分单货物</span>
+                    <!--<button class="dp-b fl-r" id="cdd">拆订单</button>-->
+                    <% if(o.airwayBillConfirm){ %>
+                    <% if(b.length > 0){ %>
+                    <a href="/vip/order/detail/ensure?id=<%= o.orderId %>" target="_blank" class="checkMenu fl-r">查看主单</a>
+                    <% } %>
+                    <% } %>
+                </div>
+                <div class="body-tabs">
+                    <div id="yfdhw" class="tabs active">
+                        <% for(var f in b){ %>
+                        <% if(b.hasOwnProperty(f)){ %>
+                        <% var d3 = b[f]; %>
+                        <% var str1 = ''; %>
+                        <% switch (d3.declareState) {
+                            case 0:
+                                str1 = '未报关';
+                                break;
+                            case 1:
+                                str1 = '预审中';
+                                break;
+                            case 2:
+                                str1 = '预审通过';
+                                break;
+                            case 3:
+                                str1 = '开始报关';
+                                break;
+                            case 4:
+                                str1 = '报关中';
+                                break;
+                            case 5:
+                                str1 = '报关完成';
+                                break;
+                            case -6:
+                                str1 = '报关失败';
+                                break;
+                            case -4:
+                                str1 = '退关中';
+                                break;
+                            case -5:
+                                str1 = '退关完成';
+                                break;
+                        } %>
+                        <div class="sg-yfd fill">
+                            <button data-time="0" data-id="<%= d3.subNum %>" type="button"
+                                    class="yfd-btn<%= str1 != '报关完成' ? '' : ' i-hide' %> <%= str1 == '报关失败' ? '' : ' input-show' %>"
+                                    data-target="#<%= d3.Id %>">
+                                <input type="checkbox" class="yfd-sg" value="<%= d3.Id %>">
+                                <p>分单号：<%= d3.subNum %></p>
+                                <% if(d3.orderConfirmState === 1){ %>
+                                <span class="fdzt">分单已确认</span>
+                                <% } %>
+                                <span class="bgzt<%= str1 != '报关完成' ? ' sb' : '' %>"><%= str1 %></span>
+                                <span class="fl-r">+展开</span>
+                            </button>
+                            <div id="<%= d3.Id %>" class="collapse fd-info-body">
+                                <div class="fd-top fill">
+                                    <div class="fd-info">
+                                        <p class="title">发货人信息
+                                            <a href="javascript:void(0);" class="show-other" data-dz="" data-cz="">编辑</a>
+                                        </p>
+                                        <p><span>公司名称：</span><span>1111111</span></p>
+                                        <p><span>联系人：</span><span>1111111</span></p>
+                                        <p><span>联系电话：</span><span>1111111</span></p>
+                                        <p><span>邮箱：</span><span>1111111</span></p>
+                                    </div>
+                                    <div class="fd-info">
+                                        <p class="title">收货人信息
+                                            <a href="javascript:void(0);" class="show-other" data-dz="" data-cz="">编辑</a>
+                                        </p>
+                                        <p><span>公司名称：</span><span>1111111</span></p>
+                                        <p><span>联系人：</span><span>1111111</span></p>
+                                        <p><span>联系电话：</span><span>1111111</span></p>
+                                        <p><span>邮箱：</span><span>1111111</span></p>
+                                    </div>
+                                    <div class="fd-info">
+                                        <p class="title">通知人
+                                            <a href="javascript:void(0);" class="show-other" data-dz="" data-cz="">编辑</a>
+                                        </p>
+                                        <p><span>公司名称：</span><span>1111111</span></p>
+                                        <p><span>联系人：</span><span>1111111</span></p>
+                                        <p><span>联系电话：</span><span>1111111</span></p>
+                                        <p><span>邮箱：</span><span>1111111</span></p>
+                                    </div>
+                                    <div class="fd-info">
+                                        <p class="title">品名
+                                            <a href="javascript:void(0);">编辑</a>
+                                        </p>
+                                        <p>纺织品</p>
+                                    </div>
+                                </div>
+                                <div class="fd-middle">
+                                    <p class="title">分单货物信息
+                                        <button class="dp-b fl-r">拆分单</button>
+                                        <a href="javascript:void(0)" target="_blank" class="fl-r">查看分单</a>
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+                        <% } %>
+                    </div>
+                    <div id="wfdhw" class="tabs">
+                        <p class="m-title">货物信息
+                            <% if(b.length > 0){ %>
+                            <!--<button class="dp-b fl-r" id="w-cfd">拆分单</button>-->
+                            <% } %>
+                        </p>
+                        <table border="1" class="mg-b" style="margin-bottom: 20px;">
+                            <thead>
+                            <tr>
+                                <td>进仓编号</td>
+                                <td>长(CM)</td>
+                                <td>宽(CM)</td>
+                                <td>高(CM)</td>
+                                <td>件数(PCS)</td>
+                                <td>重量(KGS)</td>
+                                <td>体积(CBM)</td>
+                                <td>包装</td>
+                                <td>损毁</td>
+                                <td>变形</td>
+                                <td>受潮</td>
+                                <td>其他</td>
+                                <td>备注</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <% var zjjs = 0, zjzl = 0, zjtj = 0, zjps = 0, zjbx = 0, zjsc = 0, zjqt = 0; %>
+                            <% if (wnum) { %>
+
+                            <% for(var w in wfdhw){ %>
+                            <% if(wfdhw.hasOwnProperty(w)){ %>
+                            <% var xjjs = 0, xjzl = 0, xjtj = 0, xjps = 0, xjbx = 0, xjsc = 0, xjqt = 0; %>
+                            <% var d1 = wfdhw[w]; %>
+
+                            <% for(var z in d1.entryDetail){ %>
+                            <% if(d1.entryDetail.hasOwnProperty(z)){ %>
+                            <% var d2 = d1.entryDetail[z]; %>
+                            <% if(!d2.subNum){ %>
+                            <tr>
+                                <td><%= w %></td>
+                                <td><%= d2.itemLength %></td>
+                                <td><%= d2.itemWidth %></td>
+                                <td><%= d2.itemHeight %></td>
+                                <td><%= d2.itemCount %></td>
+                                <% xjjs += d2.itemCount; %>
+                                <% zjjs += d2.itemCount; %>
+                                <td>-</td>
+                                <td><%= (d2.itemCount * d2.itemLength * d2.itemWidth * d2.itemHeight / 1000000).toFixed(2) %></td>
+                                <% xjtj += d2.itemCount * d2.itemLength * d2.itemWidth * d2.itemHeight / 1000000; %>
+                                <% zjtj += d2.itemCount * d2.itemLength * d2.itemWidth * d2.itemHeight / 1000000; %>
+                                <td><%= d1.packageType %></td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <% } %>
+                            <% } %>
+                            <% } %>
+                            <tr class="tr-xj">
+                                <td>小计</td>
+                                <td colspan="3" class="font-g">更新时间（<%= d1.storageTime %>）</td>
+                                <td><%= xjjs %></td>
+                                <td><%= d1.storageWeight %></td>
+                                <% zjzl += d1.storageWeight; %>
+                                <td><%= xjtj.toFixed(2) %></td>
+                                <td></td>
+                                <td><%= d1.damageCount || '-' %></td>
+                                <% zjps += d1.damageCount; %>
+                                <td><%= d1.transformCount || '-' %></td>
+                                <% zjbx += d1.transformCount; %>
+                                <td><%= d1.dampCount || '-' %></td>
+                                <% zjsc += d1.dampCount; %>
+                                <td><%= d1.otherCount || '-' %></td>
+                                <% zjqt += d1.otherCount; %>
+                                <td>-</td>
+                            </tr>
+                            <% } %>
+                            <% } %>
+                            <tr class="tr-zj">
+                                <td>总计</td>
+                                <td colspan="3"></td>
+                                <td><%= zjjs %></td>
+                                <td><%= zjzl %></td>
+                                <td><%= zjtj.toFixed(2) %></td>
+                                <td></td>
+                                <td><%= zjps || '' %></td>
+                                <td><%= zjbx || '' %></td>
+                                <td><%= zjsc || '' %></td>
+                                <td><%= zjqt || '' %></td>
+                                <td></td>
+                            </tr>
+                            <% } else { %>
+                            <tr>
+                                <td colspan="13">无未分单货物</td>
+                            </tr>
+                            <% } %>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+        <% } %>
+        <div class="ydtb dp-n">
+            <p class="m-title">运输信息</p>
+            <table border="1" class="yd-tb">
+                <thead>
+                <tr>
+                    <td>操作时间</td>
+                    <td>操作城市</td>
+                    <td>航班</td>
+                    <td>货物状态</td>
+                    <td>件数</td>
+                    <td>重量（KG）</td>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <% if(b.length == 0){ %>
+        <div class="upload fill ddfj-pub" data-id="<%= o.orderId %>">
+            <p class="title"><span>上传资料证件</span>温馨提示：请尽快上传报关单、报关委托书、装箱单、发票等资料，文件格式支持.doc/.docx/.xls/.xlsx/.pdf/.jpg/.png/.bmp
+            </p>
+            <!--<div class="add-type" data-type="11">-->
+            <!--<div class="top">-->
+            <!--+-->
+            <!--</div>-->
+            <!--<a href="javascript:void(0);" class="dp-b f-name" data-name="报关单">报关单</a>-->
+            <!--<input type="file" class="up-type" data-id="<%= o.orderId %>" data-type="11"/>-->
+            <!--</div>-->
+            <!--<div class="add-type" data-type="12">-->
+            <!--<div class="top">-->
+            <!--+-->
+            <!--</div>-->
+            <!--<a href="javascript:void(0);" class="dp-b f-name" data-name="申报要素">申报要素</a>-->
+            <!--<input type="file" class="up-type" data-id="<%= o.orderId %>" data-type="12"/>-->
+            <!--</div>-->
+            <!--<div class="add-type" data-type="13">-->
+            <!--<div class="top">-->
+            <!--+-->
+            <!--</div>-->
+            <!--<a href="javascript:void(0);" class="dp-b f-name" data-name="报关发票">报关发票</a>-->
+            <!--<input type="file" class="up-type" data-id="<%= o.orderId %>" data-type="13"/>-->
+            <!--</div>-->
+            <!--<div class="add-type" data-type="14">-->
+            <!--<div class="top">-->
+            <!--+-->
+            <!--</div>-->
+            <!--<a href="javascript:void(0);" class="dp-b f-name" data-name="装箱单">装箱单</a>-->
+            <!--<input type="file" class="up-type" data-id="<%= o.orderId %>" data-type="14"/>-->
+            <!--</div>-->
+            <!--<div class="add-type" data-type="15">-->
+            <!--<div class="top">-->
+            <!--+-->
+            <!--</div>-->
+            <!--<a href="javascript:void(0);" class="dp-b f-name" data-name="报关委托书">报关委托书</a>-->
+            <!--<input type="file" class="up-type" data-id="<%= o.orderId %>" data-type="15"/>-->
+            <!--</div>-->
+            <div class="add">
+                <div class="top">
+                    +
+                </div>
+                <a href="javascript:void(0);" class="dp-b">添加文件</a>
+                <input type="file" id="up-file" data-id="<%= o.orderId %>" data-sid="<%= o.subNum || '' %>">
+            </div>
+        </div>
+        <% } %>
+        <% if(1 ){ %>
+        <div class="download">
+            <div class="left">
+                <p>下载/打印文件</p>
+
+                <div class="dp-b fl-l dl" id="open_map" data-id="<%= o.warehouseId %>">
+                    <a href="javascript:void(0);">
+                        <span class="dp-b img">图</span>
+                        <span class="dp-b txt">进仓地图</span>
+                    </a>
+
+                    <div class="cover dp-n"></div>
+                </div>
+                <div class="dp-b fl-l dl dl-bh" data-id="<%= o.airwayId %>">
+                    <a href="javascript:void(0);">
+                        <span class="dp-b img">保</span>
+                        <span class="dp-b txt">货物保函</span>
+                    </a>
+
+                    <div class="cover dp-n"></div>
+                </div>
+                <div class="dp-b fl-l dl dl-price">
+                    <a href="javascript:void(0);">
+                        <span class="dp-b img">报</span>
+                        <span class="dp-b txt">导出报价单</span>
+                    </a>
+
+                    <div class="cover dp-n"></div>
+                </div>
+
+                <% if(b.length>0){%>
+                <div class="dp-n fl-l dl dl-yld" id="main-yld" data-type="21" data-key="0">
+                    <a href="javascript:void(0);">
+                        <span class="dp-b img">预</span>
+                        <span class="dp-b txt">预录单</span>
+                    </a>
+
+                    <div class="cover dp-n"></div>
+                </div>
+                <div class="dp-n fl-l dl dl-file" data-type="22" data-key="0">
+                    <a href="javascript:void(0);">
+                        <span class="dp-b img">查</span>
+                        <span class="dp-b txt">查验费用单</span>
+                    </a>
+
+                    <div class="cover dp-n"></div>
+                </div>
+                <% }else{ %>
+                <div class="dp-b fl-l dl dl-yld" id="main-yld" data-type="21" data-key="0">
+                    <a href="javascript:void(0);">
+                        <span class="dp-b img">预</span>
+                        <span class="dp-b txt">预录单</span>
+                    </a>
+
+                    <div class="cover dp-n"></div>
+                </div>
+                <div class="dp-b fl-l dl dl-file" data-type="22" data-key="0">
+                    <a href="javascript:void(0);">
+                        <span class="dp-b img">查</span>
+                        <span class="dp-b txt">查验费用单</span>
+                    </a>
+
+                    <div class="cover dp-n"></div>
+                </div>
+                <% }%>
+
+            </div>
+            <div class="right">
+                <p class="title">价格信息</p>
+
+                <div class="total">
+                    <p class="zj fill"><span class="pce"><%= o.entryState == 2 ? '订单总价' : '预估总价' %>
+                            ：CNY&nbsp;<%= o.chargingTotal %> </span>
+                        <span data-toggle="tooltip"
+                              title="<%= o.orderStrategy == 0 ? '等级价格： 根据实际进仓货物重量和体积自动计算对应等级的单价' : '约定价格： 按固定单价计算，不考虑货物重量和体积' %>"
+                              class="jg-modal"><%= o.orderStrategy == 0 ? '等级价格' : '约定单价' %></span></p>
+
+                    <p class="kyf">空运费&nbsp;=&nbsp;单价<%= o.chargingPrice %>&nbsp;x&nbsp;计费重量<%= o.chargingWeight %></p>
+                </div>
+                <div class="detail">
+                    <a href="javascript:void(0);"
+                       class="show-dprice">查看费用明细&gt;</a>
+                    <a href="javascript:void(0);"
+                       class="show-other">查看杂费明细&gt;</a>
+                    <a href="" id="aId" style="display:none"><%= o.agentCompanyId %></a>
+                    <a href="" id="aIc" style="display:none"><%= o.airCompanyCode %></a>
+                </div>
+            </div>
+        </div>
+        <% } %>
+        <div class="btb-part">
+            <div class="left">
+                <p class="title">温馨提示：</p>
+                <p>*新订单（未确认订单）可以自助改配：起飞日期、目的港、航空公司</p>
+                <p>*订单报关前可以自助申请改配：起飞日期，目的港</p>
+                <p>*订单报关后可以自助申请改配：起飞日期</p>
+                <p>*所有改配申请将由后台审核确认</p>
+                <p>*固定单价（约定单价）订单改配请联系客服操作</p>
+                <p>*其他改配需求请联系客服操作</p>
+            </div>
+            <div class="right">
+                <% if(o.orderState == 0 || o.orderState == 1 || o.orderState == 2){ %>
+                <button class="md-btn blue-btn show-refuse">取消</button>
+                <% } %>
+
+                <% if(o.allowChange){ %>
+                <button class="md-btn blue-btn show-change">申请改配</button>
+                <% } %>
+<!--拆分单的时候隐藏预览标签-->
+                <% if(o.airwayBillConfirm){ console.log(b && b.length || 0)%>
+                <% if(o.airwayBillConfirm && b!=null && b.length>0){
+                   %>
+                <a target="_blank" class="blue-btn md-btn fl-r dp-n"
+                   href="/vip/order/detail/ensure?id=<%= o.orderId %>">预览提单</a>
+                <% }else{ %>
+                <a target="_blank" class="blue-btn md-btn fl-r"
+                   href="/vip/order/detail/ensure?id=<%= o.orderId %>">预览提单</a>
+                <% } %>
+                <% } %>
+            </div>
+        </div>
+        <%# 拒绝原因 %>
+        <% if (o.orderRemark) { %>
+        <div class="refuse">
+            <p>拒绝原因：</p>
+
+            <p><%= o.orderRemark || '无' %></p>
+        </div>
+        <% } %>
+    </div>
+    <%# 模态框 %>
+    <%- include ./modal.ejs %>
+</div>

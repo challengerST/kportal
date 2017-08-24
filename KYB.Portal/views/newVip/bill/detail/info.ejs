@@ -1,0 +1,154 @@
+<% var entryCargo = 'entryCargo' in body && body.entryCargo || {} %>
+<% var serviceFeeList = 'serviceFeeList' in body && body.serviceFeeList || [] %>
+<% Date.prototype.Format = function (fmt) { //author: meizz
+    var o = {
+        "M+": this.getMonth() + 1, //月份
+        "d+": this.getDate(), //日
+        "h+": this.getHours(), //小时
+        "m+": this.getMinutes(), //分
+        "s+": this.getSeconds(), //秒
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+        "S": this.getMilliseconds() //毫秒
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+} %>
+<div class="main-box">
+    <div class="info-box">
+        <p class="font-blue">腾亿航空货运代理有限公司 <br/>费用清单 </p>
+
+        <p class="ty">
+            <span>单位名称：腾亿航空货运代理有限公司</span>
+            <span>联系电话：021-68273234</span>
+        </p>
+
+        <p class="warn">温馨提示：为保障贵公司资金账户安全，请及时核对费用清单。如有疑问请及时与我们联系。</p>
+
+        <% var str = ''; %>
+        <% switch (body.orderState) {
+            case 0:
+                str = '新订单';
+                break;
+            case 1:
+                str = '待处理';
+                break;
+            case -1:
+            case -2:
+                str = '已取消';
+                break;
+            case 2:
+                str = '进行中';
+                break;
+            case 3:
+                str = '已结束';
+                break;
+            case 4:
+                str = '进行中';
+                break;
+        } %>
+
+        <p class="khgs">
+            <span>客户公司：<%= 'companyName' in body && body.companyName || '/' %></span><br/>
+            <span>订单状态：<%= str %></span><br/>
+            <span>备注：<%= 'remark' in body && body.remark || '/' %></span>
+        </p>
+
+        <p class="shr">TO：<%= 'contact' in body && body.contact || '/' %>&nbsp;先生/女士</p>
+
+        <table class="table-bordered">
+            <tbody>
+            <tr>
+                <td rowspan="2" class="bg-g">订单编号</td>
+                <td rowspan="2" colspan="2"><%= 'orderNum' in body && body.orderNum || '/' %></td>
+                <td rowspan="2" class="bg-g">航班号</td>
+                <td rowspan="2" colspan="2"><%= 'airCompanyCode' in body && body.airCompanyCode || '/' %></td>
+                <td class="bg-g">起始港</td>
+                <td colspan="2"><%= 'deptPortCode' in body && body.deptPortCode || '/' %></td>
+                <td rowspan="2" class="bg-g">起飞时间</td>
+                <td rowspan="2" colspan="2"><%= new Date(body.airlineTime).Format('yyyy-MM-dd') %></td>
+            </tr>
+            <tr>
+                <td class="bg-g">目的港</td>
+                <td colspan="2"><%= 'destPortCode' in body && body.destPortCode || '/' %></td>
+            </tr>
+            <tr>
+                <td rowspan="2" class="bg-g">结算重量</td>
+                <td rowspan="2"><%= 'chargingWeight' in entryCargo && entryCargo.chargingWeight.toFixed(2) || '-' %></td>
+                <td rowspan="2" class="bg-g">KGS</td>
+                <td class="bg-g">毛重</td>
+                <td><%= 'cargoWeight' in entryCargo && entryCargo.cargoWeight.toFixed(2) || '-' %></td>
+                <td class="bg-g">KGS</td>
+                <td rowspan="2" class="bg-g">件数</td>
+                <td rowspan="2"><%= 'cargoCount' in entryCargo && entryCargo.cargoCount || '-' %></td>
+                <td rowspan="2" class="bg-g">PCS</td>
+                <td rowspan="2" class="bg-g">费用总计</td>
+                <td rowspan="2"><%= 'orderChargingTotal' in body && body.orderChargingTotal.toFixed(2) || 0 %></td>
+                <td rowspan="2" class="bg-g">CNY</td>
+            </tr>
+            <tr>
+                <td class="bg-g">体积</td>
+                <td><%= 'cargoSize' in entryCargo && entryCargo.cargoSize.toFixed(2) || '-' %></td>
+                <td class="bg-g">CBM</td>
+            </tr>
+            <tr>
+                <td colspan="12">费用明细</td>
+            </tr>
+            <tr>
+                <td colspan="3">项目</td>
+                <td colspan="3">单价（CNY）</td>
+                <td colspan="3">数量</td>
+                <td colspan="3" class="ta-r">小计（CNY）</td>
+            </tr>
+
+            <% for(var i = 0;i < serviceFeeList.length;i++){ %>
+            <% var d = serviceFeeList[i]; %>
+            <tr>
+                <td colspan="3"><%= d.itemName %></td>
+                <td colspan="3" class="font-r"><%= d.itemPrice.toFixed(2) %></td>
+                <td colspan="3"><%= d.itemCount %></td>
+                <td colspan="3" class="font-r ta-r"><%= d.itemTotal %></td>
+            </tr>
+            <% } %>
+
+            <tr>
+                <td colspan="12" class="ta-r">总计 <span
+                            class="font-r">CNY <%= 'orderChargingTotal' in body && body.orderChargingTotal.toFixed(2) || 0 %></span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <% var clas = ''; %>
+        <% switch ('chargeState' in body && body.chargeState || 0) {
+            case 0:
+                clas = ' dqr';
+                break;
+            case 1:
+                clas = ' yqr';
+                break;
+            case 2:
+                clas = ' zdssz';
+                break;
+            case 200:
+                clas = ' yjs';
+                break;
+        } %>
+        <!--<div class="state-icon<%= clas %>"></div>-->
+    </div>
+    <div class="btn-part fill">
+        <% if(('chargeState' in body && body.chargeState || 0) == 0){ %>
+        <button class="ensure-price dp-b fl-l md-btn red-btn"
+                data-id="<%= 'orderId' in body && body.orderId || 0 %>">确认账单
+        </button>
+        <% } %>
+        <button class="dp-b fl-l dl-pdf md-btn blue-btn">下载费用清单</button>
+    </div>
+    <% if(('chargeState' in body && body.chargeState || 0) == 0){ %>
+    <div class="appeal-part fill">
+        <p>费用清单有误，我要<a id="appeal" href="javascript:void(0);">申诉&gt;</a></p>
+        <textarea id="text-r4" class="dp-b hide"></textarea>
+        <button id="appeal-ensure" class="fl-r md-btn blue-btn hide" data-id="<%= body.orderId %>">确定</button>
+    </div>
+    <% } %>
+</div>

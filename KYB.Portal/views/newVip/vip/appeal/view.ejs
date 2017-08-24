@@ -1,0 +1,21 @@
+<%- include ../../../newBase/head.ejs %>
+<%# 样式表引用 %>
+<link rel="stylesheet" href="/stylesheets/css/web/appealList.css">
+<%# 样式表引用结束 %>
+<%- include ../../../newBase/header.ejs %>
+
+<div class="app-box">
+    <div class="user-center">
+        <div class="container">
+            <p class="header-nav"><a href="/home" class="dp-b fl-l">首页</a>&nbsp;>&nbsp;<%= title %> </p>
+            <%- include ../../side.ejs %>
+            <div class="user-info">
+                <%- include ./info.ejs %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include ../../../newBase/javascripts.ejs %>
+<script src="/javascripts/appeal/bundle.min.js" charset="utf-8"></script>
+<!--<%- include ../../../base/foot.ejs %>-->

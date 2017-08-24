@@ -1,0 +1,33 @@
+@import "./vipGeneral";
+
+.set{width: 100%;border: 1px solid $border;background-color: #fff;  padding: 20px;
+  .title{font-size: 18px;color: $blue2;margin-bottom: 30px;}
+  .left,.right{float: left;}
+  .left{
+    img{height: 100px;width: 100px;border-radius: 50%;border: 1px solid $border;}
+  }
+  .right{margin-left: 20px;
+    p{@include HEIGHT(25px);}
+    .big{font-size: 18px;color: black;@include HEIGHT(30px);margin-top: 10px;}
+    .small{font-size: 14px;color: black;}
+    .font-b{font-size: 14px;color: $blue3;}
+    table{width: 360px;margin: 20px 0;float: left;
+      td{width: 120px;height: 30px;text-align: center;border: 1px solid #ececec;}
+      thead{
+        tr{
+          td{  background-color: #f3f3f3;border-bottom: 1px solid #ececec;
+            span{color: $blue3;display: table;@include HEIGHT(28px);margin: 0 auto;}
+            .wechat:before{content: '';height: 15px;width: 20px;display: block;float: left;background: url("../../../images/vip/wechat.png") no-repeat;background-size: 100% 100%;margin: 7px 5px 0 0;}
+            .email:before{content: '';height: 15px;width: 20px;display: block;float: left;background: url("../../../images/vip/email.png") no-repeat;background-size: 100% 100%;margin: 7px 5px 0 0;}
+          }
+        }
+      }
+    }
+    .active-mail{float: left;margin: 20px 0 20px 20px;font-size: 12px;height: auto;
+      span{line-height: 20px;color: #d0011b;}
+      a{color: $blue2;text-decoration: underline;}
+      a:hover{text-decoration: none;}
+    }
+  }
+}
+#save-set{margin: 20px auto 30px;}

@@ -1,0 +1,211 @@
+@import "../general/general";
+
+.delivery-box{  background: url('../../../images/img/bg_booking.jpg') no-repeat;border-top: 1px solid $blue1;
+  .container{background-color: transparent;margin: 10px auto 100px;
+    .nav-top{color: #fff;background-color: transparent;}
+    .bottom-part{width: 100%;overflow: hidden;
+      .half{float: left;width: 50%;}
+      .left{padding: 20px 40px;background-color: rgba(7,75,160,0.95);min-height: 700px;
+        .left-body{
+          .step{padding-left: 20px;min-height: 70px;position: relative;
+            .line{position: absolute;height: 100%;border-left: 1px solid #528AD0;top: 3px;left: 6px;z-index: 100;}
+            .title{@include HEIGHT(20px);color: $gray4;position: relative;padding-left: 5px;}
+            .bd{position: relative;min-height: 50px;padding: 10px 5px;}
+          }
+          .step:before{height: 15px;width: 15px;position: absolute;top: 3px;left: 0;color: $gray4;border: 1px solid $gray4;border-radius: 50%;font-size: 12px;text-align: center;line-height: 13px;background-color: rgba(7,75,160,0.95);z-index: 1000;}
+          .step1:before{  content: '1';}
+          .step2:before{  content: '2';}
+          .step3:before{  content: '3';}
+          .step4:before{  content: '4';}
+          .step5:before{  content: '5';}
+          .step1{
+            .bd{
+              span{display:block;float: left;text-align: center;border: 1px solid $yellow2;color: $yellow2;@include HEIGHT(30px);cursor: pointer;padding: 0 5px;min-width: 60px;margin: 10px 10px 10px 0;}
+              .active{background-color:$yellow2;color: #074BA0; }
+            }
+          }
+          .step2{
+            .bd{
+              .sg-mix{border: 1px solid $yellow2;padding: 15px;margin-bottom: 5px;position: relative;
+               .sel-sg{display: block;height: 27px;line-height: 25px;padding: 0 10px;border: 1px solid $yellow2;color: $yellow2;position: absolute;right: 15px;top: 15px;}
+                .sel-sg.active{background-color: $yellow2;color: #074BA0;}
+                .info{height: 50px;
+                  p{float: left;}
+                  .big{@include HEIGHT(50px);color: $yellow2;font-size: 18px;}
+                  .zz{width: 200px;padding: 0 15px;
+                    span{display: block;width: 100%;text-align: center;@include HEIGHT(25px);font-size: 12px;position: relative;}
+                    .zd{color:$yellow2;line-height: 24px;border-top:1px solid #E3F0FF; }
+                    .circle:before{display: block;content: '';height: 5px;width: 5px;background-color: #E3F0FF;border-radius: 50%;position: absolute;top: -3px;left: 82px;}
+                    .time{color: #E3F0FF;}
+                  }
+                }
+                .jtj,.jzj{@include HEIGHT(25px);color: #E3F0FF;font-size: 12px;}
+                table{width: 100%;
+                  td{height: 25px;text-align: center;font-size: 12px;}
+                  thead{
+                    td{background-color: #528AD0;color: #fff;}
+                  }
+                  tbody{
+                    td{background-color: #fff;color: #D45075;}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .right{padding: 20px 40px;min-height: 700px;background-color: #fff;
+        .limit-remark{width: 100%;float: left;line-height: 25px;border: 1px solid red;padding: 10px;color: red;margin-top: 10px;}
+        .top{margin-top: 10px;
+          .title{color: #248fd5;font-size: 16px;@include clear();}
+          .input{width: 50%;float: left;margin-top: 10px;position: relative;
+            label,input{display: block;float: left;margin: 0;}
+            label{@include HEIGHT(30px);text-align: right;font-weight: normal;width: 100px;}
+            label.require:before{content: '*';color: red;margin-right: 5px;}
+            input{padding-right: 40px;}
+            .warm{border: 1px solid red;}
+            .unit{display: block;@include HEIGHT(30px);@include textCenter(40px);position: absolute;top: 0;right: 0;color:#999;}
+          }
+          .big{width: 100%;padding-left: 100px;
+            label{position: absolute;top: 0;left: 0;}
+            input{width: 100%;}
+          }
+          .first{
+            input{width: 140px;}
+            .unit{right: 40px;}
+            .calculate-logo{display: block;float: left;height: 30px;width: 30px;margin-left: 10px;cursor:pointer;background: url("../../../images/img/iconmap1.png") no-repeat 0 -350px;}
+            .add-part{width: 180px;height: 100px;border: 1px solid $gray3;position: absolute;right: 0;top: 32px;z-index: 100;background-color: #fff;
+              .add-in{width: 37px;height: 50px;
+                label,input{display: block;}
+                label{width: 37px;@include HEIGHT(20px);text-align: center;}
+                input{width: 37px;height: 30px;padding: 0;text-align: center;}
+              }
+              .multi{width: 10px;height: 50px;float: left;line-height: 70px;}
+              .multi-calcu{position: absolute;  bottom: 10px;left: 70px;}
+            }
+          }
+        }
+        .long{height: 150px;}
+        .middle{overflow: hidden;;margin-top: 10px;@include clear();
+          .title{display: block;float: left;width: 100px;text-align: right;@include HEIGHT(30px);}
+          .radio{float: left;margin: 5px 10px 0 0;}
+          .input{width: 50%;float: left;margin-top: 10px;position: relative;
+            label,input{display: block;float: left;margin: 0;}
+            label{@include HEIGHT(30px);text-align: right;font-weight: normal;width: 100px;}
+            input{padding-right: 30px;}
+            .unit{display: block;@include HEIGHT(30px);@include textCenter(30px);position: absolute;top: 0;right: 30px;}
+          }
+          .f-ip{@include clear();}
+        }
+        .right-price{margin-top: 10px;
+          .title{color: #248fd5;font-size: 16px;@include clear();}
+          table{width: 100%;border: 1px solid #528AD0;
+            td{text-align: center;font-size: 12px;}
+            thead{
+              tr{
+                td{background-color: #528AD0;  color: #fff;height: 25px;}
+              }
+            }
+            tbody{
+              tr{
+                td{height: 30px;background-color: #fff;color: $red1;border: none;}
+                .active{background-color: $red1;color: #fff;}
+              }
+              .c-price{border-bottom:1px solid #528AD0;}
+              .final{text-align: left;padding: 20px;
+                .final-fee{color: $red1;font-size: 20px;
+                  span{color: $red1;}
+                }
+                .detail-fee{color: $gray2;font-size: 14px;margin-top: 10px;
+                  a{margin-left: 10px;color: $blue4;}
+                  span{color: $gray2;}
+                }
+              }
+            }
+          }
+          .short{height: 100px;
+            a{display: block;@include HEIGHT(30px);margin:10px 20px 0 0;float: left;color: $blue3;text-decoration: underline;}
+            a:hover{text-decoration: none;}
+          }
+        }
+        .operate{margin-top: 10px;
+          .price-pt{width: 100%;border: 1px solid #D45075;margin: 0 auto;padding: 20px 0;
+            p{text-align: center;overflow: hidden;color: $gray2;font-size: 12px;
+              span{display: block;float: left;@include HEIGHT(25px);@include NOWRAP();color: #000;}
+              .title{width: 47%;text-align: right;}
+              .body{width: 50%;text-align: left;padding-left: 20px;}
+            }
+            .font-big{
+              span{font-size: 16px;}
+              .body{color: #D45075;}
+            }
+            a{display: block;@include HEIGHT(25px);text-align: center;margin-top: 10px;color: $blue3;text-decoration: underline;}
+            a:hover{text-decoration: none;}
+            .jsjg{
+              i{font-style: normal;color: $gray2;}
+            }
+          }
+          .dp-tb{margin: 10px auto 0;
+            input,label{display: block;float: left;margin: 0;}
+            input{margin-top: 4px;}
+          }
+          #submit{margin: 10px auto 0;}
+          .export{text-align: center;height: 30px;line-height: 30px;
+            a{display: table;margin: 10px auto 0;
+              span{color: $blue3;cursor: pointer;}
+              .excel-logo{height: 30px;width: 30px;background: url("../../../images/img/iconmap1.png") no-repeat 0 -313px;}
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.bg-class{background: url('../../../images/img/bg_bx.jpg') no-repeat;;background-size: 100%;}
+.white-back{height: 100%;width: 100%;position: fixed;left: 0;top: 0;background-color: rgba(255,255,255,0.7);z-index: 10000;
+  .other-list{width: 600px;position: absolute;left: 50%;margin-left: -300px;top: 40%;z-index: 10001;
+    .header{@include HEIGHT(50px);background-color: $blue1;
+      span{margin-left: 20px;font-size: 20px;color: $yellow2;background-color: $blue1;}
+      span:first-child{color: #fff;}
+      .close-btn{height: 50px;width: 50px;color: #fff;text-align: center;font-size: 30px;cursor: pointer;}
+    }
+    table{width: 100%;background-color: #fff;
+      td{width: 25%;text-align: center;@include HEIGHT(30px);}
+    }
+  }
+  .price-list{  width: 800px;position: absolute;left: 50%;margin-left: -400px;top: 15%;z-index: 10001;background-color: #fff;padding-bottom: 10px;border: 1px solid $border;
+    .header{@include HEIGHT(50px);background-color: $blue3;
+      span{margin-left: 20px;font-size: 20px;color: $yellow2;background-color: $blue3;}
+      span:first-child{color: #fff;}
+      .close-btn{height: 50px;width: 50px;color: #fff;text-align: center;font-size: 30px;cursor: pointer;}
+    }
+    .half{width: 50%;float: left;padding: 20px;
+      p{line-height: 30px;margin-bottom: 10px;}
+      table{width: 100%;
+        td{height: 30px;text-align: center;}
+      }
+    }
+  }
+  .history-part{background-color: #fff;width: 882px;position: fixed;top: 10%;left: 50%;margin-left: -441px;border: 1px solid $blue1;
+    .header{@include HEIGHT(50px);background-color: $blue1;color: #fff;font-size: 24px;padding: 0 0 0 20px;
+      span{display: block;float: right;@include HEIGHT(50px);width: 50px;text-align: center;color: #fff;cursor: pointer;}
+    }
+    .info-p{padding: 10px 20px;
+      .sg-info{float: left;@include HEIGHT(30px);margin-right: 10px;
+        .ttl{font-weight: 600;}
+      }
+    }
+    .title{@include HEIGHT(30px);padding-left:20px;font-size: 18px;font-weight: 600;
+      span{font-weight: normal;font-size: 14px;padding-left: 20px;}
+    }
+    .h-tb{padding: 0 20px;
+      table{width: 100%;
+        td{border: 1px solid $border;height: 30px;text-align: center;}
+      }
+    }
+    .btn-pt{display:table;margin: 0 auto;
+      button{margin-top: 20px;}
+      button:first-child{margin-right: 20px;}
+    }
+  }
+}

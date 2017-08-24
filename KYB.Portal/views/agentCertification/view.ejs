@@ -1,0 +1,134 @@
+<%- include ../newBase/head.ejs %>
+<%# 样式表引用 %>
+<link rel="stylesheet" href="/images/alifont/iconfont.css">
+<link rel="stylesheet" href="/stylesheets/css/web/agr.css">
+<link rel="stylesheet" href="/stylesheets/css/web/acf.css">
+<%# 样式表引用结束 %>
+<%- include ../newBase/header.ejs %>
+<div style="background:#fff;">
+    <div class="agr_container agr_header">
+        <p class="small-nav"><a href="/home">首页</a> > <%= title %> </p>
+    </div>
+</div>
+<div class="agr_status agr_container fill">
+    <div class="agr_statusDetail fl-l">
+        <div class="agr_statusCode"><span>1</span></div>
+        <div class="agr_statusWord"><span>设置企业账号</span></div>
+    </div>
+    <div class="transline fl-l"></div>
+    <div class="agr_statusDetail active  fl-l">
+        <div class="agr_statusCode"><span>2</span></div>
+        <div class="agr_statusWord"><span>企业实名认证</span></div>
+    </div>
+    <div class="transline fl-l"></div>
+    <div class="agr_statusDetail fl-l">
+        <div class="agr_statusCode"><span>3</span></div>
+        <div class="agr_statusWord"><span>注册成功提交审核</span></div>
+    </div>
+</div>
+<div class="app-box register-box">
+    <div class="agr_container container">
+        <!--<p class="please-register">快速注册</p>-->
+        <div style="padding-top:18px;padding-left:62px;border:1px solid #e7ebf2;background:#fff;width:705px;">
+            <div class="agr_setupTip">
+                <p class="f-12">温馨提示:</p>
+                <p class="f-12"><em class="agr_dot"></em>手持身份证照片拍摄要求：手持人面部五官清晰，手持身份证号码清晰，不能有遮挡。</p>
+                <p class="f-12"><em class="agr_dot"></em>允许上传的格式：.jpg/.jpeg/.png</p>
+            </div>
+            <div class="up-img">
+                <span class="dp-b fl-l">手持身份证照片</span>
+                <div class="fl-l out">
+                    <a href="javascript:void(0);" class="dp-b fl-l" id="sg-add">
+                        <span class="show-img dp-b agc_open">+</span>
+                        <span class="dp-b add-txt">正面</span>
+                        <input type="file" class="upImg" data-gid="0"/>
+                        <img src="/images/loading.gif" alt="" class="hide"/>
+                    </a>
+                    <a href="javascript:void(0);" class="dp-b fl-l" id="sg-add">
+                        <span class="show-img dp-b agc_back">+</span>
+                        <span class="dp-b add-txt">反面</span>
+                        <input type="file" class="upImg" data-gid="0"/>
+                        <img src="/images/loading.gif" alt="" class="hide"/>
+                    </a>
+                    <div class="fl-l">
+                        <img src="/images/img_sfz.png" width="88" height="88" class="dp-b"/>
+                        <span class="dp-b">示例</span>
+                    </div>
+                </div>
+            </div>
+            <div class="up-img">
+                <span class="dp-b fl-l">营业执照</span>
+                <div class="fl-l out">
+                    <a href="javascript:void(0);" class="dp-b fl-l" id="sg-add">
+                        <span class="show-img dp-b agc_lic">+</span>
+                        <!--<span class="dp-b add-txt">添加文件</span>-->
+                        <input type="file" class="upImg" data-gid="0"/>
+                        <img src="/images/loading.gif" alt="" class="hide"/>
+                    </a>
+                    <div class="fl-l">
+                        <img src="/images/img_yyzz.png" width="88" height="88" class="dp-b"/>
+                        <span class="dp-b">示例</span>
+                    </div>
+                </div>
+            </div>
+            <div class="up-img">
+                <span class="dp-b fl-l">资质认可证书</span>
+                <div class="fl-l out">
+                    <a href="javascript:void(0);" class="dp-b fl-l" id="sg-add">
+                        <span class="show-img dp-b agc_cer">+</span>
+                        <!--<span class="dp-b add-txt">添加文件</span>-->
+                        <input type="file" class="upImg" data-gid="0"/>
+                        <img src="/images/loading.gif" alt="" class="hide"/>
+                    </a>
+                    <div class="fl-l">
+                        <img src="/images/img_zzrz.png" width="88" height="88" class="dp-b"/>
+                        <span class="dp-b">示例</span>
+                    </div>
+                </div>
+            </div>
+            <div class="agr_next fill">
+                <!--<button class="lg-btn blue-btn agr_next"></button>-->
+                <a href="javascript:void(0)" class="lg-btn blue-btn" id="subCheck">提交审核</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="pass-box app-box agr-ok dp-n">
+    <div class="agr_container container">
+        <div class="agr_content fill">
+            <div class="fl-l agr_successCode"><img src="/images/icon_ok.png" alt=""></div>
+            <div class="fl-l agr_success">
+                <p class="fir-txt">您的加盟申请已成功提交至空运邦！</p>
+                <p>空运邦会尽快审核您提交的资料，请您耐心等待2~5个工作日；</p>
+                <p>申请通过后，空运邦会为您生成店铺、账号、密码等信息，并以短信和邮件的方式通知您；</p>
+                <p>申请日期: <span class="arc-applicationDate">2017-07-19 15:23</span></p>
+                <p class="agr_next agr_index">
+                    <a href="/home" class="go-login lg-btn blue-btn">返回首页</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="pass-box app-box agr-sorry dp-n">
+    <div class="agr_container container">
+        <div class="agr_content fill">
+            <div class="fl-l agr_successCode"><img src="/images/icon_sorry.png" alt=""></div>
+            <div class="fl-l agr_success">
+                <p class="fir-txt">抱歉...</p>
+                <p style="width:456px;line-height:1.6;">您不是【上海腾亿国际货运代理有限公司】的店主，也不是该公司的员工，无权进行此
+                    操作。</p>
+                <p class="agr_next agr_index">
+                    <a href="/home" class="go-login lg-btn blue-btn">返回首页</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+<%- include ../newBase/javascripts.ejs %>
+<%# 脚本引用 %>
+<script src="http://static.geetest.com/static/tools/gt.js"></script>
+<script src="/javascripts/certification/bundle.min.js" charset="utf-8"></script>
+<%# 脚本引用结束 %>

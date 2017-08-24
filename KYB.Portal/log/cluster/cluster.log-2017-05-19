@@ -1,0 +1,2 @@
+[2017-05-19 09:46:27.025] [INFO] cluster - fork,     worker:1,     pid:9356
+[2017-05-19 09:46:27.618] [INFO] cluster - kyb_be 启动,监听:8000 端口,   当前环境:development

@@ -1,0 +1,16 @@
+<% var body = 'resBody' in data && data.resBody || {} %>
+<div class="main-box">
+    <div class="info-box">
+        <p class="info-title"><%= 'messageTitle' in body && body.messageTitle || '-' %></p>
+
+        <p class="info-time"><%= 'createDt' in body && body.createDt || '-' %></p>
+
+        <p class="info-body"><%= 'messageContent' in body && body.messageContent || '-' %></p>
+
+        <div class="btn-part">
+            <a class="detail-delete" href="javascript:void(0);"
+               data-id="<%= 'messageId' in body && body.messageId || 0 %>">删除消息</a>
+            <button onClick="javascript:history.back(-1);" class="blue-btn sm-btn">返回</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,106 @@
+/* public part */
+.skin-blue{
+  .wrapper{
+    .main-sidebar{padding: 0;width: 230px;background-color: #002e66;min-height: 100%;padding-bottom: 50px;
+      .sidebar{
+        .sidebar-menu{
+          .header{height: 270px;background: url("/images/ic.png") no-repeat -40px -285px;
+            a{border: none;height: 90px;width: 90px;padding: 0;margin: 40px auto 0;
+              img{display: block;height: 90px;width: 90px;border-radius: 50%;}
+            }
+            a:hover{border: none;}
+            p{text-align: center;color: #FFF;}
+            .u-name{font-size: 18px;margin-top: 30px;}
+            .u-level{font-size: 14px;}
+            .login-out{font-size: 12px;
+              a{color: #fff;text-decoration: underline;}
+              a:hover{text-decoration: none;}
+            }
+          }
+          .treeview{background-color: $dblue;
+            .title-part{font-size: 18px;margin: 0;height: 50px;
+              span,i{color: #a6cfff;}
+            }
+            .title-part:hover{background-color: $dblue;
+              span,i{color: #fff;}
+            }
+            .treeview-menu{
+              li{
+                a{background: $lblue;font-size: 14px;color: #a6cfff;  }
+                a:hover{color: #fff;}
+                a.act{color: #fff;}
+              }
+            }
+          }
+          .active{
+            .title-part{
+              span{color: #fff;}
+            }
+          }
+        }
+      }
+    }
+    .main-header{
+      .navbar{background-color: #f3f3f4;min-width: 1050px;
+        .t-logo{display: block;height: 50px;width: 500px;float: left;background: url("/images/ic.png") no-repeat -35px -57px;}
+      }
+    }
+    .content-wrapper{min-width: 1050px;background-color: #ecf0f5;padding: 20px 0;overflow: auto;}
+  }
+}
+
+.alert-modal-element{position: fixed;width: 100%;height: 100%;top: 0;left: 0;background-color: rgba(3,3,3,0.5);z-index: 100000;
+  .alert-modal-content{width:300px;position: fixed;top: 50%;left: 50%;margin-left: -150px;margin-top: -100px;background-color: #fff;border-radius: 5px;border: 1px solid $gray;z-index: 100001;
+    .alert-modal-body{
+      span{display: block;width: 100%;height: 100%;padding: 20px;font-size: 16px;text-align: center;}
+    }
+    .alert-modal-footer{height: 51px;border-top: 1px solid transparent;
+      button{display: block;margin:10px auto;width: 60px;height: 30px;color: #fff;background-color: #074ba0;border-radius: 2px;font-size: 14px;}
+      button:hover{background-color: #003271;}
+      button:focus{background-color: #002655;}
+    }
+  }
+}
+
+.datetimepicker{padding: 0;margin: 0;
+  table{border-collapse:separate;
+    thead{
+      tr{
+        .prev{visibility: visible!important;}
+        .next{visibility: visible!important;}
+        th{background-color: #248fd5;border-radius: 0;color: #fff;border-bottom: 1px solid #E3F0FF;
+          .glyphicon{color: #fff;}
+        }
+        th.prev:hover,th.next:hover,th.switch:hover{background: #248fd5;}
+      }
+    }
+    tbody{
+      tr{
+        td{background-color: #85d1ff;border-radius: 0;border: 1px solid #E3F0FF;color: #fff;font-size: 12px;}
+        .day:hover,.old:hover,.new:hover{background: #FFE744;color: #333;}
+        .disabled{background-color: #f0f0f0;color: #333;}
+        .disabled:hover{background-color: #f0f0f0;color: #333;}
+        .day.active{background: #FFE744;color: #333;border:none;}
+        .day.active:hover{background: #FFE744;color: #333;}
+      }
+    }
+  }
+}
+
+
+.search-part{width: 90%;padding: 20px;margin: 0 auto;background-color: #fff;border: 1px solid $gray;border-radius: 5px;border-top: 2px solid #d2d6de;
+  .dp-tb{margin: 0 auto;
+    .input{float: left;margin-right: 10px;}
+    button{clear: both;margin: 50px auto 0;}
+  }
+}
+.outer-con{border: 1px solid $gray;border-top: 2px solid #339cd0;width: 90%;margin: 20px auto 0;background-color: #fff;border-radius: 5px;padding: 20px;
+  .operate{height: 30px;margin-bottom: 10px;
+    .list-cout{float: left;@include HEIGHT(30px);margin: 0;}
+    button{float: right;margin-left: 2px;background-color: #339cd0;}
+    button:hover{background-color: #1275a6;}
+  }
+  table{width: 100%;border: 1px solid $gray;
+    td{text-align: center;border:1px solid $gray;}
+  }
+}

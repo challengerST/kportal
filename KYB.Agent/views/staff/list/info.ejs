@@ -1,0 +1,131 @@
+<% var r = user.roleInfo.roleId; %>
+<div class="operate fill">
+    <p class="list-cout">共为您找到 0 条结果</p>
+    <% if(r == 1002 || r == 1006){ %>
+    <button class="blue-btn sm-btn reset">重置密码</button>
+    <button class="blue-btn sm-btn delete">删除</button>
+    <% } %>
+    <button class="blue-btn sm-btn disable">禁用</button>
+    <button class="blue-btn sm-btn enable">启用</button>
+    <button class="blue-btn sm-btn add">新增</button>
+</div>
+<div class="outer-con">
+    <table class="list-tb">
+        <thead>
+        <tr>
+            <td>
+                <input type="checkbox" id="sel-all">
+            </td>
+            <td>姓名</td>
+            <td>角色</td>
+            <td>手机号</td>
+            <td>邮箱</td>
+            <td>账号状态</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="page-box outer-page"></div>
+
+<div class="white-back dp-n">
+    <div class="add-modal alert-part fill dp-n">
+        <p class="header">新建员工 <span class="close-btn">X</span></p>
+
+        <div class="add-body fill">
+            <div class="half fill">
+                <div class="input">
+                    <label for="a-name">姓名：</label>
+                    <input type="text" id="a-name" class="sm-input a-require" autocomplete="off"/>
+                </div>
+                <div class="input">
+                    <label for="a-tel">手机号：</label>
+                    <input type="text" id="a-tel" class="sm-input a-require" autocomplete="off"/>
+
+                    <p class="warm dp-n">手机号格式错误</p>
+                </div>
+                <div class="input">
+                    <label for="a-mail">邮箱：</label>
+                    <input type="text" id="a-mail" class="sm-input a-require" autocomplete="new-password"/>
+
+                    <p class="warm dp-n">邮箱格式错误</p>
+                </div>
+                <div class="input">
+                    <label for="a-qq">QQ：</label>
+                    <input type="text" id="a-qq" class="sm-input" autocomplete="new-password"/>
+
+                    <p class="warm dp-n">QQ格式错误</p>
+                </div>
+                <div class="input">
+                    <label for="a-role">角色：</label>
+                    <select id="a-role" class="sm-input">
+                    </select>
+                </div>
+                <div class="input dp-n">
+                    <label for="a-pwd">密码：</label>
+                    <input type="password" id="a-pwd" class="sm-input" autocomplete="new-password"
+                           placeholder="6-20位，数字和英文组合"/>
+
+                    <p class="warm dp-n">6-20位的密码，必须由数字和英文组合</p>
+                </div>
+                <div class="input dp-n">
+                    <label for="a-repeat">重复密码：</label>
+                    <input type="password" id="a-repeat" class="sm-input" autocomplete="new-password"
+                           placeholder="再次输入密码确认"/>
+
+                    <p class="warm dp-n">两次输入不一致</p>
+                </div>
+            </div>
+            <div class="half fill right">
+                <p class="title">角色说明</p>
+                <p class="role-body">超级管理员：&nbsp;&nbsp;&nbsp;所有操作和管理权限</p>
+                <p class="role-body">管理员：&nbsp;&nbsp;&nbsp;除订单和财务外所有权限</p>
+                <p class="role-body">操作主管：&nbsp;&nbsp;&nbsp;订单操作、订单分配、费用清单操作权限</p>
+                <p class="role-body">操作员：&nbsp;&nbsp;&nbsp;订单操作、费用清单操作权限</p>
+                <p class="role-body">财务：&nbsp;&nbsp;&nbsp;对账单、开票操作权限</p>
+                <p class="role-body" style="color: red;">初始密码：kyb + 手机号</p>
+            </div>
+        </div>
+        <div class="btn-pt">
+            <button id="add-ensure" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="enable-part alert-part dp-n">
+        <p class="header">确认启用选中员工 <span class="close-btn">X</span></p>
+
+        <div class="btn-pt">
+            <button id="enable-ensure" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="disable-part alert-part dp-n">
+        <p class="header">确认禁用选中员工 <span class="close-btn">X</span></p>
+
+        <div class="btn-pt">
+            <button id="disable-ensure" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="delete-part alert-part dp-n">
+        <p class="header">确认删除选中员工 <span class="close-btn">X</span></p>
+
+        <div class="btn-pt">
+            <button id="enable-delete" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="reset-part alert-part dp-n">
+        <p class="header">确认重置选中员工密码 <span class="close-btn">X</span></p>
+
+        <div class="btn-pt">
+            <button id="enable-reset" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+</div>

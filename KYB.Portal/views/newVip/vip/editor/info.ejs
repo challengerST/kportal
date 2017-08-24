@@ -1,0 +1,31 @@
+<div class="input-part">
+    <div class="input">
+        <label for="name">姓名：</label>
+        <input type="text" id="name" data-value="<%= data.member.name %>" value="<%= data.member.name %>"
+               class="sm-input"/>
+    </div>
+    <div class="input">
+        <label for="mobile">手机号：</label>
+        <input type="text" id="mobile" value="<%= data.member.mobile %>" class="sm-input" readonly/>
+        <span class="hide">手机格式错误</span>
+    </div>
+    <div class="input">
+        <label for="mail">邮箱：</label>
+        <input type="text" id="mail" value="<%= data.member.email %>" class="sm-input"
+               data-val="<%= data.member.email %>"/>
+        <% if(data.member.emailState != 2){ %>
+        <a class="operate-mail" href="javascript:void(0);">验证邮箱</a>
+        <% } %>
+    </div>
+    <div class="input">
+        <label for="tel">电话：</label>
+        <input type="text" id="tel" data-value="<%= data.member.phone %>" value="<%= data.member.phone %>"
+               class="sm-input"/>
+    </div>
+    <div class="input">
+        <label for="QQ">QQ：</label>
+        <input type="text" id="QQ" data-value="<%= data.member.QQ %>" value="<%= data.member.QQ %>"
+               class="sm-input"/>
+    </div>
+</div>
+<button class="submit md-btn blue-btn">确认提交</button>

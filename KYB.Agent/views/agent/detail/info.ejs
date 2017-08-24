@@ -1,0 +1,121 @@
+
+<% var files = data.freightCompanyFileList || {} %>
+<% var m = data.applyLog || {} %>
+<%
+    var IDCardFace='',IDCardBack='',license='',certificate='';
+    for(var i=0;i<files.length;i++){
+
+            var file = files[i];
+            switch (file.imageFileType) {
+                case 1:
+                    IDCardFace = file.fileId;
+                    break;
+                case 2:
+                    IDCardBack = file.fileId;
+                    break;
+                case 3:
+                    license = file.fileId;
+                    break;
+                case 4:
+                    certificate = file.fileId;
+                    break;
+                default:
+                    break;
+            }
+
+    }
+%>
+<div class="top-info fill">
+    <div class="fill">
+        <p class="title"  id="applyInfo" data-id="<%= m.applyId %>">申请人信息</p>
+
+        <p class="sg-info">
+            <span class="ttl">姓名：</span>
+            <span class="bd"><%= m.name || '/' %></span>
+        </p>
+
+        <p class="sg-info">
+            <span class="ttl">手机：</span>
+            <span class="bd"><%= m.mobile || '/' %></span>
+        </p>
+
+        <p class="sg-info">
+            <span class="ttl">电子邮箱：</span>
+            <span class="bd"><%= m.email || '/' %></span>
+        </p>
+
+    </div>
+
+</div>
+<div class="second fill">
+    <div class="fill">
+        <p class="title">申请材料</p>
+    </div>
+    <div class="up-img fill">
+        <div class="fl-l agent_dec" style="width:142px;text-align:right;">
+            <span class="dp-b">手持身份证照片<a href="javascript:void(0)" class="downfile" data-key="<%=IDCardFace+','+IDCardBack %>">下载</a></span>
+        </div>
+        <div class="fl-l out fill">
+            <div class="fl-l img-box">
+                <img src="" width="88" height="88" class="dp-b oss-image" data-key="<%=IDCardFace %>" />
+                <span class="dp-b">正面</span>
+            </div>
+            <div class="fl-l img-box">
+                <img src="" width="88" height="88" class="dp-b oss-image" data-key="<%=IDCardBack %>"/>
+                <span class="dp-b">反面</span>
+            </div>
+        </div>
+    </div>
+    <div class="up-img fill">
+        <div class="fl-l agent_dec" style="width:142px;text-align:right;">
+            <span class="dp-b">营业执照<a href="javascript:void(0)" class="downfile" data-key="<%=license%>">下载</a></span>
+        </div>
+        <div class="fl-l out fill">
+            <div class="fl-l img-box">
+                <img src="" width="88" height="88" class="dp-b oss-image" data-key="<%=license%>"/>
+            </div>
+        </div>
+    </div>
+    <div class="up-img fill">
+        <div class="fl-l agent_dec" style="width:142px;text-align:right;">
+            <span class="dp-b">资质认可证书<a href="javascript:void(0)" class="downfile" data-key="<%=certificate%>">下载</a></span>
+        </div>
+        <div class="fl-l out fill">
+            <div class="fl-l img-box">
+                <img src="" width="88" height="88" class="dp-b oss-image" data-key="<%=certificate%>"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% if(m.applyState ==1){%>
+<div class="third fill">
+    <div class="fill">
+        <p class="title">检查</p>
+    </div>
+    <div class="fill">
+        请输入营业执照上的公司名称，并确保输入的公司名称与营业执照保持一致，以便系统检测此公司是否在平台上已存在。
+    </div>
+    <div class="fill">
+        <input type="text" id="companyName" />
+        <input type="button" id="btnCheck" value="检查" />
+        <span id="checkMsg"></span>
+    </div>
+    <input type="button" id="btnApprove" value="审核通过" disabled="disabled" />
+    <input type="button" id="showReject" value="审核不通过" disabled="disabled" />
+</div>
+
+<div class="white-back dp-n">
+    <div class="reject-part alert-part dp-n">
+        <p class="header">审核不通过<span class="close-btn">X</span></p>
+        <div class="border fill">
+            <p class="font-red">确定不通过此用户的加盟申请？</p>
+            <input type="textarea" id="reason" />
+        </div>
+        <div class="btn-pt">
+            <button id="btnReject" class="fl-l md-btn blue-btn">不通过</button>
+            <button class="close-btn fl-r md-btn white-btn">返回</button>
+        </div>
+    </div>
+</div>
+<%}%>

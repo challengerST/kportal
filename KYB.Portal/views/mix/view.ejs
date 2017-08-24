@@ -1,0 +1,27 @@
+<%- include ../base/head.ejs %>
+<%# 样式表引用 %>
+<link rel="stylesheet" href="/javascripts/datePicker/css/bootstrap-datetimepicker.min.css"/>
+<link rel="stylesheet" href="/stylesheets/css/web/mix.css">
+<%# 样式表引用结束 %>
+<%- include ../base/header.ejs %>
+<script>
+    var dd = {
+        mb: '<%= mb || '' %>'
+    };
+</script>
+<div class="app-box">
+    <div class="delivery-box bg-class">
+        <div class="container">
+            <p class="nav-top">首页 > 散货拼货</p>
+            <%- include info.ejs %>
+        </div>
+    </div>
+
+</div>
+<%- include ../base/javascripts.ejs %>
+<%# 脚本引用 %>
+<script src="/javascripts/datePicker/js/bootstrap-datetimepicker.min.js" charset="utf-8"></script>
+<script src="/javascripts/datePicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="utf-8"></script>
+<script src="/javascripts/mix/bundle.min.js" charset="utf-8"></script>
+<%# 脚本引用结束 %>
+<%- include ../base/foot.ejs %>

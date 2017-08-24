@@ -1,0 +1,222 @@
+[2017-08-22 09:09:06.220] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:38:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:84:17)
+    at Request.self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitTwo (events.js:106:13)
+    at Request.emit (events.js:191:7)
+    at Request.<anonymous> (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:1171:10)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at IncomingMessage.<anonymous> (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:1091:12)
+[2017-08-22 09:09:06.220] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:38:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:84:17)
+    at Request.self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitTwo (events.js:106:13)
+    at Request.emit (events.js:191:7)
+    at Request.<anonymous> (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:1171:10)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at IncomingMessage.<anonymous> (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:1091:12)
+[2017-08-22 09:11:06.266] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:38:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:84:17)
+    at Request.self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitTwo (events.js:106:13)
+    at Request.emit (events.js:191:7)
+    at Request.<anonymous> (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:1171:10)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at IncomingMessage.<anonymous> (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:1091:12)
+[2017-08-22 09:11:06.266] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:38:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:84:17)
+    at Request.self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitTwo (events.js:106:13)
+    at Request.emit (events.js:191:7)
+    at Request.<anonymous> (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:1171:10)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at IncomingMessage.<anonymous> (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:1091:12)
+[2017-08-22 12:00:18.251] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:00:29.210] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/sac","message":"Cannot set property 'loginUrl' of undefined","stack":"TypeError: Cannot set property 'loginUrl' of undefined\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\index.js:18:26\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:280:7\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)"}}
+[2017-08-22 12:00:46.326] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:00:46.330] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:00:46.332] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:33:49.157] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:34:02.066] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:34:09.024] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:34:09.053] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:39:43.650] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:39:43.683] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:41:34.283] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:41:34.317] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:41:35.256] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:41:35.284] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:42:17.501] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:42:17.531] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:42:34.255] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:42:34.307] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:42:48.378] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:42:48.406] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:42:53.060] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:42:53.089] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:43:43.770] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:43:43.807] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:44:43.776] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:44:43.801] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:45:18.711] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:45:18.735] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:45:19.492] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:45:19.506] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:45:20.052] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:45:20.074] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:45:50.234] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:45:50.251] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:47:09.329] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:47:09.360] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:47:54.910] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:47:54.945] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:47:56.197] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:47:56.227] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:48:14.554] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:48:14.582] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:48:26.943] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:48:26.961] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:49:55.186] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:49:55.256] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:50:21.964] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:50:21.997] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:50:29.346] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:50:29.371] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:50:35.461] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:50:35.479] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:51:25.751] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:51:25.780] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:51:26.427] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:51:26.447] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:51:31.001] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:51:31.021] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:53:24.809] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:53:24.847] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:53:34.340] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:53:34.359] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:53:40.178] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:53:40.199] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:53:40.890] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:53:40.909] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:53:48.360] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:53:48.377] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:53:54.482] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:53:54.500] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:53:59.729] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:53:59.753] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:54:07.499] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:54:07.504] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:54:11.767] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:54:11.793] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:55:52.742] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:55:52.773] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:55:59.749] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:55:59.771] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:56:00.722] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:56:00.738] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:56:00.954] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:56:00.976] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:57:23.989] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:57:24.009] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:57:29.087] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 12:57:29.120] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 13:36:11.921] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 13:36:22.012] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 14:26:53.959] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 14:27:02.051] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 14:28:41.654] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 14:28:49.387] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 14:30:52.551] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 14:31:19.568] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 14:31:53.912] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 14:32:09.894] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 14:36:10.577] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 14:36:19.087] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 14:36:20.714] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 14:36:31.767] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 14:37:28.208] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 14:37:30.029] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 14:37:30.803] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 14:37:33.536] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 14:42:01.785] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 14:42:03.178] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 14:50:49.060] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/sac","message":"Cannot set property 'loginUrl' of undefined","stack":"TypeError: Cannot set property 'loginUrl' of undefined\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\index.js:18:26\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:280:7\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)"}}
+[2017-08-22 14:51:20.583] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/sac","message":"Cannot set property 'loginUrl' of undefined","stack":"TypeError: Cannot set property 'loginUrl' of undefined\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\index.js:18:26\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:280:7\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)"}}
+[2017-08-22 14:51:23.276] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/sac","message":"Cannot set property 'loginUrl' of undefined","stack":"TypeError: Cannot set property 'loginUrl' of undefined\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\index.js:18:26\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:280:7\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)"}}
+[2017-08-22 14:51:31.733] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/sac","message":"Cannot set property 'loginUrl' of undefined","stack":"TypeError: Cannot set property 'loginUrl' of undefined\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\index.js:18:26\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:280:7\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)"}}
+[2017-08-22 14:51:32.468] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/sac","message":"Cannot set property 'loginUrl' of undefined","stack":"TypeError: Cannot set property 'loginUrl' of undefined\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\index.js:18:26\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:280:7\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)"}}
+[2017-08-22 14:51:40.369] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/shop","message":"Cannot set property 'loginUrl' of undefined","stack":"TypeError: Cannot set property 'loginUrl' of undefined\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\index.js:18:26\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:280:7\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)"}}
+[2017-08-22 14:51:51.676] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/shop","message":"Cannot set property 'loginUrl' of undefined","stack":"TypeError: Cannot set property 'loginUrl' of undefined\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\index.js:18:26\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:280:7\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)"}}
+[2017-08-22 14:51:52.900] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/shop","message":"Cannot set property 'loginUrl' of undefined","stack":"TypeError: Cannot set property 'loginUrl' of undefined\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\index.js:18:26\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:280:7\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)"}}
+[2017-08-22 14:51:53.316] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/shop","message":"Cannot set property 'loginUrl' of undefined","stack":"TypeError: Cannot set property 'loginUrl' of undefined\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\index.js:18:26\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:280:7\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)"}}
+[2017-08-22 14:51:53.500] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/shop","message":"Cannot set property 'loginUrl' of undefined","stack":"TypeError: Cannot set property 'loginUrl' of undefined\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\index.js:18:26\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:280:7\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)"}}
+[2017-08-22 14:51:53.669] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/shop","message":"Cannot set property 'loginUrl' of undefined","stack":"TypeError: Cannot set property 'loginUrl' of undefined\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\index.js:18:26\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:280:7\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)"}}
+[2017-08-22 14:51:58.185] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/sac","message":"Cannot set property 'loginUrl' of undefined","stack":"TypeError: Cannot set property 'loginUrl' of undefined\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\index.js:18:26\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:280:7\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)"}}
+[2017-08-22 14:54:58.934] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:03:42.484] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:03:59.140] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:04:14.520] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:04:32.634] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:04:37.050] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:04:40.060] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:04:50.008] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:06:25.792] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:14:45.402] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:14:47.455] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:36:30.864] [ERROR] error - {"error":{"sid":-1,"method":"GET","url":"/javascripts/swiper/js/maps/swiper.jquery.min.js.map","message":"Cannot set property 'loginUrl' of undefined","stack":"TypeError: Cannot set property 'loginUrl' of undefined\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\web\\index.js:18:26\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:280:7\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:312:13)"}}
+[2017-08-22 15:36:30.958] [ERROR] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:38:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:84:17)
+    at Request.self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitTwo (events.js:106:13)
+    at Request.emit (events.js:191:7)
+    at Request.<anonymous> (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:1171:10)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at IncomingMessage.<anonymous> (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:1091:12)
+[2017-08-22 15:36:30.958] [FATAL] error - TypeError: Cannot set property 'fallback' of undefined
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\utils\gt3\index.js:38:38
+    at D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:46:21
+    at Request._callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\gt-sdk.js:84:17)
+    at Request.self.callback (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:188:22)
+    at emitTwo (events.js:106:13)
+    at Request.emit (events.js:191:7)
+    at Request.<anonymous> (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:1171:10)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:188:7)
+    at IncomingMessage.<anonymous> (D:\Desktop\newversion\NodeJs\trunk\KYB.Portal\node_modules\gt3-sdk\node_modules\request\request.js:1091:12)
+[2017-08-22 15:36:53.768] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:37:02.977] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:37:05.582] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:37:06.869] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:37:07.909] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:37:16.166] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:38:50.079] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:38:55.719] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:39:00.887] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:41:37.076] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:43:43.334] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:46:43.079] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:47:09.184] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:47:13.394] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:48:32.442] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 15:48:36.274] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 16:54:19.252] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/order/sum","message":"Cannot read property 'roleId' of null","stack":"TypeError: Cannot read property 'roleId' of null\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\order\\index.js:69:40\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-22 16:56:45.828] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/order/sum","message":"Cannot read property 'roleId' of null","stack":"TypeError: Cannot read property 'roleId' of null\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\order\\index.js:69:40\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-22 16:56:48.070] [ERROR] error - {"error":{"sid":-1,"method":"POST","url":"/api/order/sum","message":"Cannot read property 'roleId' of null","stack":"TypeError: Cannot read property 'roleId' of null\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\routes\\api\\order\\index.js:69:40\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:131:13)\n    at Route.dispatch (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:277:22\n    at Function.process_params (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:330:12)\n    at next (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:271:10)\n    at Function.handle (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:176:3)\n    at router (D:\\Desktop\\newversion\\NodeJs\\trunk\\KYB.Portal\\node_modules\\express\\lib\\router\\index.js:46:12)"}}
+[2017-08-22 16:58:00.751] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 16:59:17.378] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 17:03:22.152] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}
+[2017-08-22 17:03:26.183] [ERROR] error - {"sid":-1,"ip":"::1","method":"GET","status":404}

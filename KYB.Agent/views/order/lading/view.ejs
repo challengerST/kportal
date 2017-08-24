@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="Jeremy">
+    <meta name="Author" content="Jeremy">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>提单确认</title>
+    <style>
+        .dp-n {
+            display: none;
+        }
+
+        .dp-b {
+            display: block;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-weight: 600;
+            color: blue;
+        }
+
+        .container {
+            width: 1080px;
+            margin: 0 auto;
+        }
+
+        .top {
+            height: 50px;
+        }
+
+        .top p {
+            height: 50px;
+            line-height: 50px;
+            float: left;
+            width: 33%;
+            text-align: center;
+            font-size: 22px;
+            color: #339cd0;
+        }
+
+        p.left {
+            text-align: left;
+        }
+
+        p.right {
+            width: 34%;
+            text-align: right;
+        }
+
+        .td {
+            width: 1080px;
+            height: 1548px;
+            background: url("http://kybpublic.oss-cn-shanghai.aliyuncs.com/images/img/td.png") no-repeat;
+            position: relative;
+        }
+
+        .fhr {
+            word-wrap:break-word;
+            word-break:break-word;
+            width: 490px;
+            position: absolute;
+            top: 58px;
+            left: 20px;
+            line-height: 20px;
+            text-overflow: ellipsis;
+        }
+
+        .shr {
+            word-wrap:break-word;
+            word-break:break-word;
+            width: 490px;
+            position: absolute;
+            top: 238px;
+            left: 20px;
+            line-height: 20px;
+            text-overflow: ellipsis;
+        }
+        .tzr {
+            width: 490px;
+            /*height: 90px;*/
+            position: absolute;
+            top: 638px;
+            left: 20px;
+            line-height: 20px;
+            /*overflow: hidden;*/
+            text-overflow: ellipsis;
+            word-break:break-word;
+            word-wrap:break-word;
+        }
+
+        .shr span, .fhr span,.tzr span {
+            margin-right: 5px;
+        }
+        .pm {
+            line-height: 25px;
+            width: 280px;
+            position: absolute;
+            top: 1124px;
+            left: 780px;
+            overflow: hidden;
+            word-break: break-all;
+        }
+        .zd-3 {
+            height: 45px;
+            width: 50px;
+            line-height: 45px;
+            position: absolute;
+            top: 2px;
+            left: 3px;
+            text-align: center;
+        }
+
+        .zd-st {
+            height: 45px;
+            width: 50px;
+            line-height: 45px;
+            position: absolute;
+            top: 2px;
+            left: 60px;
+            text-align: center;
+        }
+
+        .zd-8 {
+            height: 45px;
+            line-height: 45px;
+            position: absolute;
+            top: 2px;
+            left: 120px;
+        }
+
+        .zd-t {
+            height: 45px;
+            line-height: 45px;
+            position: absolute;
+            top: 2px;
+            right: 15px;
+        }
+
+        .foot-yd {
+            height: 45px;
+            line-height: 45px;
+            position: absolute;
+            top: 1500px;
+            right: 15px;
+        }
+
+        .air-company {
+            width: 500px;
+            height: 50px;
+            line-height: 50px;
+            position: absolute;
+            right: 30px;
+            top: 105px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .FP {
+            width: 500px;
+            height: 50px;
+            line-height: 50px;
+            position: absolute;
+            right: 30px;
+            top: 390px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .info-start {
+            height: 30px;
+            line-height: 30px;
+            width: 400px;
+            position: absolute;
+            top: 500px;
+            left: 20px;
+        }
+
+        .info-zz1 {
+            height: 35px;
+            line-height: 35px;
+            width: 50px;
+            text-align: center;
+            position: absolute;
+            top: 545px;
+            left: 10px;
+        }
+
+        .info-zz2 {
+            height: 35px;
+            line-height: 35px;
+            width: 50px;
+            text-align: center;
+            position: absolute;
+            top: 545px;
+            left: 327px;
+        }
+
+        .info-zz3 {
+            height: 35px;
+            line-height: 35px;
+            width: 50px;
+            text-align: center;
+            position: absolute;
+            top: 545px;
+            left: 428px;
+        }
+
+        .info-zz1-cd {
+            height: 35px;
+            line-height: 35px;
+            width: 200px;
+            text-align: center;
+            position: absolute;
+            top: 545px;
+            left: 90px;
+        }
+
+        .CNY {
+            height: 35px;
+            line-height: 35px;
+            width: 55px;
+            text-align: center;
+            position: absolute;
+            top: 545px;
+            left: 526px;
+        }
+
+        .P1 {
+            height: 35px;
+            line-height: 35px;
+            width: 30px;
+            text-align: center;
+            position: absolute;
+            top: 545px;
+            left: 610px;
+        }
+
+        .P2 {
+            height: 35px;
+            line-height: 35px;
+            width: 30px;
+            text-align: center;
+            position: absolute;
+            top: 545px;
+            left: 670px;
+        }
+
+        .NVD {
+            height: 35px;
+            line-height: 35px;
+            width: 170px;
+            text-align: center;
+            position: absolute;
+            top: 545px;
+            left: 730px;
+        }
+
+        .NVC {
+            height: 35px;
+            line-height: 35px;
+            width: 170px;
+            text-align: center;
+            position: absolute;
+            top: 545px;
+            left: 900px;
+        }
+
+        .mdg {
+            line-height: 25px;
+            height: 25px;
+            width: 250px;
+            position: absolute;
+            top: 598px;
+            left: 17px;
+            /*text-align: center;*/
+        }
+
+        .hbh {
+            line-height: 25px;
+            height: 25px;
+            width: 100px;
+            position: absolute;
+            top: 598px;
+            left: 280px;
+            text-align: center;
+        }
+
+        .qfrq {
+            line-height: 25px;
+            font-size: 14px;
+            height: 25px;
+            width: 130px;
+            position: absolute;
+            top: 598px;
+            left: 400px;
+            text-align: center;
+        }
+
+        .airlineInfo {
+            line-height: 25px;
+            font-size: 14px;
+            height: 25px;
+            width: 100px;
+            position: absolute;
+            top: 598px;
+            left: 280px;
+            text-align: center;
+        }
+
+        .js {
+            line-height: 25px;
+            height: 100px;
+            width: 45px;
+            position: absolute;
+            top: 785px;
+            left: 10px;
+            text-align: center;
+            overflow: hidden;
+            word-break: break-all;
+        }
+
+        .zl {
+            line-height: 25px;
+            height: 100px;
+            width: 95px;
+            position: absolute;
+            top: 785px;
+            left: 66px;
+            text-align: center;
+            overflow: hidden;
+            word-break: break-all;
+        }
+
+        .jfzl {
+            line-height: 25px;
+            height: 25px;
+            width: 95px;
+            position: absolute;
+            top: 785px;
+            left: 327px;
+            text-align: center;
+            overflow: hidden;
+            word-break: break-all;
+        }
+
+        .dj {
+            line-height: 25px;
+            height: 100px;
+            width: 95px;
+            position: absolute;
+            top: 785px;
+            left: 450px;
+            text-align: center;
+            overflow: hidden;
+            word-break: break-all;
+        }
+
+        .yf {
+            line-height: 25px;
+            height: 100px;
+            width: 150px;
+            position: absolute;
+            top: 785px;
+            left: 580px;
+            text-align: center;
+            overflow: hidden;
+            word-break: break-all;
+        }
+
+        .pm {
+            line-height: 25px;
+            width: 280px;
+            position: absolute;
+            top: 1124px;
+            left: 780px;
+            overflow: hidden;
+            word-break: break-all;
+        }
+
+        .unit {
+            line-height: 25px;
+            height: 100px;
+            width: 30px;
+            position: absolute;
+            top: 785px;
+            left: 158px;
+            text-align: center;
+            overflow: hidden;
+            word-break: break-all;
+        }
+        .unit2 {
+            line-height: 25px;
+            height: 100px;
+            width: 30px;
+            position: absolute;
+            top: 785px;
+            left: 240px;
+            text-align: center;
+            overflow: hidden;
+            word-break: break-all;
+        }
+        .yf2 {
+            line-height: 25px;
+            height: 25px;
+            width: 195px;
+            position: absolute;
+            top: 1130px;
+            left: 10px;
+            text-align: center;
+            overflow: hidden;
+            word-break: break-all;
+        }
+
+        .zf {
+            line-height: 25px;
+            height: 25px;
+            width: 195px;
+            position: absolute;
+            top: 1325px;
+            left: 10px;
+            text-align: center;
+            overflow: hidden;
+            word-break: break-all;
+        }
+
+        .zj {
+            line-height: 25px;
+            height: 25px;
+            width: 195px;
+            position: absolute;
+            top: 1420px;
+            left: 10px;
+            text-align: center;
+            overflow: hidden;
+            word-break: break-all;
+        }
+
+        .btm-info {
+            line-height: 50px;
+            height: 50px;
+            width: 650px;
+            position: absolute;
+            top: 1420px;
+            left: 420px;
+            text-align: center;
+            overflow: hidden;
+            word-break: break-all;
+        }
+
+        .btm-info span {
+            float: left;
+            width: 33%;
+        }
+
+        .btm-info .left {
+            text-align: left;
+        }
+
+        .btm-info .right {
+            text-align: right;
+        }
+
+        .btn-part {
+            margin: 50px 0 150px;
+        }
+
+        .dp-tb {
+            display: table;
+            margin: 0 auto;
+        }
+
+        .dp-tb button {
+            margin-right: 20px;
+            display: block;
+            width: 180px;
+            text-align: center;
+            cursor: pointer;
+            height: 40px;
+            font-size: 14px;
+            border-radius: 5px;
+            float: left;
+        }
+
+        .dp-tb button:last-child {
+            margin-right: 0;
+        }
+
+        .blue-btn {
+            color: #fff;
+            background-color: #074ba0;
+        }
+
+        .blue-btn:hover {
+            background-color: #003271;
+        }
+
+        .blue-btn:active {
+            background-color: #002655;
+        }
+
+        .white-btn {
+            color: #074ba0;
+            background-color: #fff;
+            border: 1px solid #074ba0;
+        }
+
+        .white-btn:hover {
+            background-color: #f4f4f4;
+        }
+
+        .white-btn:active {
+            background-color: #dedede;
+        }
+
+        .alert-modal-element {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(3, 3, 3, 0.5);
+            z-index: 100000;
+        }
+
+        .alert-modal-content {
+            width: 300px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-left: -150px;
+            margin-top: -100px;
+            background-color: #fff;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            z-index: 100001;
+        }
+
+        .alert-modal-body span {
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .alert-modal-footer {
+            height: 51px;
+            border-top: 1px solid transparent;
+        }
+
+        .alert-modal-footer button {
+            display: block;
+            margin: 10px auto;
+            width: 60px;
+            height: 30px;
+            color: #fff;
+            background-color: #074ba0;
+            border-radius: 2px;
+            font-size: 14px;
+        }
+
+        .alert-modal-footer button:hover {
+            background-color: #003271;
+        }
+
+        .alert-modal-footer button:focus {
+            background-color: #002655;
+        }
+
+        .to1 {
+            height: 35px;
+            line-height: 35px;
+            width: 50px;
+            position: absolute;
+            text-align: center;
+            top: 545px;
+            left: 10px;;
+        }
+
+        .to2 {
+            height: 35px;
+            line-height: 35px;
+            width: 50px;
+            position: absolute;
+            text-align: center;
+            top: 545px;
+            left: 327px;;
+        }
+
+        .zfmx {
+            height: 100px;
+            width: 500px;
+            position: absolute;
+            line-height: 25px;
+            top: 1130px;
+            left: 500px;
+        }
+        .jiesuanma{
+            position:absolute;
+            top:380px;
+            left:20px;
+        }
+        .jiesuanma input{
+            width:100px;
+        }
+        .jiesuanma textarea{
+            width:150px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 3px;
+            outline: 0;
+            font-size: 14px;
+            word-wrap: break-word;
+            overflow: hidden;
+            background:rgba(0,0,0,0);
+        }
+        .sanzima1{
+            position:absolute;
+            top:360px;
+            left:540px;
+            width:200px;
+            height:20px;
+        }
+        .sanzima1 input{
+            border: none;
+        }
+        .sanzima2{
+            position:absolute;
+            top:1294px;
+            left:540px;
+            width:100px;
+            height:50px;
+        }
+
+            .tt{
+            border:1px solid red;
+        }
+        /*.sanzima1 span,.sanzima2 span{*/
+        /*width:100px;*/
+        /*height:50px;*/
+        /*}*/
+        .wordremark{
+            width: 556px;
+            _height: 250px;
+            height:250px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 3px;
+            outline: 0;
+            font-size: 14px;
+            word-wrap: break-word;
+            overflow-x: hidden;
+            overflow-y: auto;
+            _overflow-y: visible;
+            position:absolute;
+            top:808px;
+            left:190px;
+            background:rgba(0,0,0,0);
+
+        }
+        .guige{
+            width:315px;
+            position:absolute;
+            top:774px;
+            left:759px;
+        }
+        .guigebuchong{
+            width:142px;
+            height:302px;
+            position:absolute;
+            top:806px;
+            left:20px;
+        }
+    </style>
+
+</head>
+<body>
+
+<%
+Date.prototype.Format = function (fmt) { //author: meizz
+    var o = {
+        "M+": this.getMonth() + 1, //月份
+        "d+": this.getDate(), //日
+        "h+": this.getHours(), //小时
+        "m+": this.getMinutes(), //分
+        "s+": this.getSeconds(), //秒
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+        "S": this.getMilliseconds() //毫秒
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+}
+%>
+
+<% var body = data && 'resBody' in data && data.resBody || {}; %>
+<% var o = body && 'order' in body && body.order || {}; %>
+<% var s = body && 'storage' in body && body.storage || {}; %>
+<% var t = s && 'entryList' in s && s.entryList || {}; %>
+<div class="container"  data-md="<%= o.destCode %>" data-wt="<%= o.cargo.chargingWeight %>" data-id="<%= o.orderId %>"  data-sid="<%= o.subNum %>" data-hassub="<%= o.hasSubOrder %>">
+    <div class="top">
+        <p class="left">订单号：<%= o.orderNum || '/' %></p>
+        <p class="middle">主单号：<%= o.airwayBillNum || '/' %></p>
+    </div>
+    <div class="td">
+        <p class="zd-3"><%= o.airwayBillNum.slice(0, 3) %></p>
+        <p class="zd-st"><%= o.deptCode %></p>
+        <p class="zd-8"><%= o.airwayBillNum.slice(3, 11) %></p>
+        <% if(o.subNum){ %>
+            <p class="zd-t" data-id="<%= o.subNum%>"><%= o.subNum%></p>
+            <p class="foot-yd"><%= o.subNum %></p>
+        <% } else{%>
+           <p class="zd-t" data-id=""><%= o.airwayBillNum.slice(0, 3) %> - <%= o.airwayBillNum.slice(3, 11) %></p>
+            <p class="foot-yd"><%= o.airwayBillNum.slice(0, 3) %> - <%= o.airwayBillNum.slice(3, 11) %></p>
+        <% } %>
+        <% if(o.orderShipper){ %>
+        <p class="fhr" data-sid="<%o.subOrderNum%>>">
+            <%= o.orderShipper.contactName || '/' %>
+            <br>
+            <%= o.orderShipper.contactAddress || '/' %>
+            <br>
+            <% if(o.orderShipper.contactPerson){ %>
+            <span><%= o.orderShipper.contactPerson %></span>
+            <% } %>
+            <% if(o.orderShipper.contactTel){ %>
+            <span><%= o.orderShipper.contactTel %></span>
+            <% } %>
+            <% if(o.orderShipper.contactFax){ %>
+            <span><%= o.orderShipper.contactFax %></span>
+            <% } %>
+            <% if(o.orderShipper.contactEmail){ %>
+            <span><%= o.orderShipper.contactEmail %></span>
+            <% } %>
+        </p>
+        <% } %>
+        <% if(o.orderConsignee){ %>
+        <p class="shr">
+            <%= o.orderConsignee.contactName %>
+            <br>
+            <%= o.orderConsignee.contactAddress %>
+            <br>
+
+            <% if(o.orderConsignee.contactPerson){ %>
+            <span><%= o.orderConsignee.contactPerson %></span>
+            <% } %>
+            <% if(o.orderConsignee.contactTel){ %>
+            <span><%= o.orderConsignee.contactTel %></span>
+            <% } %>
+            <% if(o.orderConsignee.contactFax){ %>
+            <span><%= o.orderConsignee.contactFax %></span>
+            <% } %>
+            <% if(o.orderConsignee.contactEmail){ %>
+            <span><%= o.orderConsignee.contactEmail %></span>
+            <% } %>
+        </p>
+        <% } %>
+        <% if(o.orderNotifier){ %>
+        <p class="tzr">
+            <%= o.orderNotifier.contactName %>
+            <br>
+            <%= o.orderNotifier.contactAddress %>
+            <br>
+
+            <% if(o.orderNotifier.contactPerson){ %>
+            <span><%= o.orderConsignee.contactPerson %></span>
+            <% } %>
+            <% if(o.orderNotifier.contactTel){ %>
+            <span><%= o.orderNotifier.contactTel %></span>
+            <% } %>
+            <% if(o.orderNotifier.contactFax){ %>
+            <span><%= o.orderNotifier.contactFax %></span>
+            <% } %>
+            <% if(o.orderNotifier.contactEmail){ %>
+            <span><%= o.orderNotifier.contactEmail %></span>
+            <% } %>
+        </p>
+        <% } %>
+        <!--jiesuanma-->
+        <p class="jiesuanma tt inputshow">
+               <textarea  name="jiesuanma" rows="3">
+                    <%= o.SettlementCode3 %>
+            </textarea>
+            <!--<input type="text" name="jiesuanma" value="<%= o.SettlementCode3 %>">-->
+        </p>
+        <p class="jiesuanma printshow" style="display: none"><%- o.SettlementCode3 ? o.SettlementCode3.replace(/\n/ig,'<br/>') : '' %></p>
+        <textarea class="wordremark tt" >
+<%= o.BillRemark %>
+        </textarea>
+        <% if(o.cargo.packageMark){ %>
+        <% var tt=(o.cargo.packageMark).split(',');console.log(tt)%>
+        <% for(var i=0;i<tt.length;i++){ %>
+        <% }%>
+        <% } %>
+        <%  var sizeTotal ="";
+            for(var i=0;i<t.length;i++) {
+            for(var j=0;j<t[i].entryDetail.length;j++) {
+                sizeTotal+= t[i].entryDetail[j].itemWidth+'*'+t[i].entryDetail[j].itemHeight+'*'+t[i].entryDetail[j].itemLength+',';
+            }
+        }
+        %>
+
+
+        <p class="guige tt" data-pm="<%= o.cargo.cargoName %>" data-mt="<%= o.cargo.packageMark %>" data-size="<%= sizeTotal %>">
+        </p>
+        <p class="sanzima1 tt">
+            <input type="text"  value="<%= o.SettlementCode1 %>">
+        </p>
+        <p class="sanzima2 tt"><%- o.SettlementCode2 ? o.SettlementCode2.replace(/\n/ig,'<br/>') : '' %></p>
+        <p class="guigebuchong tt"></p>
+        <p class="air-company"></p>
+        <p class="FP">Freight Prepaid</p>
+        <p class="info-start"><%= o.airwayInfo.deptNode.portName %> , <%= o.airwayInfo.deptNode.portCountry %></p>
+        <% if(o.airwayInfo.transPort.length >= 2){ %>
+        <p class="info-zz1"><%= o.airwayInfo.transPort[1].portCode %></p>
+        <% } %>
+        <p class="to1"><%= o.airwayInfo.transPort[1].portCode %></p>
+
+        <% if(o.airwayInfo.transPort.length >= 3){ %>
+        <p class="to2"><%= o.airwayInfo.transPort[2].portCode %></p>
+        <% } %>
+        <p class="info-zz1-cd"><%= o.airCompanyCode %></p>
+        <p class="CNY">CNY</p>
+        <p class="P1">P</p>
+        <p class="P2">P</p>
+        <p class="NVD">N.V.D</p>
+        <p class="NVC">N.C.V</p>
+        <% if(o.airwayInfo.transPort.length >= 4){ %>
+        <p class="info-zz2"><%= o.airwayInfo.transPort[3].portCode %></p>
+        <% } %>
+        <% if(o.airwayInfo.transPort.length >= 5){ %>
+        <p class="info-zz3"><%= o.airwayInfo.transPort[4].portCode %></p>
+        <% } %>
+        <p class="mdg"><%= o.airwayInfo.destNode.portName %> , <%= o.airwayInfo.destNode.portCountry %></p>
+        <% if(o.airlineInfo){ %>
+        <p class="hbh"><%= o.airlineInfo || '/' %></p>
+        <% } %>
+        <% var dt = ''; %>
+        <% switch (new Date(o.flightDate).getMonth()) {
+            case 0:
+                dt = 'Jan  ' + new Date(o.flightDate).getDate() + ' , ' + new Date(o.flightDate).getFullYear();
+                break;
+            case 1:
+                dt = 'Feb  ' + new Date(o.flightDate).getDate() + ' , ' + new Date(o.flightDate).getFullYear();
+                break;
+            case 2:
+                dt = 'Mar  ' + new Date(o.flightDate).getDate() + ' , ' + new Date(o.flightDate).getFullYear();
+                break;
+            case 3:
+                dt = 'Apr  ' + new Date(o.flightDate).getDate() + ' , ' + new Date(o.flightDate).getFullYear();
+                break;
+            case 4:
+                dt = 'May  ' + new Date(o.flightDate).getDate() + ' , ' + new Date(o.flightDate).getFullYear();
+                break;
+            case 5:
+                dt = 'Jun  ' + new Date(o.flightDate).getDate() + ' , ' + new Date(o.flightDate).getFullYear();
+                break;
+            case 6:
+                dt = 'Jul  ' + new Date(o.flightDate).getDate() + ' , ' + new Date(o.flightDate).getFullYear();
+                break;
+            case 7:
+                dt = 'Aug  ' + new Date(o.flightDate).getDate() + ' , ' + new Date(o.flightDate).getFullYear();
+                break;
+            case 8:
+                dt = 'Sept  ' + new Date(o.flightDate).getDate() + ' , ' + new Date(o.flightDate).getFullYear();
+                break;
+            case 9:
+                dt = 'Oct  ' + new Date(o.flightDate).getDate() + ' , ' + new Date(o.flightDate).getFullYear();
+                break;
+            case 10:
+                dt = 'Nov  ' + new Date(o.flightDate).getDate() + ' , ' + new Date(o.flightDate).getFullYear();
+                break;
+            case 11:
+                dt = 'Dec  ' + new Date(o.flightDate).getDate() + ' , ' + new Date(o.flightDate).getFullYear();
+                break;
+        } %>
+        <%
+        var showCharginSize = o.cargo.cargoSize;
+        if(o.entryChargingWeight && parseFloat(parseFloat(o.entryChargingWeight)*0.006) < o.cargo.cargoSize){
+            showCharginSize = parseFloat(o.entryChargingWeight)*0.006;
+        }%>
+        <p class="qfrq"><%= dt %></p>
+        <p class="js"><%= o.cargo.cargoCount %></p>
+        <p class="zl"><%= o.cargo.cargoWeight %></p>
+        <p class="unit">K</p>
+        <p class="unit2">Q</p>
+        <p class="jfzl tt" contenteditable="true"><%= o.entryChargingWeight || o.cargo.chargingWeight%></p>
+        <p class="dj"></p>
+        <p class="yf"></p>
+        <p class="pm">
+            Vol: <span  data-z="<%= showCharginSize %>"><%= showCharginSize %></span>CBM
+        </p>
+        <p class="yf2"></p>
+        <p class="zf"></p>
+        <p class="zj"></p>
+        <p class="btm-info">
+            <span class="left"><%= new Date().Format('yyyy-MM-dd') %></span>
+            <span>SHANGHAI</span>
+            <span class="right">10000</span>
+        </p>
+        <p class="zfmx"></p>
+    </div>
+
+    <div class="btn-part">
+        <div class="dp-tb">
+            <button class="blue-btn" id="save" data-id="<%= o.orderId %>" data-status="<%= o.SettlementCode1 ? 1 : 0 %>">保存</button>
+            <button class="blue-btn" id="print" data-id="<%= o.orderId %>">打印</button>
+            <button class="blue-btn" id="pdf" data-id="<%= o.orderId %>">下载给客户</button>
+            <button class="blue-btn" id="down" data-id="<%= o.orderId %>">下载给航空公司</button>
+            <button class="white-btn" onclick="javascript:window.close();">返回</button>
+        </div>
+    </div>
+
+</div>
+<script src="http://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+<script src="/javascripts/order/lading/bundle.min.js" charset="utf-8"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<%- include ../newBase/head.ejs %>
+<%# 样式表引用 %>
+<link rel="stylesheet" href="/stylesheets/css/web/newLogin.css">
+<%# 样式表引用结束 %>
+<%- include ../newBase/header.ejs %>
+<div class="app-box">
+    <div class="login-box">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide Slide1">
+                    <div class="container">
+                        <p class="bigWord">空运物流新世界从这里启航</p>
+                        <p class="ciBIg">集合优质货主货代帮 + 精选航线 + 线上一站式物流服务</p>
+                    </div>
+                </div>
+                <div class="swiper-slide Slide2">
+                    <div class="container">
+                        <p class="bigWord">空运联合平台 精彩等您发现</p>
+                        <p class="ciBIg">集合优质货主货代帮 + 精选航线 + 线上一站式物流服务</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+        </div>
+            <div class="login-form">
+                <div class="please-login width">登录：</div>
+                <div class="input-tel width">
+                    <label for="tel" class="dp-n"></label>
+                    <input id="tel" type="text" placeholder="用户名" class="lg-input">
+                </div>
+                <p class="prompt-name prompt"></p>
+
+                <div class="input-pwd width">
+                    <label for="pwd" class="dp-n"></label>
+                    <input id="pwd" type="password" placeholder="密码" class="lg-input">
+                </div>
+                <p class="prompt-pwd prompt"></p>
+
+                <div class="input-validate width">
+                    <div id="captcha">
+                        <p id="wait">正在加载验证码......</p>
+                    </div>
+                </div>
+                <p class="prompt-code prompt"></p>
+                <p class="wrong-text"></p>
+                <div class="input-submit width">
+                    <button class="lg-btn blue-btn" id="submit">登录</button>
+                </div>
+                <div class="auto-login width">
+                    <input type="checkbox" id="auto" class="fl-l" checked="checked">
+                    <label for="auto" class="fl-l">自动登录</label>
+                    <a href="/login/forget" class="fl-r dp-ib">忘记密码</a>
+                    <a href="/login/register" class="fl-r dp-ib">免费注册</a>
+                </div>
+        </div>
+
+    </div>
+</div>
+<%- include ../newBase/javascripts.ejs %>
+<%# 脚本引用 %>
+<script src="http://static.geetest.com/static/tools/gt.js"></script>
+<script src="/javascripts/login/bundle.min.js" charset="utf-8"></script>
+<%# 脚本引用结束 %>

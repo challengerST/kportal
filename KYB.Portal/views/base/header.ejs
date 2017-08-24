@@ -1,0 +1,113 @@
+</head>
+<body>
+
+<% var lv; %>
+
+<% switch (user && 'company' in user && user.company && 'accountLevel' in user.company && user.company.accountLevel) {
+    case 0:
+        lv = 'D';
+        break;
+    case 1:
+        lv = 'C';
+        break;
+    case 2:
+        lv = 'B';
+        break;
+    case 3:
+        lv = 'A';
+        break;
+    case 4:
+        lv = 'VIP';
+        break;
+} %>
+
+<div class="main-header">
+    <div class="header">
+        <div class="container">
+            <p class="fl-l">客服热线：021-31157505-8011  </p>
+            <% if('member' in user && user.member){ %>
+            <div class="fl-r vip-part" data-open="0">
+                <div class="fill show-top-part">
+                    <% if(notes && (parseInt(notes.orderCount || 0) + parseInt(notes.systemCount || 0)) != 0){ %>
+                    <span class="dp-ib fl-r number"></span>
+                    <% } %>
+                    <span class="dp-ib fl-r name"><%= 'name' in user.member && user.member.name || 'mobile' in user.member && user.member.mobile || '-' %></span>
+                    <span class="fl-r lv-icon-top lv-icon-top-<%= lv %>"></span>
+                    <span class="icon dp-ib fl-l glyphicon glyphicon-chevron-down"></span>
+                </div>
+                <ul class="vip-select dp-n">
+                    <li class="lv">
+                        <span class="fl-l"><%= lv %>级会员</span>
+                        <span class="fl-r icon-<%= lv %>"></span>
+                    </li>
+                    <li>
+                        <a href="/newVip">会员中心</a>
+                    </li>
+                    <li>
+                        <span class="half">
+                            <a href="/vip/note?tp=unread&ta=order">订单
+                                <% if(notes && 'orderCount' in notes && notes.orderCount){ %>
+                                （<%= notes.orderCount || 0 %>）
+                                <% } %>
+                            </a>
+                        </span>
+                        <span class="half">
+                            <a href="/vip/note?tp=unread&ta=system">消息
+                                <% if(notes && 'systemCount' in notes && notes.systemCount){ %>
+                                （<%= notes.systemCount || 0 %>）
+                                <% } %>
+                            </a>
+                        </span>
+                    </li>
+                    <!--<li><a href="/vip/auth">资质认证</a></li>-->
+                    <li><a href="/newLogin/out">退出</a></li>
+                </ul>
+            </div>
+            <% }else{ %>
+            <div class="fl-r login-part">
+                <a class="dp-ib fl-l" href="/newLogin">登录</a>
+                <a class="dp-ib fl-l" href="/login/register">注册</a>
+            </div>
+            <% } %>
+        </div>
+    </div>
+    <div class="banner">
+        <div class="container">
+            <a class="dp-b fl-l head-logo" href="/home"></a>
+            <% if(pos != 'login' && pos != 'register' && pos != 'forget' && pos != 'deal'){ %>
+            <ul class="banner-box fl-r">
+                <li class="<%= pos == 'home' ? 'active' : '' %>"><a href="/home">首页</a></li>
+                <li class="<%= pos == 'airline' ? 'active' : '' %>"><a href="/delivery">航线搜索</a></li>
+                <!--<li class="<%= pos == 'mix' ? 'active' : '' %>"><a href="/delivery/mix">散货拼货</a></li>-->
+                <li class="<%= pos == 'special' ? 'active' : '' %>"><a href="/delivery/special">自助订舱</a></li>
+                <!--<li class="<%= pos == 'special' ? 'fast' : '' %>"><a href="/delivery/fast">快速订舱</a></li>-->
+                <!--<li class="<%= pos == 'tools' ? 'active' : '' %>"><a href="/tools">实用工具</a></li>-->
+                <li class="<%= pos == 'vip' ? 'active' : '' %>"><a
+                            href="/newVip">会员中心</a></li>
+            </ul>
+            <% } else { %>
+            <% if(pos == 'register'){ %>
+            <p class="fl-l">注册</p>
+            <% }else if(pos == 'forget'){ %>
+            <p class="fl-l">找回密码</p>
+            <% }else if(pos == 'deal'){ %>
+            <p class="fl-l">空运邦用户协议</p>
+            <% }else{ %>
+            <p class="fl-l">欢迎来到空运邦，请登录</p>
+            <% } %>
+            <% } %>
+        </div>
+    </div>
+</div>
+<%# 侧边栏 %>
+<div class="aside">
+    <div class="aside-part online-chat"><a target="_blank"
+                                           href="http://wpa.qq.com/msgrd?v=3&uin=2355799905&site=qq&menu=yes"></a></div>
+    <div class="aside-part tel-number"><span class="dp-b"></span></div>
+    <div class="aside-part wechat-logo">
+        <div class="big-wechat">
+            <div class="wechat-url"></div>
+        </div>
+    </div>
+    <div class="aside-part back-top"></div>
+</div>

@@ -1,0 +1,436 @@
+<%- include ../newBase/head.ejs %>
+<%# 样式表引用 %>
+<link rel="stylesheet" href="/javascripts/datePicker/css/bootstrap-datetimepicker.min.css"/>
+<link rel="stylesheet" href="/stylesheets/css/web/sac.css">
+<link rel="stylesheet" href="/images/alifont/iconfont.css">
+<%# 样式表引用结束 %>
+<%- include ../newBase/header.ejs %>
+<script>
+    var dd = {
+        mb: '<%= mb || '' %>'
+    };
+</script>
+<div class="app-box" style="padding-top:0;">
+    <div class="shop-box">
+        <div class="" style="margin-bottom:-10px;border-bottom:1px solid #e7ebf2;">
+            <div class="infoContainer container fill">
+                <div class="fl-l aircompanyInfo">
+                    <!--<p class="" style="font-size:18px;color:#333;">-->
+                        <!--全部店铺<span style="color:#006bbd"> <%= 42 %></span>-->
+                    <!--</p>-->
+                </div>
+                <div class="searchDeport fill fl-r">
+                    <div class="fl-l location">
+                        <label class="dp-n" for="end_location"></label>
+                        <input id="sac_shop" type="text" value="" placeholder="输入店铺名称搜索">
+                        <ul class="ajax-part dp-n">
+                        </ul>
+                    </div>
+                    <div class="fl-l chaXun">
+                        <em class="iconfont icon-fangdajing"></em>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="container">-->
+        <!--<p class="nav-top">首页 > 运价查询</p>-->
+        <!--<div class="super-man">-->
+        <!--<span class="first mark">委托订舱</span>-->
+        <!--<span class="second">确认委托信息</span>-->
+        <!--<span class="third">委托成功</span>-->
+        <!--</div>-->
+        <!--<%# 搜索部分 %>-->
+        <!--<%- include ./search.ejs %>-->
+
+        <!--<%# 表单部分 %>-->
+        <!--<%- include ./table.ejs %>-->
+        <!--</div>-->
+
+    </div>
+    <div class="fill pageNumShow container">
+        <!--<div class="fl-r fill">-->
+            <!--<span class="fl-l" style="padding-top:6px;">每页显示</span><span class="sac_pageNumShow fl-l">5</span><span-->
+                    <!--class="numDrop fl-l"><em></em></span><span class="fl-l" style="padding-top:6px;">条</span>-->
+        <!--</div>-->
+    </div>
+    <div class="sac_table table_body">
+        <!--<div class="container sac_agentCompany fill">-->
+            <!--<div style="position:relative;width:100%;height:100%;">-->
+                <!--<div class="bcover">-->
+                    <!--<div class="tl5">-->
+                        <!--<p style="font-size:24px;">确定删除该店铺?</p>-->
+                        <!--<a href="javascript:void(0)" class="sac_cancle">取消</a>-->
+                        <!--<a href="javascript:void(0)" class="sac_ensure active">确定</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="sac_boss fl-l">-->
+                <!--<p style="margin-bottom:17px;"><img src="images/logo-m.png" alt="" style=""></p>-->
+                <!--<p class="sac_agentName">上海腾亿国际货运代理有限公司</p>-->
+                <!--<p class="sac_shopIndex"><em class="iconfont icon-shouye"></em> <span>店铺首页</span></p>-->
+                <!--<p class="sac_shopDelete"><em class="iconfont icon-105"></em> <span>删除店铺</span></p>-->
+                <!--<p class="sac_shopUp"><em class="iconfont icon-1"></em> <span>向上移动</span></p>-->
+            <!--</div>-->
+            <!--<div class="fl-l sac_main">-->
+                <!--<div class="sac_lastestPrice">-->
+                    <!--<a href="javascript:void(0)">最新价格</a>-->
+                <!--</div>-->
+                <!--<div class="fill">-->
+                    <!--<div class="fl-l sac_destail">-->
+                        <!--<div class="sac_destailHeader">-->
+                            <!--<p class="fl-l">-->
+                                <!--<img src="images/airline/1A.png" alt="" style="width:26px;height:26px;margin-bottom:3px;">-->
+                            <!--</p>-->
+                            <!--<span class="fl-l" style="margin:0 4px;">JL</span>-->
+                            <!--<span class="fl-l">日本航空</span>-->
+                            <!--<span class="sac_remark fl-r iconfont icon-ellipsis"></span>-->
+                        <!--</div>-->
+                        <!--<div class="sac_destailBody">-->
+                            <!--<div class="sac_airlinInfo">-->
+                                <!--<span>PVG</span><span class="transline"></span><span class="cc">直达</span><span-->
+                                        <!--class="transline"></span><span>SFO</span>-->
+                            <!--</div>-->
+                            <!--<div class="sac_destailDate">-->
+                                <!--<p>-->
+                                    <!--<span>截止日期</span><span class="sac_value sac_endTime">2017-07-21</span>-->
+                                <!--</p>-->
+                                <!--<p style="margin-bottom:16px;">-->
+                                    <!--<span>头程航班</span><span class="sac_value sac_circle">一周七天</span>-->
+                                <!--</p>-->
+                                <!--<p class="sac_currency" style="text-align:right;">-->
+                                    <!--<span class="currency">CNY</span><span-->
+                                            <!--class="sac_discountPrice">15.5</span><span>起</span>-->
+                                <!--</p>-->
+                            <!--</div>-->
+                            <!--<div class="fill sac_operate">-->
+                                <!--<span class="seeDetail fl-l" style="color:#006bbc">查看详情</span>-->
+                                <!--<span class="book fl-r">订舱</span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="tipWithBorder" style="display: block;width:216px;top:32px;right:0">-->
+                            <!--<div><h6>备注</h6>-->
+                                <!--<p>二程单件箱子不超过65KG，托盘不超过2000KG。</p>-->
+                            <!--</div>-->
+                            <!--<div><h6>航线限制条件</h6>-->
+                                <!--<p>航班单件货物长、宽、高最大3x3x3;-->
+                                    <!--单件最大体积:27CBM；-->
+                                    <!--单件重量不超过200KGS；-->
+                                    <!--总重量大于0KGS;不接受危险品。</p>-->
+                            <!--</div>-->
+                            <!--<div class="tipArrow"></div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="fl-l sac_main">-->
+                <!--<div class="sac_lastestPrice">-->
+                    <!--<a href="javascript:void(0)">最新价格</a>-->
+                <!--</div>-->
+                <!--<div class="fill">-->
+                    <!--<div class="fl-l sac_destail">-->
+                        <!--<div class="sac_destailHeader">-->
+                            <!--<p class="fl-l">-->
+                                <!--<img src="images/airline/1A.png" alt="" style="width:26px;height:26px;margin-bottom:3px;">-->
+                            <!--</p>-->
+                            <!--<span class="fl-l" style="margin:0 4px;">JL</span>-->
+                            <!--<span class="fl-l">日本航空</span>-->
+                            <!--<span class="fl-r"></span>-->
+                        <!--</div>-->
+                        <!--<div class="sac_destailBody">-->
+                            <!--<div class="sac_airlinInfo">-->
+                                <!--<span>PVG</span><span class="transline"></span><span class="cc">直达</span><span-->
+                                        <!--class="transline"></span><span>SFO</span>-->
+                            <!--</div>-->
+                            <!--<div class="sac_destailDate">-->
+                                <!--<p>-->
+                                    <!--<span>截止日期</span><span class="sac_value sac_endTime">2017-07-21</span>-->
+                                <!--</p>-->
+                                <!--<p style="margin-bottom:16px;">-->
+                                    <!--<span>头程航班</span><span class="sac_value sac_circle">一周七天</span>-->
+                                <!--</p>-->
+                                <!--<p class="sac_currency" style="text-align:right;">-->
+                                    <!--<span class="currency">CNY</span><span-->
+                                            <!--class="sac_discountPrice">15.5</span><span>起</span>-->
+                                <!--</p>-->
+                            <!--</div>-->
+                            <!--<div class="fill sac_operate">-->
+                                <!--<span class="seeDetail fl-l" style="color:#006bbc">查看详情</span>-->
+                                <!--<span class="book fl-r">订舱</span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="fl-l sac_main">-->
+                <!--<div class="sac_lastestPrice">-->
+                    <!--<a href="javascript:void(0)">最新价格</a>-->
+                <!--</div>-->
+                <!--<div class="fill">-->
+                    <!--<div class="fl-l sac_destail">-->
+                        <!--<div class="sac_destailHeader">-->
+                            <!--<p class="fl-l">-->
+                                <!--<img src="images/airline/1A.png" alt="" style="width:26px;height:26px;margin-bottom:3px;">-->
+                            <!--</p>-->
+                            <!--<span class="fl-l" style="margin:0 4px;">JL</span>-->
+                            <!--<span class="fl-l">日本航空</span>-->
+                            <!--<span class="fl-r"></span>-->
+                        <!--</div>-->
+                        <!--<div class="sac_destailBody">-->
+                            <!--<div class="sac_airlinInfo">-->
+                                <!--<span>PVG</span><span class="transline"></span><span class="cc">直达</span><span-->
+                                        <!--class="transline"></span><span>SFO</span>-->
+                            <!--</div>-->
+                            <!--<div class="sac_destailDate">-->
+                                <!--<p>-->
+                                    <!--<span>截止日期</span><span class="sac_value sac_endTime">2017-07-21</span>-->
+                                <!--</p>-->
+                                <!--<p style="margin-bottom:16px;">-->
+                                    <!--<span>头程航班</span><span class="sac_value sac_circle">一周七天</span>-->
+                                <!--</p>-->
+                                <!--<p class="sac_currency" style="text-align:right;">-->
+                                    <!--<span class="currency">CNY</span><span-->
+                                            <!--class="sac_discountPrice">15.5</span><span>起</span>-->
+                                <!--</p>-->
+                            <!--</div>-->
+                            <!--<div class="fill sac_operate">-->
+                                <!--<span class="seeDetail fl-l" style="color:#006bbc">查看详情</span>-->
+                                <!--<span class="book fl-r">订舱</span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="fl-l sac_main">-->
+                <!--<div class="sac_lastestPrice">-->
+                    <!--<a href="javascript:void(0)">最新价格</a>-->
+                <!--</div>-->
+                <!--<div class="fill">-->
+                    <!--<div class="fl-l sac_destail">-->
+                        <!--<div class="sac_destailHeader">-->
+                            <!--<p class="fl-l">-->
+                                <!--<img src="images/airline/1A.png" alt="" style="width:26px;height:26px;margin-bottom:3px;">-->
+                            <!--</p>-->
+                            <!--<span class="fl-l" style="margin:0 4px;">JL</span>-->
+                            <!--<span class="fl-l">日本航空</span>-->
+                            <!--<span class="fl-r"></span>-->
+                        <!--</div>-->
+                        <!--<div class="sac_destailBody">-->
+                            <!--<div class="sac_airlinInfo">-->
+                                <!--<span>PVG</span><span class="transline"></span><span class="cc">直达</span><span-->
+                                        <!--class="transline"></span><span>SFO</span>-->
+                            <!--</div>-->
+                            <!--<div class="sac_destailDate">-->
+                                <!--<p>-->
+                                    <!--<span>截止日期</span><span class="sac_value sac_endTime">2017-07-21</span>-->
+                                <!--</p>-->
+                                <!--<p style="margin-bottom:16px;">-->
+                                    <!--<span>头程航班</span><span class="sac_value sac_circle">一周七天</span>-->
+                                <!--</p>-->
+                                <!--<p class="sac_currency" style="text-align:right;">-->
+                                    <!--<span class="currency">CNY</span><span-->
+                                            <!--class="sac_discountPrice">15.5</span><span>起</span>-->
+                                <!--</p>-->
+                            <!--</div>-->
+                            <!--<div class="fill sac_operate">-->
+                                <!--<span class="seeDetail fl-l" style="color:#006bbc">查看详情</span>-->
+                                <!--<span class="book fl-r">订舱</span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="container sac_agentCompany fill">-->
+            <!--<div style="position:relative;width:100%;height:100%;">-->
+                <!--<div class="bcover">-->
+                    <!--<div class="tl5">-->
+                        <!--<p style="font-size:24px;">确定删除该店铺?</p>-->
+                        <!--<a href="javascript:void(0)" class="sac_cancle">取消</a>-->
+                        <!--<a href="javascript:void(0)" class="sac_ensure active">确定</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="sac_boss fl-l">-->
+                <!--<p style="margin-bottom:17px;"><img src="images/logo-m.png" alt="" style=""></p>-->
+                <!--<p class="sac_agentName">上海腾亿国际货运代理有限公司</p>-->
+                <!--<p class="sac_shopIndex"><em class="iconfont icon-shouye"></em> <span>店铺首页</span></p>-->
+                <!--<p class="sac_shopDelete"><em class="iconfont icon-105"></em> <span>删除店铺</span></p>-->
+                <!--<p class="sac_shopUp"><em class="iconfont icon-1"></em> <span>删除店铺</span></p>-->
+            <!--</div>-->
+            <!--<div class="fl-l sac_main">-->
+                <!--<div class="sac_lastestPrice">-->
+                    <!--<a href="javascript:void(0)">最新价格</a>-->
+                <!--</div>-->
+                <!--<div class="fill">-->
+                    <!--<div class="fl-l sac_destail">-->
+                        <!--<div class="sac_destailHeader">-->
+                            <!--<p class="fl-l">-->
+                                <!--<img src="images/airline/1A.png" alt="" style="width:26px;height:26px;margin-bottom:3px;">-->
+                            <!--</p>-->
+                            <!--<span class="fl-l" style="margin:0 4px;">JL</span>-->
+                            <!--<span class="fl-l">日本航空</span>-->
+                            <!--<span class="sac_remark fl-r iconfont icon-ellipsis"></span>-->
+                        <!--</div>-->
+                        <!--<div class="sac_destailBody">-->
+                            <!--<div class="sac_airlinInfo">-->
+                                <!--<span>PVG</span><span class="transline"></span><span class="cc">直达</span><span-->
+                                        <!--class="transline"></span><span>SFO</span>-->
+                            <!--</div>-->
+                            <!--<div class="sac_destailDate">-->
+                                <!--<p>-->
+                                    <!--<span>截止日期</span><span class="sac_value sac_endTime">2017-07-21</span>-->
+                                <!--</p>-->
+                                <!--<p style="margin-bottom:16px;">-->
+                                    <!--<span>头程航班</span><span class="sac_value sac_circle">一周七天</span>-->
+                                <!--</p>-->
+                                <!--<p class="sac_currency" style="text-align:right;">-->
+                                    <!--<span class="currency">CNY</span><span-->
+                                            <!--class="sac_discountPrice">15.5</span><span>起</span>-->
+                                <!--</p>-->
+                            <!--</div>-->
+                            <!--<div class="fill sac_operate">-->
+                                <!--<span class="seeDetail fl-l" style="color:#006bbc">查看详情</span>-->
+                                <!--<span class="book fl-r">订舱</span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="tipWithBorder" style="display: block;width:216px;top:32px;right:0">-->
+                            <!--<div><h6>备注</h6>-->
+                                <!--<p>二程单件箱子不超过65KG，托盘不超过2000KG。</p>-->
+                            <!--</div>-->
+                            <!--<div><h6>航线限制条件</h6>-->
+                                <!--<p>航班单件货物长、宽、高最大3x3x3;-->
+                                    <!--单件最大体积:27CBM；-->
+                                    <!--单件重量不超过200KGS；-->
+                                    <!--总重量大于0KGS;不接受危险品。</p>-->
+                            <!--</div>-->
+                            <!--<div class="tipArrow"></div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="fl-l sac_main">-->
+                <!--<div class="sac_lastestPrice">-->
+                    <!--<a href="javascript:void(0)">最新价格</a>-->
+                <!--</div>-->
+                <!--<div class="fill">-->
+                    <!--<div class="fl-l sac_destail">-->
+                        <!--<div class="sac_destailHeader">-->
+                            <!--<p class="fl-l">-->
+                                <!--<img src="images/airline/1A.png" alt="" style="width:26px;height:26px;margin-bottom:3px;">-->
+                            <!--</p>-->
+                            <!--<span class="fl-l" style="margin:0 4px;">JL</span>-->
+                            <!--<span class="fl-l">日本航空</span>-->
+                            <!--<span class="fl-r"></span>-->
+                        <!--</div>-->
+                        <!--<div class="sac_destailBody">-->
+                            <!--<div class="sac_airlinInfo">-->
+                                <!--<span>PVG</span><span class="transline"></span><span class="cc">直达</span><span-->
+                                        <!--class="transline"></span><span>SFO</span>-->
+                            <!--</div>-->
+                            <!--<div class="sac_destailDate">-->
+                                <!--<p>-->
+                                    <!--<span>截止日期</span><span class="sac_value sac_endTime">2017-07-21</span>-->
+                                <!--</p>-->
+                                <!--<p style="margin-bottom:16px;">-->
+                                    <!--<span>头程航班</span><span class="sac_value sac_circle">一周七天</span>-->
+                                <!--</p>-->
+                                <!--<p class="sac_currency" style="text-align:right;">-->
+                                    <!--<span class="currency">CNY</span><span-->
+                                            <!--class="sac_discountPrice">15.5</span><span>起</span>-->
+                                <!--</p>-->
+                            <!--</div>-->
+                            <!--<div class="fill sac_operate">-->
+                                <!--<span class="seeDetail fl-l" style="color:#006bbc">查看详情</span>-->
+                                <!--<span class="book fl-r">订舱</span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="fl-l sac_main">-->
+                <!--<div class="sac_lastestPrice">-->
+                    <!--<a href="javascript:void(0)">最新价格</a>-->
+                <!--</div>-->
+                <!--<div class="fill">-->
+                    <!--<div class="fl-l sac_destail">-->
+                        <!--<div class="sac_destailHeader">-->
+                            <!--<p class="fl-l">-->
+                                <!--<img src="images/airline/1A.png" alt="" style="width:26px;height:26px;margin-bottom:3px;">-->
+                            <!--</p>-->
+                            <!--<span class="fl-l" style="margin:0 4px;">JL</span>-->
+                            <!--<span class="fl-l">日本航空</span>-->
+                            <!--<span class="fl-r"></span>-->
+                        <!--</div>-->
+                        <!--<div class="sac_destailBody">-->
+                            <!--<div class="sac_airlinInfo">-->
+                                <!--<span>PVG</span><span class="transline"></span><span class="cc">直达</span><span-->
+                                        <!--class="transline"></span><span>SFO</span>-->
+                            <!--</div>-->
+                            <!--<div class="sac_destailDate">-->
+                                <!--<p>-->
+                                    <!--<span>截止日期</span><span class="sac_value sac_endTime">2017-07-21</span>-->
+                                <!--</p>-->
+                                <!--<p style="margin-bottom:16px;">-->
+                                    <!--<span>头程航班</span><span class="sac_value sac_circle">一周七天</span>-->
+                                <!--</p>-->
+                                <!--<p class="sac_currency" style="text-align:right;">-->
+                                    <!--<span class="currency">CNY</span><span-->
+                                            <!--class="sac_discountPrice">15.5</span><span>起</span>-->
+                                <!--</p>-->
+                            <!--</div>-->
+                            <!--<div class="fill sac_operate">-->
+                                <!--<span class="seeDetail fl-l" style="color:#006bbc">查看详情</span>-->
+                                <!--<span class="book fl-r">订舱</span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="fl-l sac_main">-->
+                <!--<div class="sac_lastestPrice">-->
+                    <!--<a href="javascript:void(0)">最新价格</a>-->
+                <!--</div>-->
+                <!--<div class="fill">-->
+                    <!--<div class="fl-l sac_destail">-->
+                        <!--<div class="sac_destailHeader">-->
+                            <!--<p class="fl-l">-->
+                                <!--<img src="images/airline/1A.png" alt="" style="width:26px;height:26px;margin-bottom:3px;">-->
+                            <!--</p>-->
+                            <!--<span class="fl-l" style="margin:0 4px;">JL</span>-->
+                            <!--<span class="fl-l">日本航空</span>-->
+                            <!--<span class="fl-r"></span>-->
+                        <!--</div>-->
+                        <!--<div class="sac_destailBody">-->
+                            <!--<div class="sac_airlinInfo">-->
+                                <!--<span>PVG</span><span class="transline"></span><span class="cc">直达</span><span-->
+                                        <!--class="transline"></span><span>SFO</span>-->
+                            <!--</div>-->
+                            <!--<div class="sac_destailDate">-->
+                                <!--<p>-->
+                                    <!--<span>截止日期</span><span class="sac_value sac_endTime">2017-07-21</span>-->
+                                <!--</p>-->
+                                <!--<p style="margin-bottom:16px;">-->
+                                    <!--<span>头程航班</span><span class="sac_value sac_circle">一周七天</span>-->
+                                <!--</p>-->
+                                <!--<p class="sac_currency" style="text-align:right;">-->
+                                    <!--<span class="currency">CNY</span><span-->
+                                            <!--class="sac_discountPrice">15.5</span><span>起</span>-->
+                                <!--</p>-->
+                            <!--</div>-->
+                            <!--<div class="fill sac_operate">-->
+                                <!--<span class="seeDetail fl-l" style="color:#006bbc">查看详情</span>-->
+                                <!--<span class="book fl-r">订舱</span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>
+<%- include ../newBase/javascripts.ejs %>
+<%# 脚本引用 %>
+<script src="/javascripts/datePicker/js/bootstrap-datetimepicker.min.js" charset="utf-8"></script>
+<script src="/javascripts/datePicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="utf-8"></script>
+<script src="/javascripts/sac/bundle.min.js" charset="utf-8"></script>
+<%# 脚本引用结束 %>

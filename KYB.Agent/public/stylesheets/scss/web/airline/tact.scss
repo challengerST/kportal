@@ -1,0 +1,57 @@
+@import "../../general/general";
+
+.search-part{width: 90%;padding: 20px;margin: 0 auto;background-color: #fff;border: 1px solid $gray;border-radius: 5px;border-top: 2px solid #d2d6de;
+  .dp-tb{margin: 0 auto;
+    .input{float: left;margin-right: 10px;}
+    button{clear: both;margin: 50px auto 0;}
+  }
+}
+.operate{width: 90%;margin: 20px auto 0;padding: 10px 20px;background-color: #fff;border: 1px solid $gray;border-top: 2px solid #00b494;border-bottom: none;border-top-left-radius:5px;border-top-right-radius:5px;
+  .list-cout{float: left;@include HEIGHT(30px);margin: 0;}
+  button{float: right;margin-left: 2px;background-color: #339cd0;}
+  button:hover{background-color: #1275a6;}
+}
+.outer-con{width: 90%;margin: 0 auto;padding: 0 20px 20px;background-color: #fff;border: 1px solid $gray;border-bottom-left-radius:5px;border-bottom-right-radius:5px;border-top: none;}
+table{background-color: #fff;border-color: $gray;
+  td{text-align: center;height: 30px;font-size: 12px;  }
+  .short-td{height: 15px;}
+  .wrong{
+    td{height: 200px;font-size: 16px;
+      a{display: inline;}
+    }
+  }
+}
+.outer-tb{width: 100%;
+  td{font-size: 12px;height: 28px;}
+  thead{
+    td{background-color: #fff;color: #333;font-size: 13px;font-weight: 600;height: 35px;}
+  }
+  tr{border: 1px solid $gray;}
+  tr:hover{background-color: #f3f3f3;}
+}
+.page-box{width: 90%;margin: 0 auto;}
+
+
+
+.white-back{position: fixed;width: 100%;height: 100%;background-color: rgba(255,255,255,0.85);top: 0;left: 0;z-index: 1000;
+  .ticket-modal{
+    .warm{border: 1px solid red;}
+    .ticket-body{background-color: #fff;
+      .radio{overflow: hidden;height: 40px;padding-left: 180px;margin-top: 10px;
+        span{width: 100px;@include HEIGHT(40px);text-align: right;font-weight: 600;}
+        div{margin-right: 20px;
+          label{display: block;float: right;padding: 0;margin: 0;@include HEIGHT(40px);}
+          input{position: static;display: block;float: left;margin: 14px 0 0 5px;}
+        }
+      }
+      .input{overflow: hidden;height: 30px;margin-top: 5px;padding-left: 210px;width: 100%;
+        label,input{display: block;float: left;}
+        label{width:100px;text-align: right;margin: 0;@include HEIGHT(30px);font-weight: normal;color: #333;}
+        .upload{display: block;float: left;@include HEIGHT(30px);padding: 0 5px;position: relative;z-index: 1;overflow: hidden;
+          input{position: absolute;z-index: 100000;opacity: 0;font-size: 100px;top:0;right: 0;}
+        }
+        .up-img{float: left;@include HEIGHT(30px);@include textCenter(30px);font-size: 18px;}
+      }
+    }
+  }
+}

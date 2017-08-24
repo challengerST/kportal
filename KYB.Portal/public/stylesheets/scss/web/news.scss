@@ -1,0 +1,68 @@
+@import "../general/general";
+
+.app-box{background: #F8F8F8;}
+.news-list{
+  margin:10px 0;
+  overflow:hidden;
+  a{
+float:left;
+  }
+  span{
+    float:right;
+  }
+}
+
+body{background-color: #fff;}
+.container{
+  .small-nav{@include HEIGHT(40px);
+    a{color: $blue3;}
+  }
+  .box{@include clear();margin-bottom: 20px;
+    .info-side{width: 200px;
+      .panel{margin: 0;border: none;
+        .panel-heading{padding: 0;border: 1px solid $gray3;border-bottom: none;background-color: #eff3f5!important;
+          h4{
+            a{display: block;width: 100%;@include HEIGHT(50px);padding-left: 40px;font-size: 14px;color: $blue3;position: relative;
+              .arrow{display:block;position:absolute;top:21px;right:20px;width: 0;height: 0;border-top: 5px solid transparent;border-bottom: 5px solid transparent;border-right: 5px solid $blue3;background-color: transparent;cursor: pointer;}
+            }
+            .collapsed{
+              .arrow{display:block;position:absolute;top:23px;right:20px;width: 0;height: 0;border-left: 5px solid transparent;border-right: 5px solid transparent;border-top: 5px solid $blue3;background-color: transparent;cursor: pointer;}
+            }
+          }
+        }
+        .panel-body{padding: 0;
+          a{@include HEIGHT(35px);border: 1px solid $gray3;padding-left: 40px;border-top: none;background-color: #eff3f5;font-size: 12px;}
+          a:hover{background-color: #fff;color: $blue3;}
+          a.active{background-color: #fff;color: $blue3;}
+        }
+      }
+      .active{
+        .panel-heading{background-color: #fff!important;
+          h4{
+            a{border-left:  5px solid $blue3;padding-left: 35px;}
+          }
+        }
+      }
+      .panel:last-child{
+        .panel-heading{border-bottom: 1px solid $gray3;}
+      }
+    }
+    .right-part{overflow:hidden;float: left;width: 1080px;padding: 0 30px;
+      img.tt-img{display: block;width: 100%;height: 170px;}
+      h3{margin: 0;color: $blue3;margin-bottom: 10px;}
+      .list-body{overflow: hidden;min-height: 400px;padding: 30px 50px;background-color: #fff;
+        p.title{color: $blue3;font-size: 18px;}
+        .detail-body{
+          p.go-detail{margin-top: 10px;}
+          p.go-detail:nth-child(5n+1){margin-top: 40px;}
+        }
+      }
+      .news-content{background-color: #fff;padding: 50px 20px;
+        .title{color: $blue3;font-size: 18px;text-align: center;}
+        .time{text-align: center;color: #999;@include HEIGHT(40px);font-size: 12px;margin-bottom: 10px;}
+        img{display: table;margin: 0 auto;}
+        p{line-height: 30px;text-indent:2rem;font-size: 12px;}
+      }
+    }
+  }
+}

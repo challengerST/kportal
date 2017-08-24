@@ -1,0 +1,25 @@
+@import "../../general/general";
+
+.operate{width: 90%;margin: 20px auto 0;padding: 10px 20px;background-color: #fff;border: 1px solid $gray;border-top: 2px solid #8ab928;border-bottom: none;border-top-left-radius:5px;border-top-right-radius:5px;
+  .list-cout{float: left;@include HEIGHT(30px);margin: 0;}
+  button{float: right;margin-left: 2px;background-color: #339cd0;}
+  button:hover{background-color: #1275a6;}
+  .info{float: right;@include HEIGHT(30px);margin: 0;color: red;}
+}
+.outer-con{width: 90%;margin: 0 auto;padding: 0 20px 20px;background-color: #fff;border: 1px solid $gray;border-bottom-left-radius:5px;border-bottom-right-radius:5px;border-top: none;}
+
+.outer-tb{width: 100%;
+  td{font-size: 12px;height: 28px;text-align: center;padding: 1px;
+    input{text-align: center;border: none;height: 100%;width: 100%;}
+  }
+  .dp-tb{
+    a{margin-right: 5px;}
+    a:last-child{margin: 0;}
+  }
+  .font-red{color: #d75177;}
+  thead{
+    td{background-color: #fff;color: #333;font-size: 13px;font-weight: 600;height: 35px;}
+  }
+  tr{border: 1px solid $gray;}
+
+}

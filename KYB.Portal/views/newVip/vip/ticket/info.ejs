@@ -1,0 +1,74 @@
+<div class="ticket-part">
+    <div class="editor">
+        <span class="edt-btn sm-btn blue-btn">新增</span>
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <td>发票类型</td>
+            <td>发票抬头</td>
+            <td>税号</td>
+            <td>开户行</td>
+            <td>地址</td>
+            <td>电话</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <div class="white-back dp-n">
+        <div class="ticket-modal alert-part dp-n">
+            <p class="header">新增开票信息 <span class="close-btn">X</span></p>
+
+            <div class="ticket-body">
+                <div class="radio">
+                    <span class="dp-b fl-l">发票类型：</span>
+
+                    <div class="fl-l">
+                        <label for="pp">普票</label>
+                        <input type="radio" id="pp" value="1" name="type" checked="checked" autocomplete="off"/>
+                    </div>
+                    <div class="fl-l">
+                        <label for="zp">增票</label>
+                        <input type="radio" id="zp" value="2" name="type" autocomplete="off"/>
+                    </div>
+                </div>
+                <div class="input">
+                    <label for="tt">发票抬头：</label>
+                    <input type="text" id="tt" value="<%= user && 'CompanyName' in user && user.CompanyName || '' %>"
+                           class="sm-input" autocomplete="off"/>
+                </div>
+                <div class="input">
+                    <label for="sh">税号：</label>
+                    <input type="text" id="sh" class="sm-input clear-input" readonly autocomplete="off"/>
+                </div>
+                <div class="input">
+                    <label for="kh">开户行：</label>
+                    <input type="text" id="kh" class="sm-input clear-input" readonly autocomplete="off"/>
+                </div>
+                <div class="input">
+                    <label for="dz">地址：</label>
+                    <input type="text" id="dz" class="sm-input clear-input" readonly autocomplete="off"/>
+                </div>
+                <div class="input">
+                    <label for="dh">电话：</label>
+                    <input type="text" id="dh" class="sm-input clear-input" readonly autocomplete="off"/>
+                </div>
+            </div>
+            <div class="btn-pt">
+                <button id="submit" class="fl-l md-btn blue-btn">确定</button>
+                <button id="change-ensure" class="fl-l md-btn blue-btn">修改</button>
+                <button class="close-btn fl-r md-btn white-btn">关闭</button>
+            </div>
+        </div>
+        <div class="delete-part alert-part dp-n">
+            <p class="header">删除开票资料 <span class="close-btn">X</span></p>
+
+            <div class="btn-pt">
+                <button id="delete-ensure" class="fl-l md-btn blue-btn" data-id="0" data-gid="0">确定</button>
+                <button class="close-btn fl-r md-btn white-btn">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>

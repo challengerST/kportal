@@ -1,0 +1,69 @@
+<p class="ttl"><span><%= txt %></span></p>
+<ul class="nav nav-tabs" role="tablist">
+    <li data-load="0" data-tar="all" role="presentation" class="tb-c<%= ta == 'all' ? ' active' : '' %>"><a
+                href="javascript:void(0);">全部消息类型</a></li>
+    <li data-load="0" data-tar="system" role="presentation" class="tb-c<%= ta == 'system' ? ' active' : '' %>"><a
+                href="javascript:void(0);">系统消息</a></li>
+    <li data-load="0" data-tar="order" role="presentation" class="tb-c<%= ta == 'order' ? ' active' : '' %>"><a
+                href="javascript:void(0);">订单消息</a></li>
+</ul>
+<div class="body">
+    <div class="hide-part note-all<%= ta == 'all' ? ' active' : '' %>">
+        <table>
+            <thead>
+            <tr>
+                <td><input type="checkbox" class="sel-all"/></td>
+                <td>标题内容</td>
+                <td>提交时间</td>
+                <td>类型</td>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div class="btn-part">
+            <button disabled="disabled" class="sm-btn blue-btn delete-btn">删除</button>
+            <button disabled="disabled" class="sm-btn blue-btn read-btn">标记已读</button>
+            <div class="page-box"></div>
+        </div>
+
+    </div>
+    <div class="hide-part note-system<%= ta == 'system' ? ' active' : '' %>">
+        <table>
+            <thead>
+            <tr>
+                <td><input type="checkbox" class="sel-all"/></td>
+                <td>标题内容</td>
+                <td>提交时间</td>
+                <td>类型</td>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div class="btn-part">
+            <button disabled="disabled" class="sm-btn blue-btn delete-btn">删除</button>
+            <button disabled="disabled" class="sm-btn blue-btn read-btn">标记已读</button>
+            <div class="page-box"></div>
+        </div>
+    </div>
+    <div class="hide-part note-order<%= ta == 'order' ? ' active' : '' %>">
+        <table>
+            <thead>
+            <tr>
+                <td><input type="checkbox" class="sel-all"/></td>
+                <td>标题内容</td>
+                <td>提交时间</td>
+                <td>类型</td>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div class="btn-part">
+            <button disabled="disabled" class="sm-btn blue-btn delete-btn">删除</button>
+            <button disabled="disabled" class="sm-btn blue-btn read-btn">标记已读</button>
+            <div class="page-box"></div>
+        </div>
+    </div>
+</div>

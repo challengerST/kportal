@@ -1,0 +1,78 @@
+<div class="search-part fill">
+    <div class="dp-tb">
+        <div class="input">
+            <label for="search-zdbh">账单编号：</label>
+            <input type="text" id="search-zdbh" class="sm-input">
+        </div>
+        <div class="input">
+            <label for="search-lsh">开票流水号：</label>
+            <input type="text" id="search-lsh" class="sm-input">
+        </div>
+        <div class="input">
+            <label for="fkzt">开票状态：</label>
+            <select id="fkzt" class="sm-input">
+                <option value="99">全部</option>
+                <option value="0">未开票</option>
+                <option value="1">已开票</option>
+                <option value="2">部分开票</option>
+            </select>
+        </div>
+        <button class="sm-btn blue-btn" id="search">查询</button>
+    </div>
+</div>
+<div class="operate fill">
+    <p class="list-cout">共为您找到 0 条结果</p>
+    <!--<button class="blue-btn sm-btn flr" id="batch-bills">批量开账</button>-->
+    <!--<button class="blue-btn sm-btn flr" id="new-bill">新建账单</button>-->
+</div>
+<div class="outer-con">
+    <table class="outer-tb">
+        <thead>
+        <tr>
+            <td>流水号</td>
+            <td>抬头</td>
+            <td>类型</td>
+            <td>发票号码</td>
+            <td>总金额</td>
+            <td>开票状态</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+<div class="outer-pages"></div>
+<div class="white-back dp-n">
+    <div class="detail-part alert-part dp-n">
+        <p class="header">详情 <span class="close-btn">X</span></p>
+        <p class="first">申请流水号：<span class="lsh">1321321321</span>申请时间：<span class="sqsj">2017-02-02</span><span
+                    class="fl-r kpzt">111</span></p>
+        <!--<p class="second">-->
+        <!--您一共有<span class="font-y num">1</span>笔账单需要开票：<span class="zd">xxxxxxxxx</span><br>-->
+        <!--开票总金额为：<span class="font-y je">670</span>CNY <br>-->
+        <!--您需要开<span class="font-y num">1</span>张发票-->
+        <!--</p>-->
+        <div class="d-tb">
+            <table>
+                <thead>
+                <tr>
+                    <td>开票流水号</td>
+                    <td>开票信息</td>
+                    <td>类型</td>
+                    <td>金额</td>
+                    <td>发票号码</td>
+                    <td>快递单号</td>
+                    <td>备注</td>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div class="btn-pt">
+            <button id="detail-update" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<%- include ../../base/head.ejs %>
+<%# 样式表引用 %>
+<link rel="stylesheet" href="/stylesheets/css/web/news.css">
+<%# 样式表引用结束 %>
+<%- include ../../base/header.ejs %>
+
+<div class="app-box">
+    <div class="container">
+        <p class="small-nav"><a href="/home">首页</a> > <%= title %> </p>
+        <div class="box">
+            <%- include ../side.ejs %>
+            <%- include ./info.ejs %>
+        </div>
+    </div>
+</div>
+
+<%- include ../../base/javascripts.ejs %>
+<%# 脚本引用 %>
+<script src="/javascripts/news/detail/bundle.min.js" charset="utf-8"></script>
+<%# 脚本引用结束 %>
+<%- include ../../base/foot.ejs %>

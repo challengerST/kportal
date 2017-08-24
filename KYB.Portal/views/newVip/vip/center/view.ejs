@@ -1,0 +1,52 @@
+<%- include ../../../newBase/head.ejs %>
+<%# 样式表引用 %>
+<link rel="stylesheet" href="/stylesheets/css/web/vip.css">
+<%# 样式表引用结束 %>
+<%- include ../../../newBase/header.ejs %>
+
+<div class="app-box">
+    <div class="user-center">
+        <div class="container">
+            <p class="header-nav"><a href="/home" class="dp-b fl-l">首页</a>&nbsp;>&nbsp;<%= title %> </p>
+            <%- include ../../side.ejs %>
+            <div class="user-info">
+                <%- include ./info.ejs %>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="white-back dp-n">
+    <div class="month-modal dp-n">
+        <div class="md-header">
+            申请月结账户
+            <span class="close-btn">X</span>
+        </div>
+        <img src="/images/img/img_sqyjzh.png" class="sq-img"/>
+        <hr/>
+        <div class="month-info">
+            <div class="fl-l fir">
+                <p>成为月结用户优势：</p>
+                <span>享受订单下发优先通道</span>
+                <span>累计更多会员积分</span>
+                <span>月结账单一目了然</span>
+                <span>客服一对一服务</span>
+            </div>
+            <div class="fl-l next-sec">
+                <p>资料准备：</p>
+                <span>1.签订《货物运输和相关辅助业务协议书》</span>
+                <span>2.企业营业执照复印件</span>
+                <span>3.企业组织机构代码证复印件</span>
+                <span>4.企业税务登记证复印件</span>
+                <span>5.开户许可证复印件</span>
+            </div>
+        </div>
+        <hr/>
+        <div class="month-dl">
+            <p>下载文件：</p>
+            <a href="javascript:void(0);">货物运输和相关辅助业务协议书.doc</a>
+            <button class="close-btn">关闭</button>
+        </div>
+    </div>
+</div>
+<%- include ../../../newBase/javascripts.ejs %>
+<script src="/javascripts/simple/bundle.min.js" charset="utf-8"></script>

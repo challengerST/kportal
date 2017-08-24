@@ -1,0 +1,134 @@
+<ul class="nav nav-tabs" role="tablist">
+    <li data-tar="receive" role="presentation" class="tb-c<%= tb == 'receive' ? ' active' : '' %>"><a
+                href="javascript:void(0);">收货人</a></li>
+    <li data-tar="send" role="presentation" class="tb-c<%= tb == 'send' ? ' active' : '' %>"><a
+                href="javascript:void(0);">发货人</a></li>
+</ul>
+<div class="tab-body">
+    <div id="receive" class="m-body<%= tb == 'receive' ? ' active' : '' %>">
+        <div class="search">
+            <div class="dtb">
+                <div class="fl-l input">
+                    <label for="r-name">收货人名称：</label>
+                    <input type="text" id="r-name" class="sm-input"/>
+                </div>
+                <button class="dp-b fl-l search-btn sm-btn blue-btn">搜索</button>
+            </div>
+        </div>
+        <div class="operate">
+            <span class="dp-b fl-l">您可以在这里预先录入收货人信息，下单之后，直接在您预先录入的收货人中选择一个即可。</span>
+            <span class="dp-b fl-r sm-btn blue-btn multi-add">导入</span>
+            <span class="dp-b fl-r add sm-btn blue-btn" data-nm="新增收货人">新增</span>
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <td>名称</td>
+                <td>地址</td>
+                <td>联系人</td>
+                <td>联系电话</td>
+                <td>操作</td>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div class="page-box"></div>
+    </div>
+    <div id="send" class="m-body<%= tb == 'send' ? ' active' : '' %>">
+        <div class="search">
+            <div class="dtb">
+                <div class="fl-l input">
+                    <label for="s-name">发货人名称：</label>
+                    <input type="text" id="s-name" class="sm-input"/>
+                </div>
+                <button class="dp-b fl-l search-btn sm-btn blue-btn">搜索</button>
+            </div>
+        </div>
+        <div class="operate">
+            <span class="dp-b fl-l">您可以在这里预先录入发货人信息，下单之后，直接在您预先录入的发货人中选择一个即可。</span>
+            <span class="dp-b fl-r sm-btn blue-btn multi-add">导入</span>
+            <span class="dp-b fl-r add sm-btn blue-btn" data-nm="新增发货人">新增</span>
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <td>名称</td>
+                <td>地址</td>
+                <td>联系人</td>
+                <td>联系电话</td>
+                <td>操作</td>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div class="page-box"></div>
+    </div>
+</div>
+<div class="white-back dp-n">
+    <div class="delete-part alert-part dp-n">
+        <p class="header">删除该信息 <span class="close-btn">X</span></p>
+
+        <div class="btn-pt">
+            <button id="delete-ensure" class="fl-l md-btn blue-btn" data-id="0" data-gid="0">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="ticket-modal alert-part dp-n">
+        <p class="header"></p>
+
+        <div class="ticket-body">
+            <div class="input" style="display: none;">
+                <label for="mc">别名：</label>
+                <input type="text" id="mc" class="sm-input" autocomplete="off"/>
+            </div>
+            <div class="input">
+                <label for="name">名称：</label>
+                <input type="text" id="name" class="sm-input s-require" autocomplete="off"/>
+            </div>
+            <div class="input">
+                <label for="dz">地址：</label>
+                <input type="text" id="dz" class="sm-input s-require" autocomplete="off"/>
+            </div>
+            <div class="input">
+                <label for="person">联系人：</label>
+                <input type="text" id="person" class="sm-input s-require" autocomplete="off"/>
+            </div>
+            <div class="input">
+                <label for="dh">联系电话：</label>
+                <input type="text" id="dh" class="sm-input s-require" autocomplete="off"/>
+            </div>
+            <div class="input">
+                <label for="mail">邮箱：</label>
+                <input type="text" id="mail" class="sm-input" autocomplete="off"/>
+            </div>
+            <div class="input">
+                <label for="cz">传真：</label>
+                <input type="text" id="cz" class="sm-input" autocomplete="off"/>
+            </div>
+        </div>
+        <div class="btn-pt">
+            <button id="submit" class="fl-l md-btn blue-btn" data-id="0">保存</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+    <div class="batch-part alert-part dp-n">
+        <p class="header">批量添加收发货人 <span class="close-btn">X</span></p>
+
+        <div class="main-info">
+            <p class="font-red">请先下载并参考“收发货人模板”文件</p>
+        </div>
+        <a href="javascript:void(0)" class="dp-b">
+            <p class="square">+</p>
+            <span class="dp-b excel-name">上传文件</span>
+            <input type="file" id="multi-btn"/>
+        </a>
+        <a class="dl-mb" href="/getImgCode/dlexcel">下载收发货人模板.xls</a>
+
+        <div class="btn-pt clr">
+            <button id="batch-ensure" class="fl-l md-btn blue-btn">确定</button>
+            <button class="close-btn fl-r md-btn white-btn">关闭</button>
+        </div>
+    </div>
+</div>

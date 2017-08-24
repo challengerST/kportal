@@ -1,0 +1,82 @@
+<% var order = body && 'orderChargeList' in body && body.orderChargeList || [] %>
+<% Date.prototype.Format = function (fmt) {
+    var o = {
+        "M+": this.getMonth() + 1, //月份
+        "d+": this.getDate(), //日
+        "h+": this.getHours(), //小时
+        "m+": this.getMinutes(), //分
+        "s+": this.getSeconds(), //秒
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+        "S": this.getMilliseconds() //毫秒
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+} %>
+<div class="main-box">
+    <div class="info-box">
+        <p class="font-blue">腾亿航空货运代理有限公司 <br/>对账单 </p>
+
+        <p class="ty fill">
+            <span>付款账户：<%= 'account' in body && body.account || '/' %>
+                <br/>开户行：<%= 'bankName' in body && body.bankName || '/' %> </span>
+            <span>单位名称：腾亿航空货运代理有限公司 <br/> 币种：人民币 </span>
+        </p>
+
+        <p class="warn">重要提示：为保障贵公司资金账户安全，请及时核对账务。</p>
+
+        <p class="warn">如有疑问，请及时与我们联系（021-56565241）。</p>
+
+        <p class="khgs">腾亿航空货运代理有限公司对账单</p>
+
+        <p class="khgs"
+           style="margin-top: 0;border-top: none;"><%= 'companyName' in body && body.companyName || '-' %></p>
+
+        <p class="shr">
+            TO：<%= 'memberName' in body && body.memberName || '/' %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            账期日：<%= new Date(body.chargeBillFrom).Format('yyyy/MM/dd') + ' - ' + new Date(body.chargeBillTo).Format('yyyy/MM/dd') %>
+        </p>
+        <table class="table-bordered">
+            <tbody>
+            <tr>
+                <td rowspan="2" class="bg-g">账单编号</td>
+                <td rowspan="2"><%= 'chargeBillNo' in body && body.chargeBillNo || '-' %></td>
+                <td rowspan="2" class="bg-g">总金额</td>
+                <td rowspan="2"><%= 'totalAmount' in body && body.totalAmount || '0' %></td>
+                <td class="bg-g">开账日期</td>
+                <td><%= 'BillTime' in body ? new Date(body.BillTime).Format('yyyy-MM-dd') : '-' %></td>
+            </tr>
+            <tr>
+                <td class="bg-g">付款截止日期</td>
+                <td><%= 'BilllTimeEnd' in body ? new Date(body.BilllTimeEnd).Format('yyyy-MM-dd') : '-' %></td>
+            </tr>
+            <tr>
+                <td colspan="6">费用明细</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="bg-g">订单号</td>
+                <td colspan="2" class="bg-g">币种</td>
+                <td colspan="2" class="bg-g ta-r">费用</td>
+            </tr>
+            <% for(var i = 0;i < order.length;i++){ %>
+            <% var d = order[i]; %>
+            <tr>
+                <td colspan="2"><%= d.orderNum %></td>
+                <td colspan="2">CNY</td>
+                <td colspan="2" class="font-r ta-r"><%= d.Price %></td>
+            </tr>
+            <% } %>
+            <tr>
+                <td colspan="6" class="ta-r">费用小计：CNY <span
+                            class="font-r"><%= 'totalAmount' in body && body.totalAmount || 0 %></span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="btn-part">
+
+        <button class="ensure-price dp-b fl-l md-btn red-btn dl-pdf">导出账单</button>
+
+    </div>
+</div>

@@ -1,0 +1,170 @@
+<% var body = 'resBody' in data && data.resBody || {}; %>
+<% var arr = 'billStatistic' in body && body.billStatistic instanceof Array && body.billStatistic || []; %>
+<div class="search-part fill">
+    <div class="dp-tb">
+        <div class="input">
+            <label for="num-s">主单号：</label>
+            <input type="text" id="num-s" class="sm-input"/>
+        </div>
+        <button id="search" class="sm-btn blue-btn">搜索</button>
+    </div>
+</div>
+<div class="operate fill">
+    <% var num = 0; %>
+    <% for (var i = 0; i < arr.length; i++) {
+        num += arr[i].occupiedCount;
+    } %>
+    <span class="sel-c<%= c == 'all' ? ' active' : '' %>" data-c="all">全部航空公司 (<%= num %>)</span>
+    <% for(var i = 0;i < arr.length;i++){ %>
+    <span class="sel-c<%= c == arr[i].airCompanyCode ? ' active' : '' %>"
+          data-c="<%= arr[i].airCompanyCode %>"><%= arr[i].airCompanyCode %> (<%= arr[i].occupiedCount %>)</span>
+    <% } %>
+</div>
+<div class="outer-con">
+    <table class="list-tb">
+        <thead>
+        <tr>
+            <td>运单号</td>
+            <td>航空公司</td>
+            <td>预定件数</td>
+            <td>预定重量</td>
+            <td>预定体积</td>
+            <td>航班日期</td>
+            <td>起始港</td>
+            <td>目的港</td>
+            <td>起飞时间</td>
+            <td>航班号</td>
+            <td>状态</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>AAA123456</td>
+            <td>BBB123456</td>
+            <td>四川航空</td>
+            <td>PVG</td>
+            <td>TPE</td>
+            <td>2017-02-02</td>
+            <td>【航班信息】</td>
+            <td>CTU</td>
+            <td>未分配</td>
+            <td><a href="javascript:void(0);" class="show-detail">运单详情</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="page-box"></div>
+
+<div class="white-back dp-n">
+    <div class="detail-part alert-part dp-n">
+        <p class="header">运单详情 <span class="close-btn">X</span></p>
+
+        <div class="main-info">
+            <div class="dp-tb">
+                <p class="info"><span class="title">运单号：</span><span class="ydh">AA123456456</span></p>
+
+                <p class="info"><span class="title">航空公司：</span><span class="hkgs">AA123456456</span></p>
+
+                <p class="info mg-0"><span class="title">状态：</span><span class="zt">已使用</span></p>
+            </div>
+        </div>
+        <div class="border fill">
+            <p class="title">航线信息</p>
+
+            <div class="input">
+                <label for="start">起始港：</label>
+                <input type="text" id="start" class="sm-input" AUTOCOMPLETE="OFF" readonly/>
+            </div>
+            <div class="input">
+                <label for="end">目的港：</label>
+                <input type="text" id="end" class="sm-input" AUTOCOMPLETE="OFF" readonly/>
+            </div>
+            <div class="input mg-0">
+                <label for="s-date">起飞日期：</label>
+                <input type="text" id="s-date" class="sm-input" readonly/>
+            </div>
+            <div class="input long">
+                <label for="hxlj">航线路径：</label>
+                <input type="text" id="hxlj" class="sm-input" AUTOCOMPLETE="OFF" readonly/>
+            </div>
+        </div>
+        <div class="border fill">
+            <p class="title">订舱信息
+                <button class="close-btn fl-r sm-btn white-btn">取消</button>
+                <button id="save-ensure" class="fl-r sm-btn blue-btn" data-id="0">保存</button>
+            </p>
+
+            <div class="input">
+                <label for="s-hbh">航班号：</label>
+                <input type="text" id="s-hbh" class="sm-input"/>
+            </div>
+            <div class="input">
+                <label for="s-qfsj">起飞时间：</label>
+                <input type="text" id="s-qfsj" class="sm-input"/>
+            </div>
+            <div class="input mg-0">
+                <label for="order-num">预定件数：</label>
+                <input type="text" id="order-num" class="sm-input"/>
+            </div>
+            <div class="input mgt-10">
+                <label for="order-wei">预定重量：</label>
+                <input type="text" id="order-wei" class="sm-input"/>
+            </div>
+            <div class="input mgt-10">
+                <label for="order-size">预定体积：</label>
+                <input type="text" id="order-size" class="sm-input"/>
+            </div>
+        </div>
+        <div class="border fill">
+            <p class="title">其他信息</p>
+
+            <div class="input">
+                <label for="person">联系人：</label>
+                <input type="text" id="person" class="sm-input"/>
+            </div>
+            <div class="input">
+                <label for="connect">联系方式：</label>
+                <input type="text" id="connect" class="sm-input"/>
+            </div>
+            <div class="input long">
+                <label for="s-bz">备注：</label>
+                <input type="text" id="s-bz" class="sm-input"/>
+            </div>
+        </div>
+        <div class="fill border b-tb">
+            <p class="title">关联订单</p>
+            <table border="1" class="inner-tb">
+                <thead>
+                <tr>
+                    <td rowspan="2">关联订单</td>
+                    <td colspan="3">委托信息</td>
+                    <td colspan="3">进仓信息</td>
+                    <td rowspan="2">进仓完成</td>
+                </tr>
+                <tr>
+                    <td>件数</td>
+                    <td>重量</td>
+                    <td>体积</td>
+                    <td>件数</td>
+                    <td>重量</td>
+                    <td>体积</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>12345678</td>
+                    <td>2</td>
+                    <td>200</td>
+                    <td>1.5</td>
+                    <td>3</td>
+                    <td>200</td>
+                    <td>1.5</td>
+                    <td>是</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

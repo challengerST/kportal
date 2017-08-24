@@ -1,0 +1,177 @@
+<% var s = data || {} %>
+<% var state = s.entryState || 0; %>
+<% Date.prototype.Format = function (fmt) { //author: meizz
+    var o = {
+        "M+": this.getMonth() + 1, //月份
+        "d+": this.getDate(), //日
+        "h+": this.getHours(), //小时
+        "m+": this.getMinutes(), //分
+        "s+": this.getSeconds(), //秒
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+        "S": this.getMilliseconds() //毫秒
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+} %>
+<div class="main-body">
+    <div class="top-info">
+        <p class="ta-l">客户公司：<%= n %></p>
+        <p class="ta-c">联系人：<%= c %></p>
+        <p class="ta-r">订单号：KYB<%= id %></p>
+    </div>
+    <div class="operate fill">
+        <% if(state != 2){ %>
+        <button class="sm-btn blue-btn fl-r" id="add-pc">添加批次</button>
+        <% } %>
+    </div>
+    <div class="tb-con">
+        <table>
+            <thead>
+            <tr>
+                <td class="long">进仓编号</td>
+                <td>件数PCS</td>
+                <td>重量KGS</td>
+                <td>体积CBM</td>
+                <td>长</td>
+                <td>宽</td>
+                <td>高</td>
+                <td>包装</td>
+                <td class="small">损毁</td>
+                <td class="small">变形</td>
+                <td class="small">受潮</td>
+                <td class="small">其他</td>
+                <td class="long">备注</td>
+                <td class="long">时间</td>
+                <td>操作</td>
+            </tr>
+            </thead>
+            <% if(data){ %>
+            <% for(var i = 0;i < s.entryList.length;i++){ %>
+            <% var d = s.entryList[i]; %>
+            <tbody data-each="1" data-res="<%= d.storageSource %>" data-id="<%= d.storageId %>">
+            <tr class="kb">
+                <td colspan="15"></td>
+            </tr>
+            <% for(var x in d.entryDetail){ %>
+            <% if(d.entryDetail.hasOwnProperty(x)){ %>
+            <% var dd = d.entryDetail[x] %>
+            <tr data-each="1">
+                <td class="long jcbh" data-num="<%= d.entryNum %>">
+                    <% if(x == 0 ){ %>
+                    <% if( d.storageSource == 0 && state != 2){ %>
+                    <select class="sel-bh"></select>
+                    <% }else{ %>
+                    <%= d.entryNum %>
+                    <% } %>
+                    <% } %>
+                </td>
+                <td><input type="text" class="num sg-js"
+                           value="<%= dd.itemCount %>"<%= d.storageSource == 0 && state != 2 ? '' : 'readonly' %>></td>
+                <td>/</td>
+                <td><input type="text" class="num sg-tj"
+                           value="<%= dd.itemCount * dd.itemLength * dd.itemWidth * dd.itemHeight / 1000000 %>"
+                           readonly></td>
+                <td><input type="text" class="num sg-c"
+                           value="<%= dd.itemLength %>"<%= d.storageSource == 0 && state != 2 ? '' : 'readonly' %>></td>
+                <td><input type="text" class="num sg-k"
+                           value="<%= dd.itemWidth %>"<%= d.storageSource == 0 && state != 2 ? '' : 'readonly' %>></td>
+                <td><input type="text" class="num sg-g"
+                           value="<%= dd.itemHeight %>"<%= d.storageSource == 0 && state != 2 ? '' : 'readonly' %>></td>
+                <td>/</td>
+                <td class="small">/</td>
+                <td class="small">/</td>
+                <td class="small">/</td>
+                <td class="small">/</td>
+                <td class="long">/</td>
+                <td class="long time">
+                    <% if(x == 0 ){ %>
+                    <% if( d.storageSource == 0 && state != 2){ %>
+                    <input type="text" class="sel-time"
+                           value="<%= new Date(d.storageTime).Format('yyyy-MM-dd hh:mm') %>">
+                    <% }else{ %>
+                    <%= new Date(d.storageTime).Format('yyyy-MM-dd hh:mm') %>
+                    <% } %>
+                    <% } %>
+                </td>
+                <td>
+                    <% if(d.storageSource == 0 && state != 2 && x != 0){ %>
+                    <a href="javascript:void(0);" class="remove-sg">删除规格</a>
+                    <% } %>
+                </td>
+            </tr>
+            <% } %>
+            <% } %>
+            <tr data-each="0">
+                <td class="long">小计</td>
+                <td class="xj-js"><%= d.storageCount %></td>
+                <td><input type="text" class="xj-zl num"
+                           value="<%= d.storageWeight %>"<%= d.storageSource == 0 && state != 2 ? '' : ' readonly' %>>
+                </td>
+                <td class="xj-tj"><%= d.storageSize%></td>
+                <td>/</td>
+                <td>/</td>
+                <td>/</td>
+                <td><input type="text" class="xj-bz"
+                           value="<%= d.packageType %>"<%= d.storageSource == 0 && state != 2 ? '' : ' readonly' %>>
+                </td>
+                <td class="small"><input type="text" class="xj-ps num"
+                                         value="<%= d.damageCount %>"<%= d.storageSource == 0 && state != 2 ? '' : ' readonly' %>>
+                </td>
+                <td class="small"><input type="text" class="xj-bx num"
+                                         value="<%= d.transformCount %>"<%= d.storageSource == 0 && state != 2 ? '' : ' readonly' %>>
+                </td>
+                <td class="small"><input type="text" class="xj-sc num"
+                                         value="<%= d.dampCount %>"<%= d.storageSource == 0 && state != 2 ? '' : ' readonly' %>>
+                </td>
+                <td class="small"><input type="text" class="xj-qt num"
+                                         value="<%= d.otherCount %>"<%= d.storageSource == 0 && state != 2 ? '' : ' readonly' %>>
+                </td>
+                <td class="long">/</td>
+                <td class="long">/</td>
+                <td>
+                    <% if(d.storageSource == 0 && state != 2){ %>
+                    <a href="javascript:void(0);" class="add-sg">添加规格</a>
+                    <a href="javascript:void(0);" class="remove-pc">删除批次</a>
+                    <% } %>
+                </td>
+            </tr>
+            </tbody>
+            <% } %>
+            <% } %>
+            <tbody class="total">
+            <tr class="kb">
+                <td colspan="15"></td>
+            </tr>
+            <tr>
+                <td class="long">总计</td>
+                <td class="zj-js"><%= s.totalCount || 0 %></td>
+                <td class="zj-zl"><%= s.totalWeight || 0 %></td>
+                <td class="zj-tj"><%= s.totalSize ? s.totalSize : 0 %></td>
+                <td>/</td>
+                <td>/</td>
+                <td>/</td>
+                <td>/</td>
+                <td class="small zj-ps"><%= s.totalDamage || 0 %></td>
+                <td class="small zj-bx"><%= s.totalTransform || 0 %></td>
+                <td class="small zj-sc"><%= s.totalDamp || 0 %></td>
+                <td class="small zj-qt"><%= s.totalOther || 0 %></td>
+                <td class="long">/</td>
+                <td class="long">/</td>
+                <td>/</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="btn-pt">
+        <div class="dp-tb">
+            <% if(state != 2){ %>
+            <button id="ensure" class="fl-l md-btn blue-btn">确认数据</button>
+            <button id="add" class="fl-l md-btn blue-btn">保存数据</button>
+            <% } %>
+
+            <!--<button class="close-btn fl-r md-btn white-btn" style="margin-right: 0">关闭</button>-->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<% var body = 'resBody' in data && data.resBody || {}; %>
+<% var arr = 'Settings' in body && body.Settings || []; %>
+
+<div class="set fill">
+    <p class="title">消息推送设置</p>
+
+    <div class="left">
+        <img src="/images/user.jpg"/>
+    </div>
+    <div class="right">
+        <p class="big">您好<%= user.member.name ? '，' + user.member.name : '' %>！</p>
+
+        <p class="small">欢迎来到空运邦，空运邦会给您推送一些消息，您可以在这里设置消息推送到哪儿！</p>
+
+        <p class="font-b">空运邦已经给您做好了默认配置，如果您有需要，可以修改配置。如果您取消所有配置，则空运邦不会给您推送任何消息。</p>
+
+        <table class="table-bordered" id="set-tb">
+            <thead>
+            <tr>
+                <td></td>
+                <td><span class="wechat">推送到服务号</span></td>
+                <td><span class="email">推送到邮箱</span></td>
+            </tr>
+            </thead>
+            <tbody>
+            <% for(var i = 0;i < arr.length;i++){ %>
+            <tr data-type="<%= arr[i].infoType %>">
+                <td class="name"><%= arr[i].remark %></td>
+                <td><input class="wt" type="checkbox"<%= arr[i].enableWeChat ? ' checked' : '' %>/></td>
+                <td><input class="em" type="checkbox"<%= arr[i].enableEmail ? ' checked' : '' %>/></td>
+            </tr>
+            <% } %>
+            </tbody>
+        </table>
+
+        <% if(user.member.emailState != 2){ %>
+        <p class="active-mail">
+            <span class="font-r">提示：<br>您预留的邮箱地址为：<%= user.member.email || '/' %> 尚未完成邮箱认证</span>
+            <br>
+            <a href="/vip/editor">前往认证></a>
+            <br>
+            <img src="/images/message-img.png" alt="微信绑定">
+        </p>
+        <% } %>
+
+    </div>
+</div>
+
+<button class="md-btn blue-btn" id="save-set">保存设置</button>

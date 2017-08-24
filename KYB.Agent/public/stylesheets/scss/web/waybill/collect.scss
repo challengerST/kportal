@@ -1,0 +1,26 @@
+@import "../../general/general";
+
+.operate{width: 90%;margin: 20px auto 0;padding: 10px 20px;background-color: #fff;border: 1px solid $gray;border-top: 2px solid #8ab928;border-bottom: none;border-top-left-radius:5px;border-top-right-radius:5px;
+  .list-cout{float: left;@include HEIGHT(30px);margin: 0;}
+  button{float: right;margin-left: 2px;background-color: #339cd0;}
+  button:hover{background-color: #1275a6;}
+}
+.outer-con{width: 90%;margin: 0 auto;padding: 0 20px 20px;background-color: #fff;border: 1px solid $gray;border-bottom-left-radius:5px;border-bottom-right-radius:5px;border-top: none;}
+table{background-color: #fff;border-color: $gray;
+  td{text-align: center;height: 30px;font-size: 12px;  }
+  .short-td{height: 15px;}
+  .wrong{
+    td{height: 200px;font-size: 16px;
+      a{display: inline;}
+    }
+  }
+}
+.list-tb{width: 100%;
+  td{font-size: 12px;height: 28px;}
+  .font-red{color: red;}
+  thead{
+    td{background-color: #fff;color: #333;font-size: 13px;font-weight: 600;height: 35px;}
+  }
+  tr{border: 1px solid $gray;}
+  tr:hover{background-color: #f3f3f3;}
+}

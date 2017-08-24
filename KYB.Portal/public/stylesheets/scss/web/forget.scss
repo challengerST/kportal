@@ -1,0 +1,25 @@
+@import "../general/general";
+body{background-color: #fff;}
+.forget-box{
+  .container{margin: 0 auto;
+    .st1{
+      .please-register{font-size: 24px;color: $blue2;width: 100%;padding-left: 490px;margin: 20px 0;}
+      .input{overflow: hidden;width: 800px;margin: 20px 0 20px 330px;
+        #captcha{margin: 0;line-height: 50px;width: 300px;float: left;}
+        label{display: block;float: left;@include HEIGHT(50px);width: 220px;text-align: right;font-weight: normal;}
+        input{float: left;display: block;border-color: #ccc;}
+        input:focus{border: 1px solid $blue3;}
+        span{font-size: 16px;margin: 0;@include HEIGHT(50px);width: 220px;}
+        .wrong{color: red;margin-left: 10px}
+        .wrong:before{content: '';display: block;height: 30px;width: 30px;float: left;margin:10px 5px 0 0;background: url("../../../images/img/remove.png")}
+        .hide{display: none;}
+      }
+      .validate{
+        input{width: 150px;}
+        .validate-img{height: 50px;width: 130px;border: 1px solid $gray3;margin-left: 20px;float: left;cursor: pointer;}
+        button{height: 50px;width: 130px;margin:0 0 0 20px;display: block;float: left;}
+      }
+      .send-mail{height: 50px;width: 300px;border-radius: 5px;margin: 20px 0 20px 550px;display: block;}
+    }
+  }
+}

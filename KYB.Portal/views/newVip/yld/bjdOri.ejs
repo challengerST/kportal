@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="Jeremy">
+    <meta name="Author" content="Jeremy">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>报价单</title>
+
+    <style>
+        .left {
+            BORDER-LEFT: black 1px solid
+        }
+
+        .bottom {
+            BORDER-BOTTOM: black 1px solid
+        }
+
+        .bottomfix {
+            BORDER-BOTTOM: black 1px dashed; /*height:47px;*/
+            font-family: 宋体;
+            font-size: 11px;
+            padding-left: 5px;
+            font-weight: normal;
+        }
+
+        table {
+            padding-left: 1px;
+
+        }
+
+        .content1 {
+            font-family: 宋体;
+            font-size: 12px;
+            font-weight: normal;
+
+        }
+
+        .content2 {
+            font-family: 宋体;
+            font-size: 11px;
+            padding-left: 5;
+            font-weight: normal;
+        }
+
+        .content1Left {
+            font-family: 宋体;
+            font-size: 12px;
+            BORDER-LEFT: black 1px solid;
+            font-weight: normal;
+        }
+
+        .content2Left {
+            font-family: 宋体;
+            font-size: 12px;
+            padding-left: 5px;
+            BORDER-LEFT: black 1px solid;
+            font-weight: normal;
+        }
+
+        .STYLE33 {
+            font-size: 14px;
+            font-family: "黑体";
+            line-height: 20px;
+            font-weight: normal;
+        }
+
+        .dp-n {
+            display: none;;
+        }
+
+        .dp-tb {
+            display: table;
+            margin: 0 auto 20px;
+        }
+
+        .blue-btn {
+            display: block;
+            width: 180px;
+            text-align: center;
+            cursor: pointer;
+            height: 40px;
+            font-size: 14px;
+            border-radius: 5px;
+            float: left;
+            color: #fff;
+            background-color: #074ba0;
+        }
+
+        .blue-btn:hover {
+            background-color: #003271;
+        }
+
+        .blue-btn:active {
+            background-color: #002655;
+        }
+    </style>
+
+</head>
+<body style="margin:0px; text-align:center; font-size:11px; font-family:楷体_utf-8; font-weight:normal">
+
+<% var body = 'resBody' in data && data.resBody || {}; %>
+<% var dt = 'dataRequest' in body && body.dataRequest || {}; %>
+<% var d = 'decleration' in dt && dt.decleration || {}; %>
+<% var g = 'goods' in d && d.goods || []; %>
+
+<!--
+		<div style="position:absolute;left: 470px;top: 850px;width:100;height:100；z-index:999">
+			<INPUT TYPE="image" SRC="gongzhang/" style="width:200px; height:200px">
+		</div> -->
+
+
+<div id="main-body" align="center" style="position: relative;">
+    <!--<div style="width:735px; text-align:left; font-family:宋体; font-size:11px; font-weight:normal">&nbsp;&nbsp;&nbsp;&nbsp;主页</div>-->
+
+    <!--
+    <div style="text-align:center;font-weight: normal; font-size: 16px; font-family: 宋体; text-decoration: underline">
+	中华人民共和国海关货物报关单
+    </div>
+    -->
+    <table width="735" border="0" cellspacing="0">
+        <tr>
+
+            <td style="text-align:center;width:250px; height:auto; float:left;">
+
+                <!--<FONT COLOR="" style="font-size: 13px;text-align:center;font-family:IDAutomationSC39S;">*EDI178000022907686*</FONT><BR>-->
+                <FONT COLOR="" style="text-align:center;font-size: 22px;font-family:黑体;">*<%= d.edi_no %>*</FONT>
+
+            </td>
+            <td style="text-align:center;width:250px; height:auto; float:right;">
+
+                <!--<FONT COLOR="" style="font-size: 13px;text-align:center;font-family:IDAutomationSC39S;">*223320170000736633*</FONT><BR>-->
+                <FONT COLOR="" style="text-align:center;font-size: 22px;font-family:黑体;">*<%= d.customs_id %>*</FONT>
+
+            </td>
+
+        </tr>
+
+
+        <tr>
+            <td width="725">
+                <div>
+                    <div style="text-align:center;font-weight: normal; font-size: 18px; font-family: 宋体; ">
+                        <FONT COLOR="" style="font-weight: normal; font-size: 16px; font-family: 宋体; ">
+                            中华人民共和国海关出口货物报关单</FONT>
+                    </div>
+                </div>
+            </td>
+
+        </tr>
+
+    </table>
+
+    <table style="border-top-style: none; border-right-style: none; border-left-style: none; border-bottom-style: none; text-align:left;width:735px">
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td style="width:80px">&nbsp;</td>
+
+                        <td style="width:235px" class="content2">预录入编号：<%= d.pre_entry_id %></td>
+
+                        <td style="width:100px" class="content2"></td>
+                        <td style="width:220px" class="content2">海关编号：<%= d.customs_id %></td>
+                        <td style="width:100px" class="content2"></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table id="OrderTable" cellpadding="0" cellspacing="0"
+           style="border-right: black 2px solid; border-top: black 2px solid; border-left: black 2px solid; border-bottom: black 2px solid;width:735px;height:855px; vertical-align: middle; position: static; text-align: center;">
+        <tr>
+            <td class="bottom" style="height:31px">
+                <table cellpadding="0" cellspacing="0"
+                       style="text-align:left; vertical-align:text-top;width:100%;height:100%;">
+                    <tr>
+                        <td style="width:75px; height: 31px;">收发货人</td>
+                        <td class="content2" rowspan="2" style="width:243px; height: 31px;">
+                            <%= d.shipperCompany.code %>&nbsp;&nbsp;<br/><%= d.shipperCompany.name %>
+                        </td>
+
+
+                        <td style="width:60px; height: 31px;" class="left">出口口岸</td>
+
+                        <td class="content2" rowspan="2" style="height: 31px;"><%= d.deptPort.name %>&nbsp;&nbsp;<%= d.deptPort.code %></td>
+
+
+                        <td style="width:55px; height: 31px;" class="left">出口日期</td>
+                        <td class="content2" rowspan="2"
+                            style="width:81px; height: 31px;"><%= d.i_e_date ? new Date(d.i_e_date).Format('yyyy-MM-dd') : '' %></td>
+                        <td style="width:55px; height: 31px;" class="left">申报日期</td>
+                        <td class="content2" rowspan="2"
+                            style="width:65px; height: 31px;"><%= dt.sbrq ? new Date(dt.sbrq).Format('yyyy-MM-dd') : '' %></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="bottom" style="height:31px">
+                <table cellpadding="0" cellspacing="0"
+                       style="text-align:left; vertical-align:text-top;width:100%;height:100%;">
+                    <tr>
+                        <td style="width:75px">
+                            生产销售单位
+                        </td>
+                        <td class="content2" rowspan="2" style="width:243px">
+                            <%= d.ownerCompany.code %>&nbsp;&nbsp;<br/><%= d.ownerCompany.name %>
+                        </td>
+
+                        <td style="width:70px" class="left">运输方式</td>
+                        <td class="left">运输工具名称</td>
+                        <td style="width:194px" class="left">提运单号</td>
+                    </tr>
+
+                    <tr>
+                        <td style="width:55px">&nbsp;</td>
+
+                        <td style="width:70px" class="content1Left"><%= d.transf.name || '/' %></td>
+                        <td class="content1Left"><%= d.traf_name || '/' %></td>
+                        <td style="width:194px" class="content1Left"><%= d.bill_no || '/' %></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="bottom" style="height:31px">
+                <table cellpadding="0" cellspacing="0"
+                       style="text-align:left; vertical-align:text-top;width:100%;height:100%;">
+                    <tr>
+
+                        <td style="width:75px">申报单位</td>
+                        <td class="content2" rowspan="2" style="width:243px">
+                            <%= d.agentCompany.code %>&nbsp;&nbsp;<br/><%= d.agentCompany.name %>
+                        </td>
+
+
+                        <td class="left">
+                            <!-- 贸易方式 -->监管方式
+                        </td>
+                        <td style="width:147px" class="left">征免性质</td>
+                        <td style="width:122px" class="left">
+                            备案号
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="width:55px">&nbsp;</td>
+                        <td class="left">
+                            <table style="width:100%;">
+                                <tr>
+                                    <td class="content2" style="width:80%;">&nbsp;&nbsp;<%= d.supervision.name %></td>
+                                    <td class="content2" style="width:20%;"><%= d.supervision.code %></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td style="width:147px" class="left">
+                            <table style="width:100%;">
+                                <tr>
+
+                                    <td class="content2" style="width:80%;">&nbsp;&nbsp;<%= d.levytype.name %></td>
+                                    <td class="content2" style="width:20%;"><%= d.levytype.code %></td>
+                                </tr>
+                            </table>
+                        </td>
+
+                        <td style="width:122px" class="left">
+                            <table style="width:100%;">
+                                <tr>
+                                    <td class="content2" style="width:80%;">
+                                        <!-- 备案号 -->
+                                    </td>
+                                    <td class="content2" style="width:20%;"><%= d.manual_no || '' %></td>
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="bottom" style="height:31px">
+                <table cellpadding="0" cellspacing="0"
+                       style="text-align:left; vertical-align:text-top;width:100%;height:100%;">
+                    <tr>
+                        <td style="width:150px">贸易国(地区)</td>
+
+                        <td class="left">
+                            运抵国(地区)
+                        </td>
+                        <td style="width:189px" class="left">
+                            指运港
+                        </td>
+                        <td style="width:149px" class="left">
+                            境内货源地
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td class="content2" style="width:80%;"><%= d.tradeCountry.name %></td>
+                                    <td class="content2" style="width:20%;"><%= d.tradeCountry.code %></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="left">
+                            <table style="width:100%;">
+                                <tr>
+                                    <td class="content2" style="width:80%;"><%= d.destCountry.name %></td>
+                                    <td class="content2" style="width:20%;"><%= d.destCountry.code %></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td style="width:189px" class="left">
+                            <table style="width:100%;">
+                                <tr>
+                                    <td class="content2" style="width:80%;"><%= d.destPort.name %></td>
+                                    <td class="content2" style="width:20%;"><%= d.destPort.code %></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td style="width:149px" class="left">
+                            <table style="width:100%;">
+                                <tr>
+                                    <td class="content2"
+                                        style="width:80%; font-size:10px; overflow:hidden"><%= d.deptDistrict.name %></td>
+                                    <td class="content2" style="width:20%;"><%= d.deptDistrict.code %></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="bottom" style="height:31px">
+                <table cellpadding="0" cellspacing="0"
+                       style="text-align:left; vertical-align:text-top;width:100%;height:100%;">
+                    <tr>
+                        <td style="width:55px">许可证号</td>
+                        <td rowspan="2" class="content2" style="width:154px"></td>
+
+
+                        <td class="left">成交方式</td>
+                        <td style="width:159px" class="left">运费</td>
+                        <td style="width:119px" class="left">保费</td>
+                        <td style="width:149px" class="left">杂费</td>
+                    </tr>
+                    <tr>
+
+                        <td style="width:55px">&nbsp;<%= d.lisence_no || '' %></td>
+                        <td class="content2Left">
+                            &nbsp;&nbsp;&nbsp;<%= d.trans_mode == 1 ? 'CIF' : (d.trans_mode == 2 ? 'C8F' : 'FOB') %></td>
+                        <td style="width:159px"
+                            class="content2Left"><%= d.trans_fee ? d.trans_fee.curr_code + '/' + d.trans_fee.rate + '/' + d.trans_fee.mark : '' %></td>
+                        <td style="width:119px"
+                            class="content2Left"><%= d.insur_fee ? d.insur_fee.curr_code + '/' + d.insur_fee.rate + '/' + d.insur_fee.mark : '' %></td>
+                        <td style="width:149px"
+                            class="content2Left"><%= d.other_fee ? d.other_fee.curr_code + '/' + d.other_fee.rate + '/' + d.other_fee.mark : '' %></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="bottom" style="height:31px">
+                <table cellpadding="0" cellspacing="0"
+                       style="text-align:left; vertical-align:text-top;width:100%;height:100%;">
+                    <tr>
+                        <td style="width:70px">合同协议号</td>
+                        <td class="content2" style="width:139px"><%= d.contr_no || '' %></td>
+                        <td class="left">件数</td>
+                        <td class="content2" style="width:91px"><%= d.pack_no || '' %></td>
+
+                        <td style="width:55px" class="left">包装种类</td>
+                        <td class="content2" style="width:63px"><%= d.wrap_type || '' %></td>
+
+                        <td style="width:80px" class="left">毛重（千克）</td>
+                        <td class="content2" style="width:57px"><%= d.gross_wt || '' %></td>
+                        <td style="width:80px" class="left">净重（千克）</td>
+                        <td class="content2" style="width:49px"><%= d.net_wt || '' %></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="bottom" style="height:31px">
+                <table cellpadding="0" cellspacing="0"
+                       style="text-align:left; vertical-align:text-top;width:100%;height:100%;">
+                    <tr>
+                        <td style="width:70px">集装箱号</td>
+                        <td class="content2" style="width:139px"><%= d.ex_source || '' %></td>
+                        <td style="width:55px" class="left">随附单据</td>
+                        <td class="content2"></td>
+                        <!--                   <td style="width:55px" class="left">
+
+                                            生产厂家
+
+                                            用途
+
+                                            </td>
+                                          <td class="content2" style="width:94px">&nbsp;</td> -->
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="bottom" style="height:60px">
+                <table cellpadding="0" cellspacing="0"
+                       style="text-align:left; vertical-align:text-top;width:100%;height:100%;">
+                    <tr>
+                        <td colspan="2" style="width:734px">标记唛码及备注</td>
+                    </tr>
+                    <tr>
+                        <td style="width:95px"></td>
+                        <td style="width:638px;height:50px" class="content2">
+
+
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="height:250px">
+                <table cellpadding="0" cellspacing="0"
+                       style="text-align:left; vertical-align:text-top;width:100%;height:100%;">
+                    <tr>
+                        <td class="bottom" style="width: 30px">项号</td>
+                        <td class="bottom" style="width: 83px">商品编号</td>
+                        <td class="bottom" style="width: 155px">商品名称、规格型号</td>
+                        <td class="bottom" style="width: 100px">数量及单位</td>
+                        <td class="bottom" style="width: 123px">
+                            最终目的国（地区）
+                        </td>
+                        <td class="bottom" style="width: 72px">单价</td>
+                        <td class="bottom" style="width: 75px">总价</td>
+                        <td class="bottom" style="width: 55px">币制</td>
+                        <td class="bottom" style="width: 50px">征免</td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="bottomfix" style="width: 30px; vertical-align:top; padding-top:10px">
+                            <div style="vertical-align:top;width:100%;height:67%; margin:0px; padding:0px">
+                                <%= g.length > 0 ? '1' : '' %>&nbsp;&nbsp;</div>
+                            <div style="width:100%;height:33%;margin:0px; padding:0px"></div>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="width: 83px; vertical-align:top; padding-top:10px"><%= g.length > 0 ? g[0].code_s : '' %></td>
+
+                        <td class="bottomfix" style="width: 155px; vertical-align:top; padding-top:0px">
+                            <div style="vertical-align:top;height:33%; margin:0px; padding:0px;width:100%;"><%= g.length > 0 ? g[0].g_name : '' %></div>
+                            <div style="width:100%;height:100%; margin:0px; padding:0px;"><%= g.length > 0 ? g[0].g_model : '' %></div>
+                        </td>
+                        <td class="bottomfix" style="width: 100px; vertical-align:top; padding-top:10px">
+                            <%= g.length > 0 ? g[0].qty_conv : '' %><%= g.length > 0 ? g[0].unit_1.name : '' %>
+                            <% if(g.length > 0 && g[0].unit_2){ %>
+                            <br/>
+                            <% } %>
+                            <%= g.length > 0 && g[0].unit_2 ? g[0].qty_2 : '' %><%= g.length > 0 && g[0].unit_2 ? g[0].unit_2.name : '' %>
+                            <br/>
+                            <%= g.length > 0 ? g[0].qty_1 : '' %><%= g.length > 0 ? g[0].g_unit.name : '' %>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="width: 123px; vertical-align:top; padding-top:10px">  <%= g.length > 0 ? g[0].destCountry.name : '' %>
+                            <br/>
+                            <%= g.length > 0 ? '(' + g[0].destCountry.code + ')' : '' %>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="width: 72px; vertical-align:top; padding-top:10px"><%= g.length > 0 ? g[0].decl_price : '' %></td>
+                        <td class="bottomfix"
+                            style="width: 75px; vertical-align:top; padding-top:10px"><%= g.length > 0 ? g[0].trade_total : '' %></td>
+
+                        <td class="bottomfix"
+                            style="vertical-align:top; padding-top:10px;overflow:hidden;white-space:nowrap;"><%= g.length > 0 ? '(' + g[0].currency.code + ')' : '' %>
+                            <br/><%= g.length > 0 ? g[0].currency.name : '' %>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="vertical-align:top; padding-top:10px;overflow:hidden;white-space:nowrap;"><%= g.length > 0 ? g[0].duty_mode.name : '' %>
+                            <br/><%= g.length > 0 ? '(' + g[0].duty_mode.code + ')' : '' %>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="bottomfix" style="width: 30px; vertical-align:top; padding-top:10px">
+                            <div style="vertical-align:top;width:100%;height:67%; margin:0px; padding:0px">
+                                <%= g.length > 1 ? '2' : '' %>&nbsp;&nbsp;</div>
+                            <div style="width:100%;height:33%;margin:0px; padding:0px"></div>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="width: 83px; vertical-align:top; padding-top:10px"><%= g.length > 1 ? g[1].code_s : '' %></td>
+
+                        <td class="bottomfix" style="width: 155px; vertical-align:top; padding-top:0px">
+                            <div style="vertical-align:top;height:33%; margin:0px; padding:0px;width:100%;"><%= g.length > 1 ? g[1].g_name : '' %></div>
+                            <div style="width:100%;height:100%; margin:0px; padding:0px;"><%= g.length > 1 ? g[1].g_model : '' %></div>
+                        </td>
+                        <td class="bottomfix" style="width: 100px; vertical-align:top; padding-top:10px">
+                            <%= g.length > 1 ? g[1].qty_conv : '' %><%= g.length > 1 ? g[1].unit_1.name : '' %>
+                            <% if(g.length > 1 && g[1].unit_2){ %>
+                            <br/>
+                            <% } %>
+                            <%= g.length > 1 && g[1].unit_2 ? g[1].qty_2 : '' %><%= g.length > 1 && g[1].unit_2 ? g[1].unit_2.name : '' %>
+                            <br/>
+                            <%= g.length > 1 ? g[1].qty_1 : '' %><%= g.length > 1 ? g[1].g_unit.name : '' %>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="width: 123px; vertical-align:top; padding-top:10px">  <%= g.length > 1 ? g[1].destCountry.name : '' %>
+                            <br/>
+                            <%= g.length > 1 ? '(' + g[1].destCountry.code + ')' : '' %>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="width: 72px; vertical-align:top; padding-top:10px"><%= g.length > 1 ? g[1].decl_price : '' %></td>
+                        <td class="bottomfix"
+                            style="width: 75px; vertical-align:top; padding-top:10px"><%= g.length > 1 ? g[1].trade_total : '' %></td>
+
+                        <td class="bottomfix"
+                            style="vertical-align:top; padding-top:10px;overflow:hidden;white-space:nowrap;"><%= g.length > 1 ? '(' + g[1].currency.code + ')' : '' %>
+                            <br/><%= g.length > 1 ? g[1].currency.name : '' %>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="vertical-align:top; padding-top:10px;overflow:hidden;white-space:nowrap;"><%= g.length > 1 ? g[1].duty_mode.name : '' %>
+                            <br/><%= g.length > 1 ? '(' + g[1].duty_mode.code + ')' : '' %>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="bottomfix" style="width: 30px; vertical-align:top; padding-top:10px">
+                            <div style="vertical-align:top;width:100%;height:67%; margin:0px; padding:0px">
+                                <%= g.length > 2 ? '3' : '' %>&nbsp;&nbsp;</div>
+                            <div style="width:100%;height:33%;margin:0px; padding:0px"></div>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="width: 83px; vertical-align:top; padding-top:10px"><%= g.length > 2 ? g[2].code_s : '' %></td>
+
+                        <td class="bottomfix" style="width: 155px; vertical-align:top; padding-top:0px">
+                            <div style="vertical-align:top;height:33%; margin:0px; padding:0px;width:100%;"><%= g.length > 2 ? g[2].g_name : '' %></div>
+                            <div style="width:100%;height:100%; margin:0px; padding:0px;"><%= g.length > 2 ? g[2].g_model : '' %></div>
+                        </td>
+                        <td class="bottomfix" style="width: 100px; vertical-align:top; padding-top:10px">
+                            <%= g.length > 2 ? g[2].qty_conv : '' %><%= g.length > 2 ? g[2].unit_1.name : '' %>
+                            <% if(g.length > 2 && g[2].unit_2){ %>
+                            <br/>
+                            <% } %>
+                            <%= g.length > 2 && g[2].unit_2 ? g[2].qty_2 : '' %><%= g.length > 2 && g[2].unit_2 ? g[2].unit_2.name : '' %>
+                            <br/>
+                            <%= g.length > 2 ? g[2].qty_1 : '' %><%= g.length > 2 ? g[2].g_unit.name : '' %>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="width: 123px; vertical-align:top; padding-top:10px">  <%= g.length > 2 ? g[2].destCountry.name : '' %>
+                            <br/>
+                            <%= g.length > 2 ? '(' + g[2].destCountry.code + ')' : '' %>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="width: 72px; vertical-align:top; padding-top:10px"><%= g.length > 2 ? g[2].decl_price : '' %></td>
+                        <td class="bottomfix"
+                            style="width: 75px; vertical-align:top; padding-top:10px"><%= g.length > 2 ? g[2].trade_total : '' %></td>
+
+                        <td class="bottomfix"
+                            style="vertical-align:top; padding-top:10px;overflow:hidden;white-space:nowrap;"><%= g.length > 2 ? '(' + g[2].currency.code + ')' : '' %>
+                            <br/><%= g.length > 2 ? g[2].currency.name : '' %>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="vertical-align:top; padding-top:10px;overflow:hidden;white-space:nowrap;"><%= g.length > 2 ? g[2].duty_mode.name : '' %>
+                            <br/><%= g.length > 2 ? '(' + g[2].duty_mode.code + ')' : '' %>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="bottomfix" style="width: 30px; vertical-align:top; padding-top:10px">
+                            <div style="vertical-align:top;width:100%;height:67%; margin:0px; padding:0px">
+                                <%= g.length > 3 ? '4' : '' %>&nbsp;&nbsp;</div>
+                            <div style="width:100%;height:33%;margin:0px; padding:0px"></div>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="width: 83px; vertical-align:top; padding-top:10px"><%= g.length > 3 ? g[3].code_s : '' %></td>
+
+                        <td class="bottomfix" style="width: 155px; vertical-align:top; padding-top:0px">
+                            <div style="vertical-align:top;height:33%; margin:0px; padding:0px;width:100%;"><%= g.length > 3 ? g[3].g_name : '' %></div>
+                            <div style="width:100%;height:100%; margin:0px; padding:0px;"><%= g.length > 3 ? g[3].g_model : '' %></div>
+                        </td>
+                        <td class="bottomfix" style="width: 100px; vertical-align:top; padding-top:10px">
+                            <%= g.length > 3 ? g[3].qty_conv : '' %><%= g.length > 3 ? g[3].unit_1.name : '' %>
+                            <br>
+                            <%= g.length > 3 && g[3].unit_2 ? g[3].qty_2 : '' %><%= g.length > 3 && g[3].unit_2 ? g[3].unit_2.name : '' %>
+                            <br/>
+                            <%= g.length > 3 ? g[3].qty_1 : '' %><%= g.length > 3 ? g[3].g_unit.name : '' %>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="width: 123px; vertical-align:top; padding-top:10px">  <%= g.length > 3 ? g[3].destCountry.name : '' %>
+                            <br/>
+                            <%= g.length > 3 ? '(' + g[3].destCountry.code + ')' : '' %>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="width: 72px; vertical-align:top; padding-top:10px"><%= g.length > 3 ? g[3].decl_price : '' %></td>
+                        <td class="bottomfix"
+                            style="width: 75px; vertical-align:top; padding-top:10px"><%= g.length > 3 ? g[3].trade_total : '' %></td>
+
+                        <td class="bottomfix"
+                            style="vertical-align:top; padding-top:10px;overflow:hidden;white-space:nowrap;"><%= g.length > 3 ? '(' + g[3].currency.code + ')' : '' %>
+                            <br/><%= g.length > 3 ? g[3].currency.name : '' %>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="vertical-align:top; padding-top:10px;overflow:hidden;white-space:nowrap;"><%= g.length > 3 ? g[3].duty_mode.name : '' %>
+                            <br/><%= g.length > 3 ? '(' + g[3].duty_mode.code + ')' : '' %>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="bottomfix" style="width: 30px; vertical-align:top; padding-top:10px">
+                            <div style="vertical-align:top;width:100%;height:67%; margin:0px; padding:0px">
+                                <%= g.length > 4 ? '5' : '' %>&nbsp;&nbsp;</div>
+                            <div style="width:100%;height:33%;margin:0px; padding:0px"></div>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="width: 83px; vertical-align:top; padding-top:10px"><%= g.length > 4 ? g[4].code_s : '' %></td>
+
+                        <td class="bottomfix" style="width: 155px; vertical-align:top; padding-top:0px">
+                            <div style="vertical-align:top;height:33%; margin:0px; padding:0px;width:100%;"><%= g.length > 4 ? g[4].g_name : '' %></div>
+                            <div style="width:100%;height:100%; margin:0px; padding:0px;"><%= g.length > 4 ? g[4].g_model : '' %></div>
+                        </td>
+                        <td class="bottomfix" style="width: 100px; vertical-align:top; padding-top:10px">
+                            <%= g.length > 4 ? g[4].qty_conv : '' %><%= g.length > 4 ? g[4].unit_1.name : '' %>
+                            <br>
+                            <%= g.length > 4 && g[4].unit_2 ? g[4].qty_2 : '' %><%= g.length > 4 && g[4].unit_2 ? g[4].unit_2.name : '' %>
+                            <br/>
+                            <%= g.length > 4 ? g[4].qty_1 : '' %><%= g.length > 4 ? g[4].g_unit.name : '' %>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="width: 123px; vertical-align:top; padding-top:10px">  <%= g.length > 4 ? g[4].destCountry.name : '' %>
+                            <br/>
+                            <%= g.length > 4 ? '(' + g[4].destCountry.code + ')' : '' %>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="width: 72px; vertical-align:top; padding-top:10px"><%= g.length > 4 ? g[4].decl_price : '' %></td>
+                        <td class="bottomfix"
+                            style="width: 75px; vertical-align:top; padding-top:10px"><%= g.length > 4 ? g[4].trade_total : '' %></td>
+
+                        <td class="bottomfix"
+                            style="vertical-align:top; padding-top:10px;overflow:hidden;white-space:nowrap;"><%= g.length > 4 ? '(' + g[4].currency.code + ')' : '' %>
+                            <br/><%= g.length > 4 ? g[4].currency.name : '' %>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="vertical-align:top; padding-top:10px;overflow:hidden;white-space:nowrap;"><%= g.length > 4 ? g[4].duty_mode.name : '' %>
+                            <br/><%= g.length > 4 ? '(' + g[4].duty_mode.code + ')' : '' %>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="bottomfix" style="width: 30px; vertical-align:top; padding-top:10px">
+                            <div style="vertical-align:top;width:100%;height:67%; margin:0px; padding:0px">
+                                <%= g.length > 5 ? '6' : '' %>&nbsp;&nbsp;</div>
+                            <div style="width:100%;height:33%;margin:0px; padding:0px"></div>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="width: 83px; vertical-align:top; padding-top:10px"><%= g.length > 5 ? g[5].code_s : '' %></td>
+
+                        <td class="bottomfix" style="width: 155px; vertical-align:top; padding-top:0px">
+                            <div style="vertical-align:top;height:33%; margin:0px; padding:0px;width:100%;"><%= g.length > 5 ? g[5].g_name : '' %></div>
+                            <div style="width:100%;height:100%; margin:0px; padding:0px;"><%= g.length > 5 ? g[5].g_model : '' %></div>
+                        </td>
+                        <td class="bottomfix" style="width: 100px; vertical-align:top; padding-top:10px">
+                            <%= g.length > 5 ? g[5].qty_conv : '' %><%= g.length > 5 ? g[5].unit_1.name : '' %>
+                            <br>
+                            <%= g.length > 5 && g[5].unit_2 ? g[5].qty_2 : '' %><%= g.length > 5 && g[5].unit_2 ? g[5].unit_2.name : '' %>
+                            <br/>
+                            <%= g.length > 5 ? g[5].qty_1 : '' %><%= g.length > 5 ? g[5].g_unit.name : '' %>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="width: 123px; vertical-align:top; padding-top:10px">  <%= g.length > 5 ? g[5].destCountry.name : '' %>
+                            <br/>
+                            <%= g.length > 5 ? '(' + g[5].destCountry.code + ')' : '' %>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="width: 72px; vertical-align:top; padding-top:10px"><%= g.length > 5 ? g[5].decl_price : '' %></td>
+                        <td class="bottomfix"
+                            style="width: 75px; vertical-align:top; padding-top:10px"><%= g.length > 5 ? g[5].trade_total : '' %></td>
+
+                        <td class="bottomfix"
+                            style="vertical-align:top; padding-top:10px;overflow:hidden;white-space:nowrap;"><%= g.length > 5 ? '(' + g[5].currency.code + ')' : '' %>
+                            <br/><%= g.length > 5 ? g[5].currency.name : '' %>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="vertical-align:top; padding-top:10px;overflow:hidden;white-space:nowrap;"><%= g.length > 5 ? g[5].duty_mode.name : '' %>
+                            <br/><%= g.length > 5 ? '(' + g[5].duty_mode.code + ')' : '' %>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="bottomfix" style="width: 30px; vertical-align:top; padding-top:10px">
+                            <div style="vertical-align:top;width:100%;height:67%; margin:0px; padding:0px">
+                                <%= g.length > 6 ? '7' : '' %>&nbsp;&nbsp;</div>
+                            <div style="width:100%;height:33%;margin:0px; padding:0px"></div>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="width: 83px; vertical-align:top; padding-top:10px"><%= g.length > 6 ? g[6].code_s : '' %></td>
+
+                        <td class="bottomfix" style="width: 155px; vertical-align:top; padding-top:0px">
+                            <div style="vertical-align:top;height:33%; margin:0px; padding:0px;width:100%;"><%= g.length > 6 ? g[6].g_name : '' %></div>
+                            <div style="width:100%;height:100%; margin:0px; padding:0px;"><%= g.length > 6 ? g[6].g_model : '' %></div>
+                        </td>
+                        <td class="bottomfix" style="width: 100px; vertical-align:top; padding-top:10px">
+                            <%= g.length > 6 ? g[6].qty_conv : '' %><%= g.length > 6 ? g[6].unit_1.name : '' %>
+                            <br>
+                            <%= g.length > 6 && g[6].unit_2 ? g[6].qty_2 : '' %><%= g.length > 6 && g[6].unit_2 ? g[6].unit_2.name : '' %>
+                            <br/>
+                            <%= g.length > 6 ? g[6].qty_1 : '' %><%= g.length > 6 ? g[6].g_unit.name : '' %>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="width: 123px; vertical-align:top; padding-top:10px">  <%= g.length > 6 ? g[6].destCountry.name : '' %>
+                            <br/>
+                            <%= g.length > 6 ? '(' + g[6].destCountry.code + ')' : '' %>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="width: 72px; vertical-align:top; padding-top:10px"><%= g.length > 6 ? g[6].decl_price : '' %></td>
+                        <td class="bottomfix"
+                            style="width: 75px; vertical-align:top; padding-top:10px"><%= g.length > 6 ? g[6].trade_total : '' %></td>
+
+                        <td class="bottomfix"
+                            style="vertical-align:top; padding-top:10px;overflow:hidden;white-space:nowrap;"><%= g.length > 6 ? '(' + g[6].currency.code + ')' : '' %>
+                            <br/><%= g.length > 6 ? g[6].currency.name : '' %>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="vertical-align:top; padding-top:10px;overflow:hidden;white-space:nowrap;"><%= g.length > 6 ? g[6].duty_mode.name : '' %>
+                            <br/><%= g.length > 6 ? '(' + g[6].duty_mode.code + ')' : '' %>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="bottomfix" style="width: 30px; vertical-align:top; padding-top:10px">
+                            <div style="vertical-align:top;width:100%;height:67%; margin:0px; padding:0px">
+                                <%= g.length > 7 ? '8' : '' %>&nbsp;&nbsp;</div>
+                            <div style="width:100%;height:33%;margin:0px; padding:0px"></div>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="width: 83px; vertical-align:top; padding-top:10px"><%= g.length > 7 ? g[7].code_s : '' %></td>
+
+                        <td class="bottomfix" style="width: 155px; vertical-align:top; padding-top:0px">
+                            <div style="vertical-align:top;height:33%; margin:0px; padding:0px;width:100%;"><%= g.length > 7 ? g[7].g_name : '' %></div>
+                            <div style="width:100%;height:100%; margin:0px; padding:0px;"><%= g.length > 7 ? g[7].g_model : '' %></div>
+                        </td>
+                        <td class="bottomfix" style="width: 100px; vertical-align:top; padding-top:10px">
+                            <%= g.length > 7 ? g[7].qty_conv : '' %><%= g.length > 7 ? g[7].unit_1.name : '' %>
+                            <br>
+                            <%= g.length > 7 && g[7].unit_2 ? g[7].qty_2 : '' %><%= g.length > 7 && g[7].unit_2 ? g[7].unit_2.name : '' %>
+                            <br/>
+                            <%= g.length > 7 ? g[7].qty_1 : '' %><%= g.length > 7 ? g[7].g_unit.name : '' %>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="width: 123px; vertical-align:top; padding-top:10px">  <%= g.length > 7 ? g[7].destCountry.name : '' %>
+                            <br/>
+                            <%= g.length > 7 ? '(' + g[7].destCountry.code + ')' : '' %>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="width: 72px; vertical-align:top; padding-top:10px"><%= g.length > 7 ? g[7].decl_price : '' %></td>
+                        <td class="bottomfix"
+                            style="width: 75px; vertical-align:top; padding-top:10px"><%= g.length > 7 ? g[7].trade_total : '' %></td>
+
+                        <td class="bottomfix"
+                            style="vertical-align:top; padding-top:10px;overflow:hidden;white-space:nowrap;"><%= g.length > 7 ? '(' + g[7].currency.code + ')' : '' %>
+                            <br/><%= g.length > 7 ? g[7].currency.name : '' %>
+                        </td>
+
+                        <td class="bottomfix"
+                            style="vertical-align:top; padding-top:10px;overflow:hidden;white-space:nowrap;"><%= g.length > 7 ? g[7].duty_mode.name : '' %>
+                            <br/><%= g.length > 7 ? '(' + g[7].duty_mode.code + ')' : '' %>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+        <!--           <tr>
+                    <td class="bottom" style="height:100px"><table cellpadding="0" cellspacing="0" style="text-align:left; vertical-align:text-top;width:100%;height:100%;">
+                        <tr>
+                          <td style="width:734px">税费征收情况</td>
+                        </tr>
+                        <tr>
+                          <td align="left" style="width:734px;height:80px"><table width="100%" height="70" border="0" cellspacing="0">
+                            <td align="left" >
+
+                            <img src="guanggao.jpg" width="296" height="80" border="0" alt="">
+
+                          </table></td>
+                        </tr>
+                    </table></td>
+                  </tr> -->
+
+
+        <tr>
+            <td class="bottom" style="height:30px">
+                <table border="0" cellpadding="0" cellspacing="0"
+                       style="padding-left:0px;text-align:left; vertical-align:text-top;width:100%;height:100%;">
+                    <tbody>
+                    <tr>
+                        <TD style="padding-left:2px;text-align:center;">特殊关系确认：&nbsp;否</TD>
+                        <TD style="padding-left:2px;text-align:center;">价格影响确认：&nbsp;否</TD>
+                        <TD style="padding-left:2px;text-align:center;">支付特许权使用费确认：&nbsp;否</TD>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="bottom" style="height:125px">
+                <table border="0" cellpadding="0" cellspacing="0"
+                       style="padding-left:0px;text-align:left; vertical-align:text-top;width:100%;height:100%;">
+                    <tr>
+                        <td style="width:485px;border-right: black 1px solid;">
+                            <table border="0" cellpadding="0" cellspacing="0"
+                                   style="padding-left:0px;width:100%;height:100%;">
+                                <tr>
+                                    <td valign="top" style="width:230px">
+                                        <table border="0" cellpadding="0" cellspacing="0"
+                                               style="width:100%; height:100%;">
+                                            <tr>
+                                                <td valign="top" style="height:45px">
+                                                    <table height="52" border="0" cellpadding="0" cellspacing="0"
+                                                           style="padding-left:0px;width:100%; height:45px; border-right: black 1px solid; border-bottom: black 1px solid;">
+                                                        <tr>
+                                                            <td>录入员</td>
+                                                            <td>录入单位</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="content2" style="height:30px">
+
+                                                                <span style="font-size:12px;font-family:宋体;"><%= d.username %></span>
+
+                                                            </td>
+                                                            <td style="height:30px">&nbsp</td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>报关人员</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="height:5px" class="lastline">&nbsp;</td>
+                                                <td style="position: relative">
+                                                    <img SRC="http://kybpublic.oss-cn-shanghai.aliyuncs.com/images/img/hanglian_stamp.png"
+                                                         style="height: 150px;width: 150px;position: absolute;top: -135px;left: -135px;"></td>
+                                            </tr>
+                                            <!-- <tr>
+                                              <td>单位地址</td>
+                                            </tr>
+                                            <tr>
+                                              <td style="height:45px">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                              <td><table border="0" cellpadding="0" cellspacing="0" style="width:100%; height:100%;">
+                                                  <tr>
+                                                    <td>邮编</td>
+                                                    <td>电话</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>&nbsp</td>
+                                                    <td>&nbsp</td>
+                                                  </tr>
+                                              </table></td>
+                                            </tr> -->
+                                        </table>
+                                    </td>
+                                    <td style="width:254px">
+                                        <table border="0" cellpadding="0" cellspacing="0"
+                                               style="width:100%; height:100%">
+                                            <tr>
+                                                <td style="text-align:left; height:13px">&nbsp;&nbsp;兹申明对以上内容承担如实申报、依法纳税之法律责任</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="height:47px" class="lastline">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;申报单位（签章）</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="height:47px" class="content2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                                    <span style="font-size:12px;font-family:宋体;"><%= d.agentCompany.name %></span>
+
+                                                </td>
+                                            </tr>
+                                            <!-- <tr>
+
+                                              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;填制日期&nbsp;2017-04-29&nbsp;&nbsp;12:48:06</td>
+
+                                            </tr>
+                                            <tr>
+                                              <td>&nbsp;</td>
+                                            </tr> -->
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td style="width:250px;">
+                            <table border="0" cellpadding="0" cellspacing="0" style="width:100%; height:100%">
+                                <tr>
+                                    <td colspan="2" style="height:13px">&nbsp;&nbsp;海关批注及签章</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="height:30px;">&nbsp;</td>
+                                </tr>
+                                <tr>
+
+                                    <td></td>
+                                    <td><!-- 审价 --></td>
+                                </tr>
+                                <tr>
+                                    <td class="bottom" style="height:5px;" class="lastline">&nbsp;</td>
+                                    <td class="bottom" style="height:5px;" class="lastline">&nbsp;</td>
+                                </tr>
+                                <!-- <tr>
+                                  <td>征税</td>
+                                  <td>统计</td>
+                                </tr>
+                                <tr>
+                                  <td class="bottom" style="height:34px;">&nbsp;</td>
+                                  <td class="bottom" style="height:34px;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                  <td>查验</td>
+                                  <td>放行</td>
+                                </tr>
+                                <tr>
+                                  <td style="height:35px;">&nbsp;</td>
+                                  <td style="height:35px;">&nbsp;</td>
+                                </tr> -->
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br/>
+
+
+</div>
+<div class="dp-tb">
+    <button class="dl-yld blue-btn">下载</button>
+</div>
+<!-- <div id='bottomnav' style='position:Absolute; top:300px;left:70px; z-index:-111;font-size:68px;filter: alpha(opacity=25);-moz-opacity: 0.25;opacity: 0.25;'><img src="mxjlogo.png" border="0" alt="">www.moxiangjing.net</div> -->
+
+<script src="http://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+<script src="/javascripts/lading/bundle.min.js" charset="utf-8"></script>
+</body>
+</html>

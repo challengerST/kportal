@@ -1,0 +1,48 @@
+<%- include ../base/head.ejs %>
+<%# 样式表引用 %>
+<link rel="stylesheet" href="/javascripts/datePicker/css/bootstrap-datetimepicker.min.css"/>
+<link rel="stylesheet" href="/stylesheets/css/web/delivery.css">
+<link rel="stylesheet" href="/images/alifont/iconfont.css">
+<%# 样式表引用结束 %>
+<%- include ../base/header.ejs %>
+<script>
+    var dd = {
+        mb: '<%= mb||'' %>'
+    };
+</script>
+<div class="app-box">
+    <div class="delivery-box">
+        <!--<div class="infoContainer fill">-->
+            <!--<div class="fl-l aircompanyIcon">-->
+                <!--<img src="/images/logo-m.png" alt="">-->
+            <!--</div>-->
+            <!--<div class="fl-l aircompanyInfo">-->
+                <!--<p style="font-size:20px;">上海腾亿国际货运代理有限公司</p>-->
+                <!--<p style="font-size:12px;">Shanghai TengYi International Freight Forwarding Co., Ltd</p>-->
+            <!--</div>-->
+            <!--<div class="fl-l">-->
+                <!--<em class="iconfont icon-shoucang1"></em><span>收藏店铺</span>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="container">
+            <p class="nav-top">首页 > 运价查询</p>
+            <div class="super-man">
+                <span class="first mark">委托订舱</span>
+                <span class="second">确认委托信息</span>
+                <span class="third">委托成功</span>
+            </div>
+            <%# 搜索部分 %>
+            <%- include ./search.ejs %>
+            <%# 表单部分 %>
+            <%- include ./table.ejs %>
+        </div>
+    </div>
+</div>
+
+<%- include ../base/javascripts.ejs %>
+<%# 脚本引用 %>
+<script src="/javascripts/datePicker/js/bootstrap-datetimepicker.min.js" charset="utf-8"></script>
+<script src="/javascripts/datePicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="utf-8"></script>
+<script src="/javascripts/delivery/bundle.min.js" charset="utf-8"></script>
+<%# 脚本引用结束 %>
+<%- include ../base/foot.ejs %>

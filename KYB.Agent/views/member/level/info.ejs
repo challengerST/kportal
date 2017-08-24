@@ -1,0 +1,125 @@
+<% var d = data && 'resCode' in data && data.resCode == 0 && data.resBody && 'config' in data.resBody && data.resBody.config %>
+<% d['AA'] = 'AA' in d && d['AA'] || {} %>
+<% d['A'] = 'A' in d && d['A'] || {} %>
+<% d['B'] = 'B' in d && d['B'] || {} %>
+<% d['C'] = 'C' in d && d['C'] || {} %>
+<% d['D'] = 'D' in d && d['D'] || {} %>
+
+<div class="operate fill">
+    <button class="sm-btn blue-btn fl-l" id="submit" data-id="<%= data.resBody.Id %>">保存</button>
+    <button class="sm-btn blue-btn fl-l" id="cancel">取消</button>
+    <p class="info">会员评级与额度设置</p>
+</div>
+<div class="outer-con">
+    <table class="outer-tb">
+        <thead>
+        <tr>
+            <td>会员等级</td>
+            <td>会员类型</td>
+            <td>信用额度</td>
+            <td>信用比率</td>
+            <td>信用账期</td>
+            <td>订单限额</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>AA</td>
+            <td><%= d['AA'].accountLevelDesc || '/' %></td>
+            <td><input type="text" class="AA-cs" onkeyup="value=value.replace(/[^\d.]/g,'')"
+                       value="<%= d['AA'].creditDefault || '0' %>"
+                       data-init="<%= d['AA'].creditDefault || '0' %>"/>
+            </td>
+            <td><input type="text" class="AA-bl percentage" onkeyup="value=value.replace(/[^\d.%]/g,'')"
+                       value="<%= parseInt(d['AA'].creditRate * 100) + '%' || '0' %>"
+                       data-init="<%= parseInt(d['AA'].creditRate * 100) + '%' || '0' %>"/>
+            </td>
+            <td><input type="text" class="AA-zq zq" onkeyup="value=value.replace(/[^\d]/g,'')"
+                       value="<%= d['AA'].creditSettlement || '0' %>"
+                       data-init="<%= d['AA'].creditSettlement || '0' %>"/>
+            </td>
+            <td><input type="text" class="AA-xe xe" onkeyup="value=value.replace(/[^\d]/g,'')"
+                       value="<%= d['AA'].orderLimit || '0' %>"
+                       data-init="<%= d['AA'].orderLimit || '0' %>"/>
+            </td>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td><%= d['A'].accountLevelDesc || '/' %></td>
+            <td><input type="text" class="A-cs" onkeyup="value=value.replace(/[^\d.]/g,'')"
+                       value="<%= d['A'].creditDefault || '0' %>"
+                       data-init="<%= d['A'].creditDefault || '0' %>"/>
+            </td>
+            <td><input type="text" class="A-bl percentage" onkeyup="value=value.replace(/[^\d.%]/g,'')"
+                       value="<%= parseInt(d['A'].creditRate) * 100 + '%' || '0' %>"
+                       data-init="<%= parseInt(d['A'].creditRate) * 100 + '%' || '0' %>"/>
+            </td>
+            <td><input type="text" class="A-zq zq" onkeyup="value=value.replace(/[^\d]/g,'')"
+                       value="<%= d['A'].creditSettlement || '0' %>"
+                       data-init="<%= d['A'].creditSettlement || '0' %>"/>
+            </td>
+            <td><input type="text" class="A-xe xe" onkeyup="value=value.replace(/[^\d]/g,'')"
+                       value="<%= d['A'].orderLimit || '0' %>"
+                       data-init="<%= d['A'].orderLimit || '0' %>"/>
+            </td>
+        </tr>
+        <tr>
+            <td>B</td>
+            <td><%= d['B'].accountLevelDesc || '/' %></td>
+            <td><input readonly type="text" class="B-cs" onkeyup="value=value.replace(/[^\d.]/g,'')"
+                       value="<%= d['B'].creditDefault || '0' %>" data-init="<%= d['B'].creditDefault || '0' %>"/>
+            </td>
+            <td><input readonly type="text" class="B-bl percentage" onkeyup="value=value.replace(/[^\d.%]/g,'')"
+                       value="<%= parseInt(d['B'].creditRate * 100) + '%' || '0' %>"
+                       data-init="<%= parseInt(d['B'].creditRate * 100) + '%' || '0' %>"/>
+            </td>
+            <td><input readonly type="text" class="B-zq zq" onkeyup="value=value.replace(/[^\d]/g,'')"
+                       value="<%= d['B'].creditSettlement || '0' %>"
+                       data-init="<%= d['B'].creditSettlement || '0' %>"/>
+            </td>
+            <td><input type="text" class="B-xe xe" onkeyup="value=value.replace(/[^\d]/g,'')"
+                       value="<%= d['B'].orderLimit || '0' %>"
+                       data-init="<%= d['B'].orderLimit || '0' %>"/>
+            </td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td><%= d['C'].accountLevelDesc || '/' %></td>
+            <td><input readonly type="text" class="C-cs" onkeyup="value=value.replace(/[^\d.]/g,'')"
+                       value="<%= d['C'].creditDefault || '0' %>" data-init="<%= d['C'].creditDefault || '0' %>"/>
+            </td>
+            <td><input readonly type="text" class="C-bl percentage" onkeyup="value=value.replace(/[^\d.%]/g,'')"
+                       value="<%= parseInt(d['C'].creditRate * 100) + '%' || '0' %>"
+                       data-init="<%= parseInt(d['C'].creditRate * 100) + '%' || '0' %>"/>
+            </td>
+            <td><input readonly type="text" class="C-zq zq" onkeyup="value=value.replace(/[^\d]/g,'')"
+                       value="<%= d['C'].creditSettlement || '0' %>"
+                       data-init="<%= d['C'].creditSettlement || '0' %>"/>
+            </td>
+            <td><input type="text" class="C-xe xe" onkeyup="value=value.replace(/[^\d]/g,'')"
+                       value="<%= d['C'].orderLimit || '0' %>"
+                       data-init="<%= d['C'].orderLimit || '0' %>"/>
+            </td>
+        </tr>
+        <tr>
+            <td>D</td>
+            <td><%= d['D'].accountLevelDesc || '/' %></td>
+            <td><input readonly type="text" class="D-cs" onkeyup="value=value.replace(/[^\d.]/g,'')"
+                       value="<%= d['D'].creditDefault || '0' %>" data-init="<%= d['D'].creditDefault || '0' %>"/>
+            </td>
+            <td><input readonly type="text" class="D-bl percentage" onkeyup="value=value.replace(/[^\d.%]/g,'')"
+                       value="<%= parseInt(d['D'].creditRate * 100) + '%' || '0' %>"
+                       data-init="<%= parseInt(d['D'].creditRate * 100) + '%' || '0' %>"/>
+            </td>
+            <td><input readonly type="text" class="D-zq zq" onkeyup="value=value.replace(/[^\d]/g,'')"
+                       value="<%= d['D'].creditSettlement || '0' %>"
+                       data-init="<%= d['D'].creditSettlement || '0' %>"/>
+            </td>
+            <td><input type="text" class="D-xe xe" onkeyup="value=value.replace(/[^\d]/g,'')"
+                       value="<%= d['D'].orderLimit || '0' %>"
+                       data-init="<%= d['D'].orderLimit || '0' %>"/>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

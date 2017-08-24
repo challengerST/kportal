@@ -1,0 +1,131 @@
+<div class="white-back dp-n">
+    <%# 地图模态框 %>
+    <div class="map fill dp-n">
+        <p class="map-head">
+            进仓地图
+            <span class="dp-b fl-r close-modal">X</span>
+        </p>
+
+        <div class="map-box">
+            <div class="dl-part">
+                <p><span class="title">进仓编号：</span><%= data.warehouseEntryNum || '' %></p>
+
+                <p><span class="title">仓库名称：</span><span class="w-name"></span></p>
+
+                <p><span class="title">地址：</span><span class="w-address"></span></p>
+
+                <p><span class="title">联系方式：</span><span class="w-tel"></span></p>
+
+                <p><span class="title">订单号：</span><span class="w-num"><%= data.orderNum %></span></p>
+
+                <div class="map-main">
+
+                </div>
+            </div>
+
+            <button id="dl-map" class="blue-btn md-btn">下载</button>
+        </div>
+    </div>
+    <%# 表单模态框 %>
+    <div class="list dp-n">
+        <div class="list-head">
+            下载货物保函
+            <span class="dp-b fl-r close-modal">X</span>
+        </div>
+        <div class="list-box">
+            <div class="download">
+                <div class="white-list fl-l"></div>
+                <div class="dl-txt fl-l">
+                    <p><a href="javascript:void(0);" class="dp-b fl-l">下载空运邦货物保函 </a><span class="dl-logo"></span></p>
+
+                    <p class="send-address">快递地址：浦东新区盛夏路560号601A室</p>
+                </div>
+            </div>
+            <p class="see-list">查看保函填写规范：</p>
+
+            <div class="sample">
+                <a href="javascript:void(0);" class="fl-l sample-a dp-b dl-sample"></a>
+                <a href="javascript:void(0);" class="fl-l sample-b dp-b dl-sample"></a>
+                <a href="javascript:void(0);" class="fl-l sample-c dp-b dl-sample"></a>
+            </div>
+        </div>
+    </div>
+    <%# 报价单模态框 %>
+    <div class="export">
+        <table>
+
+        </table>
+    </div>
+</div>
+<div class="forbid-part dp-n al-part">
+    <p class="header">禁运品声明 <span class="close-btn">X</span></p>
+
+    <p class="fir">根据中华人民共和国海关总署相关文件，以下物品禁运：</p>
+
+    <p class="sec">1、各种武器，仿真武器，弹药及爆炸物品；</p>
+
+    <p class="sec">2、伪造的货币及伪造的有价证券；</p>
+
+    <p class="sec">3、对中国政治、经济、文化、道德有害的印刷品、胶卷、照片、唱片、影片、录音带、录像带、激光视盘、计算机存储介质及其他物品；</p>
+
+    <p class="sec">4、各种烈性毒品；</p>
+
+    <p class="sec">5、鸦片、吗啡、海洛因、大麻以及其他能使人成瘾的麻醉品、精神药物；</p>
+
+    <p class="sec">6、带有危险性病菌、害虫以及其他有害生物的动物、植物及其产品；</p>
+
+    <p class="sec">7、有碍人畜健康的，来自疫区的以及其他能传播疾病的食品，药品、或其他物品。</p>
+</div>
+<div class="al-part rule-part dp-n">
+    <p class="header">计费规则 <span class="close-btn">X</span></p>
+    <table>
+        <thead>
+        <tr>
+            <td>M售价</td>
+            <td>N售价</td>
+            <td>45KG售价</td>
+            <td>100KG售价</td>
+            <td>300KG售价</td>
+            <td>500KG售价</td>
+            <td>1000KG售价</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="sp-tr">
+            <td class="m-price">\</td>
+            <td class="n-price">\</td>
+            <td class="45-price">\</td>
+            <td class="100-price">\</td>
+            <td class="300-price">\</td>
+            <td class="500-price">\</td>
+            <td class="1000-price">\</td>
+        </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+        <tr>
+            <td>体积</td>
+            <td class="rule-vol">\</td>
+            <td>重量</td>
+            <td class="rule-wei">\</td>
+            <td colspan="3" class="rule-isP">\</td>
+        </tr>
+        <tr class="dp-n rule-show">
+            <td colspan="2">分泡比例</td>
+            <td colspan="2" class="rule-percent">\</td>
+            <td colspan="3" class="f-after-wei">分泡后的计费重量：\KG</td>
+        </tr>
+        <tr>
+            <td>是否靠级</td>
+            <td class="is-level">\</td>
+            <td>单价</td>
+            <td class="s-price">\KG/CNY</td>
+            <td colspan="3" class="k-fater-wei">靠级后的计费重量：\KG</td>
+        </tr>
+        <tr class="sp-tr">
+            <td colspan="7" class="rule-t-price">预估总价：\</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

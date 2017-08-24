@@ -1,0 +1,48 @@
+@import "../general/general";
+
+body{background-color: #fff;}
+
+.register-box{
+  .container{border-bottom: 1px dotted $gray2;padding: 20px 0 20px 350px;background-color: #fff;
+    .please-register{width: 150px;font-size: 24px;color: $blue2;text-align: right;}
+    .ipt{margin:25px 0;
+      label{width: 150px;@include HEIGHT(50px);text-align: right;margin: 0;padding-right:10px;font-size: 14px;color: #333;font-weight: normal;
+        .star{color: red;}
+      }
+      #captcha{margin: 0;line-height: 50px;width: 300px;float: left;}
+      input{display: block;float: left;width: 300px;@include HEIGHT(50px);line-height:28px;-ms-line-height:28px;border: 1px solid #ccc;padding:0 0 0 14px;font-size: 14px;color: #999;}
+      select:focus,input:focus{border: 1px solid $blue3;}
+      .info,.wrong-tel{float: left;@include HEIGHT(50px);color: $red1;}
+      .info:before,.wrong-tel:before{display:block;float:left;content: '';height: 30px;width: 30px;background: url('../../../images/img/remove.png');margin: 10px 10px;}
+    }
+    .code{
+      #code{width: 160px;margin-right: 10px;}
+      #getCode{width: 130px;@include HEIGHT(50px);text-align: center;color: $blue2;border: 1px solid $border;cursor: pointer;}
+    }
+    .phone-msg{
+      input{width: 160px}
+      .p-msg{margin: 0 0 0 10px;width: 130px;float: left;font-size: 14px;color: #074ba0;}
+    }
+    .already{margin-left: 180px;
+      a{color: $blue2;}
+    }
+    .click-pt{margin: 0;overflow: hidden;
+      button{margin:25px 0 50px 150px;float: left;}
+      a{ display: block;@include HEIGHT(50px);float: left;margin: 25px 0 0 50px;color: $blue2;text-decoration: underline;}
+      a:hover{text-decoration: none;}
+    }
+  }
+}
+.pass-box{background-color: #fff;
+  .container{
+    .pass-img{height: 180px;width: 250px;background: url('../../../images/img/iconmap2.png') no-repeat;margin: 50px auto 10px;}
+    p{text-align: center;margin-top: 10px;
+      a{color: $blue3;margin: 0 5px;}
+      span{margin: 0 5px;}
+    }
+    .fir-txt{font-size: 26px;color: $blue3;margin-bottom: 20px;}
+    .go-login{margin:50px auto 30px;}
+    .go-login:hover{color: #fff;}
+    .go-login:focus{color: #Fff;}
+  }
+}

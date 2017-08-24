@@ -1,0 +1,157 @@
+.banner {
+  .login-part{
+    padding-top:12px;
+  }
+  .container {
+    p {
+      font-size: 16px;
+      color: #fff;
+    }
+    .login-part {
+      a:first-child {
+        border-right: 1px solid #fff;
+      }
+      a {
+        padding: 0 10px;
+        @include HEIGHT(20px);
+        margin-top: 10px;
+        font-size: 16px;
+        color:#fff;
+      }
+    }
+    .vip-part {
+      width: 160px;
+      background-color: #006bbd;
+      position: relative;
+      margin-top: 10px;
+      .show-top-part {
+        cursor: pointer;
+        padding-right: 25px;
+        height: 40px;
+        span {
+          @include HEIGHT(20px);
+          margin-top: 10px;
+          color: #fff;
+        }
+        .lv-icon-top {
+          height: 26px;
+          width: 26px;
+          margin-left: 9px;
+          margin-top: 7px;
+        }
+        .lv-icon-top-D {
+          background: url("../../../images/icon/icon_m_D.png") no-repeat;
+        }
+        .lv-icon-top-C {
+          background: url("../../../images/icon/icon_m_C.png") no-repeat;
+        }
+        .lv-icon-top-B {
+          background: url("../../../images/icon/icon_m_B.png") no-repeat;
+        }
+        .lv-icon-top-A {
+          background: url("../../../images/icon/icon_m_A.png") no-repeat;
+        }
+        .lv-icon-top-VIP {
+          background: url("../../../images/icon/icon_m_VIP.png") no-repeat;
+        }
+        .icon {
+          position: absolute;
+          right: 5px;
+          top: 10px;
+          margin-top: 0;
+          font-size: 12px;
+          text-align: center;
+        }
+        span.name {
+          margin: 10px 5px 0;
+          font-size: 12px;
+          text-align: center;
+          width: 90px;
+          @include NOWRAP();
+        }
+        span.number {
+          height: 7px;
+          width: 7px;
+          background-color: #d45075;
+          border-radius: 50%;
+          position: absolute;
+          margin: 0;
+          top: 8px;
+          left: 29px;
+        }
+      }
+      .vip-select {
+        display: none;
+        width: 160px;
+        border-radius: 5px;
+        background-color: #277ccc;
+        position: absolute;
+        top: 39px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        z-index: 10000;
+        padding: 0 10px;
+        li {
+          width: 100%;
+          height: 36px;
+          border-bottom: 1px solid #0098e4;
+          line-height: 35px;
+          font-size: 12px;
+          color: #fff;
+          overflow: hidden;
+          a {
+            color: #fff;
+          }
+          .half {
+            width: 50%;
+            float: left;
+          }
+        }
+        .lv {
+          height: 61px;
+          line-height: 60px;
+          span {
+            color: #95c4e1;
+            font-size: 14px;
+          }
+          .fl-r {
+            width: 70px;
+            height: 40px;
+            margin: 10px 0 0 0;
+            border-radius: 5px;
+          }
+          .icon-D {
+            background: url("../../../images/vip/card_D.png") no-repeat;
+            background-size: 100% 100%;
+          }
+          .icon-C {
+            background: url("../../../images/vip/card_C.png") no-repeat;
+            background-size: 100% 100%;
+          }
+          .icon-B {
+            background: url("../../../images/vip/card_B.png") no-repeat;
+            background-size: 100% 100%;
+          }
+          .icon-A {
+            background: url("../../../images/vip/card_A.png") no-repeat;
+            background-size: 100% 100%;
+          }
+          .icon-VIP {
+            background: url("../../../images/vip/card_AA.png") no-repeat;
+            background-size: 100% 100%;
+          }
+        }
+        li:last-child {
+          border-bottom: none;
+          a {
+            color: #95c4e1;
+          }
+        }
+      }
+    }
+    //.vip-part:hover{
+    //  .vip-select{display: block;}
+    //}
+  }
+}
+

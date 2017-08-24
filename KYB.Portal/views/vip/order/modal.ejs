@@ -1,0 +1,187 @@
+<div class="white-back dp-n">
+    <div class="modal-box cancel-modal alert-part dp-n">
+        <div class="header"><span class="dp-b fl-l"></span><span class="dp-b fl-l">订单取消申请</span><span
+                    class="close-btn fl-r dp-b">X</span></div>
+        <p class="ensure-txt">确定要为此订单进行取消操作吗？</p>
+
+        <p class="warn">温馨提示：</p>
+
+        <div class="operate">
+            <button class="close-btn md-btn white-btn">关闭</button>
+            <button class="click-btn md-btn blue-btn" id="ensure_cancel" data-gid="0" data-id="0">
+                确认取消
+            </button>
+        </div>
+    </div>
+    <%# 退关 %>
+    <div class="modal-box tg-modal alert-part dp-n">
+        <div class="header"><span class="dp-b fl-l"></span><span class="dp-b fl-l">订单退关申请</span><span
+                    class="close-btn fl-r dp-b">X</span></div>
+        <p class="ensure-txt">确定要为此订单进行退关操作吗？</p>
+
+        <p class="warn">温馨提示：此次操作可能会产生费用</p>
+
+        <div class="operate">
+            <button class="close-btn md-btn white-btn">关闭</button>
+            <button class="click-btn md-btn blue-btn" id="ensure_quit" data-gid="0" data-id="0">确认退关
+            </button>
+        </div>
+    </div>
+    <%# 重新报关 %>
+    <div class="modal-box bg-modal alert-part dp-n">
+        <div class="header"><span class="dp-b fl-l"></span><span
+                    class="dp-b fl-l">订单重新报关申请</span><span
+                    class="close-btn fl-r dp-b">X</span></div>
+        <p class="ensure-txt">确定要为此订单进行重新报关操作吗？</p>
+
+        <p class="warn">温馨提示：此次操作不产生费用</p>
+
+        <div class="operate">
+            <button class="close-btn md-btn white-btn">关闭</button>
+            <button class="click-btn md-btn blue-btn" id="ensure_bg" data-gid="0" data-id="0">报关
+            </button>
+        </div>
+    </div>
+    <%# 进仓重新查验 %>
+    <div class="modal-box check-modal-in alert-part dp-n">
+        <div class="header"><span class="dp-b fl-l"></span><span
+                    class="dp-b fl-l">订单重新查验申请</span><span
+                    class="close-btn fl-r dp-b">X</span></div>
+        <p class="ensure-txt">确定要为此订单进行重新查验操作吗？</p>
+
+        <p class="warn">温馨提示：此次操作不产生费用</p>
+
+        <div class="operate">
+            <button class="close-btn md-btn white-btn">关闭</button>
+            <button class="click-btn md-btn blue-btn" id="ensure_check_in" data-gid="0" data-id="0">
+                重新查验
+            </button>
+        </div>
+    </div>
+    <%# 出仓重新查验 %>
+    <div class="modal-box check-modal-out alert-part dp-n">
+        <div class="header"><span class="dp-b fl-l"></span><span
+                    class="dp-b fl-l">订单重新查验申请</span><span
+                    class="close-btn fl-r dp-b">X</span></div>
+        <p class="ensure-txt">确定要为此订单进行重新查验操作吗？</p>
+
+        <p class="warn">温馨提示：此次操作不产生费用</p>
+
+        <div class="operate">
+            <button class="close-btn md-btn white-btn">关闭</button>
+            <button class="click-btn md-btn blue-btn" id="ensure_check_out" data-gid="0"
+                    data-id="0">
+                重新查验
+            </button>
+        </div>
+    </div>
+    <%# 改配 %>
+    <div class="gp-modal alert-part dp-n">
+        <div class="header"><span class="dp-b fl-l"></span><span class="dp-b fl-l">订单改配申请</span><span
+                    class="close-btn fl-r dp-b">X</span></div>
+        <div class="gp-body">
+            <div class="top">
+                <div class="logo fl-l">
+                    <div>
+                        <div class="fl-l">
+                            <span class="dp-b biger st-add">上海</span>
+                            <span class="dp-b smaller st-code"></span>
+                        </div>
+                        <div class="fl-l img"></div>
+                        <div class="fl-l">
+                            <span class="dp-b biger ed-add"></span>
+                            <span class="dp-b smaller ed-code"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fl-l al-info">
+                    <p class="fir"><span></span>航班信息</p>
+
+                    <p><span class="title">航空公司：</span><span class="val al-com"></span></p>
+
+                    <p><span class="title">起飞日期：</span><span class="val al-time"></span></p>
+
+                    <p><span class="title">中转方式：</span><span class="val al-dir"></span></p>
+                </div>
+                <div class="fl-l good-info">
+                    <p class="fir"><span></span>货物信息</p>
+
+                    <p class="fl-l big gd-name">货物名称：</p>
+
+                    <p class="fl-l small gd-num">件数：&nbsp;件</p>
+
+                    <p class="fl-l big gd-pack">货物包装：</p>
+
+                    <p class="fl-l small gd-weight">毛重：&nbsp;KG</p>
+
+                    <p class="fl-r small mr-10 gd-size">体积：&nbsp;m³</p>
+                </div>
+            </div>
+            <div class="search-part">
+                <div class="input fl-l">
+                    <label for="start">起飞港：</label>
+                    <input type="text" id="start" readonly value=""/>
+                </div>
+                <div class="input fl-l">
+                    <label for="end">目的港：</label>
+                    <input type="text" id="end" readonly value=""/>
+                </div>
+                <div class="input fl-l">
+                    <label for="com">航空公司：</label>
+                    <input type="text" id="com"/>
+                </div>
+                <div class="input fl-l">
+                    <label for="time">起飞时间：</label>
+                    <input type="text" id="time" readonly data-date-format="yyyy-mm-dd"/>
+                </div>
+                <div class="dir fl-l">
+                    <input type="hidden" id="direc" value="true"/>
+                    <span class="span-dir" data-dir="false">中转</span>
+                    <span class="span-dir sel-dir" data-dir="true">直达</span>
+                </div>
+                <button class="submit-search">搜索</button>
+            </div>
+            <p class="num-info">根据您的改配信息我们为您推荐 <span>0</span>条结果：</p>
+
+            <div class="table">
+                <div class="th">
+                    <div class="fl-l hbh">航班号</div>
+                    <div class="fl-l qfmd">起飞港/目的港</div>
+                    <div class="fl-l qfrq">起飞日期</div>
+                    <div class="fl-l yjdd">预计到达</div>
+                    <div class="fl-l yjzj">预计总价</div>
+                    <div class="fl-l jgxq">价格详情</div>
+                </div>
+                <div class="tb">
+
+                </div>
+            </div>
+            <button class="sub-gp md-btn blue-btn" data-gid="0" data-id="0">确认改配</button>
+        </div>
+    </div>
+    <%# 费用申诉 %>
+    <div class="modal-box appeal-modal alert-part dp-n">
+        <p class="appeal-reason">申诉理由：</p>
+        <textarea id="appeal-txt"></textarea>
+
+        <div class="reason-div">
+            <button class="close-btn dp-b fl-r md-btn white-btn">取消</button>
+            <button class="dp-b fl-r md-btn blue-btn" id="submit-reason" data-gid="0" data-id="0">提交
+            </button>
+        </div>
+    </div>
+    <%# 取消改配 %>
+    <div class="modal-box clgp-modal alert-part dp-n">
+        <div class="header"><span class="dp-b fl-l"></span><span
+                    class="dp-b fl-l">订单取消改配申请申请</span><span
+                    class="close-btn fl-r dp-b">X</span></div>
+        <p class="ensure-txt">确定要为此订单进行取消改配操作吗？</p>
+
+        <p class="warn">温馨提示：此次操作不会产生费用</p>
+        <div class="operate">
+            <button class="close-btn md-btn white-btn">关闭</button>
+            <button class="click-btn md-btn blue-btn" id="ensure_clgp" data-gid="0" data-id="0">确认取消
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+@import "./vipGeneral";
+
+.search-part{height: 100px;width: 100%;border: 1px solid #E3F0FF;background-color: #fff;
+  .input-part{overflow: hidden;
+    .input{height: 30px;width:280px;float: left;margin:10px 0 0 140px;position: relative;
+      label,input,select{display: block;float: left;margin: 0;}
+      label{@include HEIGHT(30px);width: 100px;text-align: right;font-weight: normal;}
+      .time-logo{display: block;height: 28px;width: 28px;position: absolute;right: 1px;top: 1px;z-index: 2;background: url("../../../images/img/iconmap1.png") no-repeat 1px 5px}
+      #time{padding-right: 28px;}
+    }
+  }
+  button{margin: 10px auto 0;}
+}
+table{width: 100%;border-collapse:separate;margin-top: 20px;border: 1px solid $gray3;border-bottom: none;
+  thead{
+    tr{
+      td{background-color: $gray1;color: #fff;border-top: 1px solid transparent;height: 28px;font-size: 12px;text-align: center;}
+    }
+  }
+  tbody{
+    tr{
+      td{border-bottom: 1px solid $gray3;background-color: #fff;height: 32px;font-size: 12px;text-align: center;
+        a{color: $blue1;text-decoration: underline!important;}
+        a:hover{text-decoration: none!important;}
+      }
+    }
+    tr:hover{
+      td{background-color: #d0e5fd;}
+    }
+    .wrong-msg{height: 300px;
+      td{width: 100%;text-align: center;@include HEIGHT(300px);font-size: 20px;border:none;
+        a{color: $blue3;text-decoration: underline;}
+      }
+    }
+  }
+}

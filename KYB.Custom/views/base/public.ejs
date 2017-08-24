@@ -1,0 +1,50 @@
+</head>
+<body class="skin-blue sidebar-mini">
+
+<div class="wrapper">
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar" style="height:auto">
+            <ul class="sidebar-menu">
+                <li class="header">
+                    <a href="#" class="dp-b">
+                        <img src="/images/demo.jpg"/>
+                    </a>
+
+                    <p class="u-name"><%= user.agentCompany.companyName || '/' %></p>
+
+                    <p class="u-level"><%= user.roleInfo.roleName || '/' %></p>
+
+                    <p class="login-out"><a href="/login/out">注销</a></p>
+                </li>
+                <li class="treeview<%= position == 'order' ? ' active' : '' %>">
+                    <a href="#" class="title-part">
+                        <i class="fa fa-file-text"></i> <span>订单管理</span> <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/order/pre"
+                               class="<%= position == 'order' && part == 'pre' ? 'act' : '' %>">待预审</a></li>
+                        <li><a href="/order/custom"
+                               class="<%= position == 'order' && part == 'custom' ? 'act' : '' %>">待报关</a></li>
+                        <li><a href="/order/declare"
+                               class="<%= position == 'order' && part == 'declare' ? 'act' : '' %>">报关中</a>
+                        </li>
+                        <li><a href="/order/pass"
+                               class="<%= position == 'order' && part == 'pass' ? 'act' : '' %>">报关完成</a></li>
+                        <li><a href="/order/other"
+                               class="<%= position == 'order' && part == 'other' ? 'act' : '' %>">其他</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+    <header class="main-header">
+        <nav class="navbar navbar-static-top">
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
+            <span class="t-logo"></span>
+        </nav>
+    </header>
+    <div class="content-wrapper">

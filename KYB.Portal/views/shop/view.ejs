@@ -1,0 +1,87 @@
+<%- include ../newBase/head.ejs %>
+<%# 样式表引用 %>
+<link rel="stylesheet" href="/javascripts/datePicker/css/bootstrap-datetimepicker.min.css"/>
+<link rel="stylesheet" href="/stylesheets/css/web/shop.css">
+<link rel="stylesheet" href="/images/alifont/iconfont.css">
+<%# 样式表引用结束 %>
+<%- include ../newBase/header.ejs %>
+<script>
+    var dd = {
+        mb: '<%= mb || '' %>'
+    };
+</script>
+<div class="app-box" style="padding-top:0;">
+    <div class="shop-box">
+        <div class="bs26">
+            <div class="infoContainer fill">
+                <div class="fl-l aircompanyIcon">
+                    <img src="/images/logo-m.png" alt="">
+                </div>
+                <div class="fl-l aircompanyInfo" style="line-height:1;margin-top:22px;margin-left:20px;">
+                    <p class="companyInfo" style=""></p>
+                    <p class="companyDescription" style=""></p>
+                </div>
+                <div class="fl-l shopCollect" data-memberId="<%= user.member?user.member.memberId:'' %>">
+                    <em class="iconfont icon-shoucang1" style="" data-companyId="<%= user.member?user.member.companyId:'' %>"></em><span>收藏店铺</span>
+                </div>
+                <div class="searchDeport fill fl-l">
+                    <div class="fl-l location" style="position:relative;">
+                        <label class="dp-n" for="start_location"></label>
+                        <input id="start_location" type="text" value="" placeholder="起始港">
+                        <span class="line"></span>
+                        <ul class="ajax-part dp-n">
+                        </ul>
+                    </div>
+                    <div class="fl-l location" style="position:relative;">
+                        <label class="dp-n" for="end_location"></label>
+                        <input id="end_location" type="text" value="" placeholder="目的港">
+                        <ul class="ajax-part dp-n">
+                        </ul>
+                    </div>
+                    <div class="fl-l chaXun">
+                        <em class="iconfont icon-fangdajing"></em>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<%- include ./search.ejs %>-->
+        <!--<%- include ./table.ejs %>-->
+        <div class="briefInfo">
+            <div class="shop_container">
+                <p style="font-size:30px;text-align:left;color:#fff;padding-top:64px;">
+                    Shanghai TengYi International Freight
+                </p>
+                <div class="shop_container">
+                    <p style="font-size:20px;text-align:left;color:#fff;width:524px;margin-top:16px;">
+                        专业一级货运代理，空运铜牌证书，东南亚、澳洲、非洲、欧洲等拥有多条D7 CK CZ MK CA 等知名航线
+                    </p>
+                </div>
+                <div class="shop_learnMore">
+                    <span>了解更多</span>
+                </div>
+                <div class="shop-briefInfoBtn"><span><i>收起简介信息</i><em class="iconfont icon-jiantou"
+                                                                      style="color:#fff;"></em></span></div>
+            </div>
+        </div>
+        <div class="container">
+            <p class="info-part">
+                <span id="start-txt" class=" dp-b fl-l big"></span>
+                <span class="big dp-b fl-l">-</span>
+                <span id="end-txt" class="big dp-b fl-l"></span>
+                <span class="dp-b fl-l small margin">共计</span>
+                <span class="dp-b fl-l small" id="sum" style="color:#E64C7B
+">0</span>
+                <span class="dp-b fl-l small" style="">个查询结果</span>
+            </p>
+            <%- include ./table.ejs %>
+        </div>
+    </div>
+</div>
+
+<%- include ../newBase/javascripts.ejs %>
+<%# 脚本引用 %>
+<script src="/javascripts/datePicker/js/bootstrap-datetimepicker.min.js" charset="utf-8"></script>
+<script src="/javascripts/datePicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="utf-8"></script>
+<script src="/javascripts/shop/bundle.min.js" charset="utf-8"></script>
+<%# 脚本引用结束 %>
+<!--<%- include ../newBase/foot.ejs %>-->

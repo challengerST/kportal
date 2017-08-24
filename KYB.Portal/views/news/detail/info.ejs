@@ -1,0 +1,10 @@
+<% var detail = 'resBody' in data && data.resBody || {};console.log(detail)%>
+<div class="right-part">
+    <div class="news-content" data-nT="<%=detail.newsType%>" data-sT="<%=detail.subType%>">
+        <div class="title"><%= detail.newsTitle%></div>
+        <div class="time"><%= detail.modifyDt%></div>
+        <div id="content"><%- detail.newsContent%></div>
+    </div>
+</div>
+
+

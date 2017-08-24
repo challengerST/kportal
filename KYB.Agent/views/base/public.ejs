@@ -1,0 +1,203 @@
+</head>
+<body class="skin-blue sidebar-mini">
+
+<% var r = user.roleId; %>
+
+<div class="wrapper">
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar" style="height:auto">
+            <ul class="sidebar-menu">
+                <li class="header">
+                    <a href="#" class="dp-b">
+                        <img src="/images/demo.jpg"/>
+                    </a>
+
+                    <p class="u-name"><%= user.agentCompany.companyName || '/' %></p>
+
+                    <p class="u-level"><%= user.roleName || '/' %></p>
+
+                    <p class="login-out">
+                        <a id="change-pwd" href="javascript:void(0);" style="margin-right: 5px;">修改密码</a>
+                        <a href="/login/out">注销</a>
+                    </p>
+                </li>
+                <li class="treeview<%= position == 'home' ? ' active' : '' %>">
+                    <a href="/home" class="title-part">
+                        <i class="fa fa-home"></i> <span>管理者主页</span>
+                    </a>
+                </li>
+
+                <% if(r == 13 || r == 11){ %>
+                <li class="treeview<%= position == 'airline' ? ' active' : '' %>">
+                    <a href="#" class="title-part">
+                        <i class="fa fa-plane"></i> <span>航线管理</span> <i
+                                class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/airline/company"
+                               class="<%= position == 'airline' && part == 'company' ? 'act' : '' %>">航空公司维护</a>
+                        </li>
+                        <li><a href="/airline/maintenance"
+                               class="<%= position == 'airline' && part == 'maintenance' ? 'act' : '' %>">航线维护</a>
+                        <!--<li><a href="/airline/mix"-->
+                               <!--class="<%= position == 'airline' && part == 'mix' ? 'act' : '' %>">拼货维护</a></li>-->
+                        <!--</li>-->
+                        <li><a href="/airline/price"
+                               class="<%= position == 'airline' && part == 'price' ? 'act' : '' %>">费用模板</a></li>
+                        </li>
+                        <li><a href="/airline/tact"
+                               class="<%= position == 'airline' && part == 'tact' ? 'act' : '' %>">TACT费率维护</a></li>
+                        </li>
+                    </ul>
+                </li>
+                <% } %>
+
+                <% if(r == 10|| r == 11){ %>
+                <li class="treeview<%= position == 'waybill' ? ' active' : '' %>">
+                    <a href="#" class="title-part">
+                        <i class="fa fa-sticky-note"></i> <span>运单管理</span> <i
+                                class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/waybill/manage"
+                               class="<%= position == 'waybill' && part == 'manage' ? 'act' : '' %>">运单维护</a></li>
+                        <li><a href="/waybill/state"
+                               class="<%= position == 'waybill' && part == 'state' ? 'act' : '' %>">运单状态</a></li>
+                        <li><a href="/waybill/collect"
+                               class="<%= position == 'waybill' && part == 'collect' ? 'act' : '' %>">汇总统计</a>
+                        </li>
+                    </ul>
+                </li>
+                <% } %>
+
+                <% if(r == 13 || r == 11 ){ %>
+                <li class="treeview<%= position == 'order' ? ' active' : '' %>">
+                    <a href="#" class="title-part">
+                        <i class="fa fa-file-text"></i> <span>订单管理</span> <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/order/pending"
+                               class="<%= position == 'order' && part == 'pending' ? 'act' : '' %>">待处理</a></li>
+                        <li><a href="/order/underway"
+                               class="<%= position == 'order' && part == 'underway' ? 'act' : '' %>">进行中</a></li>
+                        <% if(r != 1008){ %>
+                        <li><a href="/order/done"
+                               class="<%= position == 'order' && part == 'done' ? 'act' : '' %>">已结束</a>
+                        </li>
+                        <li><a href="/order/change"
+                               class="<%= position == 'order' && part == 'change' ? 'act' : '' %>">改配申请</a></li>
+                        <% } %>
+                    </ul>
+                </li>
+                <% } %>
+
+                <% if(r == 10 || r == 11){ %>
+                <li class="treeview<%= position == 'warehouse' ? ' active' : '' %>">
+                    <a href="#" class="title-part">
+                        <i class="fa fa-cubes"></i> <span>仓库管理</span> <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/warehouse/query"
+                               class="<%= position == 'warehouse' && part == 'query' ? 'act' : '' %>">进仓数据查询</a></li>
+                        <li><a href="/warehouse/list"
+                               class="<%= position == 'warehouse' && part == 'list' ? 'act' : '' %>">仓库信息维护</a>
+                        </li>
+                    </ul>
+                </li>
+                <% } %>
+
+                <% if(r != 10 && r != 13 ){ %>
+                <li class="treeview<%= position == 'tickets' ? ' active' : '' %>">
+                    <a href="#" class="title-part">
+                        <i class="fa fa-credit-card"></i> <span>财务管理</span> <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+
+                        <% if(r != 12 ){ %>
+                        <li><a href="/tickets/expense"
+                               class="<%= position == 'tickets' && part == 'expense' ? 'act' : '' %>">费用清单</a>
+                        </li>
+                        <% } %>
+
+                        <% if(r != 13 ){ %>
+                        <li><a href="/tickets/account"
+                               class="<%= position == 'tickets' && part == 'account' ? 'act' : '' %>">对账单</a>
+                        </li>
+                        <li><a href="/tickets/invoice"
+                               class="<%= position == 'tickets' && part == 'invoice' ? 'act' : '' %>">开票管理</a>
+                        </li>
+                        <% } %>
+                        <!--<li><a href="/tickets/cash"-->
+                               <!--class="<%= position == 'tickets' && part == 'cash' ? 'act' : '' %>">客户返现</a>-->
+                        <!--</li>-->
+                        <!--<li><a href="/tickets/examine"-->
+                               <!--class="<%= position == 'tickets' && part == 'examine' ? 'act' : '' %>">客户返现审核</a>-->
+                        <!--</li>-->
+                        <li><a href="/tickets/wPrice"
+                               class="<%= position == 'tickets' && part == 'wPrice' ? 'act' : '' %>">仓库费用清单</a>
+                        </li>
+                        <li><a href="/tickets/dPrice"
+                               class="<%= position == 'tickets' && part == 'dPrice' ? 'act' : '' %>">报关行费用清单</a>
+                        </li>
+                    </ul>
+                </li>
+                <% } %>
+
+                <% if(r == 10 || r == 11){ %>
+                <li class="treeview<%= position == 'member' ? ' active' : '' %>">
+                    <a href="#" class="title-part">
+                        <i class="fa fa-street-view"></i> <span>会员管理</span> <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/member/list"
+                               class="<%= position == 'member' && part == 'list' ? 'act' : '' %>">会员列表</a>
+                        </li>
+                        <li><a href="/member/level"
+                               class="<%= position == 'member' && part == 'level' ? 'act' : '' %>">会员评级</a>
+                        </li>
+                        <li><a href="/member/review"
+                               class="<%= position == 'member' && part == 'review' ? 'act' : '' %>">认证审核</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="treeview<%= position == 'staff' ? ' active' : '' %>">
+                    <a href="#" class="title-part">
+                        <i class="fa fa-user-plus"></i> <span>员工管理</span> <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a class="<%= position == 'staff' && part == 'list' ? 'act' : '' %>"
+                               href="/staff/list">员工列表</a>
+                        </li>
+                        <li><a class="<%= position == 'staff' && part == 'role' ? 'act' : '' %>"
+                               href="/staff/role">角色管理</a>
+                        </li>
+                    </ul>
+                </li>
+                <% } %>
+                <li class="treeview<%= position == 'agent' ? ' active' : '' %>">
+                    <a href="#" class="title-part">
+                        <i class="fa fa-hand-rock-o"></i> <span>加盟审核</span><i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a class="<%= position == 'agent' && part == 'review' ? 'act' : '' %>"
+                               href="/agent/review">待审核</a>
+                        </li>
+                        <li><a class="<%= position == 'agent' && part == 'list' ? 'act' : '' %>"
+                               href="/agent/list">审核日志</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+    <header class="main-header">
+        <nav class="navbar navbar-static-top">
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
+            <span class="t-logo"></span>
+        </nav>
+    </header>
+    <div class="content-wrapper">
